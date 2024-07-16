@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gremius{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'login' %}">Login</a>
+            <!-- Otras enlaces de navegación -->
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Información del pie de página -->
+    </footer>
+</body>
+</html>
