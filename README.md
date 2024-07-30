@@ -83,15 +83,9 @@ Gremius es un sistema web diseñado para la administración de un gremio. Este p
 - Acceder a la página principal en `http://localhost:8000` para ver las noticias y promociones.
 - Iniciar sesión como afiliado para realizar reservas de servicios.
 
-## Contribución
+## Contacto
 
-Si deseas contribuir a Gremius, por favor sigue los siguientes pasos:
-
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva funcionalidad'`).
-4. Sube los cambios a tu rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+Si tienes alguna pregunta o deseas contactarme, puedes enviarme un correo a [nicobutter@gmail.com](mailto:nicobutter@gmail.com).
 
 ## Licencia
 
