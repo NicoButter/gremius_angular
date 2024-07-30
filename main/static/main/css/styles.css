@@ -1,6 +1,3 @@
-/* styles.css */
-
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,26 +5,75 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Estilos del encabezado */
+/* ****************************************************************************************/
+
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #f8f9fa;
     padding: 10px 0;
-    text-align: center;
 }
 
-header nav a {
-    color: #fff;
-    margin: 0 15px;
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Estilos para la barra de navegación */
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav .nav-list li {
+    margin-right: 20px;
+}
+
+nav .nav-list li a {
     text-decoration: none;
+    color: #007bff;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+nav .nav-list li a:hover {
+    color: #0056b3;
 }
+
+/* Estilo para el botón de login */
+
+.login-button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/********************************************************************************************/
 
 /* Estilos del contenido principal */
+
 main {
     padding: 20px;
     background-color: #fff;
@@ -36,18 +82,35 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos del pie de página */
+/*******************************************************************************************************************/
+
+/* Estilo para el footer */
+
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #f8f9fa;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
-/* Estilos específicos para h1 */
-h1 {
-    color: #333;
+footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilo para los enlaces de redes sociales */
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #007bff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #0056b3;
 }

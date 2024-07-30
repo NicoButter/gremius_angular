@@ -5,20 +5,56 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Gremius{% endblock %}</title>
+
+    <script src="https://kit.fontawesome.com/16c678032e.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
 </head>
 <body>
+
+
+
     <header>
-        <nav>
-            <a href="{% url 'login' %}">Login</a>
-            <!-- Otras enlaces de navegación -->
-        </nav>
+        <div class="container">
+            <h1>Judiciales de Santa Cruz</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Institucional</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Encuentro de Mujeres</a></li>
+                    <li><a href="#">Comunicados Oficiales</a></li>
+                </ul>
+                <a href="{% url 'login' %}" class="login-button">Login</a>
+            </nav>
+        </div>
     </header>
+
+
+
+
+
+
     <main>
         {% block content %}{% endblock %}
     </main>
+
     <footer>
-        <!-- Información del pie de página -->
+        <div class="container">
+            <p>&copy; {{ current_year }} Gremio de Judiciales - Santa Cruz. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook fa-shake"></i>
+                </a>
+                <a href="https://x.com" target="_blank" aria-label="X">
+                    <i class="fa-solid fa-x fa-shake"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram fa-shake"></i>
+                </a>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
