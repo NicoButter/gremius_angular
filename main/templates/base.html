@@ -3,20 +3,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
-    <title>{% block title %}Gremius{% endblock %}</title>
+
+    <title>{% block title %}Gremiop Judiciales Santa Cruz{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
 
     <script src="https://kit.fontawesome.com/16c678032e.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
 </head>
 <body>
 
-
-
     <header>
         <div class="container">
-            <h1>Judiciales de Santa Cruz</h1>
+            <div class="logo">
+                <a href="#">
+                    <img src="{% static 'main/images/logo_judiciales.png' %}" alt="Logo de Gremius">
+                </a>
+            </div>
             <nav>
                 <ul class="nav-list">
                     <li><a href="#">Inicio</a></li>
@@ -25,7 +34,7 @@
                     <li><a href="#">Encuentro de Mujeres</a></li>
                     <li><a href="#">Comunicados Oficiales</a></li>
                 </ul>
-                <a href="{% url 'login' %}" class="login-button">Login</a>
+                <a href="{% url 'login' %}" class="login-button">Ingresá</a>
             </nav>
         </div>
     </header>

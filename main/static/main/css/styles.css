@@ -1,5 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -7,17 +11,34 @@ body {
 
 /* ****************************************************************************************/
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************************************************************************/
+
 header {
-    background-color: #f8f9fa;
+    background-color: #253F59;
     padding: 10px 0;
 }
 
 header .container {
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo {
+    flex-shrink: 0; /* Evita que el logo se reduzca */
+}
+
+.logo img {
+    max-height: 150px; 
+    width: auto;
 }
 
 header h1 {
@@ -45,7 +66,7 @@ nav .nav-list li {
 
 nav .nav-list li a {
     text-decoration: none;
-    color: #007bff;
+    color: #fff;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -75,6 +96,7 @@ nav .nav-list li a:hover {
 /* Estilos del contenido principal */
 
 main {
+    flex: 1;
     padding: 20px;
     background-color: #fff;
     margin: 20px auto;
@@ -87,7 +109,7 @@ main {
 /* Estilo para el footer */
 
 footer {
-    background-color: #f8f9fa;
+    background-color: #253F59;
     padding: 20px 0;
     text-align: center;
 }
@@ -95,6 +117,7 @@ footer {
 footer .container {
     width: 80%;
     margin: 0 auto;
+    color: #fff;
 }
 
 /* Estilo para los enlaces de redes sociales */
@@ -104,7 +127,7 @@ footer .container {
 }
 
 .social-media a {
-    color: #007bff;
+    color: #fff;
     margin: 0 10px;
     text-decoration: none;
     font-size: 24px;
@@ -112,5 +135,5 @@ footer .container {
 }
 
 .social-media a:hover {
-    color: #0056b3;
+    color: #000;
 }
