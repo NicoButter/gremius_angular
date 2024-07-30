@@ -21,7 +21,7 @@ Gremius es un sistema web diseñado para la administración de un gremio. Este p
 - Python 3.x
 - Django
 - PostgreSQL
-- openSUSE
+- openSUSE (opcional no es obligatorio pero es mas lindo)
 
 ## Instalación
 
