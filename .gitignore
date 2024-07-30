@@ -1,0 +1,44 @@
+# Entorno virtual
+gremius_venv/
+
+# Archivos compilados de Python
+*.pyc
+__pycache__/
+
+# Archivos de configuración del entorno
+.env
+
+# Configuración del editor y del sistema operativo
+.vscode/
+.idea/
+.DS_Store
+
+# Archivos de base de datos
+*.sqlite3
+
+# Archivos de logs
+*.log
+
+# Archivos estáticos compilados
+staticfiles/
+
+# Archivos subidos por el usuario
+media/
+
+# Archivos de migraciones
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+
+# Archivos de configuración de PyCharm
+*.iml
+.idea/
+
+# Archivos de configuración de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
