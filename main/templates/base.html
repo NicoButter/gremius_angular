@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
 
     <title>{% block title %}Gremiop Judiciales Santa Cruz{% endblock %}</title>
@@ -22,14 +22,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="#">
+                <a href="{% url 'index' %}">
                     <img src="{% static 'main/images/logo_judiciales.png' %}" alt="Logo de Gremius">
                 </a>
             </div>
             <nav>
                 <ul class="nav-list">
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Institucional</a></li>
                     <li><a href="#">Novedades</a></li>
                     <li><a href="#">Encuentro de Mujeres</a></li>
                     <li><a href="#">Comunicados Oficiales</a></li>
@@ -38,11 +37,6 @@
             </nav>
         </div>
     </header>
-
-
-
-
-
 
     <main>
         {% block content %}{% endblock %}
@@ -61,6 +55,10 @@
                 <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
                     <i class="fa-brands fa-instagram fa-shake"></i>
                 </a>
+            </div>
+            <div class="footer-links">
+                <a href="{% url 'terminos_condiciones' %}">Términos y Condiciones</a>
+                <a href="{% url 'politica_privacidad' %}">Política de Privacidad</a>
             </div>
         </div>
     </footer>

@@ -124,6 +124,7 @@ footer .container {
 
 .social-media {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .social-media a {
@@ -136,4 +137,14 @@ footer .container {
 
 .social-media a:hover {
     color: #000;
+}
+
+.footer-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
