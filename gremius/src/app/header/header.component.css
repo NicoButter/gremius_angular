@@ -1,0 +1,36 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #274572;
+  }
+  
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #f0f0f0;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    transition: transform 0.3s;
+  }
+  
+  .social-links a:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-links img {
+    width: 24px;
+    height: 24px;
+  }
+  
