@@ -1,0 +1,44 @@
+#actualidad {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.actualidad-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.actualidad-item {
+    max-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.actualidad-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.actualidad-item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.leer-mas {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.leer-mas:hover {
+    text-decoration: underline;
+}

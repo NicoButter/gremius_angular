@@ -3,12 +3,12 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #2a2a2a;
-    color: #274572;
+    background-color: #314F7E;
+    color: #fff;
   }
   
   .logo img {
-    height: 50px;
+    height: 150px;
     width: auto;
   }
   
