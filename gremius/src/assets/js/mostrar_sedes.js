@@ -13,44 +13,43 @@ function mostrarSede(sedeId) {
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.439610135546!2d-67.53266132291307!3d-46.4319141738599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde5dfb6ae69e6c1%3A0xde248f5b6b47a5c8!2sVenezuela%20630%2C%20Z9011%20Caleta%20Olivia%2C%20Santa%20Cruz!5e1!3m2!1ses!2sar!4v1730402291797!5m2!1ses!2sar"
     }
     
-  // Definir información de las sedes incluyendo la imagen
   const sedes = {
     sede1: {
       nombre: "Sede Central Río Gallegos",
-      descripcion: "Aquí se encuentran nuestras oficinas administrativas.",
+      descripcion: "Sede central y oficinas administrativas.",
       direccion: "Ramon y Cajal 257",
       telefono: "(02966) 340743",
       horarios: "9 a 12 y 15 a 20hs",
       responsable: "Diana Climis",
-      imagen: "assets/images/sede_rio_gallegos.png", // Ruta de la imagen
+      imagen: "assets/images/sede_rio_gallegos.png", 
     },
     sede2: {
       nombre: "El Calafate",
-      descripcion: "Sede secundaria para atención al público.",
+      descripcion: "Sede de El Calafate.",
       direccion: "Avda. Costanera Néstor Kirchner 134",
       telefono: "(02966) 340743",
       horarios: "9 a 12 y 15 a 20hs",
       responsable: "Diana Climis",
-      imagen: "assets/images/sede_el_calafate.png", // Ruta de la imagen
+      imagen: "assets/images/sede_el_calafate.png", 
     },
     sede3: {
       nombre: "San Julian",
-      descripcion: "Centro de formación profesional.",
+      descripcion: "Sede de Puerto San Julián.",
       direccion: "9 de Julio 1186",
       telefono: "(02966) 707561",
       horarios: "8 a 10 y 16 a 19hs",
       responsable: "Antonia Méndez",
-      imagen: "assets/images/sede_san_julian.png", // Ruta de la imagen
+      imagen: "assets/images/sede_san_julian.png", 
     },
     sede4: {
       nombre: "Caleta Olivia",
-      descripcion: "Capacitación y desarrollo profesional.",
+      descripcion: "Sede Caleta Olivia.",
       direccion: "Venezuela 630",
       telefono: "(02966) 406-101",
       horarios: "10 a 12 y 16 a 19hs",
       responsable: "José Morodiel",
       mapa: "https://www.google.com/maps/embed?pb=!1m18...",
-      imagen: "assets/images/sede_caleta_olivia.png", // Ruta de la imagen
+      imagen: "assets/images/sede_caleta_olivia.png", 
     },
   };
 
