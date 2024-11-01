@@ -42,3 +42,13 @@
 .leer-mas:hover {
     text-decoration: underline;
 }
+
+.app-info {
+    text-align: center;
+}
+
+.qr-image {
+    width: 150px;
+    height: auto;
+    margin: 0 auto 10px;
+}

@@ -16,10 +16,12 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-section {
     flex: 1;
+    min-width: 200px;
     margin: 10px;
 }
 
@@ -64,6 +66,21 @@
 .footer-section.links a:hover {
     color: #ffdd57;
     text-shadow: 0 0 5px #ffdd57, 0 0 10px #ffdd57, 0 0 15px #ffdd57;
+}
+
+.app-download {
+    text-align: center;
+}
+
+.footer-qr {
+    width: 250px;
+    height: auto;
+    margin-top: 5px;
+    transition: transform 0.3s;
+}
+
+.footer-qr:hover {
+    transform: scale(1.1);
 }
 
 .footer-bottom {
