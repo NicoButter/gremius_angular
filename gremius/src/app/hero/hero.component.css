@@ -1,5 +1,5 @@
 .hero {
-    background-image: url('/gremius/src/assets/images/hero_1.jpg'); 
+    background-image: url('/assets/images/hero_4.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -7,12 +7,13 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #000;
+    color: #fff;
     position: relative;
 }
 
 .hero-content {
     z-index: 1;
+    padding: 0 20px;
 }
 
 .hero h2 {
@@ -36,4 +37,29 @@
 
 .btn:hover {
     background-color: #0056b3;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
 }

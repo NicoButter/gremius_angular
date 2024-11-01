@@ -26,6 +26,22 @@
     border-radius: 8px;
 }
 
+.iframe-container {
+    width: 100%; /* Para que ocupe todo el ancho del artículo */
+    overflow: hidden; /* Para evitar el desbordamiento */
+    position: relative;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Hace que el iframe ocupe el 100% del contenedor */
+    height: 100%; /* Hace que el iframe ocupe el 100% del contenedor */
+    border: none; /* Sin bordes */
+}
+
 .actualidad-item h3 {
     margin-top: 10px;
     font-size: 1.2em;
