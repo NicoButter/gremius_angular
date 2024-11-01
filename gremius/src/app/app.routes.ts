@@ -6,6 +6,7 @@ import { ActualidadComponent } from './actualidad/actualidad.component';
 import { SedesComponent } from './sedes/sedes.component';
 
 export const routes: Routes = [
+    { path: '', component: HeroComponent },
     { path: 'header', component: HeaderComponent },
     { path: 'vavbar', component: NavbarComponent },
     { path: 'hero', component: HeroComponent },
