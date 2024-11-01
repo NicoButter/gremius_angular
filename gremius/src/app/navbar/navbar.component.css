@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #314F7E;
     padding: 10px 20px;
@@ -11,6 +11,7 @@
     display: flex;
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 .nav-item {
@@ -20,19 +21,16 @@
 .nav-item a {
     text-decoration: none;
     color: white;
-    font-weight: onrmal;
+    font-weight: normal;
     transition: color 0.3s;
 }
 
 .nav-item a:hover {
     color: #ff6347;
-    /* Cambia el color en hover */
 }
 
-/* Estilos para el menú móvil */
 .menu-toggle {
     display: none;
-    /* Ocultar por defecto */
     flex-direction: column;
     cursor: pointer;
 }
@@ -44,34 +42,27 @@
     margin: 3px 0;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
     .nav-list {
         display: none;
-        /* Ocultar lista de navegación por defecto en móviles */
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 60px;
-        /* Justo debajo de la barra de navegación */
         left: 0;
         background-color: #333;
     }
 
     .nav-item {
         margin: 15px 0;
-        /* Espaciado vertical en móvil */
         text-align: center;
-        /* Centrar texto */
     }
 
     .menu-toggle {
         display: flex;
-        /* Mostrar menú móvil */
     }
 
     .navbar.active .nav-list {
         display: flex;
-        /* Mostrar lista de navegación cuando está activa */
     }
 }
