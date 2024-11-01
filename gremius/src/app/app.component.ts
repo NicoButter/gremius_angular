@@ -5,11 +5,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeroComponent } from './hero/hero.component';
 import { ActualidadComponent } from './actualidad/actualidad.component';
 import { SedesComponent } from './sedes/sedes.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, NavbarComponent, HeroComponent, ActualidadComponent, SedesComponent],
+  imports: [
+    RouterOutlet, 
+    HeaderComponent, 
+    NavbarComponent, 
+    HeroComponent, 
+    ActualidadComponent, 
+    SedesComponent,
+    FooterComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
