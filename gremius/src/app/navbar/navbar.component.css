@@ -1,14 +1,12 @@
-/* Estilos de la navbar en pantallas grandes */
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #314F7E;
+    background-color: #444C8A;
     padding: 10px 20px;
-    position: relative; /* Asegura que el menú móvil se posicione debajo */
+    position: relative;
 }
 
-/* Oculta el nav-list en vista móvil por defecto */
 .nav-list {
     list-style: none;
     display: flex;
@@ -32,12 +30,11 @@
     color: #ff6347;
 }
 
-/* Estilos para el botón de menú hamburguesa */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 15; /* Asegura que el botón esté visible */
+    z-index: 15;
 }
 
 .bar {
@@ -47,39 +44,35 @@
     margin: 3px 0;
 }
 
-/* Responsividad para móviles */
 @media (max-width: 768px) {
-    /* Oculta la lista de navegación y la estructura vertical */
+
     .nav-list {
         display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 100%; /* Coloca el menú debajo del navbar */
+        top: 100%;
         left: 0;
         background-color: #333;
         padding: 10px 0;
         transition: opacity 0.3s ease, transform 0.3s ease;
-        transform: translateY(-10px); /* Añade una pequeña animación hacia abajo */
-        opacity: 0; /* Empieza oculto */
+        transform: translateY(-10px);
+        opacity: 0;
         z-index: 5;
     }
 
-    /* Ajustes de estilo de los enlaces en el menú desplegable */
     .nav-item {
         margin: 15px 0;
         text-align: center;
     }
 
-    /* Muestra el botón hamburguesa en dispositivos móviles */
     .menu-toggle {
         display: flex;
     }
 
-    /* Cuando el menú está activo, muestra nav-list */
     .navbar.active .nav-list {
         display: flex;
         opacity: 1;
-        transform: translateY(0); /* Elimina el deslizamiento */
+        transform: translateY(0);
     }
 }

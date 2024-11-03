@@ -3,12 +3,12 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #314F7E;
-  color: #fff;
+  background-color: #fff;
+  color: #444C8A;
 }
 
 .logo img {
-  height: 150px;
+  height: 100px;
   width: auto;
 }
 
@@ -27,7 +27,7 @@ header {
 .social-links a {
   margin: 0 10px;
   transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
-  color: #fff;
+  color: #444C8A;
   text-decoration: none;
   font-size: 24px;
 }
