@@ -1,8 +1,25 @@
-<section class="hero">
+<!-- HTML (solo cambios en el contenido del hero) -->
+<section class="hero-carousel">
+  <div
+    class="carousel-slide"
+    *ngFor="let noticia of noticias; let i = index"
+    [class.active]="i === currentSlide"
+    [ngStyle]="{ 'background-image': 'url(' + noticia.image + ')' }"
+  >
     <div class="hero-content">
-        <!-- <h2>Judiciales de Santa Cruz</h2>
-        <p>Tu fuente confiable de la información de tu gremio.</p>
-        <p>En esta sección se van a sincronizar los feeds de Meta.</p>
-        <a href="#contact" class="btn">Contáctanos</a> -->
+      <div class="news-label">NOTICIAS</div>
+      <h2>{{ noticia.titulo }}</h2>
+      <p class="news-author">{{ noticia }}</p>
+      <p class="news-quote">{{ noticia.descripcion }}</p>
     </div>
-</section>
+  </div>
+
+  <!-- Navegación opcional -->
+  <div class="carousel-nav">
+    <span
+      *ngFor="let noticia of noticias; let i = index"
+      (click)="goToSlide(i)"
+      [class.active]="i === currentSlide"
+    ></span>
+  </div>
+</section>|
