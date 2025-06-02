@@ -13,5 +13,6 @@ export const routes: Routes = [
     { path: 'hero', component: HeroComponent },
     { path: 'actulidad', component: ActualidadComponent },
     { path: 'sedes', component: SedesComponent },
-    { path: 'footer', component: FooterComponent }
+    { path: 'footer', component: FooterComponent },
+    
 ];
