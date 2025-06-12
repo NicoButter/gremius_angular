@@ -1,0 +1,8 @@
+:root {
+  --header-height: 80px; /* Altura inicial del header */
+}
+
+.header.shrink {
+  --header-height: 60px; /* Altura cuando se encoge */
+  padding: 5px 15px;
+}

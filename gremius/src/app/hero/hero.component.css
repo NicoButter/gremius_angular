@@ -1,4 +1,9 @@
-/* CSS OPTIMIZADO - Hero Full Screen con Degradado */
+:host {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
 .news-hero {
     position: relative;
     width: 100%;

@@ -1,29 +1,27 @@
-<!-- <header class="header" [class.shrink]="isShrunk">
-	<div class="logo">
-		<img src="assets/images/logo_judiciales_1.png"
-			alt="Logo Judiciales de Santa Cruz">
-	</div>
-	<div class="title">
-		<p>El Gremio del Empleado Judicial de Santa Cruz.</p>	
-	</div>
-	<div class="social-links">
-		<a href="https://www.facebook.com/judicialessantacruz"
-			target="_blank"
-			aria-label="Facebook">
-			<i class="fa-brands fa-facebook"></i>
-		</a>
-		<a href="https://www.instagram.com/judicialessantacruz/"
-			target="_blank"
-			aria-label="Instagram">
-			<i class="fa-brands fa-instagram"></i>
-		</a>
-	</div>
+<header class="header" [class.shrink]="isShrunk">
+  <div class="logo">
+    <img src="assets/images/logo_judiciales_1.png" alt="Logo Judiciales de Santa Cruz">
+  </div>
+  <div class="title">
+    <p>El Gremio del Empleado Judicial de Santa Cruz.</p>
+  </div>
+  <div class="social-links">
+    <a href="https://www.facebook.com/judicialessantacruz" target="_blank" aria-label="Facebook">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/judicialessantacruz/" target="_blank" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
 </header>
-
 <nav class="navbar">
+  <div class="menu-toggle" id="mobile-menu" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
   <ul class="nav-list" [class.active]="isMobileMenuOpen">
     <li class="nav-item"><a routerLink="/inicio">Inicio</a></li>
-
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle">Institucional</a>
       <ul class="dropdown-menu">
@@ -34,7 +32,6 @@
         <li><a routerLink="/archivos">Archivos</a></li>
       </ul>
     </li>
-
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle">Áreas</a>
       <ul class="dropdown-menu">
@@ -46,7 +43,6 @@
         <li><a routerLink="/ddhh">DD.HH.</a></li>
       </ul>
     </li>
-
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle">De Inclusión</a>
       <ul class="dropdown-menu">
@@ -54,7 +50,6 @@
         <li><a routerLink="/discapacidad">Discapacidad</a></li>
       </ul>
     </li>
-
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle">Unidades</a>
       <ul class="dropdown-menu">
@@ -64,7 +59,6 @@
         <li><a routerLink="/trabajo-social">Trabajo Social (Heredia/MTS)</a></li>
       </ul>
     </li>
-
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" class="dropdown-toggle">Capacitaciones</a>
       <ul class="dropdown-menu">
@@ -72,13 +66,6 @@
         <li><a routerLink="/encuentro-dialogados">Encuentro Dialogados</a></li>
       </ul>
     </li>
-
     <li class="nav-item"><a routerLink="/contacto">Contacto</a></li>
   </ul>
-
-  <div class="menu-toggle" id="mobile-menu" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
-</nav> -->
+</nav>
