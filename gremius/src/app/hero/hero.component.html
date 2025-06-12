@@ -1,4 +1,4 @@
-<section class="news-hero">
+<!-- <section class="news-hero">
   <div 
     class="hero-slide"
     *ngFor="let noticia of noticias; let i = index"
@@ -9,8 +9,35 @@
     <div class="hero-text">
       <span class="news-badge">NOTICIAS</span>
       <h1>{{ noticia.titulo }}</h1>
-      <p class="author">{{ noticia }}</p>
+      <p class="author">{{ noticia.autor }}</p>
       <p class="excerpt">{{ noticia.descripcion }}</p>
+    </div>
+  </div>
+
+  <div class="hero-nav">
+    <span 
+      *ngFor="let noticia of noticias; let i = index"
+      (click)="goToSlide(i)"
+      [class.active]="i === currentSlide"
+    ></span>
+  </div>
+</section> -->
+
+<section class="news-hero">
+  <div class="hero-container">
+    <div 
+      class="hero-slide"
+      *ngFor="let noticia of noticias; let i = index"
+      [class.active]="i === currentSlide"
+      [ngStyle]="{ 'background-image': 'url(' + noticia.image + ')' }"
+    >
+      <div class="gradient-overlay"></div>
+      <div class="hero-text">
+        <span class="news-badge">NOTICIAS</span>
+        <h1>{{ noticia.titulo }}</h1>
+        <p class="author">{{ noticia.autor }}</p>
+        <p class="excerpt">{{ noticia.descripcion }}</p>
+      </div>
     </div>
   </div>
 

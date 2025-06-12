@@ -15,7 +15,7 @@ import { RouterOutlet } from '@angular/router';
     ActualidadComponent,
     SedesComponent,
     FooterComponent,
-    RouterOutlet
+    //RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
