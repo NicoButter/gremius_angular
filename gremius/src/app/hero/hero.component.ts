@@ -31,7 +31,7 @@ export class HeroComponent implements OnInit, OnDestroy {
     {
       titulo: 'Marcha en Río Gallegos',
       descripcion: 'Gran convocatoria frente al Tribunal Superior de Justicia.',
-      image: '/assets/images/hero_3.jpg',
+      image: '/assets/images/companieros_2025.png',
       autor: 'Corresponsal Local'
     }
   ];
