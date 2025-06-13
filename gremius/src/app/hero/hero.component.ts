@@ -20,7 +20,7 @@ export class HeroComponent implements OnInit, OnDestroy {
       titulo: 'Jueza con pedido de Jury.',
       descripcion: 'Una jueza con pedido de jury y su secretario sumariado renunció, pero hay denuncias contra magistrados que no avanzaron.',
       image: '/assets/images/jueza_pierde_el_jury_2025.png',
-      autor: 'Redacción Judicial'
+      autor: 'Redacción Judicial.'
     },
     {
       titulo: 'Reunión con el ministro de trabajo',
