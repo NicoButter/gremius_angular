@@ -1,7 +1,5 @@
 <app-header-nav></app-header-nav>
-<main>
-  <app-hero></app-hero>
-  <app-actualidad></app-actualidad>
-  <app-sedes></app-sedes>
-  <app-footer></app-footer>
+<main [style.padding-top]="getMainPadding()">
+  <router-outlet></router-outlet>
 </main>
+<app-footer></app-footer>

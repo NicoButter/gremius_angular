@@ -1,0 +1,140 @@
+.delegados-afiliados-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  /*font-family: 'Roboto', sans-serif;*/
+  color: #333;
+}
+
+.main-title {
+  /*font-family: 'Lora', serif;*/
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #444C8A;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  flex: 0 0 300px;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.card-content {
+  flex: 1;
+  padding: 20px;
+}
+
+h2 {
+  /* font-family: 'Lora', serif; */
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #444C8A;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h3 {
+  /* font-family: 'Roboto', sans-serif; */
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+button {
+  background-color: #444C8A;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* font-family: 'Roboto', sans-serif; */
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #5A62A0;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.action-buttons h3 {
+  margin-bottom: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .card-image img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .delegados-afiliados-container {
+    margin: 20px;
+    padding: 15px;
+  }
+}

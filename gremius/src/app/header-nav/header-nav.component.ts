@@ -14,15 +14,17 @@ export class HeaderNavComponent implements OnInit {
 
   ngOnInit(): void {
     document.documentElement.style.setProperty('--header-height', '120px'); // Inicial
+    document.documentElement.style.setProperty('--navbar-offset', '0px'); // Inicial
   }
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll(): void {
-    this.isShrunk = window.scrollY > 50;
-    document.documentElement.style.setProperty('--header-height', this.isShrunk ? '70px' : '120px');
-  }
+ @HostListener('window:scroll', ['$event'])
+onScroll(): void {
+  this.isShrunk = window.scrollY > 50;
+  const headerHeight = this.isShrunk ? '50px' : '120px';
+  document.documentElement.style.setProperty('--header-height', headerHeight);
+}
 
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
+toggleMobileMenu(): void {
+  this.isMobileMenuOpen = !this.isMobileMenuOpen;
+}
 }
