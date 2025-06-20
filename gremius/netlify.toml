@@ -1,0 +1,10 @@
+[build]
+  command = "ng build --configuration production"
+  publish = "dist/gremius"
+  environment = { NODE_VERSION = "18" }
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  
