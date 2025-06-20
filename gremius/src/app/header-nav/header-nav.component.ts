@@ -1,11 +1,11 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router'; // Añade RouterModule
-import { CommonModule } from '@angular/common'; // Añade CommonModule
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header-nav',
   standalone: true,
-  imports: [RouterModule, CommonModule], // Añade estos imports
+  imports: [RouterModule, CommonModule],
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.css']
 })
@@ -14,11 +14,18 @@ export class HeaderNavComponent implements OnInit {
   isMobileMenuOpen = false;
   activeDropdown: string | null = null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.updateHeaderHeight();
     this.setInitialScrollState();
+
+    // Escuchar eventos de navegación para cerrar el menú
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd && this.isMobileMenuOpen) {
+        this.closeMenuOnNavigation();
+      }
+    });
   }
 
   @HostListener('window:scroll')
@@ -31,6 +38,7 @@ export class HeaderNavComponent implements OnInit {
   onResize(): void {
     if (window.innerWidth > 768 && this.isMobileMenuOpen) {
       this.isMobileMenuOpen = false;
+      document.body.style.overflow = '';
     }
     this.updateHeaderHeight();
   }
@@ -50,14 +58,14 @@ export class HeaderNavComponent implements OnInit {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.activeDropdown = null; // Cerrar dropdowns al abrir/cerrar el menú
     document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
   }
 
   closeMenuOnNavigation(): void {
-    if (this.isMobileMenuOpen) {
-      this.isMobileMenuOpen = false;
-      document.body.style.overflow = '';
-    }
+    this.isMobileMenuOpen = false;
+    this.activeDropdown = null; // Cerrar dropdowns al navegar
+    document.body.style.overflow = '';
   }
 
   toggleDropdown(item: string): void {

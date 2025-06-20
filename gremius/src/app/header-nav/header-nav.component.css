@@ -70,7 +70,7 @@ header.shrink .title {
 }
 
 .navbar {
-  position: fixed; 
+  position: fixed;
   top: var(--header-height);
   left: 0;
   right: 0;
@@ -186,6 +186,7 @@ header.shrink .title {
 
 /* Media Query para pantallas menores a 768px */
 @media (max-width: 768px) {
+
   main {
     padding-top: calc(var(--header-height, 120px) + 40px);
   }
@@ -236,29 +237,28 @@ header.shrink .title {
   }
 
   .nav-list {
-    display: block;
+    position: fixed;
+    /* <- Este es el cambio clave */
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #444C8A;
+    transform-origin: top;
+    transform: scaleY(0);
     visibility: hidden;
     opacity: 0;
-    transform: scaleY(0);
-    transform-origin: top;
     flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444C8A;
-    padding: 0;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    z-index: 998;
   }
 
   .nav-list.active {
     visibility: visible;
     opacity: 1;
     transform: scaleY(1);
-    top: var(--header-height, 120px);
-    /* Ajuste dinámico */
   }
 
   .nav-item {
