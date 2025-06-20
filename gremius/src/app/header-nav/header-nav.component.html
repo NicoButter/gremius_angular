@@ -38,6 +38,7 @@
     <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('areas')">Áreas</a>
     <ul class="dropdown-menu" [class.show]="isDropdownActive('areas')">
       <li><a routerLink="/general" (click)="closeMenuOnNavigation()">General</a></li>
+      <li><a routerLink="/secretarias" (click)="closeMenuOnNavigation()">Secretarías</a></li>
       <li><a routerLink="/general" (click)="closeMenuOnNavigation()">Delegados/as y afiliados/as</a></li>
       <li><a routerLink="/tecnica" (click)="closeMenuOnNavigation()">Técnica</a></li>
       <li><a routerLink="/capacitacion" (click)="closeMenuOnNavigation()">Capacitación</a></li>
@@ -87,7 +88,14 @@
     </ul>
   </li>
 
-
+   <li class="nav-item dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('sobre-nosotros')">
+      ¿Quiénes Somos?
+    </a>
+    <ul class="dropdown-menu" [class.show]="isDropdownActive('sobre-nosotros')">
+      <li><a routerLink="/sobrenosotros" (click)="closeMenuOnNavigation()">¿Quiénes Somos?</a></li>
+    </ul>
+  </li>
 
   <li class="nav-item"><a routerLink="/contacto" (click)="closeMenuOnNavigation()">Contacto</a></li>
 </ul>
