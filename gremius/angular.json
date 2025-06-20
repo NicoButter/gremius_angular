@@ -23,20 +23,18 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              { "glob": "_redirects", "input": ".", "output": "." } 
+              { "glob": "_redirects", "input": ".", "output": "." }
             ],
             "styles": [
               "src/styles.css"
             ],
             "scripts": [
               "src/assets/js/navbar.js",
-              "src/assets/js/mostrar_sedes.js" 
+              "src/assets/js/mostrar_sedes.js"
             ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "server": "src/main.server.ts", 
+            "prerender": false, 
+            "ssr": false
           },
           "configurations": {
             "production": {
