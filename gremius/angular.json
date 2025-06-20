@@ -21,13 +21,17 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-                 "src/assets",
-                  "src/favicon.ico"
+              "src/assets",
+              "src/favicon.ico",
+              "src/_redirects" 
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/navbar.js",
+              "src/assets/js/mostrar_sedes.js" 
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -83,8 +87,8 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/assets",
-               "src/favicon.ico"
-         ],
+              "src/favicon.ico"
+            ],
             "styles": [
               "src/styles.css"
             ],
