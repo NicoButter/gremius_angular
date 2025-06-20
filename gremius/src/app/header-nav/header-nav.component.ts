@@ -1,30 +1,72 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterModule } from '@angular/router'; // Añade RouterModule
+import { CommonModule } from '@angular/common'; // Añade CommonModule
 
 @Component({
   selector: 'app-header-nav',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterModule, CommonModule], // Añade estos imports
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.css']
 })
 export class HeaderNavComponent implements OnInit {
-  isShrunk: boolean = false;
-  isMobileMenuOpen: boolean = false;
+  isShrunk = false;
+  isMobileMenuOpen = false;
+  activeDropdown: string | null = null;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    document.documentElement.style.setProperty('--header-height', '120px'); // Inicial
-    document.documentElement.style.setProperty('--navbar-offset', '0px'); // Inicial
+    this.updateHeaderHeight();
+    this.setInitialScrollState();
   }
 
- @HostListener('window:scroll', ['$event'])
-onScroll(): void {
-  this.isShrunk = window.scrollY > 50;
-  const headerHeight = this.isShrunk ? '50px' : '120px';
-  document.documentElement.style.setProperty('--header-height', headerHeight);
-}
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.isShrunk = window.scrollY > 50;
+    this.updateHeaderHeight();
+  }
 
-toggleMobileMenu(): void {
-  this.isMobileMenuOpen = !this.isMobileMenuOpen;
-}
+  @HostListener('window:resize')
+  onResize(): void {
+    if (window.innerWidth > 768 && this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false;
+    }
+    this.updateHeaderHeight();
+  }
+
+  private setInitialScrollState(): void {
+    this.isShrunk = window.scrollY > 50;
+    this.updateHeaderHeight();
+  }
+
+  private updateHeaderHeight(): void {
+    const headerEl = document.querySelector('header');
+    if (!headerEl) return;
+
+    const headerHeight = headerEl.getBoundingClientRect().height + 'px';
+    document.documentElement.style.setProperty('--header-height', headerHeight);
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+  }
+
+  closeMenuOnNavigation(): void {
+    if (this.isMobileMenuOpen) {
+      this.isMobileMenuOpen = false;
+      document.body.style.overflow = '';
+    }
+  }
+
+  toggleDropdown(item: string): void {
+    if (window.innerWidth <= 768) {
+      this.activeDropdown = this.activeDropdown === item ? null : item;
+    }
+  }
+
+  isDropdownActive(item: string): boolean {
+    return this.activeDropdown === item;
+  }
 }

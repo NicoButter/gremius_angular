@@ -1,6 +1,11 @@
 :root {
   --header-height: 120px;
-  --header-shrink-height: 50px; /* Nueva altura mínima para móviles */
+  --header-shrink-height: 80px;
+  --mobile-header-height: 100px;
+  --mobile-shrink-height: 70px;
+  --navbar-height: 40px;
+  --mobile-navbar-height: 36px;
+  --navbar-top: 120px;
 }
 
 header {
@@ -26,11 +31,11 @@ header.shrink {
 }
 
 header.shrink .logo img {
-  height: 40px; /* Reducido más para móviles */
+  height: 40px;
 }
 
 header.shrink .title {
-  font-size: 0.9rem; /* Ajuste para móviles */
+  font-size: 0.9rem;
 }
 
 .logo img {
@@ -65,8 +70,8 @@ header.shrink .title {
 }
 
 .navbar {
-  position: fixed;
-  top: var(--header-height, 120px);
+  position: fixed; 
+  top: var(--header-height);
   left: 0;
   right: 0;
   z-index: 999;
@@ -182,7 +187,7 @@ header.shrink .title {
 /* Media Query para pantallas menores a 768px */
 @media (max-width: 768px) {
   main {
-    padding-top: calc(var(--header-height, 120px) + 40px); /* Espacio para header y navbar */
+    padding-top: calc(var(--header-height, 120px) + 40px);
   }
 
   header {
@@ -252,7 +257,8 @@ header.shrink .title {
     visibility: visible;
     opacity: 1;
     transform: scaleY(1);
-    top: var(--header-height, 120px); /* Ajuste dinámico */
+    top: var(--header-height, 120px);
+    /* Ajuste dinámico */
   }
 
   .nav-item {
@@ -301,7 +307,8 @@ header.shrink .title {
 /* Media Query para pantallas menores a 480px */
 @media (max-width: 480px) {
   main {
-    padding-top: calc(var(--header-height, 120px) + 36px); /* Ajuste para navbar */
+    padding-top: calc(var(--header-height, 120px) + 36px);
+    /* Ajuste para navbar */
   }
 
   .logo img {
