@@ -17,7 +17,7 @@ import { RouterOutlet } from '@angular/router';
     ActualidadComponent,
     SedesComponent,
     FooterComponent,
-    DelegadosAfiliadosComponent,
+    // DelegadosAfiliadosComponent,
     HomeComponent,
     RouterOutlet
   ],

@@ -35,9 +35,7 @@
     </ul>
   </li>
   <li class="nav-item dropdown">
-    <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('areas')">
-      Áreas
-    </a>
+    <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('areas')">Áreas</a>
     <ul class="dropdown-menu" [class.show]="isDropdownActive('areas')">
       <li><a routerLink="/general" (click)="closeMenuOnNavigation()">General</a></li>
       <li><a routerLink="/general" (click)="closeMenuOnNavigation()">Delegados/as y afiliados/as</a></li>
@@ -77,6 +75,20 @@
       <li><a routerLink="/encuentro-dialogados" (click)="closeMenuOnNavigation()">Encuentro Dialogados</a></li>
     </ul>
   </li>
+
+
+  <li class="nav-item dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('utilidades')">
+      Utilidades
+    </a>
+    <ul class="dropdown-menu" [class.show]="isDropdownActive('utilidades')">
+      <li><a routerLink="/ley-paritaria-3022" (click)="closeMenuOnNavigation()">Ley Paritaria 3022</a></li>
+      <li><a routerLink="/sistema-salarial" (click)="closeMenuOnNavigation()">Sistema salarial</a></li>
+    </ul>
+  </li>
+
+
+
   <li class="nav-item"><a routerLink="/contacto" (click)="closeMenuOnNavigation()">Contacto</a></li>
 </ul>
 </nav>
