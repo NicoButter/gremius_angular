@@ -4,7 +4,12 @@
   environment = { NODE_VERSION = "18" }
 
 [[redirects]]
+  from = "/"
+  to = "/home"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  
