@@ -16,8 +16,8 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '25 de Octubre de 1982',
       secretarios: [
-        { name: 'Domitilia Eduviges Rodríguez', role: 'Secretario General' },
-        { name: 'Susana Argentina Knoll', role: 'Secretario Adjunto' },
+        { name: 'Domitilia Eduviges Rodríguez', role: 'Secretaria General' },
+        { name: 'Susana Argentina Knoll', role: 'Secretaria Adjunta' },
         { name: 'Eduardo Clementi', role: 'Secretario Gremial' },
         { name: 'Ernesto Eduardo Bargero', role: 'Sec. Adm. y de Actas' },
         { name: 'Antonio Silvestre Segovia', role: 'Sec. Finanzas y Estadísticas' },
@@ -42,8 +42,8 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '15 de Noviembre de 1984',
       secretarios: [
-        { name: 'Silvia Graciela López', role: 'Secretario General' },
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario Adjunto' },
+        { name: 'Silvia Graciela López', role: 'Secretaria General' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria Adjunta' },
         { name: 'Rubén Segundo Sepúlveda', role: 'Secretario Gremial' },
         { name: 'Adriana Rosa Dileva', role: 'Sec. Adm. y de Actas' },
         { name: 'Domingo Enrique Urbieta', role: 'Sec. Finanzas y Estadísticas' },
@@ -58,9 +58,9 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '14 de Noviembre de 1984 (Provisoria)',
       secretarios: [
-        { name: 'Patricia María Aranda', role: 'Secretario General' },
-        { name: 'Mirta Susana Oñate', role: 'Secretario Adjunto' },
-        { name: 'Teresita del Carmen Oñate', role: 'Secretario Gremial' },
+        { name: 'Patricia María Aranda', role: 'Secretaria General' },
+        { name: 'Mirta Susana Oñate', role: 'Secretaria Adjunta' },
+        { name: 'Teresita del Carmen Oñate', role: 'Secretaria Gremial' },
         { name: 'Ruth Elizabeth Figueroa', role: 'Sec. Adm. y de Actas' },
         { name: 'Domingo Enrique Urbieta', role: 'Sec. Finanzas y Estadísticas' },
       ],
@@ -71,8 +71,8 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '20 de Diciembre de 1984',
       secretarios: [
-        { name: 'Silvia Graciela López', role: 'Secretario General' },
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario Adjunto' },
+        { name: 'Silvia Graciela López', role: 'Secretaria General' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria Adjunta' },
         { name: 'Rubén Segundo Sepúlveda', role: 'Secretario Gremial' },
         { name: 'Hilda del Carmen Cárdenas', role: 'Sec. Adm. y de Actas' },
         { name: 'Clara Alicia Navarro', role: 'Sec. Finanzas y Estadísticas' },
@@ -93,9 +93,9 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '5 de Junio de 1986',
       secretarios: [
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario General' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria General' },
         { name: 'Rubén Segundo Sepúlveda', role: 'Secretario Adjunto' },
-        { name: 'Marisa Rosana Arteaga', role: 'Secretario Gremial' },
+        { name: 'Marisa Rosana Arteaga', role: 'Secretaria Gremial' },
         { name: 'Adriana Rosa Dileva', role: 'Sec. Adm. y de Actas' },
         { name: 'Hilda del Carmen Cárdenas', role: 'Sec. Finanzas y Estadísticas' },
       ],
@@ -109,8 +109,8 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '19 de Diciembre de 1986 (Provisoria)',
       secretarios: [
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario General' },
-        { name: 'María Rosa Arteaga', role: 'Secretario Adjunto' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria General' },
+        { name: 'María Rosa Arteaga', role: 'Secretaria Adjunta' },
         { name: 'Rubén Segundo Sepúlveda', role: 'Secretario Gremial' },
         { name: 'Adriana Rosa Dileva', role: 'Sec. Adm. y de Actas' },
         { name: 'María Teresa Núñez', role: 'Sec. Finanzas y Estadísticas' },
@@ -131,7 +131,7 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '21 de Diciembre de 1988',
       secretarios: [
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario General' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria General' },
         { name: 'Emilio Eduardo Aybar', role: 'Secretario Adjunto' },
         { name: 'Alfonso Victoriano Lobo', role: 'Secretario Gremial' },
         { name: 'Ana María Vivanco', role: 'Sec. Adm. y de Actas' },
@@ -153,7 +153,7 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '15 de Diciembre de 1990',
       secretarios: [
-        { name: 'María Rosana Arteaga', role: 'Secretario General' },
+        { name: 'María Rosana Arteaga', role: 'Secretaria General' },
         { name: 'Carlos Amato', role: 'Secretario Adjunto' },
         { name: 'Juan Carlos Cardinali', role: 'Secretario Gremial' },
         { name: 'Francisco Ramírez', role: 'Sec. Adm. y de Actas' },
@@ -187,7 +187,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       secretarios: [
         { name: 'Juan Carlos Cardinali', role: 'Secretario General' },
         { name: 'Ismael Ramón Machuca', role: 'Secretario Adjunto' },
-        { name: 'Nelly Blanca Martínez', role: 'Secretario Gremial' },
+        { name: 'Nelly Blanca Martínez', role: 'Secretaria Gremial' },
         { name: 'Ernesto Rodolfo Regueira', role: 'Sec. Adm. y de Actas' },
         { name: 'Héctor Hugo Lanzetti', role: 'Sec. Finanzas y Estadísticas' },
         { name: 'Mario Alejandro Moreno', role: 'Sec. de Organización' },
@@ -216,9 +216,9 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '15 de Noviembre de 1995',
       secretarios: [
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario General' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria General' },
         { name: 'Ramón Hipólito Rasijdo', role: 'Secretario Adjunto' },
-        { name: 'Alicia Inés Troncoso', role: 'Secretario Gremial' },
+        { name: 'Alicia Inés Troncoso', role: 'Secretaria Gremial' },
         { name: 'Silvia Mónica Álvarez', role: 'Sec. Adm. y de Actas' },
         { name: 'Miguel Armando Ramírez', role: 'Sec. Finanzas y Estadísticas' },
         { name: 'Adolfo Victoriano Bonachera', role: 'Sec. de Organización' },
@@ -248,9 +248,9 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '3 de Agosto de 1998',
       secretarios: [
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario General' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria General' },
         { name: 'Carlos Marcelo Ballester', role: 'Secretario Adjunto' },
-        { name: 'Vivian Luz Teppa', role: 'Secretario Gremial' },
+        { name: 'Vivian Luz Teppa', role: 'Secretaria Gremial' },
         { name: 'Nidia Martha Basso', role: 'Sec. Adm. y de Actas' },
         { name: 'Néstor Omar Gallardo', role: 'Sec. Finanzas y Estadísticas' },
         { name: 'Miguel Armando Ramírez', role: 'Sec. de Organización' },
@@ -261,7 +261,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       ],
       vocalesSuplentes: [
         { name: 'Juan Edmundo Zamora', role: 'Secretario Adjunto Suplente' },
-        { name: 'Mabel Noemí Castagno', role: 'Secretario Gremial Suplente' },
+        { name: 'Mabel Noemí Castagno', role: 'Secretaria Gremial Suplente' },
         { name: 'Antonio Silvestre Segovia', role: 'Sec. Adm. y de Actas Suplente' },
         { name: 'Dais Myrian Sotomayor', role: 'Sec. Finanzas y Estadísticas Suplente' },
         { name: 'Luis Bernardo Knoll', role: 'Sec. de Organización Suplente' },
@@ -280,7 +280,7 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '3 de Agosto de 2001',
       secretarios: [
-        { name: 'María Teresa Núñez', role: 'Secretario General' },
+        { name: 'María Teresa Núñez', role: 'Secretaria General' },
         { name: 'Juan Eduardo Zamora', role: 'Secretario Adjunto' },
         { name: 'Horacio Oscar Gómez', role: 'Secretario Gremial' },
         { name: 'Hugo Pablo Agüero', role: 'Sec. Adm. y de Actas' },
@@ -292,7 +292,7 @@ export class ComisionesAnterioresComponent implements OnInit {
         { name: 'Mabel Yolanda Acosta', role: 'Sec. de Derechos Humanos' },
       ],
       vocalesSuplentes: [
-        { name: 'Alicia del Carmen Figueroa', role: 'Secretario Adjunto Suplente' },
+        { name: 'Alicia del Carmen Figueroa', role: 'Secretaria Adjunta Suplente' },
         { name: 'Omar Ernesto Pichipil', role: 'Secretario Gremial Suplente' },
         { name: 'José Guillermo Perea', role: 'Sec. Adm. y de Actas Suplente' },
         { name: 'Francisca Antonio Igor', role: 'Sec. Finanzas y Estadísticas Suplente' },
@@ -313,7 +313,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       period: '3 de Agosto de 2004',
       secretarios: [
         { name: 'Oscar Augusto Bode', role: 'Secretario General' },
-        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretario Adjunto' },
+        { name: 'Elsa Beatriz Capuchinelli', role: 'Secretaria Adjunta' },
         { name: 'Carlos Antonio Mansilla', role: 'Secretario Gremial' },
         { name: 'María Angélica Galich', role: 'Sec. Adm. y de Actas' },
         { name: 'Roberto Javier Hornus', role: 'Sec. Finanzas y Estadísticas' },
@@ -378,7 +378,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       secretarios: [
         { name: 'Francisco Alfredo Gómez', role: 'Secretario General' },
         { name: 'Juan José Ortega', role: 'Secretario Adjunto' },
-        { name: 'Romina Mc Namara', role: 'Secretario Gremial' },
+        { name: 'Romina Mc Namara', role: 'Secretaria Gremial' },
         { name: 'Melania Pérez', role: 'Sec. Adm. y de Actas' },
         { name: 'Luis Osvaldo Calisto', role: 'Sec. Finanzas y Estadísticas' },
         { name: 'Horacio Gómez', role: 'Sec. de Organización' },
@@ -389,7 +389,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       ],
       vocalesSuplentes: [
         { name: 'Rubén Fernández', role: 'Secretario Adjunto Suplente' },
-        { name: 'Alejandra Beroiz', role: 'Secretario Gremial Suplente' },
+        { name: 'Alejandra Beroiz', role: 'Secretaria Gremial Suplente' },
         { name: 'Patricia Wigand', role: 'Sec. Adm. y de Actas Suplente' },
         { name: 'Guillermo Ghio', role: 'Sec. Finanzas y Estadísticas Suplente' },
         { name: 'Rubén Viusen', role: 'Sec. de Organización Suplente' },
@@ -410,7 +410,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       secretarios: [
         { name: 'Juan José Ortega', role: 'Secretario General' },
         { name: 'Alfonso Victoriano Lobo', role: 'Secretario Adjunto' },
-        { name: 'Romina Mc Namara', role: 'Secretario Gremial' },
+        { name: 'Romina Mc Namara', role: 'Secretaria Gremial' },
         { name: 'María Verónica Levati', role: 'Sec. Adm. y de Actas' },
         { name: 'Diego Rubén Rosselli', role: 'Sec. Finanzas y Estadísticas' },
         { name: 'Ana Carolina Miro', role: 'Sec. de Organización' },
@@ -419,8 +419,8 @@ export class ComisionesAnterioresComponent implements OnInit {
         { name: 'María Alejandra Beroiz', role: 'Sec. de Acción Social' },
       ],
       vocalesSuplentes: [
-        { name: 'Susana Ethel Gargiulo', role: 'Secretario Adjunto Suplente' },
-        { name: 'Alejandra Daniela Morales', role: 'Secretario Gremial Suplente' },
+        { name: 'Susana Ethel Gargiulo', role: 'Secretaria Adjunta Suplente' },
+        { name: 'Alejandra Daniela Morales', role: 'Secretaria Gremial Suplente' },
         { name: 'Carola Renee Valderrama', role: 'Sec. Adm. y de Actas Suplente' },
         { name: 'Daniel Adrián Vega', role: 'Sec. Finanzas y Estadísticas Suplente' },
         { name: 'Rubén Viusen', role: 'Sec. de Organización Suplente' },
@@ -439,7 +439,7 @@ export class ComisionesAnterioresComponent implements OnInit {
       period: '1 de Agosto de 2016',
       secretarios: [
         { name: 'Francisco Alfredo Gómez', role: 'Secretario General' },
-        { name: 'Rosa del Carmen Hindie', role: 'Secretario Adjunto' },
+        { name: 'Rosa del Carmen Hindie', role: 'Secretaria Adjunta' },
         { name: 'María Verónica Levati', role: 'Secretario Gremial' },
         { name: 'Carola Renee Valderrama', role: 'Sec. Adm. y de Actas' },
         { name: 'Martín Díaz', role: 'Sec. Finanzas y Estadísticas' },
@@ -470,26 +470,26 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '1 de Agosto de 2019',
       secretarios: [
-        { name: 'María Eugenia Bianchi Galich', role: 'Secretario General' },
-        { name: 'Noelia Marisel Vidal', role: 'Secretario Adjunto' },
+        { name: 'María Eugenia Bianchi Galich', role: 'Secretaria General' },
+        { name: 'Noelia Marisel Vidal', role: 'Secretaria Adjunta' },
         { name: 'Pablo Sebastián Salcedo', role: 'Secretario Gremial' },
-        { name: 'Gabriela Soledad Vera', role: 'Secretario Administrativo y de Actas' },
+        { name: 'Gabriela Soledad Vera', role: 'Secretaria Administrativa y de Actas' },
         { name: 'Matías Exequiel Román', role: 'Secretario de Finanzas y Estadística' },
-        { name: 'Marianela Raquel Contreras', role: 'Secretario de Organización' },
+        { name: 'Marianela Raquel Contreras', role: 'Secretaria de Organización' },
         { name: 'Lucas Antonio Pachilla', role: 'Secretario de Prensa y Difusión' },
         { name: 'Diego Joaquín Federico Gaitán', role: 'Secretario de Capacitación Laboral y Gremial' },
-        { name: 'Berta Mónica Julián', role: 'Secretario de Acción Social' },
-        { name: 'Noelia Soledad Laba', role: 'Secretario de Derechos Humanos' },
+        { name: 'Berta Mónica Julián', role: 'Secretaria de Acción Social' },
+        { name: 'Noelia Soledad Laba', role: 'Secretaria de Derechos Humanos' },
       ],
       vocalesSuplentes: [
         { name: 'Vacante', role: 'Secretario Adjunto Suplente' },
-        { name: 'Libertad Zunilda Fraccarolli', role: 'Secretario Gremial Suplente' },
+        { name: 'Libertad Zunilda Fraccarolli', role: 'Secretaria Gremial Suplente' },
         { name: 'Pedro Carlos Tula', role: 'Secretario Administrativo y de Actas Suplente' },
         { name: 'Mario Nicolás Ormeño', role: 'Secretario de Finanzas y Estadísticas Suplente' },
-        { name: 'Tayhana Vanina López', role: 'Secretario de Organización Suplente' },
-        { name: 'Mirna Yanina Larrosa', role: 'Secretario de Prensa y Difusión Suplente' },
-        { name: 'Elsa Haydee Pastori', role: 'Secretario de Capacitación Laboral y Gremial Suplente' },
-        { name: 'Rosa Mercedes Gómez', role: 'Secretario de Acción Social Suplente' },
+        { name: 'Tayhana Vanina López', role: 'Secretaria de Organización Suplente' },
+        { name: 'Mirna Yanina Larrosa', role: 'Secretaria de Prensa y Difusión Suplente' },
+        { name: 'Elsa Haydee Pastori', role: 'Secretaria de Capacitación Laboral y Gremial Suplente' },
+        { name: 'Rosa Mercedes Gómez', role: 'Secretaria de Acción Social Suplente' },
         { name: 'Vacante', role: 'Secretario de Derechos Humanos Suplente' },
       ],
       delegadosCongresales: [
@@ -501,27 +501,27 @@ export class ComisionesAnterioresComponent implements OnInit {
     {
       period: '1 de Agosto de 2022',
       secretarios: [
-        { name: 'María Alejandra Beroiz', role: 'Secretario General' },
+        { name: 'María Alejandra Beroiz', role: 'Secretaria General' },
         { name: 'Juan Franco Mascheroni', role: 'Secretario Adjunto' },
-        { name: 'Adriana Isabel Nieto López', role: 'Secretario Gremial' },
-        { name: 'Ruth Eliette Ayala Vargas', role: 'Secretario Administrativo y de Actas' },
+        { name: 'Adriana Isabel Nieto López', role: 'Secretaria Gremial' },
+        { name: 'Ruth Eliette Ayala Vargas', role: 'Secretaria Administrativa y de Actas' },
         { name: 'Fernando Horacio Abeldaño', role: 'Secretario de Finanzas y Estadística' },
         { name: 'Aníbal Roberto Sosa', role: 'Secretario de Organización' },
-        { name: 'Dana Kinter', role: 'Secretario de Prensa y Difusión' },
-        { name: 'Florencia Alejandra Ampuero Milostic', role: 'Secretario de Capacitación Laboral y Gremial' },
-        { name: 'Claudia Alejandra D’Ambrosio', role: 'Secretario de Acción Social' },
+        { name: 'Dana Kinter', role: 'Secretaria de Prensa y Difusión' },
+        { name: 'Florencia Alejandra Ampuero Milostic', role: 'Secretaria de Capacitación Laboral y Gremial' },
+        { name: 'Claudia Alejandra D’Ambrosio', role: 'Secretaria de Acción Social' },
         { name: 'Luis Alberto Quiroga', role: 'Secretario de Derechos Humanos' },
       ],
       vocalesSuplentes: [
-        { name: 'Susana Ethel Gargiulo', role: 'Secretario Adjunto Suplente' },
-        { name: 'Marianela Raquel Contreras', role: 'Secretario Gremial Suplente' },
+        { name: 'Susana Ethel Gargiulo', role: 'Secretaria Adjunto Suplente' },
+        { name: 'Marianela Raquel Contreras', role: 'Secretaria Gremial Suplente' },
         { name: 'Ramón Alejandro Paolazzi', role: 'Secretario Administrativo y de Actas Suplente' },
         { name: 'Héctor Ricardo Roberts', role: 'Secretario de Finanzas y Estadísticas Suplente' },
         { name: 'Edgar Armando Cippitelli', role: 'Secretario de Organización Suplente' },
         { name: 'Héctor Horacio Paez', role: 'Secretario de Prensa y Difusión Suplente' },
         { name: 'Fernando Ramón Opazo', role: 'Secretario de Capacitación Laboral y Gremial Suplente' },
         { name: 'Lionel Norberto Pedernera', role: 'Secretario de Acción Social Suplente' },
-        { name: 'Mabel Alejandra Alonso', role: 'Secretario de Derechos Humanos Suplente' },
+        { name: 'Mabel Alejandra Alonso', role: 'Secretaria de Derechos Humanos Suplente' },
       ],
       delegadosCongresales: [
         { name: 'Alejandra Beroiz', role: 'Titular' },
