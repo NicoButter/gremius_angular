@@ -34,6 +34,18 @@
       <li><a routerLink="/archivos" (click)="closeMenuOnNavigation()">Archivos</a></li>
     </ul>
   </li>
+
+  <li class="nav-item dropdown">
+    <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('Comisiones Directivas')">
+      Comisiones Directivas
+    </a>
+    <ul class="dropdown-menu" [class.show]="isDropdownActive('comisionesDirectivas')">
+      <li><a routerLink="/comision-actual" (click)="closeMenuOnNavigation()">Comisión actual</a></li>
+      <li><a routerLink="/comisiones-anteriores" (click)="closeMenuOnNavigation()">Comisiones anteriores</a></li>
+    </ul>
+  </li>
+
+
   <li class="nav-item dropdown">
     <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('areas')">Áreas</a>
     <ul class="dropdown-menu" [class.show]="isDropdownActive('areas')">
@@ -96,7 +108,7 @@
       <li><a routerLink="/ley-paritaria-3022" (click)="closeMenuOnNavigation()">Ley Paritaria 3022</a></li>
       <li><a routerLink="/sistema-salarial" (click)="closeMenuOnNavigation()">Sistema salarial</a></li>
       <li><a routerLink="/beneficios" (click)="closeMenuOnNavigation()">De Beneficios</a></li>
-      <li><a routerLink="/ley-participativa-2022" (click)="closeMenuOnNavigation()">Ley Participativa 2022</a></li>
+      <!-- <li><a routerLink="/ley-participativa-2022" (click)="closeMenuOnNavigation()">Ley Participativa 2022</a></li> -->
       <li><a routerLink="/derecho-laboral-2021" (click)="closeMenuOnNavigation()">Derecho Laboral 2021</a></li>
       <li><a routerLink="/trabajo-social" (click)="closeMenuOnNavigation()">Trabajo Social (Heredia/MTS)</a></li>
     </ul>

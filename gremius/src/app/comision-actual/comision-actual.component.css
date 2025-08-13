@@ -1,0 +1,109 @@
+#comision-actual {
+    padding: 40px 20px;
+    background-color: #e8ecef;
+    text-align: center;
+}
+
+#comision-actual h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #1a3c5e;
+    border-bottom: 3px solid #f4a261;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#comision-actual p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.comision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comision-container h3 {
+    font-size: 1.8rem;
+    margin: 30px 0 20px;
+    color: #2c3e50;
+}
+
+.miembros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.miembro-card {
+    background-color: #fff;
+    border: 2px solid #f4a261;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.miembro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.miembro-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.miembro-nombre {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.miembro-cargo {
+    font-size: 1rem;
+    color: #e76f51;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.miembro-localidad {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.congresales-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.congresal-item {
+    background-color: #fff;
+    border: 1px solid #f4a261;
+    border-radius: 6px;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .miembro-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .congresal-item {
+        width: 100%;
+    }
+}

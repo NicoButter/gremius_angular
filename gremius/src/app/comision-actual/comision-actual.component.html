@@ -1,0 +1,26 @@
+<section id="comision-actual">
+  <h2>Comisión Directiva {{ comision.period }}</h2>
+  <p>Conozca a las autoridades actuales de la Asociación Gremial de Empleados Judiciales de la Provincia de Santa Cruz “3 de Julio”, comprometidas con la defensa de los derechos de los trabajadores judiciales.</p>
+
+  <div class="comision-container">
+    <h3>Autoridades</h3>
+    <div class="miembros-container">
+      <div *ngFor="let miembro of comision.directiva" class="miembro-card">
+        <div class="miembro-info">
+          <span class="miembro-nombre">{{ miembro.name }}</span>
+          <span class="miembro-cargo">{{ miembro.role }}</span>
+          <span class="miembro-localidad">{{ miembro.location }}</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Congresales de Federación</h3>
+    <div class="congresales-container">
+      <div *ngFor="let congresal of comision.congresales" class="congresal-item">
+        <span class="miembro-nombre">{{ congresal.name }}</span>
+        <span class="miembro-cargo">{{ congresal.role }}</span>
+        <span class="miembro-localidad" *ngIf="congresal.location">{{ congresal.location }}</span>
+      </div>
+    </div>
+  </div>
+</section>

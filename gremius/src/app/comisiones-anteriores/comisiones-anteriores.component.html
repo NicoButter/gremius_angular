@@ -1,0 +1,46 @@
+<!-- src/app/comisiones-anteriores/comisiones-anteriores.component.html -->
+<section id="comisiones-anteriores">
+  <h2>Nuestra Historia, Nuestro Orgullo</h2>
+  <p>Desde su creación, la Asociación Gremial de Empleados Judiciales de la Provincia de Santa Cruz “3 de Julio” ha sido conducida por hombres y mujeres comprometidos con la defensa de los derechos de los/as trabajadores/as judiciales, dejando su huella en cada etapa de nuestra historia.</p>
+  <p>Cada Comisión Directiva, con sus particularidades y desafíos, aportó su esfuerzo, tiempo y convicción para sostener y fortalecer nuestra organización. A través de los años, fueron quienes representaron la voz de nuestros afiliados/as, gestionaron mejoras laborales, impulsaron obras, generaron beneficios y defendieron con firmeza nuestra autonomía sindical.</p>
+  <p>Reconocemos y valoramos profundamente el compromiso de todas las conducciones que nos precedieron, porque gracias a su trabajo colectivo hoy contamos con una institución sólida, presente en toda la provincia y con la mirada puesta en el futuro.</p>
+  <p>Este espacio en nuestra página es un homenaje a quienes asumieron la responsabilidad de conducir el gremio, manteniendo viva la esencia que nos une: la unidad, la lucha y la dignidad de los/as trabajadores/as judiciales.</p>
+
+  <div class="comisiones-container">
+    <div *ngFor="let comision of comisiones" class="comision-card" (click)="toggleCard(comision.period)">
+      <h3>Comisión Directiva {{ comision.period }}</h3>
+      <div class="comision-details" [class.expanded]="isCardExpanded(comision.period)">
+        <h4>Secretarios</h4>
+        <ul>
+          <li *ngFor="let secretario of comision.secretarios">
+            {{ secretario.name }} - {{ secretario.role }}
+          </li>
+        </ul>
+        <h4 *ngIf="comision.vocalesTitulares?.length">Vocales Titulares</h4>
+        <ul *ngIf="comision.vocalesTitulares?.length">
+          <li *ngFor="let vocal of comision.vocalesTitulares">
+            {{ vocal.name }} - {{ vocal.role }}
+          </li>
+        </ul>
+        <h4 *ngIf="comision.vocalesSuplentes?.length">Vocales Suplentes</h4>
+        <ul *ngIf="comision.vocalesSuplentes?.length">
+          <li *ngFor="let vocal of comision.vocalesSuplentes">
+            {{ vocal.name }} - {{ vocal.role }}
+          </li>
+        </ul>
+        <h4 *ngIf="comision.revisoresCuentas?.length">Comisión Revisora de Cuentas</h4>
+        <ul *ngIf="comision.revisoresCuentas?.length">
+          <li *ngFor="let revisor of comision.revisoresCuentas">
+            {{ revisor.name }} - {{ revisor.role }}
+          </li>
+        </ul>
+        <h4 *ngIf="comision.delegadosCongresales?.length">Delegados Congresales a F.J.A.</h4>
+        <ul *ngIf="comision.delegadosCongresales?.length">
+          <li *ngFor="let delegado of comision.delegadosCongresales">
+            {{ delegado.name }} - {{ delegado.role }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

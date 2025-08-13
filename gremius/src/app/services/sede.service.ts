@@ -52,7 +52,7 @@ export class SedesService {
       name: 'Sede Caleta Olivia',
       image: 'assets/images/sede_caleta_olivia.png',
       description: 'Sede enfocada en servicios laborales y beneficios para afiliados.',
-      address: 'Calle Belgrano 101, Caleta Olivia, Santa Cruz',
+      address: 'Venezuela 630, Caleta Olivia, Santa Cruz',
       mapIframeUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.789!2d-67.531!3d-46.439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDYuNDM5LCAtNjcuNTMx!5e0!3m2!1sen!2sar!4v1631234567893!5m2!1sen!2sar',
       images: ['assets/images/sede_caleta_olivia_1.png', 'assets/images/sede_caleta_olivia_2.png', 'assets/images/sede_caleta_olivia_3.png'],
       videos: ['https://www.youtube.com/embed/VIDEO_ID_4'],

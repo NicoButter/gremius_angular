@@ -7,6 +7,8 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 import { SecretariasComponent } from './secretarias/secretarias.component';
 import { SedeDetailComponent } from './sede-detail/sede-detail.component';
 import { SedesComponent } from './sedes/sedes.component';
+import { ComisionActualComponent } from './comision-actual/comision-actual.component';
+import { ComisionesAnterioresComponent } from './comisiones-anteriores/comisiones-anteriores.component';
 
 
 export const routes: Routes = [
@@ -19,6 +21,8 @@ export const routes: Routes = [
   { path: 'secretarias', component: SecretariasComponent },
   { path: 'sedes', component: SedesComponent },
   { path: 'sedes/:id', component: SedeDetailComponent },
+  { path: 'comision-actual', component: ComisionActualComponent },
+  { path: 'comisiones-anteriores', component: ComisionesAnterioresComponent },
   { path: '**', redirectTo: '/home' },
   { path: '**', redirectTo: '' }
 ];
