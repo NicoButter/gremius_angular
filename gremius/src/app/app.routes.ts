@@ -5,6 +5,8 @@ import { LeyParitaria3022Component } from './ley-paritaria-3022/ley-paritaria-30
 import { SistemaSalarialComponent } from './sistema-salarial/sistema-salarial.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { SecretariasComponent } from './secretarias/secretarias.component';
+import { SedeDetailComponent } from './sede-detail/sede-detail.component';
+import { SedesComponent } from './sedes/sedes.component';
 
 
 export const routes: Routes = [
@@ -15,6 +17,8 @@ export const routes: Routes = [
   { path: 'sistema-salarial', component: SistemaSalarialComponent },
   { path: 'sobrenosotros', component: SobreNosotrosComponent },
   { path: 'secretarias', component: SecretariasComponent },
+  { path: 'sedes', component: SedesComponent },
+  { path: 'sedes/:id', component: SedeDetailComponent },
   { path: '**', redirectTo: '/home' },
   { path: '**', redirectTo: '' }
 ];

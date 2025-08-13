@@ -1,4 +1,20 @@
 <section id="sedes">
+  <h2>Nuestras Sedes</h2>
+  <p>Contamos con varias sedes para brindarte el mejor servicio. Selecciona una sede para conocer más detalles y cómo llegar.</p>
+
+  <div class="sedes-container">
+    <div class="sedes-lista">
+      <div *ngFor="let sede of sedes" class="sede-detalle sede-miniatura" [routerLink]="['/sedes', sede.id]">
+        <img [src]="sede.image" [alt]="sede.name">
+        <h3>{{ sede.name }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <section id="sedes">
     <h2>Nuestras Sedes</h2>
     <p>Contamos con varias sedes para brindarte el mejor servicio. Selecciona una sede para conocer más detalles y cómo llegar.</p>
 
@@ -26,7 +42,7 @@
         </div>
 
         <div id="informacion-sede" class="informacion-sede">
-            <!-- Información de la sede seleccionada -->
+            <!-- 
         </div>
     </div>
-</section>
+</section> -->

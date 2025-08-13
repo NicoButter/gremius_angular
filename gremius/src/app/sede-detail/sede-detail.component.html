@@ -1,0 +1,41 @@
+<section class="sede-detail" *ngIf="sede">
+  <h2>{{ sede.name }}</h2>
+  <p>{{ sede.description }}</p>
+  <p><strong>Dirección:</strong> {{ sede.address }}</p>
+
+  <!-- Carrusel de imágenes -->
+  <div class="image-gallery">
+    <img *ngFor="let img of sede.images" [src]="img" [alt]="sede.name + ' imagen'" class="gallery-image">
+  </div>
+
+  <!-- Mapa con iframe -->
+  <div class="map-container">
+    <iframe
+      width="100%"
+      height="400"
+      frameborder="0"
+      style="border:0"
+      [src]="sede.mapIframeUrl | safeUrl"
+      allowfullscreen
+      aria-hidden="false"
+      tabindex="0">
+    </iframe>
+  </div>
+
+  <!-- Videos -->
+  <div class="video-gallery">
+    <iframe
+      *ngFor="let video of sede.videos"
+      width="100%"
+      height="315"
+      [src]="video | safeUrl"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section *ngIf="!sede">
+  <p>Sede no encontrada.</p>
+</section>
