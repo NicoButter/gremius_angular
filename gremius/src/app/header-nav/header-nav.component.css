@@ -35,7 +35,7 @@ header.shrink .logo img {
 }
 
 header.shrink .title {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 .logo img {
@@ -44,12 +44,52 @@ header.shrink .title {
 }
 
 .title {
+  margin: 6px 0;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  /* Reducido ligeramente para mejor ajuste */
+  font-weight: 400;
+  color: #444C8A;
+  margin: 0 20px;
+  /* Aumenta el espaciado horizontal */
+  padding: 10px 15px;
+  /* Padding para el fondo */
+  position: relative;
+  /* Para el pseudo-elemento del degradado */
+  line-height: 1.4;
+  /* Mejora la legibilidad */
+}
+
+/* Degradado debajo del título usando un pseudo-elemento */
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  /* Altura del degradado */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(68, 76, 138, 0.2), rgba(255, 255, 255, 0.1));
+  /* Degradado suave */
+  z-index: 1;
+}
+
+.title-text {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* .title {
   flex-grow: 1;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 100;
   color: #444C8A;
-}
+} */
 
 .social-links {
   display: flex;
@@ -215,11 +255,6 @@ header.shrink .title {
     height: 50px;
   }
 
-  .title {
-    font-size: 1.2rem;
-    margin: 6px 0;
-  }
-
   .social-links {
     margin-top: 6px;
   }
@@ -313,10 +348,6 @@ header.shrink .title {
 
   .logo img {
     height: 40px;
-  }
-
-  .title {
-    font-size: 0.9rem;
   }
 
   .social-links a {
