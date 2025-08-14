@@ -53,6 +53,19 @@
 
 <section class="news-hero">
   <div class="hero-container">
+    <!-- Reproductor integrado arriba del carrusel -->
+    <div class="audio-player-fixed">
+      <div class="live-announcement">
+        🎙️ Escuchá en VIVO la entrevista a nuestro Secretario General 
+        <strong>Franco Macheroni</strong> a partir de las 19 hs desde LU14!!
+      </div>
+      <h3>Radio LU14 AM830</h3>
+      <audio controls aria-label="Reproductor de Radio LU14">
+        <source src="https://transmision-lu14.santacruz.gob.ar/lu14.mp3" type="audio/mpeg">
+        Tu navegador no soporta el reproductor de audio.
+      </audio>
+    </div>
+
     <div 
       class="hero-slide"
       *ngFor="let noticia of noticias; let i = index"
@@ -77,17 +90,3 @@
     </div>
   </div>
 </section>
-
-<!-- Reproductor fijo al costado -->
-<div class="audio-player-fixed">
-  <div class="live-announcement">
-    🎙️ Escuchá en VIVO la entrevista a nuestro Secretario General 
-    <strong>Franco Macheroni</strong> a partir de las 19 hs desde LU14!!
-  </div>
-  <h3>Radio LU14 AM830</h3>
-  <audio controls>
-    <source src="https://transmision-lu14.santacruz.gob.ar/lu14.mp3" type="audio/mpeg">
-    Tu navegador no soporta el reproductor de audio.
-  </audio>
-</div>
-
