@@ -23,8 +23,9 @@
   </div>
 </section> -->
 
-<section class="news-hero">
+<!-- <section class="news-hero">
   <div class="hero-container">
+        
     <div 
       class="hero-slide"
       *ngFor="let noticia of noticias; let i = index"
@@ -48,4 +49,45 @@
       [class.active]="i === currentSlide"
     ></span>
   </div>
+</section> -->
+
+<section class="news-hero">
+  <div class="hero-container">
+    <div 
+      class="hero-slide"
+      *ngFor="let noticia of noticias; let i = index"
+      [class.active]="i === currentSlide"
+      [ngStyle]="{ 'background-image': 'url(' + noticia.image + ')' }"
+    >
+      <div class="gradient-overlay"></div>
+      <div class="hero-text">
+        <span class="news-badge">NOTICIAS</span>
+        <h1>{{ noticia.titulo }}</h1>
+        <p class="author">{{ noticia.autor }}</p>
+        <p class="excerpt">{{ noticia.descripcion }}</p>
+      </div>
+    </div>
+
+    <div class="hero-nav">
+      <span 
+        *ngFor="let noticia of noticias; let i = index"
+        (click)="goToSlide(i)"
+        [class.active]="i === currentSlide"
+      ></span>
+    </div>
+  </div>
 </section>
+
+<!-- Reproductor fijo al costado -->
+<div class="audio-player-fixed">
+  <div class="live-announcement">
+    🎙️ Escuchá en VIVO la entrevista a nuestro Secretario General 
+    <strong>Franco Macheroni</strong> a partir de las 19 hs desde LU14!!
+  </div>
+  <h3>Radio LU14 AM830</h3>
+  <audio controls>
+    <source src="https://transmision-lu14.santacruz.gob.ar/lu14.mp3" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
+</div>
+

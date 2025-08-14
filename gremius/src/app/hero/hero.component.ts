@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +8,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent implements OnInit, OnDestroy {
+export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('radioPlayer') radioPlayer!: ElementRef<HTMLAudioElement>;
+
   noticias = [
     {
       titulo: 'Día Del Periodista',
@@ -35,6 +37,7 @@ export class HeroComponent implements OnInit, OnDestroy {
       autor: 'Corresponsal Local'
     }
   ];
+
   currentSlide = 0;
   private intervalId: any;
 
@@ -43,6 +46,21 @@ export class HeroComponent implements OnInit, OnDestroy {
       this.intervalId = setInterval(() => {
         this.currentSlide = (this.currentSlide + 1) % this.noticias.length;
       }, 5000);
+    }
+  }
+
+  ngAfterViewInit(): void {
+    if (this.radioPlayer) {
+      const player = this.radioPlayer.nativeElement;
+      player.addEventListener('loadedmetadata', () => {
+        try {
+          if (player.seekable.length > 0) {
+            player.currentTime = player.seekable.end(0);
+          }
+        } catch (e) {
+          console.warn('No se pudo ajustar el tiempo del stream', e);
+        }
+      });
     }
   }
 
