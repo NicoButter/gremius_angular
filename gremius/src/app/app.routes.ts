@@ -12,6 +12,7 @@ import { ComisionActualComponent } from './comision-actual/comision-actual.compo
 import { ComisionesAnterioresComponent } from './comisiones-anteriores/comisiones-anteriores.component';
 import { LicenciaPromocionComponent } from './licencia-promocion/licencia-promocion.component';
 import { LicenciaContratadosComponent } from './licencia-contratados/licencia-contratados.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,6 +28,7 @@ export const routes: Routes = [
   { path: 'comisiones-anteriores', component: ComisionesAnterioresComponent },
   { path: 'licencia-promocion', component: LicenciaPromocionComponent },
   { path: 'licencia-contratados', component: LicenciaContratadosComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

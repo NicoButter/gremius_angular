@@ -1,0 +1,35 @@
+<div class="contact-page">
+  <h2>Contacto</h2>
+
+  <!-- Selección de destinatario -->
+  <div *ngIf="!destinatario" class="destinatarios">
+    <p>Seleccioná la Sede con la que te querés contactar:</p>
+    <ul>
+      <li *ngFor="let d of destinatarios">
+        <button (click)="selectDestinatario(d.email)">{{ d.label }}</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Formulario de contacto -->
+  <div *ngIf="destinatario" class="contact-form">
+    
+    <h3>Enviar mensaje a {{ destinatario }}</h3>
+    <form (ngSubmit)="sendMessage()">
+      <label>Nombre:</label>
+      <input type="text" [(ngModel)]="contactData.name" name="name" required />
+
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="contactData.email" name="email" required />
+
+      <label>Mensaje:</label>
+      <textarea [(ngModel)]="contactData.message" name="message" rows="5" required></textarea>
+
+      <div class="form-buttons">
+        <button type="button" class="back-btn" (click)="back()">← Volver</button>
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+
+  </div>
+</div>
