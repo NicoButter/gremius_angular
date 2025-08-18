@@ -444,7 +444,7 @@ export class ComisionesAnterioresComponent implements OnInit {
         { name: 'Carola Renee Valderrama', role: 'Sec. Adm. y de Actas' },
         { name: 'Martín Díaz', role: 'Sec. Finanzas y Estadísticas' },
         { name: 'Oscar Huancq', role: 'Sec. de Organización' },
-        { name: 'María José Putterfield', role: 'Sec. de Prensa y Difusión' },
+        { name: 'María José Butterfield', role: 'Sec. de Prensa y Difusión' },
         { name: 'Martín Segovia', role: 'Sec. de Cap. Lab. y Gremial' },
         { name: 'Guadalupe Judis', role: 'Sec. de Acción Social' },
         { name: 'Héctor Paez', role: 'Sec. de Derechos Humanos' },
