@@ -20,11 +20,11 @@ export class SedesService {
     {
       id: 'sede1',
       name: 'Sede Central Río Gallegos',
-      image: 'assets/images/sede_rio_gallegos.png',
+      image: 'assets/images/sede_rio_gallegos_2.png',
       description: 'Nuestra sede principal en Río Gallegos ofrece servicios administrativos y de capacitación.',
       address: 'Ramón y Cajal 257, Río Gallegos, Santa Cruz',
       mapIframeUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1215.6214862671156!2d-69.2163383983986!3d-51.628563641653436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb6f959e5cfffff%3A0x7708da357b12f17e!2sQuincho%20de%20Judiciales!5e0!3m2!1ses!2sar!4v1755098854211!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
-      images: ['assets/images/sede_rio_gallegos.png', 'assets/images/sede_rio_gallegos.png'],
+      images: ['assets/images/sede_rio_gallegos.png', 'assets/images/sede_rio_gallegos_2.png'],
       videos: ['https://www.youtube.com/embed/VIDEO_ID_1'],
     },
     {
