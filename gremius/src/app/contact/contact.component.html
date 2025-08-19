@@ -14,6 +14,11 @@
     </ul>
   </div>
 
+  <!-- Success alert -->
+  <div *ngIf="showSuccessAlert" class="success-alert">
+    ¡Correo enviado exitosamente!
+  </div>
+
   <!-- Selección de destinatario -->
   <div *ngIf="!destinatario" class="destinatarios">
     <p>Seleccioná la Sede con la que te querés contactar:</p>
@@ -26,28 +31,28 @@
 
   <!-- Formulario de contacto -->
   <div *ngIf="destinatario" class="contact-form">
-    
     <h3>Enviar mensaje a {{ destinatario }}</h3>
-    <form (ngSubmit)="sendMessage()">
+
+    <form [attr.action]="formAction" method="POST">
       <label>Nombre:</label>
-      <input type="text" [(ngModel)]="contactData.name" name="name" required />
+      <input type="text" name="name" [(ngModel)]="contactData.name" required />
 
       <label>Email:</label>
-      <input type="email" [(ngModel)]="contactData.email" name="email" required />
+      <input type="email" name="email" [(ngModel)]="contactData.email" required />
 
       <label>Mensaje:</label>
-      <textarea [(ngModel)]="contactData.message" name="message" rows="5" required></textarea>
+      <textarea name="message" [(ngModel)]="contactData.message" rows="5" required></textarea>
+
+      <!-- Config extra de FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://judicialesdesantacruz.netlify.app/contacto?success=true">
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
 
       <div class="form-buttons">
         <button type="button" class="back-btn" (click)="back()">← Volver</button>
         <button type="submit">Enviar</button>
       </div>
     </form>
-
   </div>
-
-  <p class="thanks-msg">
-    Gracias por comunicarte con nosotros 🙌. Vamos a responderte lo antes posible.
-  </p>
-
 </div>
