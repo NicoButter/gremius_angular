@@ -1,6 +1,19 @@
 <div class="contact-page">
   <h2>Contacto</h2>
 
+  <p class="intro">
+    Estamos para escucharte. Seleccioná la sede con la que quieras comunicarte 
+    y enviá tu consulta, reclamo o sugerencia.
+  </p>
+
+  <div class="faq">
+    <h3>Preguntas frecuentes</h3>
+    <ul>
+      <li><strong>¿Qué puedo consultar?</strong><br>Podés escribirnos por reservas, beneficios o consultas administrativas.</li>
+      <li><strong>¿Cuánto tardan en responder?</strong><br>Generalmente dentro de las 48 hs hábiles.</li>
+    </ul>
+  </div>
+
   <!-- Selección de destinatario -->
   <div *ngIf="!destinatario" class="destinatarios">
     <p>Seleccioná la Sede con la que te querés contactar:</p>
@@ -32,4 +45,9 @@
     </form>
 
   </div>
+
+  <p class="thanks-msg">
+    Gracias por comunicarte con nosotros 🙌. Vamos a responderte lo antes posible.
+  </p>
+
 </div>

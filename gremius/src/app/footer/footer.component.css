@@ -114,21 +114,33 @@
 }
 
 .footer-section.contact p {
-  margin-bottom: 12px;
-  line-height: 1.5;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 .footer-section.contact strong {
-  color: #ffdd57; /* destaca lo importante */
+    color: #ffdd57;
 }
 
 .reservas-list {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 15px 0;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 15px 0;
 }
 
 .reservas-list li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer-section.contact a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-section.contact a:hover {
+    color: #ffdd57;
+    text-decoration: underline;
 }

@@ -15,7 +15,7 @@ export class ContactComponent {
   contactData = { name: '', email: '', message: '' };
   destinatarios = [
     { label: 'Gremio Judiciales Río Gallegos', email: 'gremiojudicialesrg@gmail.com' },
-    { label: 'Gremio Juducuales Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com' }
+    { label: 'Gremio Judiciales San Julián', email: 'empleadosjudiciales3dejulio@hotmail.com' }
   ];
 
   constructor(private contactService: ContactService) {
