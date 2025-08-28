@@ -1,0 +1,50 @@
+.logos-historicos {
+  padding: 3rem 1rem;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.logos-historicos h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.logos-timeline {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.logo-card {
+  background: white;
+  border: 2px solid #f7931e; /* bordecito naranja */
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo-card:hover {
+  transform: scale(1.05);
+}
+
+.logo-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.logo-card h3 {
+  color: #f7931e;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo-card p {
+  font-size: 0.9rem;
+  color: #555;
+}

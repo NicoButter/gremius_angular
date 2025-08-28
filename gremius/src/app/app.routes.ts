@@ -17,6 +17,7 @@ import { ReglamentoParaLaJusticiaComponent } from './reglamento-para-la-justicia
 import { AfiliacionesComponent } from './afiliaciones/afiliaciones.component';
 import { DerechoLaboralComponent } from './derecho-laboral/derecho-laboral.component';
 import { DerechoSindicalComponent } from './derecho-sindical/derecho-sindical.component';
+import { LogosComponent } from './logos/logos.component';
 
 
 export const routes: Routes = [
@@ -37,6 +38,7 @@ export const routes: Routes = [
   { path: 'afiliaciones', component: AfiliacionesComponent },
   { path: 'derecho-laboral', component: DerechoLaboralComponent },
   { path: 'derecho-sindical', component: DerechoSindicalComponent },
+  { path: 'logos', component: LogosComponent },
   { path: 'reglamento-justicia', component: ReglamentoParaLaJusticiaComponent },
   { path: '**', redirectTo: '/home' }
 ];
