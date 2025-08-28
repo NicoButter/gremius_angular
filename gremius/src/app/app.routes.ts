@@ -13,6 +13,11 @@ import { ComisionesAnterioresComponent } from './comisiones-anteriores/comisione
 import { LicenciaPromocionComponent } from './licencia-promocion/licencia-promocion.component';
 import { LicenciaContratadosComponent } from './licencia-contratados/licencia-contratados.component';
 import { ContactComponent } from './contact/contact.component';
+import { ReglamentoParaLaJusticiaComponent } from './reglamento-para-la-justicia/reglamento-para-la-justicia.component';
+import { AfiliacionesComponent } from './afiliaciones/afiliaciones.component';
+import { DerechoLaboralComponent } from './derecho-laboral/derecho-laboral.component';
+import { DerechoSindicalComponent } from './derecho-sindical/derecho-sindical.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +34,10 @@ export const routes: Routes = [
   { path: 'licencia-promocion', component: LicenciaPromocionComponent },
   { path: 'licencia-contratados', component: LicenciaContratadosComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'afiliaciones', component: AfiliacionesComponent },
+  { path: 'derecho-laboral', component: DerechoLaboralComponent },
+  { path: 'derecho-sindical', component: DerechoSindicalComponent },
+  { path: 'reglamento-justicia', component: ReglamentoParaLaJusticiaComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

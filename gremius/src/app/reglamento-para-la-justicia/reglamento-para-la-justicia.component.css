@@ -1,0 +1,89 @@
+.reglamento {
+  padding: 2rem;
+  background: #fafafa;
+  border-radius: 12px;
+}
+
+/* Título principal */
+.reglamento h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #222;
+}
+
+/* Subtítulo */
+.reglamento h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #444;
+  border-left: 6px solid #ff6600; /* Naranja */
+  padding-left: 0.5rem;
+}
+
+/* Párrafos introductorios */
+.reglamento p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Cada sección tipo tarjeta */
+.reglamento-section {
+  background: #fff;
+  border: 1px solid #ff6600; /* borde naranja */
+  border-left: 6px solid #ff6600; /* más marcado a la izquierda */
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover */
+.reglamento-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de cada tarjeta */
+.reglamento-section h4 {
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Lista dentro de tarjetas */
+.reglamento-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.reglamento-section li {
+  margin-bottom: 0.5rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Texto final de descarga */
+.descarga {
+  margin-top: 2rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.download-button {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid #ff6600;
+  border-radius: 6px;
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.download-button:hover {
+  background: #ff6600;
+  color: #fff;
+}

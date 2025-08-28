@@ -14,8 +14,8 @@ export class ContactComponent implements OnInit {
   destinatario: string | null = null;
   contactData = { name: '', email: '', message: '' };
   destinatarios = [
-    { label: 'Gremio Judiciales Río Gallegos', email: 'gremiojudicialesrg@gmail.com' },
-    { label: 'Gremio Judiciales San Julián', email: 'empleadosjudiciales3dejulio@hotmail.com' }
+    { label: 'Gremio Judiciales Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com' },
+    { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com' }
   ];
   showSuccessAlert = false;
 

@@ -29,6 +29,7 @@
     <ul class="dropdown-menu" [class.show]="isDropdownActive('institucional')">
       <!-- <li><a routerLink="/autoridades" (click)="closeMenuOnNavigation()">Miembros de Comisión</a></li> -->
       <!-- <li><a routerLink="/estatuto" (click)="closeMenuOnNavigation()">Estatuto</a></li> -->
+      <li><a routerLink="/afiliaciones" (click)="closeMenuOnNavigation()">Afiliaciones</a></li>
       <li><a routerLink="/historia" (click)="closeMenuOnNavigation()">Historia (EN CONSTRUCCIÓN)</a></li>
       <li><a routerLink="/logos" (click)="closeMenuOnNavigation()">Logos (EN CONSTRUCCIÓN)</a></li>
       <!-- <li><a routerLink="/archivos" (click)="closeMenuOnNavigation()">Archivos</a></li> -->
@@ -49,8 +50,8 @@
   <li class="nav-item dropdown">
     <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('areas')">Áreas</a>
     <ul class="dropdown-menu" [class.show]="isDropdownActive('areas')">
-      <!-- <li><a routerLink="/general" (click)="closeMenuOnNavigation()">General</a></li>
-      <li><a routerLink="/secretarias" (click)="closeMenuOnNavigation()">Secretarías</a></li>-->
+      <!-- <li><a routerLink="/general" (click)="closeMenuOnNavigation()">General</a></li> -->
+      <li><a routerLink="/secretarias" (click)="closeMenuOnNavigation()">Secretarías</a></li>
       <li><a routerLink="/delegados-afiliados" (click)="closeMenuOnNavigation()">Delegados/as y afiliados/as</a></li>
       <!-- <li><a routerLink="/tecnica" (click)="closeMenuOnNavigation()">Técnica</a></li>
       <li><a routerLink="/capacitacion" (click)="closeMenuOnNavigation()">Capacitación</a></li>  -->
@@ -109,10 +110,12 @@
       <li><a routerLink="/sistema-salarial" (click)="closeMenuOnNavigation()">Sistema salarial</a></li>
       <li><a routerLink="/beneficios" (click)="closeMenuOnNavigation()">De Beneficios</a></li>
       <!-- <li><a routerLink="/ley-participativa-2022" (click)="closeMenuOnNavigation()">Ley Participativa 2022</a></li> -->
-      <li><a routerLink="/derecho-laboral-2021" (click)="closeMenuOnNavigation()">Derecho Laboral 2021</a></li>
+      <li><a routerLink="/derecho-laboral" (click)="closeMenuOnNavigation()">Derecho Laboral</a></li>
+      <li><a routerLink="/derecho-sindical" (click)="closeMenuOnNavigation()">Derecho Sindical</a></li>
       <li><a routerLink="/licencia-promocion" (click)="closeMenuOnNavigation()">Licencia y Promoción</a></li>
       <li><a routerLink="/licencia-contratados" (click)="closeMenuOnNavigation()">Licencia Contratados</a></li>
-      <li><a routerLink="/trabajo-social" (click)="closeMenuOnNavigation()">Trabajo Social (Heredia/MTS)</a></li>
+      <li><a routerLink="/reglamento-justicia" (click)="closeMenuOnNavigation()">Reglamento para la Justicia</a></li>
+      <!-- <li><a routerLink="/trabajo-social" (click)="closeMenuOnNavigation()">Trabajo Social (Heredia/MTS)</a></li> -->
     </ul>
   </li>
 
