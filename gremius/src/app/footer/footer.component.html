@@ -1,4 +1,19 @@
 <footer class="footer">
+
+  <!-- Modal Bienvenida -->
+  <div class="welcome-modal" *ngIf="welcomeModalOpen" (click)="onWelcomeModalClick($event)">
+    <div class="welcome-modal-content" (click)="$event.stopPropagation()">
+      <span class="qr-close" (click)="closeWelcomeModal()">&times;</span>
+      <h3>¡Afiliate a nuestro gremio!</h3>
+      <p>Bienvenidos/as a Judiciales de Santa Cruz
+          Aquí vas a encontrar todo sobre la vida gremial: licencias, derechos, comisiones directivas, noticias y la voz de los/as trabajadores/as judiciales.
+          Un espacio para informarnos, organizarnos y seguir construyendo juntos.</p>
+      <p>Conviértete en parte de la Asociación Gremial de Empleados/as Judiciales de Santa Cruz y disfruta de todos los beneficios.</p>
+      <button (click)="closeWelcomeModal()">Cerrar</button>
+    </div>
+  </div>
+
+
   <div class="container">
     <div class="footer-content">
       <div class="footer-section about">
@@ -69,51 +84,30 @@
 
         <p><em>Te invitamos a visitarnos o a comunicarte con nosotros para cualquier consulta o inquietud.</em></p>
       </div>
-      
 
-
-      <!-- <div class="footer-section contact">
-        <h2>Contacto</h2>
-
-        <p><strong>Río Gallegos - El Calafate</strong><br>
-          Email: <strong>gremiojudicialesrg&#64;gmail.com</strong></p>
-
-        <p><strong>Caleta Olivia - Pto. San Julián</strong><br>
-          Email: <strong>empleadosjudiciales3dejulio&#64;hotmail.com</strong></p>
-
-        <p><strong>Central Río Gallegos - El Calafate</strong><br>
-          Teléfono: <strong>+54 9 2966 34-0743</strong></p>
-
-        <p><strong>Sedes San Julián - Caleta Olivia</strong><br>
-          Teléfono: <strong>+54 9 2966 70-7561</strong></p>
-
-        <p><strong>Dirección:</strong> Ramón y Cajal 257<br>
-          <strong>Teléfono fijo:</strong> (02966) 340743<br>
-          <strong>Horarios:</strong> Lunes a Viernes, 9:00 a 12:00 y 15:00 a 20:00 hs</p>
-
-        <p><strong>Puntos de atención para reservas</strong></p>
-        <ul class="reservas-list">
-          <li><strong>San Julián:</strong> reservas para hospedajes en San Julián y Caleta Olivia.<br>
-              <em>Horario: Lunes a Viernes, 9:00 a 12:00 y 16:00 a 19:00 hs.</em></li>
-          <li><strong>Río Gallegos:</strong> reservas para Río Gallegos y El Calafate.<br>
-              <em>Horario: Lunes a Viernes, 8:00 a 12:00 y 16:00 a 19:00 hs.</em></li>
-        </ul>
-
-        <p><strong>Responsable:</strong> Franco Mascheroni</p>
-
-        <p><em>Te invitamos a visitarnos o a comunicarte con nosotros para cualquier consulta o inquietud.</em></p>
-      </div> -->
+      <!-- Modal QR -->
+      <div class="qr-modal" *ngIf="qrModalOpen" (click)="onModalClick($event)">
+        <span class="qr-close" (click)="closeQrModal()">&times;</span>
+        <img [src]="qrModalSrc" [alt]="qrModalAlt" class="qr-modal-content">
+        <div class="qr-caption">{{ qrModalAlt }}</div>  
+      </div>
       
       <!-- Nueva sección para la app móvil -->
       <div class="footer-section app-download">
         <h2>App para Afiliados</h2>
-        <p>Descarga nuestra app "Judiciales de Santa Cruz Cred":</p>
-        <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz&pli=1" target="_blank" aria-label="Descargar la app Judiciales de Santa Cruz Cred">
-          <img src="assets/images/qr-code-android.png" alt="QR para descargar la app Judiciales de Santa Cruz Cred" class="footer-qr">
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz&pli=1" target="_blank" aria-label="Descargar la app Judiciales de Santa Cruz Cred">
-          <img src="assets/images/qr-code-ios.png" alt="QR para descargar la app Judiciales de Santa Cruz Cred" class="footer-qr">
-        </a>
+        <p>Escanea con tu celular para descargar nuestra app "Judiciales de Santa Cruz Mi Credencial Digital":</p>
+
+        <!-- QR Android -->
+        <img src="assets/images/qr-code-android.png" 
+            alt="QR Android" 
+            class="footer-qr clickable-qr"
+            (click)="openQrModal('assets/images/qr-code-android.png','QR Android')">
+
+        <!-- QR iOS -->
+        <img src="assets/images/qr-code-ios.png" 
+            alt="QR iOS" 
+            class="footer-qr clickable-qr"
+            (click)="openQrModal('assets/images/qr-code-ios.png','QR iOS')">
       </div>
     </div>
 

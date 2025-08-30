@@ -1,33 +1,48 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit, OnDestroy {
-
-  countdown = {
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  };
-
+  // Countdown
+  countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
   private interval: any;
   private targetDate = new Date('Nov 16, 2025 00:00:00').getTime();
+
+  // Modal QR
+  qrModalOpen: boolean = false;
+  qrModalSrc: string = '';
+  qrModalAlt: string = '';
+
+  // Modal bienvenida
+  welcomeModalOpen: boolean = false;
 
   ngOnInit(): void {
     this.updateCountdown();
     this.interval = setInterval(() => this.updateCountdown(), 1000);
+
+    // Mostrar bienvenida siempre al entrar / refrescar
+    this.welcomeModalOpen = true;
+
+    // Si querés mostrar solo una vez por usuario, usar esta lógica:
+    /*
+    const seenWelcome = localStorage.getItem('welcomeModalSeen');
+    if (!seenWelcome) {
+      this.welcomeModalOpen = true;
+    }
+    */
   }
 
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
 
+  // Countdown
   private updateCountdown(): void {
     const now = new Date().getTime();
     const distance = this.targetDate - now;
@@ -42,5 +57,45 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.countdown.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     this.countdown.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     this.countdown.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  }
+
+  // Abrir / cerrar modal QR
+  openQrModal(src: string, alt: string) {
+    this.qrModalSrc = src;
+    this.qrModalAlt = alt;
+    this.qrModalOpen = true;
+  }
+  closeQrModal() {
+    this.qrModalOpen = false;
+  }
+
+  // Abrir / cerrar modal bienvenida
+  closeWelcomeModal() {
+    this.welcomeModalOpen = false;
+    // Para solo una vez:
+    // localStorage.setItem('welcomeModalSeen', 'true');
+  }
+
+  // ESC key listener
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscape(event: KeyboardEvent) {
+    if (this.qrModalOpen) this.closeQrModal();
+    if (this.welcomeModalOpen) this.closeWelcomeModal();
+  }
+
+  // Click fuera del modal QR
+  onModalClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('qr-modal')) {
+      this.closeQrModal();
+    }
+  }
+
+  // Click fuera del modal bienvenida
+  onWelcomeModalClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('welcome-modal')) {
+      this.closeWelcomeModal();
+    }
   }
 }
