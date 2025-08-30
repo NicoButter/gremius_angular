@@ -20,7 +20,7 @@
 
 .logo-card {
   background: white;
-  border: 2px solid #f7931e; /* bordecito naranja */
+  border: 2px solid #444C8A; /* azul institucional */
   border-radius: 12px;
   padding: 1rem;
   max-width: 250px;
@@ -39,7 +39,7 @@
 }
 
 .logo-card h3 {
-  color: #f7931e;
+  color: #444C8A; /* azul institucional */
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }

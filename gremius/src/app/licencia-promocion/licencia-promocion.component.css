@@ -7,8 +7,8 @@
 #licencia-promocion h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    color: #1a3c5e;
-    border-bottom: 3px solid #f4a261;
+    color: #444C8A;
+    border-bottom: 3px solid #5A62A0;
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -31,12 +31,14 @@
 .promocion-container h3 {
     font-size: 1.8rem;
     margin: 30px 0 20px;
-    color: #2c3e50;
+    color: #444C8A;
 }
 
-.licencia-card {
+/* Tarjetas unificadas: Licencias y Promoción */
+.licencia-card,
+.promocion-section {
     background-color: #fff;
-    border: 1px solid #f4a261;
+    border: 1px solid #444C8A;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -46,64 +48,26 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.licencia-card:hover {
+.licencia-card:hover,
+.promocion-section:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.licencia-card h4 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.licencia-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.licencia-card li {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 5px 0;
-    position: relative;
-    padding-left: 20px;
-}
-
-.licencia-card li::before {
-    content: "•";
-    color: #f4a261;
-    position: absolute;
-    left: 0;
-}
-
-.promocion-section {
-    background-color: #fff;
-    border: 1px solid #e8ecef;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px auto;
-    text-align: left;
-    max-width: 800px;
-}
-
+.licencia-card h4,
 .promocion-section h4 {
-    font-size: 1.3rem;
-    color: #2c3e50;
+    font-size: 1.4rem;
+    color: #444C8A;
     margin-bottom: 10px;
 }
 
-.promocion-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
+.licencia-card ul,
 .promocion-section ul {
     list-style: none;
     padding: 0;
 }
 
+.licencia-card li,
 .promocion-section li {
     font-size: 1rem;
     line-height: 1.6;
@@ -112,13 +76,15 @@
     padding-left: 20px;
 }
 
+.licencia-card li::before,
 .promocion-section li::before {
     content: "•";
-    color: #f4a261;
+    color: #444C8A;
     position: absolute;
     left: 0;
 }
 
+/* Descargas y notas */
 .nota {
     font-style: italic;
     color: #666;
@@ -132,7 +98,7 @@
 .download-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f4a261;
+    background-color: #444C8A;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -141,13 +107,14 @@
 }
 
 .download-button:hover {
-    background-color: #e76f51;
+    background-color: #5A62A0;
 }
 
+/* Separador entre secciones */
 .section-divider {
     border: 0;
     height: 3px;
-    background: #f4a261;
+    background: #444C8A;
     margin: 40px auto;
     width: 50%;
     max-width: 600px;
@@ -160,8 +127,8 @@
 
 .section-divider-title h3 {
     font-size: 1.8rem;
-    color: #2c3e50;
-    background: #fff;
+    color: #444C8A;
+    background: #f2f2f2;
     display: inline-block;
     padding: 0 20px;
     position: relative;
@@ -174,12 +141,11 @@
     top: 50%;
     left: 0;
     right: 0;
-    border-top: 2px solid #f4a261;
+    border-top: 2px solid #5A62A0;
     z-index: 0;
 }
 
 @media (max-width: 768px) {
-
     .licencia-card,
     .promocion-section {
         width: 100%;

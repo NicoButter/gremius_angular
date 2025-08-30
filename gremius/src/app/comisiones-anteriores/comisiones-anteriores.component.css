@@ -9,6 +9,10 @@
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
+    border-bottom: 3px solid #444C8A;
+    /* borde inferior azul institucional */
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 #comisiones-anteriores p {
@@ -28,6 +32,8 @@
 
 .comision-card {
     background-color: #fff;
+    border: 2px solid #444C8A;
+    /* borde azul institucional */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -60,6 +66,9 @@
     font-size: 1.2rem;
     margin: 15px 0 10px;
     color: #34495e;
+    border-left: 3px solid #444C8A;
+    /* detalle azul institucional */
+    padding-left: 8px;
 }
 
 .comision-details ul {
