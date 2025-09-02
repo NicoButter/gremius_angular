@@ -74,11 +74,34 @@
     </p>
   </article>
 
-  <footer class="historia-footer">
-    <h3>Nuestra memoria es colectiva</h3>
-    <p>
-      El gremio no se entiende sin las voces de quienes lo hacen día a día. Abrimos este espacio para que compartas
-      tus recuerdos, luchas y anécdotas. Cada palabra suma y mantiene viva la historia de Judiciales Santa Cruz.
-    </p>
-  </footer>
+<footer class="historia-footer">
+  <h3>Nuestra memoria es colectiva</h3>
+  <p>
+    El gremio no se entiende sin las voces de quienes lo hacen día a día. Abrimos este espacio para que compartas
+    tus recuerdos, luchas y anécdotas. Cada palabra suma y mantiene viva la historia de Judiciales Santa Cruz.
+  </p>
+
+  <h4>Comparte tu historia</h4>
+  <p>Si sos afiliado/a, completá el formulario y publicaremos tu experiencia.</p>
+
+  <div *ngIf="showSuccessAlert" class="alert-success">
+    ¡Gracias! Tu historia fue enviada correctamente.
+  </div>
+
+  <form *ngIf="destinatario" [action]="formAction" method="POST" target="_blank">
+    <input type="hidden" name="_next" value="http://judicialesdesantacruz.org.ar/historia?success=true" />
+    <input type="hidden" name="_captcha" value="false" />
+
+    <label for="name">Nombre completo</label>
+    <input id="name" name="name" type="text" [(ngModel)]="contactData.name" required />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" [(ngModel)]="contactData.email" required />
+
+    <label for="message">Tu historia</label>
+    <textarea id="message" name="message" rows="5" [(ngModel)]="contactData.message" required></textarea>
+
+    <button type="submit">Enviar historia</button>
+  </form>
+</footer>
 </section>

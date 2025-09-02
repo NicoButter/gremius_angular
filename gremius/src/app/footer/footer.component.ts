@@ -29,13 +29,6 @@ export class FooterComponent implements OnInit, OnDestroy {
     // Mostrar bienvenida siempre al entrar / refrescar
     this.welcomeModalOpen = true;
 
-    // Si querés mostrar solo una vez por usuario, usar esta lógica:
-    /*
-    const seenWelcome = localStorage.getItem('welcomeModalSeen');
-    if (!seenWelcome) {
-      this.welcomeModalOpen = true;
-    }
-    */
   }
 
   ngOnDestroy(): void {
