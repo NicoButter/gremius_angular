@@ -1,0 +1,49 @@
+.historia {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fafafa;
+    border-radius: 12px;
+    color: #333;
+}
+
+.historia h2 {
+    color: #444C8A;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #444C8A;
+    padding-bottom: 0.5rem;
+}
+
+.historia h3 {
+    color: #444C8A;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 6px solid #444C8A;
+    padding-left: 0.6rem;
+    font-size: 1.4rem;
+}
+
+.historia p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.historia ul {
+    margin: 0 0 1rem 1.2rem;
+    color: #444C8A;
+}
+
+.historia-footer {
+    margin-top: 3rem;
+    text-align: center;
+    background: #f0f0f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.historia-footer h3 {
+    margin-bottom: 1rem;
+    color: #444C8A;
+}
