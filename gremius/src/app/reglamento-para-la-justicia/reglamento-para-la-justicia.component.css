@@ -4,23 +4,51 @@
   border-radius: 12px;
 }
 
-/* Título principal */
-.reglamento h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #444C8A; /* institucional */
-  border-bottom: 3px solid #5A62A0; /* secundario institucional */
-  display: inline-block;
-  padding-bottom: 5px;
+
+/* Contenedor principal alineado con tarjetas */
+.reglamento-container,
+.reglamento > p {
+  max-width: 800px;   /* igual que las tarjetas */
+  margin: 0 auto 1.5rem; /* centrado */
+  text-align: center; /* centra el contenido */
 }
 
 /* Subtítulo */
-.reglamento h3 {
-  margin: 1rem 0;
+.reglamento-container h3 {
   font-size: 1.5rem;
-  color: #444C8A; /* institucional */
-  border-left: 6px solid #444C8A; /* institucional */
+  color: #444C8A;
+  border-left: 6px solid #444C8A;
+  padding-left: 0.5rem;
+  text-align: left;  /* opcional: para que no quede raro el borde */
+  margin-bottom: 1rem;
+}
+
+
+
+/* Título principal */
+.reglamento h2 {
+  margin: 0 auto 1rem;
+  /* centrado y con margen inferior */
+  font-size: 2rem;
+  color: #444C8A;
+  /* institucional */
+  border-bottom: 3px solid #5A62A0;
+  padding-bottom: 5px;
+  max-width: 800px;
+  /* mismo ancho que las tarjetas */
+  text-align: center;
+  /* mantiene el texto centrado */
+}
+
+
+/* Subtítulo */
+.reglamento h3 {
+  margin: 1 auto 1rem ;
+  font-size: 1.5rem;
+  color: #444C8A;
+  /* institucional */
+  border-left: 6px solid #444C8A;
+  /* institucional */
   padding-left: 0.5rem;
 }
 
@@ -33,12 +61,16 @@
 /* Cada sección tipo tarjeta */
 .reglamento-section {
   background: #fff;
-  border: 1px solid #444C8A; /* institucional */
-  border-left: 6px solid #444C8A; /* más marcado a la izquierda */
+  border: 1px solid #444C8A;
+  /* institucional */
+  border-left: 6px solid #444C8A;
+  /* más marcado a la izquierda */
   border-radius: 8px;
   padding: 1rem 1.2rem;
-  margin: 1rem auto; /* centrado */
-  max-width: 800px; /* más angosta que antes */
+  margin: 1rem auto;
+  /* centrado */
+  max-width: 800px;
+  /* más angosta que antes */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -53,7 +85,8 @@
 .reglamento-section h4 {
   margin-bottom: 0.6rem;
   font-size: 1.2rem;
-  color: #444C8A; /* institucional */
+  color: #444C8A;
+  /* institucional */
 }
 
 /* Lista dentro de tarjetas */
@@ -64,7 +97,8 @@
 
 .reglamento-section li {
   margin-bottom: 0.5rem;
-  color: #444C8A; /* institucional */
+  color: #444C8A;
+  /* institucional */
   line-height: 1.5;
 }
 
@@ -79,15 +113,18 @@
   display: inline-block;
   margin-left: 0.5rem;
   padding: 0.4rem 0.8rem;
-  border: 2px solid #444C8A; /* institucional */
+  border: 2px solid #444C8A;
+  /* institucional */
   border-radius: 6px;
-  color: #444C8A; /* institucional */
+  color: #444C8A;
+  /* institucional */
   text-decoration: none;
   font-weight: bold;
   transition: all 0.2s ease;
 }
 
 .download-button:hover {
-  background: #444C8A; /* institucional */
+  background: #444C8A;
+  /* institucional */
   color: #fff;
 }
