@@ -24,18 +24,18 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       image: '/assets/images/nueva_pagina_web_1.png',
       autor: 'Equipo IT.'
     },
-    {
-      titulo: 'Reunión con el ministro de trabajo',
-      descripcion: 'Se acordó una mesa de diálogo para el mes de julio.',
-      image: '/assets/images/hero_2.jpg',
-      autor: 'Secretaría del Gremio'
-    },
-    {
-      titulo: 'Marcha en Río Gallegos',
-      descripcion: 'Gran convocatoria frente al Tribunal Superior de Justicia.',
-      image: '/assets/images/companieros_2024.png',
-      autor: 'Corresponsal Local'
-    }
+    // {
+    //   titulo: 'Reunión con el ministro de trabajo',
+    //   descripcion: 'Se acordó una mesa de diálogo para el mes de julio.',
+    //   image: '/assets/images/hero_2.jpg',
+    //   autor: 'Secretaría del Gremio'
+    // },
+    // {
+    //   titulo: 'Marcha en Río Gallegos',
+    //   descripcion: 'Gran convocatoria frente al Tribunal Superior de Justicia.',
+    //   image: '/assets/images/companieros_2024.png',
+    //   autor: 'Corresponsal Local'
+    // }
   ];
 
   currentSlide = 0;
