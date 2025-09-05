@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class GremioJubiladosJudicialesComponent {
   gremio = {
-    titulo: 'Gremio de Jubilados Judiciales',
-    descripcion: 'El Gremio de Jubilados Judiciales de Santa Cruz tiene como objetivo representar y acompañar a todos los compañeros y compañeras que han culminado su trayectoria laboral en el Poder Judicial, garantizando sus derechos y promoviendo espacios de encuentro y participación. Nuestra sede se encuentra en Maipú esquina Richieri, Río Gallegos.',
+    titulo: 'Centro de Jubilados Judiciales "3 de Febrero"',
+    descripcion: 'El Centro de Jubilados Judiciales de Santa Cruz "3 de Febrero" tiene como objetivo representar y acompañar a todos los compañeros y compañeras que han culminado su trayectoria laboral en el Poder Judicial, garantizando sus derechos y promoviendo espacios de encuentro y participación. Nuestra sede se encuentra en Maipú esquina Richieri, Río Gallegos.',
     logoUrl: 'assets/images/logo_gremio_jubilados_judiciales.png',
     sedeUrl: 'assets/images/gremio_jubilados_judiciales.png',
     extras: [
