@@ -19,6 +19,7 @@ import { DerechoLaboralComponent } from './derecho-laboral/derecho-laboral.compo
 import { DerechoSindicalComponent } from './derecho-sindical/derecho-sindical.component';
 import { LogosComponent } from './logos/logos.component';
 import { HistoriaComponent } from './historia/historia.component';
+import { EncuentroMujeresDiversidadsComponent } from './encuentro-mujeres-diversidades/encuentro-mujeres-diversidades.component';
 
 
 export const routes: Routes = [
@@ -42,6 +43,7 @@ export const routes: Routes = [
   { path: 'logos', component: LogosComponent },
   { path: 'reglamento-justicia', component: ReglamentoParaLaJusticiaComponent },
   { path: 'historia', component: HistoriaComponent },
+  { path: 'encuentro-mujeres-diversidades', component: EncuentroMujeresDiversidadsComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
