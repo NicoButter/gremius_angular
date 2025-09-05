@@ -35,9 +35,9 @@ export class ComisionActualComponent {
     congresales: [
       { name: 'Juan Franco Mascheroni', role: 'Secretario General', location: '' },
       { name: 'Laura Vanesa Berra', role: 'Titular', location: 'Las Heras' },
-      { name: 'Luis Armando López', role: 'Suplente 1', location: 'Puerto Santa Cruz' },
-      { name: 'Blanca Cecilia Muñoz Barría', role: 'Suplente 2', location: 'Gobernador Gregores' },
-      { name: 'Mirna Yanina Larosa', role: 'Suplente 3', location: 'Piedra Buena' },
+      { name: 'Luis Armando López', role: 'Suplente', location: 'Puerto Santa Cruz' },
+      { name: 'Blanca Cecilia Muñoz Barría', role: 'Suplente', location: 'Gobernador Gregores' },
+      { name: 'Mirna Yanina Larrosa', role: 'Suplente', location: 'Piedra Buena' },
     ],
   };
 }
