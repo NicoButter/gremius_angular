@@ -5,17 +5,52 @@
     <div class="actualidad-grid">
         <article class="actualidad-item app-info">
             <img src="assets/images/nueva_pagina_web_1.png" alt="banner_bienvenida_2025">
-            <h3>Nuestra nueva página WEB !!!</h3>
-            <p>Disfrutá de nuestra nueva página WEB!!!.</p>
+            <h3>¡Estrenamos nueva página web!</h3>
+            <p>
+                Te damos la bienvenida a nuestro renovado sitio institucional. 
+                Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias, 
+                información sobre actividades, convenios, comunicados oficiales y mucho más.  
+                Diseñamos esta página para que sea un espacio de encuentro, memoria y comunicación 
+                permanente con nuestros afiliados y afiliadas.
+            </p>
             <!-- <a href="https://www.facebook.com/photo?fbid=1093078606182774&set=a.445007694323205" class="leer-mas" target="_blank">Saber más...</a> -->
         </article>
 
         <!-- Artículo adicional para la aplicación móvil -->
         <article class="actualidad-item app-info">
-            <img src="assets/images/qr-code-android.png" alt="QR para descargar Judiciales de Santa Cruz Cred" class="qr-image">
-            <h3>Descarga la App Judiciales de Santa Cruz Cred</h3>
-            <p>Escaneá el código QR para descargar nuestra aplicación móvil para afiliados disponible en la App Store. Accede a tus credenciales y beneficios desde tu dispositivo móvil.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz&pli=1" class="leer-mas" target="_blank">Descargar desde Google Play</a>
+            <h3>Descargá la App Judiciales de Santa Cruz Cred</h3>
+            <p>Accedé a tus credenciales y beneficios desde tu celular. Elegí tu sistema operativo:</p>
+
+            <!-- Botones -->
+            <div class="qr-tabs">
+                <button 
+                [class.active]="plataforma === 'android'" 
+                (click)="cambiarPlataforma('android')">
+                Android
+                </button>
+                <button 
+                [class.active]="plataforma === 'ios'" 
+                (click)="cambiarPlataforma('ios')">
+                iOS
+                </button>
+            </div>
+
+            <!-- QR dinámico -->
+            <div class="qr-display">
+                <ng-container *ngIf="plataforma === 'android'">
+                <img src="assets/images/qr-code-android.png" alt="QR Android" class="qr-image">
+                <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz" target="_blank">
+                    Descargar en Google Play
+                </a>
+                </ng-container>
+
+                <ng-container *ngIf="plataforma === 'ios'">
+                <img src="assets/images/qr-code-ios.png" alt="QR iOS" class="qr-image">
+                <a href="https://apps.apple.com/ar/app/..." target="_blank">
+                    Descargar en App Store
+                </a>
+                </ng-container>
+            </div>
         </article>
      
     </div>

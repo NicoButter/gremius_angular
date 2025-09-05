@@ -22,12 +22,14 @@
             {{ vocal.name }} - {{ vocal.role }}
           </li>
         </ul>
-        <h4 *ngIf="comision.vocalesSuplentes?.length">Vocales Suplentes</h4>
-        <ul *ngIf="comision.vocalesSuplentes?.length">
-          <li *ngFor="let vocal of comision.vocalesSuplentes">
-            {{ vocal.name }} - {{ vocal.role }}
-          </li>
-        </ul>
+        <h4 *ngIf="comision.vocalesSuplentes?.length">
+            {{ getVocalesSuplentesTitulo(comision.period) }}
+          </h4>
+          <ul *ngIf="comision.vocalesSuplentes?.length">
+            <li *ngFor="let vocal of comision.vocalesSuplentes">
+              {{ vocal.name }} - {{ vocal.role }}
+            </li>
+          </ul>
         <h4 *ngIf="comision.revisoresCuentas?.length">Comisión Revisora de Cuentas</h4>
         <ul *ngIf="comision.revisoresCuentas?.length">
           <li *ngFor="let revisor of comision.revisoresCuentas">

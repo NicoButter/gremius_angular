@@ -541,4 +541,13 @@ export class ComisionesAnterioresComponent implements OnInit {
   isCardExpanded(period: string): boolean {
     return this.expandedCard === period;
   }
+
+  getVocalesSuplentesTitulo(period: string): string {
+  const match = period.match(/\d{4}/); // busca un año en el string
+    if (match) {
+      const year = parseInt(match[0], 10);
+      return year >= 1990 ? 'Suplentes' : 'Vocales Suplentes';
+    }
+    return 'Vocales Suplentes'; // por defecto
+  }
 }

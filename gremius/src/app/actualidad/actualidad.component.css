@@ -53,3 +53,38 @@
     height: auto;
     margin: 0 auto 10px;
 }
+
+.qr-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.qr-tabs button {
+    padding: 10px 18px;
+    border: 1px solid #444C8A;
+    background: #fff;
+    color: #444C8A;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.qr-tabs button.active,
+.qr-tabs button:hover {
+    background: #444C8A;
+    color: #fff;
+}
+
+.qr-display {
+    text-align: center;
+}
+
+.qr-image {
+    width: 160px;
+    height: auto;
+    margin-bottom: 10px;
+}

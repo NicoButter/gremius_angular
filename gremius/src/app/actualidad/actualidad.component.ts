@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-actualidad',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './actualidad.component.html',
-  styleUrl: './actualidad.component.css'
+  styleUrls: ['./actualidad.component.css']  // <-- corregido
 })
 export class ActualidadComponent {
+  plataforma: 'android' | 'ios' = 'android';
 
+  cambiarPlataforma(plataforma: 'android' | 'ios') {
+    this.plataforma = plataforma;
+  }
 }
