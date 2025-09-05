@@ -20,6 +20,7 @@ import { DerechoSindicalComponent } from './derecho-sindical/derecho-sindical.co
 import { LogosComponent } from './logos/logos.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EncuentroMujeresDiversidadsComponent } from './encuentro-mujeres-diversidades/encuentro-mujeres-diversidades.component';
+import { GremioJubiladosJudicialesComponent } from './gremio-jubilados-judiciales/gremio-jubilados-judiciales.component';
 
 
 export const routes: Routes = [
@@ -43,6 +44,7 @@ export const routes: Routes = [
   { path: 'logos', component: LogosComponent },
   { path: 'reglamento-justicia', component: ReglamentoParaLaJusticiaComponent },
   { path: 'historia', component: HistoriaComponent },
+  { path: 'gremio-jubilados-judiciales', component: GremioJubiladosJudicialesComponent },
   { path: 'encuentro-mujeres-diversidades', component: EncuentroMujeresDiversidadsComponent },
   { path: '**', redirectTo: '/home' }
 ];

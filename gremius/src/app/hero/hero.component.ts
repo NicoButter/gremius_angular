@@ -13,16 +13,16 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   noticias = [
     {
-      titulo: 'Día Del Periodista',
-      descripcion: 'Conmemoramos el Día Del Periodista.',
-      image: '/assets/images/dia_del_periodista_2025.png',
+      titulo: 'Encuentro De Mujeres y Diversidades',
+      descripcion: 'Este encuentro será un espacio de reflexión, intercambio y construcción colectiva, pensado para fortalecer la organización, compartir experiencias y seguir ampliando derechos.',
+      image: '/assets/images/encuentro_mujeres_calafate_2025.png',
       autor: 'Equipo de Comunicación'
     },
     {
-      titulo: 'Jueza con pedido de Jury.',
-      descripcion: 'Una jueza con pedido de jury y su secretario sumariado renunció, pero hay denuncias contra magistrados que no avanzaron.',
-      image: '/assets/images/jueza_pierde_el_jury_2025.png',
-      autor: 'Redacción Judicial.'
+      titulo: 'Estrenamos Página WEB!!',
+      descripcion: 'Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias, información sobre actividades, convenios, comunicados oficiales y mucho más.',
+      image: '/assets/images/nueva_pagina_web_1.png',
+      autor: 'Equipo IT.'
     },
     {
       titulo: 'Reunión con el ministro de trabajo',

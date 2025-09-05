@@ -120,6 +120,21 @@
     </ul>
   </li>
 
+
+    <li class="nav-item dropdown">
+      <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('capacitaciones')">
+        Amigos
+      </a>
+      <ul class="dropdown-menu" [class.show]="isDropdownActive('amigos')">
+        <li><a routerLink="/gremio-jubilados-judiciales" (click)="closeMenuOnNavigation()">Gremio de Jbilados Judiciales</a></li>
+      </ul>
+    </li>
+
+
+
+
+
+
    <li class="nav-item dropdown">
     <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('sobre-nosotros')">
       ¿Quiénes Somos?
