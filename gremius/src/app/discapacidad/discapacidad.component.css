@@ -1,0 +1,65 @@
+.discapacidad-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.header-image {
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border-left: 6px solid #444C8A;
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: #5A62A0;
+}
+
+.discapacidad-container h2 {
+    text-align: center;
+    color: #444c8a;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.discapacidad-container h3 {
+    margin-top: 1.5rem;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.discapacidad-container ul {
+    list-style: disc inside;
+    margin: 0.5rem 0 1.5rem 1rem;
+    padding-left: 1rem;
+}
+
+.discapacidad-container li {
+    margin-bottom: 0.8rem;
+}
+
+.closing-text {
+    font-weight: 500;
+    color: #222;
+    margin-top: 2rem;
+    font-style: italic;
+}

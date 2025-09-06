@@ -1,0 +1,32 @@
+<div class="galeria-container">
+  <h2 class="title">Galería Histórica del Gremio Judicial</h2>
+  <p class="subtitle">
+    Recorre más de 20 años de nuestra historia, encuentros, actividades y momentos destacados de nuestro gremio.  
+    Desliza las imágenes para revivir los eventos y ver cómo hemos crecido juntos.
+  </p>
+
+  <div class="carousel-card">
+    <div class="carousel">
+      <button class="nav prev" (click)="prevSlide()">&#10094;</button>
+
+      <div class="slides">
+        <img
+          *ngFor="let image of images; let i = index"
+          [src]="image.src"
+          [alt]="image.alt"
+          [class.active]="i === currentSlide"
+        />
+      </div>
+
+      <button class="nav next" (click)="nextSlide()">&#10095;</button>
+    </div>
+
+    <div class="dots">
+      <span
+        *ngFor="let image of images; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+      ></span>
+    </div>
+  </div>
+</div>

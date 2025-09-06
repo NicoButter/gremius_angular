@@ -21,6 +21,9 @@ import { LogosComponent } from './logos/logos.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EncuentroMujeresDiversidadsComponent } from './encuentro-mujeres-diversidades/encuentro-mujeres-diversidades.component';
 import { GremioJubiladosJudicialesComponent } from './gremio-jubilados-judiciales/gremio-jubilados-judiciales.component';
+import { DiscapacidadComponent } from './discapacidad/discapacidad.component';
+import { GeneroDiversidadComponent } from './genero-diversidad/genero-diversidad.component';
+import { GaleriaHistoricaComponent } from './galeria-historica/galeria-historica.component';
 
 
 export const routes: Routes = [
@@ -46,6 +49,9 @@ export const routes: Routes = [
   { path: 'historia', component: HistoriaComponent },
   { path: 'gremio-jubilados-judiciales', component: GremioJubiladosJudicialesComponent },
   { path: 'encuentro-mujeres-diversidades', component: EncuentroMujeresDiversidadsComponent },
+  { path: 'discapacidad', component: DiscapacidadComponent },
+  { path: 'genero-diversidad', component: GeneroDiversidadComponent },
+  { path: 'galeria-historica', component: GaleriaHistoricaComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
