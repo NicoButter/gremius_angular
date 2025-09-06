@@ -24,6 +24,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       image: '/assets/images/nueva_pagina_web_1.png',
       autor: 'Equipo IT.'
     },
+    {
+      titulo: 'Reunión con el Intendente de Puerto Madryn',
+      descripcion: 'Se gestionó un terreno destinado a los/as judiciales de Santa Cruz, con el objetivo de mejorar la infraestructura y brindar más espacios de uso gremial.',
+      image: '/assets/images/solicitud_terreno_madryn.png',
+      autor: 'Equipo de Comunicación'
+    }
     // {
     //   titulo: 'Reunión con el ministro de trabajo',
     //   descripcion: 'Se acordó una mesa de diálogo para el mes de julio.',
