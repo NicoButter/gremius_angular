@@ -29,7 +29,13 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       descripcion: 'Se gestionó un terreno destinado a los/as judiciales de Santa Cruz, con el objetivo de mejorar la infraestructura y brindar más espacios de uso gremial.',
       image: '/assets/images/solicitud_terreno_madryn.png',
       autor: 'Equipo de Comunicación'
-    }
+    },
+    {
+      titulo: 'Fiesta Judicial 2025',
+      descripcion: '¡No te pierdas la gran Fiesta Judicial 2025! Sorteos con importantes premios, banda en vivo y opciones de menú para celíacos y vegetarianos. Día 15 de noviembre de 2025, 21:00 hs.',
+      image: '/assets/images/fiesta_judicial_2025.png',
+      autor: 'Equipo de Comunicación'
+  }
     // {
     //   titulo: 'Reunión con el ministro de trabajo',
     //   descripcion: 'Se acordó una mesa de diálogo para el mes de julio.',
