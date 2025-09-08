@@ -24,6 +24,8 @@ import { GremioJubiladosJudicialesComponent } from './gremio-jubilados-judiciale
 import { DiscapacidadComponent } from './discapacidad/discapacidad.component';
 import { GeneroDiversidadComponent } from './genero-diversidad/genero-diversidad.component';
 import { GaleriaHistoricaComponent } from './galeria-historica/galeria-historica.component';
+import { BienestarLaboralComponent } from './bienestar-laboral/bienestar-laboral.component';
+import { ProtocoloSaludMentalComponent } from './protocolo-salud-mental/protocolo-salud-mental.component';
 
 
 export const routes: Routes = [
@@ -52,6 +54,8 @@ export const routes: Routes = [
   { path: 'discapacidad', component: DiscapacidadComponent },
   { path: 'genero-diversidad', component: GeneroDiversidadComponent },
   { path: 'galeria-historica', component: GaleriaHistoricaComponent },
+  { path: 'bienestar-laboral', component: BienestarLaboralComponent },
+  { path: 'salud-mental', component: ProtocoloSaludMentalComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

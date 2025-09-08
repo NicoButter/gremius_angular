@@ -35,7 +35,13 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       descripcion: '¡No te pierdas la gran Fiesta Judicial 2025! Sorteos con importantes premios, banda en vivo y opciones de menú para celíacos y vegetarianos. Día 15 de noviembre de 2025, 21:00 hs.',
       image: '/assets/images/fiesta_judicial_2025.png',
       autor: 'Equipo de Comunicación'
-  }
+    },
+    {
+      titulo: 'Nueva obra en Puerto Deseado: Quincho de 200 m²',
+      descripcion: 'Se encuentra en ejecución la primera etapa del quincho de 200 m² en Puerto Deseado',
+      image: '/assets/images/flyer_obra_puerto_deseado.png',
+      autor: 'Equipo de Obras Públicas'
+    }
     // {
     //   titulo: 'Reunión con el ministro de trabajo',
     //   descripcion: 'Se acordó una mesa de diálogo para el mes de julio.',

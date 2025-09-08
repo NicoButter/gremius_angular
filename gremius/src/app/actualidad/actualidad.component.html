@@ -3,8 +3,9 @@
     <p>Mantenete al día con nuestras actividades y logros recientes</p>
     
     <div class="actualidad-grid">
+        <!-- Tarjeta 1: Nueva Web -->
         <article class="actualidad-item app-info">
-            <img src="assets/images/nueva_pagina_web_1.png" alt="banner_bienvenida_2025">
+            <img src="assets/images/nueva_pagina_web_1.png" alt="Nueva página web institucional">
             <h3>¡Estrenamos nueva página web!</h3>
             <p>
                 Te damos la bienvenida a nuestro renovado sitio institucional. 
@@ -13,10 +14,9 @@
                 Diseñamos esta página para que sea un espacio de encuentro, memoria y comunicación 
                 permanente con nuestros afiliados y afiliadas.
             </p>
-            <!-- <a href="https://www.facebook.com/photo?fbid=1093078606182774&set=a.445007694323205" class="leer-mas" target="_blank">Saber más...</a> -->
         </article>
 
-        <!-- Artículo adicional para la aplicación móvil -->
+        <!-- Tarjeta 2: App Móvil -->
         <article class="actualidad-item app-info">
             <h3>Descargá la App Judiciales de Santa Cruz Cred</h3>
             <p>Accedé a tus credenciales y beneficios desde tu celular. Elegí tu sistema operativo:</p>
@@ -38,20 +38,44 @@
             <!-- QR dinámico -->
             <div class="qr-display">
                 <ng-container *ngIf="plataforma === 'android'">
-                <img src="assets/images/qr-code-android.png" alt="QR Android" class="qr-image">
-                <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz" target="_blank">
-                    Descargar en Google Play
-                </a>
+                    <img src="assets/images/qr-code-android.png" alt="QR Android" class="qr-image">
+                    <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz" target="_blank">
+                        Descargar en Google Play
+                    </a>
                 </ng-container>
 
                 <ng-container *ngIf="plataforma === 'ios'">
-                <img src="assets/images/qr-code-ios.png" alt="QR iOS" class="qr-image">
-                <a href="https://apps.apple.com/ar/app/..." target="_blank">
-                    Descargar en App Store
-                </a>
+                    <img src="assets/images/qr-code-ios.png" alt="QR iOS" class="qr-image">
+                    <a href="https://apps.apple.com/ar/app/..." target="_blank">
+                        Descargar en App Store
+                    </a>
                 </ng-container>
             </div>
         </article>
-     
+
+        <!-- Tarjeta 3: Obra en Puerto Deseado -->
+        <article class="actualidad-item app-info">
+            <img src="assets/images/flyer_obra_puerto_deseado.png" alt="Obra del quincho en Puerto Deseado">
+            <h3>Obra en Puerto Deseado: Quincho de 200 m²</h3>
+            <p>
+                Avanza la primera etapa del quincho con inversión de $110 millones. 
+                Incluye materiales estructurales y entrega llave en mano. 
+                La segunda etapa incorporará calefacción y mobiliario.
+            </p>
+            <!-- <a href="#" class="leer-mas">Más detalles de la obra...</a> -->
+        </article>
+
+        <!-- Tarjeta 4: Fiesta Judicial 2025 -->
+        <article class="actualidad-item app-info">
+            <img src="assets/images/fiesta_judicial_2025.png" alt="Fiesta Judicial 2025">
+            <h3>Fiesta Judicial 2025</h3>
+            <p>
+                ¡No te pierdas la gran Fiesta Judicial 2025! 
+                Sorteos con importantes premios, banda en vivo y menúes especiales 
+                para celíacos y vegetarianos. 
+                <strong>15 de noviembre de 2025, 21:00 hs.</strong>
+            </p>
+            <a href="#" class="leer-mas">Reservar tu lugar</a>
+        </article>
     </div>
 </section>
