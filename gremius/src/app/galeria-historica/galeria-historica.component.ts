@@ -18,25 +18,47 @@ export class GaleriaHistoricaComponent implements OnInit, OnDestroy {
   private intervalId: any;
 
   ngOnInit(): void {
-    // Cambiar automáticamente cada 4 segundos
-    this.intervalId = setInterval(() => {
-      this.currentSlide = (this.currentSlide + 1) % this.images.length;
-    }, 4000);
+    this.startAutoSlide();
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.intervalId);
+    this.clearAutoSlide();
+  }
+
+  // Método para iniciar el temporizador
+  private startAutoSlide(): void {
+    this.clearAutoSlide(); // Por si acaso ya existía
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+    }, 4000);
+  }
+
+  // Método para limpiar el temporizador
+  private clearAutoSlide(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
   }
 
   goToSlide(index: number): void {
     this.currentSlide = index;
+    this.restartAutoSlide();
   }
 
   prevSlide(): void {
     this.currentSlide = (this.currentSlide - 1 + this.images.length) % this.images.length;
+    this.restartAutoSlide();
   }
 
   nextSlide(): void {
     this.currentSlide = (this.currentSlide + 1) % this.images.length;
+    this.restartAutoSlide();
+  }
+
+  // Reinicia el temporizador después de cualquier interacción
+  private restartAutoSlide(): void {
+    this.clearAutoSlide();
+    this.startAutoSlide();
   }
 }
