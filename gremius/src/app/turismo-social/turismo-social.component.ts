@@ -33,7 +33,7 @@ export class TurismoSocialComponent {
     },
     {
       city: 'PUERTO SAN JULIÁN',
-      address: '3 de Julio esquina Colón',
+      address: '9 de Julio 1186',
       phone: '2966707561',
       email: 'empleadosjudiciales3dejulio@hotmail.com',
       schedule: '9 a 12 hs y de 16 a 19 hs (Lunes a Viernes)',

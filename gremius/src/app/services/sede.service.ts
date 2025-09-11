@@ -1,4 +1,3 @@
-// gremius/src/app/services/sede.service.ts
 import { Injectable } from '@angular/core';
 
 export interface Sede {
@@ -35,7 +34,7 @@ export class SedesService {
       address: 'Calle Los Glaciares 456, El Calafate, Santa Cruz',
       mapIframeUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1304077.025895104!2d-74.57511890625001!3d-50.328776600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdbb0d00125c6d9d%3A0xa87108c486445307!2sGremio%20Judicial%20%E2%80%9C3%20de%20julio%E2%80%9D%20(Sede%20El%20Calafate)!5e0!3m2!1ses!2sar!4v1755114200780!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       images: ['assets/images/sede_el_calafate_1.png', 'assets/images/sede_el_calafate_2.png', 'assets/images/sede_el_calafate_2.png'],
-      videos: ['https://www.youtube.com/embed/VIDEO_ID_2'],
+      videos: ['https://www.youtube.com/embed/X0PgSGNhctY'],
     },
     {
       id: 'sede3',

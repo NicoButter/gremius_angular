@@ -27,6 +27,7 @@ import { BienestarLaboralComponent } from './bienestar-laboral/bienestar-laboral
 import { ProtocoloSaludMentalComponent } from './protocolo-salud-mental/protocolo-salud-mental.component';
 import { ConveniosSindicalesComponent } from './convenios-sindicales/convenios-sindicales.component';
 import { TurismoSocialComponent } from './turismo-social/turismo-social.component';
+import { AccionSocialComponent } from './accion-social/accion-social.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -58,6 +59,7 @@ export const routes: Routes = [
   { path: 'salud-mental', component: ProtocoloSaludMentalComponent },
   { path: 'convenios-sindicales', component: ConveniosSindicalesComponent },
   { path: 'turismo-social', component: TurismoSocialComponent },
+  { path: 'accion-social', component: AccionSocialComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

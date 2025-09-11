@@ -77,10 +77,12 @@ header.shrink .title {
 
 .title-text {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  background: rgba(255, 255, 255, 0.9);
+  /* Fondo blanco semitransparente */
   padding: 5px 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
 }
 
 /* .title {
