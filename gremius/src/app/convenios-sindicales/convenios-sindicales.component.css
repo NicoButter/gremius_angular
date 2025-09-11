@@ -1,7 +1,7 @@
 .convenios-container {
     max-width: 1000px;
     margin: 2rem auto;
-    padding: 2rem;
+    padding: 1rem 2rem;
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     background: #f9f9f9;
@@ -11,7 +11,7 @@
 
 .title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #444c8a;
     /* azul institucional */
@@ -36,11 +36,8 @@
 
 .logos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* siempre 3 columnas */
-    grid-template-rows: repeat(2, auto);
-    /* 2 filas automáticas */
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
     justify-items: center;
     align-items: center;
 }
@@ -48,15 +45,15 @@
 
 .logo-card {
     background: #fff;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-card img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
@@ -64,6 +61,26 @@
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .logos-grid {
+        grid-template-columns: 1fr; /* una columna en móvil */
+        gap: 1rem;
+    }
+
+    .intro-card {
+        padding: 1rem;
+    }
+
+    .logo-card {
+        padding: 0.8rem;
+    }
+}
+
 
 @media (max-width: 768px) {
     .logos-grid {
