@@ -1,8 +1,5 @@
 <section class="gremio-container">
   <div class="imagenes-destacadas">
-    <!-- Logo del gremio -->
-    <!-- <img [src]="gremio.logoUrl" alt="Logo {{ gremio.titulo }}" class="logo"> -->
-
     <!-- Imagen de la sede -->
     <img [src]="gremio.sedeUrl" alt="Sede del gremio Maipú esquina Richieri" class="sede">
   </div>
@@ -14,6 +11,60 @@
   <div class="extras" *ngIf="gremio.extras?.length">
     <p *ngFor="let extra of gremio.extras">
       <strong>{{ extra.titulo }}:</strong> {{ extra.texto }}
+    </p>
+  </div>
+
+  <!-- Nuevo bloque de historia -->
+  <div class="historia-container">
+    <p>
+      Hace 20 años, un 3 de febrero de 2005, un grupo de jubilados judiciales con inquietudes y sueños compartidos decidió reunirse por primera vez para dar forma al <strong>Centro de Jubilados y Pensionados del Poder Judicial</strong>. 
+      Desde aquel inicio, quedó establecido que podrían ser socios los empleados, magistrados y funcionarios jubilados del Poder Judicial.
+    </p>
+
+    <h3>Comisión Directiva Constitutiva</h3>
+    <p>
+      El 1º de marzo de 2005 se celebró la Asamblea Constitutiva del Centro de Jubilados y Pensionados del Poder Judicial, conformándose la primera Comisión Directiva con la siguiente integración:
+    </p>
+    <ul>
+      <li><strong>Presidenta:</strong> Alicia Inés Troncoso</li>
+      <li><strong>Secretaria:</strong> Alicia María Gómez</li>
+      <li><strong>Tesorera:</strong> María Cristina Mirol</li>
+      <li><strong>Vocal 1ª:</strong> Mónica Susana García</li>
+      <li><strong>Vocal 2ª:</strong> Hilda del Carmen Cárdenas</li>
+      <li><strong>Vocal 3ª:</strong> Adriana Rosa Dileva</li>
+    </ul>
+
+    <h4>Vocales Suplentes</h4>
+    <ul>
+      <li>Sara de las Mercedes Vera</li>
+      <li>María Cristina Segovia</li>
+      <li>Mabel Sáez</li>
+    </ul>
+
+    <h4>Comisión Revisora de Cuentas</h4>
+    <ul>
+      <li>Juana Palmira Núñez</li>
+      <li>Ana Elisa Medina</li>
+    </ul>
+
+    <h4>Revisoras de Cuentas Suplentes</h4>
+    <ul>
+      <li>María Teresa Gaberty</li>
+      <li>Elisa del Rosario Trevisan</li>
+    </ul>
+
+    <p>
+      Así comenzó este camino como Asociación, con un objetivo central inspirado en su Estatuto: 
+      <em>fortalecer la solidaridad, y promover actividades sociales, culturales y recreativas que nos mantengan unidos y activos</em>.
+    </p>
+
+    <p>
+      Hoy, dos décadas después, celebramos con orgullo un logro colectivo: nuestro propio edificio, ubicado en las calles <strong>Richieri y Maipú</strong>. 
+      La sede social y el salón quincho son fruto del esfuerzo y compromiso de todos nuestros asociados, más allá de las distintas comisiones que fueron parte de esta historia.
+    </p>
+
+    <p>
+      Este espacio no es solo ladrillos y paredes: es la casa común que construimos entre todos, símbolo de veinte años de trabajo, unión y pertenencia.
     </p>
   </div>
 </section>
