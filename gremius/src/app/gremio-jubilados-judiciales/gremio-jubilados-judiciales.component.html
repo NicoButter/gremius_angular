@@ -1,17 +1,19 @@
 <section class="gremio-container">
-  <div class="imagenes-destacadas">
-    <!-- Imagen de la sede -->
-    <img [src]="gremio.sedeUrl" alt="Sede del gremio Maipú esquina Richieri" class="sede">
-  </div>
+  
 
   <h2 class="titulo">{{ gremio.titulo }}</h2>
 
   <p class="descripcion">{{ gremio.descripcion }}</p>
 
   <div class="extras" *ngIf="gremio.extras?.length">
-    <p *ngFor="let extra of gremio.extras">
+    <!-- <p *ngFor="let extra of gremio.extras">
       <strong>{{ extra.titulo }}:</strong> {{ extra.texto }}
-    </p>
+    </p> -->
+  </div>
+
+  <div class="imagenes-destacadas">
+    <!-- Imagen de la sede -->
+    <img [src]="gremio.sedeUrl" alt="Sede del gremio Maipú esquina Richieri" class="sede">
   </div>
 
   <!-- Nuevo bloque de historia -->
