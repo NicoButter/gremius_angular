@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { HomeComponent } from './home/home.component';
 import { DelegadosAfiliadosComponent } from './delegados-afiliados/delegados-afiliados.component';
 import { LeyParitaria3022Component } from './ley-paritaria-3022/ley-paritaria-3022.component';
@@ -27,7 +26,7 @@ import { GaleriaHistoricaComponent } from './galeria-historica/galeria-historica
 import { BienestarLaboralComponent } from './bienestar-laboral/bienestar-laboral.component';
 import { ProtocoloSaludMentalComponent } from './protocolo-salud-mental/protocolo-salud-mental.component';
 import { ConveniosSindicalesComponent } from './convenios-sindicales/convenios-sindicales.component';
-
+import { TurismoSocialComponent } from './turismo-social/turismo-social.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -58,6 +57,7 @@ export const routes: Routes = [
   { path: 'bienestar-laboral', component: BienestarLaboralComponent },
   { path: 'salud-mental', component: ProtocoloSaludMentalComponent },
   { path: 'convenios-sindicales', component: ConveniosSindicalesComponent },
+  { path: 'turismo-social', component: TurismoSocialComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

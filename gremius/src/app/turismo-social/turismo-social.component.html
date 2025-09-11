@@ -1,0 +1,56 @@
+<div class="container">
+  <h1 class="title">Disponibilidades - Gremio Judicial</h1>
+
+  <div class="locations-grid">
+    <div class="location-card" *ngFor="let loc of locations">
+      <h2 class="city">{{ loc.city }}</h2>
+      <p><strong>Dirección:</strong> {{ loc.address }}</p>
+      <p><strong>Teléfono:</strong> {{ loc.phone }}</p>
+      <p><strong>Email:</strong> {{ loc.email }}</p>
+      <p><strong>Horario de atención:</strong> {{ loc.schedule }}</p>
+
+      <!-- Departamentos -->
+      <div *ngIf="loc.departments && loc.departments.length > 0" class="section">
+        <h3>Departamentos</h3>
+        <div class="item-list">
+          <div class="item" *ngFor="let dept of loc.departments">
+            <h4>{{ dept.name }} (hasta {{ dept.capacity }} personas)</h4>
+            <p>{{ dept.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cabañas (solo Calafate) -->
+      <div *ngIf="loc.cabins && loc.cabins.length > 0" class="section">
+        <h3>Cabañas</h3>
+        <div class="item-list">
+          <div class="item" *ngFor="let cabin of loc.cabins">
+            <h4>{{ cabin.name }} (hasta {{ cabin.capacity }} personas)</h4>
+            <p>{{ cabin.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sala compartida -->
+      <div *ngIf="loc.hasSharedRoom" class="section">
+        <p>Contamos con sala de SUM compartida y equipada.</p>
+      </div>
+
+      <!-- Salón de eventos -->
+      <div *ngIf="loc.eventHall" class="section event-hall">
+        <h3>Salón de Eventos (Capacidad: {{ loc.eventHall.capacity }} personas)</h3>
+        <ul>
+          <li><strong>De 10 a 17 hs:</strong> {{ loc.eventHall.rates.day }}</li>
+          <li><strong>De 20 a 05 hs:</strong> {{ loc.eventHall.rates.night }}</li>
+          <li><strong>De 10 a 05 hs:</strong> {{ loc.eventHall.rates.full }}</li>
+        </ul>
+      </div> 
+    </div>
+    
+  </div>
+   <div class="download-section">
+    <button (click)="downloadPdf()" class="download-btn">
+      Descargar PDF Completo
+    </button>
+  </div>
+</div>
