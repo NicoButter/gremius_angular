@@ -26,6 +26,7 @@ import { GeneroDiversidadComponent } from './genero-diversidad/genero-diversidad
 import { GaleriaHistoricaComponent } from './galeria-historica/galeria-historica.component';
 import { BienestarLaboralComponent } from './bienestar-laboral/bienestar-laboral.component';
 import { ProtocoloSaludMentalComponent } from './protocolo-salud-mental/protocolo-salud-mental.component';
+import { ConveniosSindicalesComponent } from './convenios-sindicales/convenios-sindicales.component';
 
 
 export const routes: Routes = [
@@ -56,6 +57,7 @@ export const routes: Routes = [
   { path: 'galeria-historica', component: GaleriaHistoricaComponent },
   { path: 'bienestar-laboral', component: BienestarLaboralComponent },
   { path: 'salud-mental', component: ProtocoloSaludMentalComponent },
+  { path: 'convenios-sindicales', component: ConveniosSindicalesComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

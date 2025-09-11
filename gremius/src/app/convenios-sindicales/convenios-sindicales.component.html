@@ -1,0 +1,23 @@
+<div class="convenios-container">
+  <h2 class="title">Más unión, más acompañamiento</h2>
+
+  <div class="intro-card">
+    <p>
+      En Judiciales Santa Cruz creemos que la fuerza del sindicalismo está en el encuentro y en el
+      trabajo conjunto. Por eso, seguimos ampliando nuestros lazos con otros sindicatos de la
+      provincia, firmando convenios de cooperación que nos permiten estar más cerca, acompañarnos y
+      fortalecernos mutuamente.
+    </p>
+    <p>
+      Estos acuerdos son una muestra de que los trabajadores y trabajadoras, unidos, podemos
+      construir un presente y un futuro con mayor organización, solidaridad y presencia en todo el
+      territorio.
+    </p>
+  </div>
+
+  <div class="logos-grid">
+    <div class="logo-card" *ngFor="let logo of logos">
+      <img [src]="logo.src" [alt]="logo.alt" />
+    </div>
+  </div>
+</div>
