@@ -1,0 +1,13 @@
+<section class="novedades-container">
+  <h2 class="title">Novedades en nuestro Centro de Jubilados</h2>
+
+  <div class="cards-grid">
+    <div class="card" *ngFor="let noticia of novedades">
+      <img [src]="noticia.image" [alt]="noticia.title" />
+      <div class="card-content">
+        <h3>{{ noticia.title }}</h3>
+        <p>{{ noticia.detail }}</p>
+      </div>
+    </div>
+  </div>
+</section>
