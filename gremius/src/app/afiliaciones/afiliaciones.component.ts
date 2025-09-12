@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AfiliacionesComponent implements OnInit {
   destinatario: string | null = null;
-  afiliacionData = { nombre: '', email: '', dni: '', telefono: '', mensaje: '' };
+  afiliacionData = { nombre: '', email: '', dni: '', cuil:'', telefono: '', mensaje: '' };
   destinatarios = [
     { label: 'Sede Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com' },
     { label: 'Sede San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com' }
@@ -42,7 +42,7 @@ export class AfiliacionesComponent implements OnInit {
 
   resetForm() {
     this.destinatario = null;
-    this.afiliacionData = { nombre: '', email: '', dni: '', telefono: '', mensaje: '' };
+    this.afiliacionData = { nombre: '', email: '', dni: '', cuil: '', telefono: '', mensaje: '' };
   }
 
   get formAction(): string {
