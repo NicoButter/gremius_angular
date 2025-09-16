@@ -13,21 +13,19 @@ import emailjs from '@emailjs/browser';
 })
 export class ContactComponent implements OnInit {
   destinatario: string | null = null;
+  selectedTemplateID: string | null = null;
   contactData = { name: '', email: '', message: '' };
   destinatarios = [
-    { label: 'Gremio Judiciales Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com' },
-    { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com' }
+    { label: 'Gremio Judiciales Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com', templateID: 'template_wluyfpg' },
+    { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com', templateID: 'template_8e3q3cm' }
   ];
 
   showSuccessAlert = false;
   sending = false;
   error = false;
 
-  // Tus IDs de EmailJS
   private serviceID = 'service_ck9nnbd';
-  private templateRioID = 'template_wluyfpg';
-  private templateCaletaID = 'template_8e3q3cm';
-  private publicKey = 'user_zzz'; // reemplazá con tu public key real
+  private publicKey = 'cd4j8Dqisx59BKdag';
 
   constructor(private route: ActivatedRoute) {}
 
@@ -40,48 +38,40 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  selectDestinatario(email: string) {
-    this.destinatario = email;
+  selectDestinatario(dest: any) {
+    this.destinatario = dest.email;
+    this.selectedTemplateID = dest.templateID;
     console.log('Destinatario seleccionado:', this.destinatario);
   }
 
   back() {
     this.destinatario = null;
+    this.selectedTemplateID = null;
     this.contactData = { name: '', email: '', message: '' };
     this.sending = false;
     this.error = false;
   }
 
   sendEmail() {
-    if (!this.destinatario) return;
+    if (!this.destinatario || !this.selectedTemplateID) return;
 
     this.sending = true;
     this.error = false;
 
-    // Elegir template según destinatario
-    let templateID = '';
-    if (this.destinatario === 'gremiojudicialesrg@gmail.com') {
-      templateID = this.templateRioID;
-    } else if (this.destinatario === 'empleadosjudiciales3dejulio@hotmail.com') {
-      templateID = this.templateCaletaID;
-    }
-
     const templateParams = {
+      to_email: this.destinatario,
       from_name: this.contactData.name,
       from_email: this.contactData.email,
       message: this.contactData.message
     };
 
-    console.log('Enviando correo con params:', templateParams);
-
-    emailjs.send(this.serviceID, templateID, templateParams, this.publicKey)
+    emailjs.send(this.serviceID, this.selectedTemplateID, templateParams, this.publicKey)
       .then(() => {
         this.sending = false;
         this.showSuccessAlert = true;
         setTimeout(() => this.back(), 3000);
-      })
-      .catch(err => {
-        console.error('Error enviando correo:', err);
+      }, (err) => {
+        console.error('❌ Error enviando correo:', err);
         this.sending = false;
         this.error = true;
       });
