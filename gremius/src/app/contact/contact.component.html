@@ -41,7 +41,7 @@
   <div *ngIf="destinatario" class="contact-form">
     <!-- <h3>Enviar mensaje a {{ destinatario }}</h3> -->
 
-    <form [attr.action]="formAction" method="POST">
+    <form *ngIf="formAction" [attr.action]="formAction" method="POST">
       <label>Nombre:</label>
       <input type="text" name="name" [(ngModel)]="contactData.name" required />
 
