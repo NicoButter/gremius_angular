@@ -22,10 +22,9 @@
     </ul>
   </div>
 
-  <!-- Success alert -->
-  <div *ngIf="showSuccessAlert" class="success-alert">
-    ¡Correo enviado exitosamente!
-  </div>
+  <!-- Mensajes -->
+  <div *ngIf="sending" class="info-alert">Enviando tu mensaje...</div>
+  <div *ngIf="sent" class="success-alert">¡Correo enviado exitosamente!</div>
 
   <!-- Selección de destinatario -->
   <div *ngIf="!destinatario" class="destinatarios">
@@ -39,9 +38,12 @@
 
   <!-- Formulario de contacto -->
   <div *ngIf="destinatario" class="contact-form">
-    <!-- <h3>Enviar mensaje a {{ destinatario }}</h3> -->
+    <form *ngIf="formAction"
+          [attr.action]="formAction"
+          method="POST"
+          target="_blank"
+          (submit)="onSend()">
 
-    <form *ngIf="formAction" [attr.action]="formAction" method="POST">
       <label>Nombre:</label>
       <input type="text" name="name" [(ngModel)]="contactData.name" required />
 

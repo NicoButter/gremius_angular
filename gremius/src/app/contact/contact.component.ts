@@ -19,17 +19,21 @@ export class ContactComponent implements OnInit {
   ];
   showSuccessAlert = false;
 
+  // flags de feedback
+  sending = false;
+  sent = false;
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Check for 'success' query parameter on page load
+    // Chequear parámetro success (cuando vuelve desde FormSubmit)
     this.route.queryParams.subscribe(params => {
       if (params['success'] === 'true') {
         this.showSuccessAlert = true;
         setTimeout(() => {
           this.showSuccessAlert = false;
-          this.back(); // Reset form after showing alert
-        }, 3000); // Hide alert after 3 seconds
+          this.back();
+        }, 3000);
       }
     });
   }
@@ -45,5 +49,15 @@ export class ContactComponent implements OnInit {
 
   get formAction(): string {
     return this.destinatario ? `https://formsubmit.co/${this.destinatario}` : '';
+  }
+
+  onSend() {
+    this.sending = true;
+    setTimeout(() => {
+      this.sending = false;
+      this.sent = true;
+      // Ocultamos el mensaje después de 3s
+      setTimeout(() => this.sent = false, 3000);
+    }, 800);
   }
 }
