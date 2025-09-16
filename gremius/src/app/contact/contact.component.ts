@@ -23,10 +23,11 @@ export class ContactComponent implements OnInit {
   sending = false;
   error = false;
 
-  // IDs de EmailJS (reemplazar templateID y publicKey con los tuyos)
+  // Tus IDs de EmailJS
   private serviceID = 'service_ck9nnbd';
-  private templateID = 'template_yyy';
-  private publicKey = 'user_zzz';
+  private templateRioID = 'template_wluyfpg';
+  private templateCaletaID = 'template_8e3q3cm';
+  private publicKey = 'user_zzz'; // reemplazá con tu public key real
 
   constructor(private route: ActivatedRoute) {}
 
@@ -39,13 +40,11 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  // Selección de sede
   selectDestinatario(email: string) {
     this.destinatario = email;
     console.log('Destinatario seleccionado:', this.destinatario);
   }
 
-  // Volver a la selección inicial
   back() {
     this.destinatario = null;
     this.contactData = { name: '', email: '', message: '' };
@@ -53,30 +52,36 @@ export class ContactComponent implements OnInit {
     this.error = false;
   }
 
-  // Envío de correo con EmailJS
   sendEmail() {
     if (!this.destinatario) return;
 
     this.sending = true;
     this.error = false;
 
+    // Elegir template según destinatario
+    let templateID = '';
+    if (this.destinatario === 'gremiojudicialesrg@gmail.com') {
+      templateID = this.templateRioID;
+    } else if (this.destinatario === 'empleadosjudiciales3dejulio@hotmail.com') {
+      templateID = this.templateCaletaID;
+    }
+
     const templateParams = {
-      to_email: this.destinatario,             // correo del gremio
-      from_name: this.contactData.name,        // nombre del usuario
-      from_email: this.contactData.email,      // correo del usuario
-      message: this.contactData.message        // mensaje
+      from_name: this.contactData.name,
+      from_email: this.contactData.email,
+      message: this.contactData.message
     };
 
     console.log('Enviando correo con params:', templateParams);
 
-    emailjs.send(this.serviceID, this.templateID, templateParams, this.publicKey)
+    emailjs.send(this.serviceID, templateID, templateParams, this.publicKey)
       .then(() => {
         this.sending = false;
         this.showSuccessAlert = true;
-        console.log('✅ Correo enviado correctamente');
-        setTimeout(() => this.back(), 3000);   // reset del formulario
-      }, (err) => {
-        console.error('❌ Error enviando correo:', err);
+        setTimeout(() => this.back(), 3000);
+      })
+      .catch(err => {
+        console.error('Error enviando correo:', err);
         this.sending = false;
         this.error = true;
       });
