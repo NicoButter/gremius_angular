@@ -12,23 +12,19 @@
       <li><strong>¿Qué puedo consultar?</strong><br>Podés escribirnos por reservas, beneficios o consultas administrativas.</li>
       <li><strong>¿Si no soy afiliado/a puedo alquilar el Quincho o cabañas del Gremio?</strong><br>Sí, hace tu consulta y te informamos las condiciones.</li>
       <li><strong>¿En qué localidades el gremio tiene alojamiento propio?</strong><br>Actualmente contamos con alojamiento en Río Gallegos, Caleta Olivia, San Julián y El Calafate.</li>
-      <li><strong>¿Cómo hago para afiliarme al gremio?</strong><br>Tenes que trabajar para el Poder Judicial de Santa Cruz. Completa la Pre carga del formulario de afiliación en la web y te contactaremos para que acerques a tu sede más cercana, o consultanos por mail para recibir asistencia.</li>
+      <li><strong>¿Cómo hago para afiliarme al gremio?</strong><br>Tenes que trabajar para el Poder Judicial de Santa Cruz. Completa la pre-carga del formulario de afiliación en la web y te contactaremos para que acerques a tu sede más cercana, o consultanos por mail para recibir asistencia.</li>
       <li><strong>¿Qué beneficios tengo como afiliado/a?</strong><br>Accedés a turismo social, capacitaciones, asesoramiento gremial y distintos convenios.</li>
       <li><strong>¿Cómo reservo una cabaña o departamento?</strong><br>Las reservas se realizan escribiendo a la sede correspondiente o si sos afiliado/a a través de la app “Mi Credencial”. Encontrás la información en la sección Turismo Social.</li>
-      <li><strong>¿Cuánto tardan en responder?</strong><br>Generalmente dentro de las 48 hs hábiles. Récorda que la atención es de lunes a viernes de 9:00 a 12:00 y 16:00 a 19:00 horas.</li>
+      <li><strong>¿Cuánto tardan en responder?</strong><br>Generalmente dentro de las 48 hs hábiles. La atención es de lunes a viernes de 9:00 a 12:00 y 16:00 a 19:00 horas.</li>
       <li><strong>¿Dónde encuentro información sobre el sistema salarial y paritarias?</strong><br>En la sección Utilidades, donde también podés consultar derechos laborales y sindicales.</li>
       <li><strong>¿Cómo me inscribo en capacitaciones?</strong><br>Podés anotarte desde la sección Capacitaciones de la web o enviando un mensaje a tu sede.</li>
       <li><strong>¿Si soy contratado/a por el Poder Judicial de la Provincia de Santa Cruz, me puedo afiliar?</strong><br>Sí, podés afiliarte al gremio.</li>
     </ul>
   </div>
 
-  <!-- Mensajes -->
-  <div *ngIf="sending" class="info-alert">Enviando tu mensaje...</div>
-  <div *ngIf="sent" class="success-alert">¡Correo enviado exitosamente!</div>
-
   <!-- Selección de destinatario -->
   <div *ngIf="!destinatario" class="destinatarios">
-    <p>Seleccioná la Sede con la que te querés contactar:</p>
+    <p>Seleccioná la sede:</p>
     <ul>
       <li *ngFor="let d of destinatarios">
         <button (click)="selectDestinatario(d.email)">{{ d.label }}</button>
@@ -38,30 +34,25 @@
 
   <!-- Formulario de contacto -->
   <div *ngIf="destinatario" class="contact-form">
-    <form *ngIf="formAction"
-      [attr.action]="formAction"
-      method="POST"
-      (ngSubmit)="onSend()">
-      
+    <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
       <label>Nombre:</label>
-      <input type="text" name="name" [(ngModel)]="contactData.name" required />
+      <input type="text" [(ngModel)]="contactData.name" name="name" required #nameInput="ngModel">
 
       <label>Email:</label>
-      <input type="email" name="email" [(ngModel)]="contactData.email" required />
+      <input type="email" [(ngModel)]="contactData.email" name="email" required #emailInput="ngModel">
 
       <label>Mensaje:</label>
-      <textarea name="message" [(ngModel)]="contactData.message" rows="5" required></textarea>
-
-      <!-- Hidden fields de FormSubmit -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://judicialesdesantacruz.org.ar/contacto?success=true">
-      <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
+      <textarea [(ngModel)]="contactData.message" name="message" rows="5" required #messageInput="ngModel"></textarea>
 
       <div class="form-buttons">
-        <button type="button" class="back-btn" (click)="back()">← Volver</button>
-        <button type="submit">Enviar</button>
+        <button type="button" (click)="back()">← Volver</button>
+        <button type="submit" [disabled]="sending || contactForm.invalid">
+          {{ sending ? 'Enviando...' : 'Enviar' }}
+        </button>
       </div>
+
+      <p *ngIf="error" class="error">❌ Ocurrió un error al enviar. Intentá de nuevo.</p>
+      <p *ngIf="showSuccessAlert" class="success">✅ Correo enviado exitosamente!</p>
     </form>
   </div>
 </div>

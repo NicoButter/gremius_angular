@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -17,53 +18,67 @@ export class ContactComponent implements OnInit {
     { label: 'Gremio Judiciales Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com' },
     { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com' }
   ];
-  showSuccessAlert = false;
 
-  // flags de feedback
+  showSuccessAlert = false;
   sending = false;
-  sent = false;
+  error = false;
+
+  // IDs de EmailJS (reemplazar templateID y publicKey con los tuyos)
+  private serviceID = 'service_ck9nnbd';
+  private templateID = 'template_yyy';
+  private publicKey = 'user_zzz';
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Chequear parámetro success (cuando vuelve desde FormSubmit)
     this.route.queryParams.subscribe(params => {
       if (params['success'] === 'true') {
         this.showSuccessAlert = true;
-        setTimeout(() => {
-          this.showSuccessAlert = false;
-          this.back();
-        }, 3000);
+        setTimeout(() => this.showSuccessAlert = false, 3000);
       }
     });
   }
 
+  // Selección de sede
   selectDestinatario(email: string) {
     this.destinatario = email;
+    console.log('Destinatario seleccionado:', this.destinatario);
   }
 
+  // Volver a la selección inicial
   back() {
     this.destinatario = null;
     this.contactData = { name: '', email: '', message: '' };
+    this.sending = false;
+    this.error = false;
   }
 
-  get formAction(): string {
-    return this.destinatario ? `https://formsubmit.co/${this.destinatario}` : '';
-  }
-
-  onSend() {
-    console.log('👉 Enviando formulario con action:', this.formAction);
-    console.log('👉 Datos del formulario:', this.contactData);
+  // Envío de correo con EmailJS
+  sendEmail() {
+    if (!this.destinatario) return;
 
     this.sending = true;
+    this.error = false;
 
-    // Simulación de envío
-    setTimeout(() => {
-      this.sending = false;
-      this.sent = true;
-      console.log('✅ Formulario enviado (simulación)');
+    const templateParams = {
+      to_email: this.destinatario,             // correo del gremio
+      from_name: this.contactData.name,        // nombre del usuario
+      from_email: this.contactData.email,      // correo del usuario
+      message: this.contactData.message        // mensaje
+    };
 
-      setTimeout(() => this.sent = false, 3000);
-    }, 800);
+    console.log('Enviando correo con params:', templateParams);
+
+    emailjs.send(this.serviceID, this.templateID, templateParams, this.publicKey)
+      .then(() => {
+        this.sending = false;
+        this.showSuccessAlert = true;
+        console.log('✅ Correo enviado correctamente');
+        setTimeout(() => this.back(), 3000);   // reset del formulario
+      }, (err) => {
+        console.error('❌ Error enviando correo:', err);
+        this.sending = false;
+        this.error = true;
+      });
   }
 }
