@@ -42,7 +42,7 @@ export class ContactComponent implements OnInit {
   selectDestinatario(dest: any) {
     this.destinatario = dest.email;
     this.selectedTemplateID = dest.templateID;
-    console.log('Destinatario seleccionado:', this.destinatario);
+    //console.log('Destinatario seleccionado:', this.destinatario);
   }
 
   back() {
