@@ -39,11 +39,10 @@
   <!-- Formulario de contacto -->
   <div *ngIf="destinatario" class="contact-form">
     <form *ngIf="formAction"
-          [attr.action]="formAction"
-          method="POST"
-          target="_blank"
-          (submit)="onSend()">
-
+      [attr.action]="formAction"
+      method="POST"
+      (ngSubmit)="onSend()">
+      
       <label>Nombre:</label>
       <input type="text" name="name" [(ngModel)]="contactData.name" required />
 
@@ -53,7 +52,7 @@
       <label>Mensaje:</label>
       <textarea name="message" [(ngModel)]="contactData.message" rows="5" required></textarea>
 
-      <!-- Config extra de FormSubmit -->
+      <!-- Hidden fields de FormSubmit -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://judicialesdesantacruz.org.ar/contacto?success=true">

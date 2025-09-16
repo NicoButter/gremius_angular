@@ -52,11 +52,17 @@ export class ContactComponent implements OnInit {
   }
 
   onSend() {
+    console.log('👉 Enviando formulario con action:', this.formAction);
+    console.log('👉 Datos del formulario:', this.contactData);
+
     this.sending = true;
+
+    // Simulación de envío
     setTimeout(() => {
       this.sending = false;
       this.sent = true;
-      // Ocultamos el mensaje después de 3s
+      console.log('✅ Formulario enviado (simulación)');
+
       setTimeout(() => this.sent = false, 3000);
     }, 800);
   }
