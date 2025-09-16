@@ -15,13 +15,14 @@ export class ContactComponent implements OnInit {
   destinatario: string | null = null;
   selectedTemplateID: string | null = null;
   contactData = { name: '', email: '', message: '' };
+
   destinatarios = [
     { label: 'Gremio Judiciales Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com', templateID: 'template_wluyfpg' },
     { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com', templateID: 'template_8e3q3cm' }
   ];
 
-  showSuccessAlert = false;
   sending = false;
+  showSuccessAlert = false;
   error = false;
 
   private serviceID = 'service_ck9nnbd';
@@ -70,7 +71,8 @@ export class ContactComponent implements OnInit {
         this.sending = false;
         this.showSuccessAlert = true;
         setTimeout(() => this.back(), 3000);
-      }, (err) => {
+      })
+      .catch(err => {
         console.error('❌ Error enviando correo:', err);
         this.sending = false;
         this.error = true;
