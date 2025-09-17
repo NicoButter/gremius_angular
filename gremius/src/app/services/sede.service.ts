@@ -44,7 +44,7 @@ export class SedesService {
       address: 'Av. 9 de Julio 789, San Julián, Santa Cruz',
       mapIframeUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2987.456!2d-67.730!3d-49.306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDkuMzA2LCAtNjcuNzMw!5e0!3m2!1sen!2sar!4v1631234567892!5m2!1sen!2sar<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d738.6754817200838!2d-67.71652504277236!3d-49.31483291574104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdc4037c0b494ce1%3A0x5d2ac3c95805117d!2sLounge%20Quincho%20de%20Judiciales!5e0!3m2!1ses!2sar!4v1755114513291!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       images: ['assets/images/sede_san_julian_1.png', 'assets/images/sede_san_julian_2.png'],
-      videos: ['https://www.youtube.com/embed/VIDEO_ID_3'],
+      videos: ['https://www.youtube.com/embed/9Ayupbb4l4Y'],
     },
     {
       id: 'sede4',
