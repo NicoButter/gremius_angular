@@ -41,6 +41,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       descripcion: 'Se encuentra en ejecución la primera etapa del quincho de 200 m² en Puerto Deseado',
       image: '/assets/images/flyer_obra_puerto_deseado.png',
       autor: 'Equipo de Obras Públicas'
+    },
+    {
+      titulo: 'Comunicado del Frente Sindical de Santa Cruz',
+      descripcion: 'Desde el movimiento obrero nos solidarizamos con la justa lucha de los docentes organizados en la ADoSaC, y exigimos que se deje sin efecto la citada multa y cesen las acciones de carácter antisindical.',
+      image: '/assets/images/reclamo_frente_sindical_hero.png',
+      autor: 'Equipo de Prensa'
     }
     // {
     //   titulo: 'Reunión con el ministro de trabajo',
