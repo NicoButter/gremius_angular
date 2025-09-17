@@ -110,28 +110,35 @@
 
   
    <footer class="historia-footer">
-    <h3>Nuestra memoria es colectiva</h3>
-    <p>
-      El gremio no se entiende sin las voces de quienes lo hacen día a día. Compartí tu historia y la recibiremos en prensa.
-    </p>
+<section class="historia-form">
+  <h3>Comparte tu historia</h3>
+    <p>Si sos afiliado/a, completá el formulario y la recibirá nuestro equipo de prensa.</p>
 
-    <h4>Comparte tu historia</h4>
+    <!-- ✅ Mensaje de éxito -->
+    <div *ngIf="showSuccessAlert" class="alert success">
+      ✅ ¡Gracias! Tu historia fue enviada correctamente.
+    </div>
 
-    <div *ngIf="showSuccessAlert" class="alert-success">
-      ¡Gracias! Tu historia fue enviada correctamente.
+    <!-- ❌ Mensaje de error -->
+    <div *ngIf="showErrorAlert" class="alert error">
+      ⚠️ Hubo un problema al enviar tu historia. Intenta de nuevo.
     </div>
 
     <form (ngSubmit)="sendStory()" #storyForm="ngForm">
       <label for="name">Nombre completo</label>
-      <input id="name" name="name" type="text" [(ngModel)]="contactData.name" required />
+      <input id="name" name="name" [(ngModel)]="contactData.name" required />
 
       <label for="email">Email</label>
-      <input id="email" name="email" type="email" [(ngModel)]="contactData.email" required />
+      <input id="email" type="email" name="email" [(ngModel)]="contactData.email" required />
 
       <label for="message">Tu historia</label>
       <textarea id="message" name="message" rows="5" [(ngModel)]="contactData.message" required></textarea>
 
-      <button type="submit" [disabled]="storyForm.invalid">Enviar historia</button>
+      <button type="submit" [disabled]="isSending">
+        {{ isSending ? 'Enviando...' : 'Enviar historia' }}
+      </button>
     </form>
+  </section>
+
   </footer>
 </section>

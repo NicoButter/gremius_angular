@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-historia',
@@ -19,23 +18,37 @@ export class HistoriaComponent {
   };
 
   showSuccessAlert = false;
+  showErrorAlert = false;
+  isSending = false;
 
   constructor(private http: HttpClient) {}
 
   sendStory() {
-    const formUrl = 'https://formspree.io/f/movaerny'; // 👉 tu endpoint real
+    const formUrl = 'https://formly.email/submit';
 
-    this.http.post(formUrl, this.contactData, {
-      headers: { 'Accept': 'application/json' }
-    }).subscribe({
-      next: () => {
-        this.showSuccessAlert = true;
-        this.contactData = { name: '', email: '', message: '' }; // reset form
-      },
-      error: (err) => {
-        console.error('Error al enviar historia', err);
-      }
-    });
+    const payload = {
+      access_key: 'aba22342839b48b885c4b02ea35b640a', // ✅ Key de prensa
+      ...this.contactData
+    };
+
+    this.isSending = true;
+    this.showSuccessAlert = false;
+    this.showErrorAlert = false;
+
+    this.http.post(formUrl, payload, {
+  headers: { 'Accept': 'application/json' }, // se puede dejar o quitar
+  responseType: 'text' as 'json'  // 👈 esto evita el error de parseo
+}).subscribe({
+  next: () => {
+    this.isSending = false;
+    this.showSuccessAlert = true;
+    this.contactData = { name: '', email: '', message: '' }; 
+  },
+  error: (err) => {
+    this.isSending = false;
+    this.showErrorAlert = true;
+    console.error('Error al enviar historia', err);
+  }
+});
   }
 }
-
