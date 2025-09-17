@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-historia',
@@ -10,30 +11,31 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './historia.component.html',
   styleUrls: ['./historia.component.css']
 })
-export class HistoriaComponent implements OnInit {
+export class HistoriaComponent {
+  contactData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
   showSuccessAlert = false;
-  contactData = { name: '', email: '', message: '' };
-  destinatario = 'prensa.judicialessantacruz@gmail.com'; // destinatario por default
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if (params['success'] === 'true') {
+  sendStory() {
+    const formUrl = 'https://formspree.io/f/mayplqwe'; // tu endpoint de Formspree
+
+    this.http.post(formUrl, this.contactData, {
+      headers: { 'Accept': 'application/json' }
+    }).subscribe({
+      next: () => {
         this.showSuccessAlert = true;
-        setTimeout(() => {
-          this.showSuccessAlert = false;
-          this.back();
-        }, 3000);
+        this.contactData = { name: '', email: '', message: '' }; // reset
+      },
+      error: (err) => {
+        console.error('Error al enviar historia', err);
       }
     });
   }
-
-  back() {
-    this.contactData = { name: '', email: '', message: '' };
-  }
-
-  get formAction(): string {
-    return this.destinatario ? `https://formsubmit.co/${this.destinatario}` : '';
-  }
 }
+
