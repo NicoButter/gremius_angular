@@ -1,0 +1,55 @@
+.consejo-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.consejo-container h1 {
+    text-align: center;
+    color: #444C8A;
+    margin-bottom: 20px;
+}
+
+.consejo-container h2 {
+    text-align: center;
+    color: #444C8A;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #f8f9fc;
+    border-left: 4px solid #444C8A;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #2c3475;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card.highlight {
+    background: #e0e3f8;
+    border-left: 6px solid #2c3475;
+}
+
+.card.emphasis {
+    background: #fff;
+    border: 2px solid #444C8A;
+    font-weight: 500;
+}
+
+.card .final {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444C8A;
+    text-align: center;
+}
