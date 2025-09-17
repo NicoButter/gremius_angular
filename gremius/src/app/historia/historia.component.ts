@@ -23,14 +23,14 @@ export class HistoriaComponent {
   constructor(private http: HttpClient) {}
 
   sendStory() {
-    const formUrl = 'https://formspree.io/f/mayplqwe'; // tu endpoint de Formspree
+    const formUrl = 'https://formspree.io/f/movaerny'; // 👉 tu endpoint real
 
     this.http.post(formUrl, this.contactData, {
       headers: { 'Accept': 'application/json' }
     }).subscribe({
       next: () => {
         this.showSuccessAlert = true;
-        this.contactData = { name: '', email: '', message: '' }; // reset
+        this.contactData = { name: '', email: '', message: '' }; // reset form
       },
       error: (err) => {
         console.error('Error al enviar historia', err);
