@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./galeria-historica.component.css']
 })
 export class GaleriaHistoricaComponent implements OnInit, OnDestroy {
-  images = Array.from({ length: 21 }, (_, i) => ({
+  images = Array.from({ length: 41 }, (_, i) => ({
     src: `/assets/galeria/image-${i + 1}.png`,
     alt: `Imagen histórica ${i + 1}`
   }));

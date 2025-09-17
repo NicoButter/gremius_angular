@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HistoriaComponent implements OnInit {
   showSuccessAlert = false;
   contactData = { name: '', email: '', message: '' };
-  destinatario = 'gremiojudicialesrg@gmail.com'; // destinatario por default
+  destinatario = 'prensa.judicialessantacruz@gmail.com'; // destinatario por default
 
   constructor(private route: ActivatedRoute) {}
 
