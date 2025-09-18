@@ -47,6 +47,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       descripcion: 'Desde el movimiento obrero nos solidarizamos con la justa lucha de los docentes organizados en la ADoSaC, y exigimos que se deje sin efecto la citada multa y cesen las acciones de carácter antisindical.',
       image: '/assets/images/reclamo_frente_sindical_hero.png',
       autor: 'Equipo de Prensa'
+    },
+    {
+      titulo: 'FEDERACIÓN JUDICIAL ARGENTINA - COMUNICADO',
+      descripcion: 'DECLARACIÓN DE LA FJA ANTE LA INICIATIVA DEL GOBIERNO DE SANTA CRUZ DE AMPLIAR INJUSTIFICADAMENTE LA COMPOSICIÓN DEL TSJ',
+      image: '/assets/images/federacion_judicial_argentina_hero.png',
+      autor: 'Equipo de Comunicación'
     }
     // {
     //   titulo: 'Reunión con el ministro de trabajo',
