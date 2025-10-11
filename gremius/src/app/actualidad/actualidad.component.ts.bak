@@ -1,4 +1,8 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, HostListener, OnDestroy } from '@angular/core';
+// Backup of previous ActualidadComponent
+// If anything goes wrong, use this file to restore previous logic.
+
+/*
+import { Component, ElementRef, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -8,7 +12,7 @@ import { NgIf } from '@angular/common';
   templateUrl: './actualidad.component.html',
   styleUrls: ['./actualidad.component.css']
 })
-export class ActualidadComponent implements AfterViewInit, OnDestroy {
+export class ActualidadComponent implements AfterViewInit {
   plataforma: 'android' | 'ios' = 'android';
   modalActivo = false;
   imagenModal = '';
@@ -20,11 +24,10 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   escala = 1;
   escalaMinima = 0.5;
   escalaMaxima = 3;
-  offsetHorizontal = 0; // Para movimiento horizontal
+  offsetHorizontal = 0; // Solo para centrado horizontal
   offsetVertical = 0; // Para movimiento vertical
   arrastrando = false;
-  puntoInicioX = 0; // Posición X inicial del arrastre
-  puntoInicioY = 0; // Posición Y inicial del arrastre
+  puntoInicioY = 0; // Solo guardamos la posición Y inicial
   anchoImagenOriginal = 0;
   altoImagenOriginal = 0;
   anchoContenedor = 0;
@@ -89,52 +92,47 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   centrarImagen() {
     if (this.anchoImagenOriginal === 0 || this.altoImagenOriginal === 0) return;
     
-    // Centrar tanto horizontal como verticalmente cuando no hay zoom
-    if (this.escala <= 1) {
-      this.offsetHorizontal = 0;
-      this.offsetVertical = 0;
-      return;
-    }
+    // Siempre mantener la imagen centrada horizontalmente
+    this.offsetHorizontal = 0;
     
-    // Aplicar límites cuando hay zoom para que no se salga del contenedor
-    this.aplicarLimites();
+    // Verificar si la imagen es más pequeña que el contenedor verticalmente
+    const altoImagenEscalada = this.altoImagenOriginal * this.escala;
+    if (altoImagenEscalada < this.altoContenedor) {
+      this.offsetVertical = 0;
+    }
+    // Si la imagen es más grande, mantenerla dentro de los límites
+    else {
+      const maxOffset = (altoImagenEscalada - this.altoContenedor) / 2;
+      this.offsetVertical = Math.max(-maxOffset, Math.min(maxOffset, this.offsetVertical));
+    }
   }
 
   manejarZoom(event: WheelEvent) {
     event.preventDefault();
     
-    // Guardar posición del mouse relativa al contenedor
+    // Guardar posición vertical relativa antes del zoom
     const rect = event.currentTarget as HTMLElement;
-    const mouseX = event.clientX - rect.getBoundingClientRect().left;
     const mouseY = event.clientY - rect.getBoundingClientRect().top;
     
-    // Calcular el centro del contenedor
-    const centroX = this.anchoContenedor / 2;
+    // Calcular el centro vertical antes del zoom
     const centroY = this.altoContenedor / 2;
     
     // Determinar dirección del zoom
     const factorZoom = event.deltaY > 0 ? 0.9 : 1.1;
-    const escalaAnterior = this.escala;
     const nuevaEscala = Math.min(Math.max(this.escala * factorZoom, this.escalaMinima), this.escalaMaxima);
     
-    // Si la escala cambió, ajustar la posición para mantener el zoom centrado en el cursor
-    if (nuevaEscala !== escalaAnterior && this.anchoImagenOriginal > 0 && this.altoImagenOriginal > 0) {
-      const ratio = nuevaEscala / escalaAnterior;
-      
-      // Calcular el offset relativo al cursor
-      const offsetMouseX = mouseX - centroX - this.offsetHorizontal;
-      const offsetMouseY = mouseY - centroY - this.offsetVertical;
-      
-      // Ajustar los offsets para mantener el punto bajo el cursor
-      this.offsetHorizontal = mouseX - centroX - (offsetMouseX * ratio);
-      this.offsetVertical = mouseY - centroY - (offsetMouseY * ratio);
+    // Calcular nueva posición vertical para mantener el punto bajo el cursor
+    if (this.altoImagenOriginal > 0) {
+      const diferenciaEscala = nuevaEscala / this.escala;
+      const offsetRelativo = mouseY - (this.altoContenedor / 2) - this.offsetVertical;
+      this.offsetVertical = mouseY - (this.altoContenedor / 2) - (offsetRelativo * diferenciaEscala);
     }
     
     // Aplicar nueva escala
     this.escala = nuevaEscala;
     
-    // Aplicar límites para mantener la imagen dentro del contenedor
-    this.aplicarLimites();
+    // Ajustar posición para mantener límites
+    this.centrarImagen();
     
     // Mostrar indicador de zoom
     this.mostrarIndicadorZoom();
@@ -147,7 +145,6 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     }
     
     this.arrastrando = true;
-    this.puntoInicioX = event.clientX;
     this.puntoInicioY = event.clientY;
     event.preventDefault();
     
@@ -158,13 +155,10 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
 
   moverImagen(event: MouseEvent) {
     if (this.arrastrando && this.escala > 1) {
-      const deltaX = event.clientX - this.puntoInicioX;
       const deltaY = event.clientY - this.puntoInicioY;
       
-      this.offsetHorizontal += deltaX;
       this.offsetVertical += deltaY;
       
-      this.puntoInicioX = event.clientX;
       this.puntoInicioY = event.clientY;
       
       // Aplicar límites para que la imagen no se salga del contenedor
@@ -173,27 +167,14 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   }
 
   aplicarLimites() {
-    if (this.anchoImagenOriginal === 0 || this.altoImagenOriginal === 0) return;
+    if (this.altoImagenOriginal === 0) return;
     
-    // Calcular dimensiones de la imagen escalada
-    const anchoImagenEscalada = this.anchoImagenOriginal * this.escala;
     const altoImagenEscalada = this.altoImagenOriginal * this.escala;
-    
-    // Aplicar límites horizontales
-    if (anchoImagenEscalada > this.anchoContenedor) {
-      const maxOffsetX = (anchoImagenEscalada - this.anchoContenedor) / 2;
-      this.offsetHorizontal = Math.max(-maxOffsetX, Math.min(maxOffsetX, this.offsetHorizontal));
-    } else {
-      // Si la imagen es más pequeña que el contenedor horizontalmente, mantenerla centrada
-      this.offsetHorizontal = 0;
-    }
-    
-    // Aplicar límites verticales
     if (altoImagenEscalada > this.altoContenedor) {
-      const maxOffsetY = (altoImagenEscalada - this.altoContenedor) / 2;
-      this.offsetVertical = Math.max(-maxOffsetY, Math.min(maxOffsetY, this.offsetVertical));
+      const maxOffset = (altoImagenEscalada - this.altoContenedor) / 2;
+      this.offsetVertical = Math.max(-maxOffset, Math.min(maxOffset, this.offsetVertical));
     } else {
-      // Si la imagen es más pequeña que el contenedor verticalmente, mantenerla centrada
+      // Si la imagen es más pequeña que el contenedor, mantenerla centrada
       this.offsetVertical = 0;
     }
   }
@@ -236,62 +217,4 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  ocultarIndicadorZoom() {
-    if (this.zoomIndicator) {
-      this.zoomIndicator.classList.remove('visible');
-    }
-  }
-
-  eliminarIndicadorZoom() {
-    if (this.zoomIndicator && this.zoomIndicator.parentNode) {
-      this.zoomIndicator.parentNode.removeChild(this.zoomIndicator);
-      this.zoomIndicator = null;
-    }
-  }
-
-  escucharTeclaEscape(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.modalActivo) {
-      this.cerrarModal(new MouseEvent('click'));
-    }
-  }
-
-  // Reset zoom con doble click (opcional)
-  @HostListener('document:dblclick', ['$event'])
-  onDoubleClick(event: MouseEvent) {
-    if (this.modalActivo) {
-      const target = event.target as HTMLElement;
-      if (target.closest('.modal-body')) {
-        event.preventDefault();
-        
-        // Alternar entre zoom 1x y 2x
-        if (this.escala === 1) {
-          this.escala = 2;
-          this.offsetHorizontal = 0;
-          this.offsetVertical = 0;
-          this.centrarImagen();
-        } else {
-          this.escala = 1;
-          this.offsetHorizontal = 0;
-          this.offsetVertical = 0;
-          this.centrarImagen();
-        }
-        
-        this.mostrarIndicadorZoom();
-      }
-    }
-  }
-
-  // Detectar cuando la imagen se carga para obtener sus dimensiones
-  onImageLoad(event: Event) {
-    const img = event.target as HTMLImageElement;
-    this.anchoImagenOriginal = img.naturalWidth;
-    this.altoImagenOriginal = img.naturalHeight;
-    this.centrarImagen();
-  }
-
-  // Limpiar event listeners y elementos cuando el componente se destruye
-  ngOnDestroy() {
-    document.removeEventListener('keydown', this.escucharTeclaEscape);
-    this.eliminarIndicadorZoom();
-  }
-}
+The backup file content was successfully written.

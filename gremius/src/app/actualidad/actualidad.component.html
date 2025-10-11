@@ -4,7 +4,8 @@
     
     <div class="actualidad-grid">
         <!-- Tarjeta 1: Nueva Web -->
-        <article class="actualidad-item app-info">
+        <article class="actualidad-item app-info" (click)="abrirModal('assets/images/nueva_pagina_web_1.png', '¡Estrenamos nueva página web!', 'Te damos la bienvenida a nuestro renovado sitio institucional. Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias, información sobre actividades, convenios, comunicados oficiales y mucho más. Diseñamos esta página para que sea un espacio de encuentro, memoria y comunicación permanente con nuestros afiliados y afiliadas.')">
+            <div class="expand-indicator">Click para ampliar</div>
             <img src="assets/images/nueva_pagina_web_1.png" alt="Nueva página web institucional">
             <h3>¡Estrenamos nueva página web!</h3>
             <p>
@@ -38,23 +39,20 @@
             <!-- QR dinámico -->
             <div class="qr-display">
                 <ng-container *ngIf="plataforma === 'android'">
-                    <img src="assets/images/qr-code-android.png" alt="QR Android" class="qr-image">
-                    <!-- <a href="https://play.google.com/store/apps/details?id=com.dynamicice.Judicialessantacruz" target="_blank">
-                        Descargar en Google Play
-                    </a> -->
+                    <img src="assets/images/qr-code-android.png" alt="QR Android" class="qr-image" (click)="abrirModal('assets/images/qr-code-android.png', 'Descargar App para Android', 'Escanea este código QR para descargar la aplicación Judiciales de Santa Cruz Cred en tu dispositivo Android.')">
                 </ng-container>
 
                 <ng-container *ngIf="plataforma === 'ios'">
-                    <img src="assets/images/qr-code-ios.png" alt="QR iOS" class="qr-image">
-                    <!-- <a href="https://apps.apple.com/ar/app/..." target="_blank">
-                        Descargar en App Store
-                    </a> -->
+                    <img src="assets/images/qr-code-ios.png" alt="QR iOS" class="qr-image" (click)="abrirModal('assets/images/qr-code-ios.png', 'Descargar App para iOS', 'Escanea este código QR para descargar la aplicación Judiciales de Santa Cruz Cred en tu dispositivo iOS.')">
                 </ng-container>
+                
+                <div class="qr-expand-indicator">Click para ampliar</div>
             </div>
         </article>
 
         <!-- Tarjeta 3: Obra en Puerto Deseado -->
-        <article class="actualidad-item app-info">
+        <article class="actualidad-item app-info" (click)="abrirModal('assets/images/flyer_obra_puerto_deseado.png', 'Obra en Puerto Deseado: Quincho de 200 m²', 'Avanza la primera etapa del quincho con inversión de $110 millones. Incluye materiales estructurales y entrega llave en mano. La segunda etapa incorporará calefacción y mobiliario.')">
+            <div class="expand-indicator">Click para ampliar</div>
             <img src="assets/images/flyer_obra_puerto_deseado.png" alt="Obra del quincho en Puerto Deseado">
             <h3>Obra en Puerto Deseado: Quincho de 200 m²</h3>
             <p>
@@ -62,11 +60,11 @@
                 Incluye materiales estructurales y entrega llave en mano. 
                 La segunda etapa incorporará calefacción y mobiliario.
             </p>
-            <!-- <a href="#" class="leer-mas">Más detalles de la obra...</a> -->
         </article>
 
         <!-- Tarjeta 4: Fiesta Judicial 2025 -->
-        <article class="actualidad-item app-info">
+        <article class="actualidad-item app-info" (click)="abrirModal('assets/images/fiesta_judicial_2025.png', 'Fiesta Judicial 2025', '¡No te pierdas la gran Fiesta Judicial 2025! Sorteos con importantes premios, banda en vivo y menúes especiales para celíacos y vegetarianos. 15 de noviembre de 2025, 21:00 hs.')">
+            <div class="expand-indicator">Click para ampliar</div>
             <img src="assets/images/fiesta_judicial_2025.png" alt="Fiesta Judicial 2025">
             <h3>Fiesta Judicial 2025</h3>
             <p>
@@ -75,31 +73,56 @@
                 para celíacos y vegetarianos. 
                 <strong>15 de noviembre de 2025, 21:00 hs.</strong>
             </p>
-            <!-- <a href="#" class="leer-mas">Reservar tu lugar</a> -->
         </article>
 
         <!-- Tarjeta 5: Frente Sindical -->
-        <article class="actualidad-item app-info">
-            <img src="assets/images/reclamo_frente_sindical.png" alt="Fiesta Judicial 2025">
+        <article class="actualidad-item app-info" (click)="abrirModal('assets/images/reclamo_frente_sindical.png', 'Comunicado Frente Sindical de Santa Cruz', 'Desde el Movimiento Obrero nos solidarizamos con la justa lucha de los docentes organizados en la ADoSaC, Sin efecto la citada multa y cesen las acciones de carácter antisindical.')">
+            <div class="expand-indicator">Click para ampliar</div>
+            <img src="assets/images/reclamo_frente_sindical.png" alt="Frente Sindical de Santa Cruz">
             <h3>Comunicado Frente Sindical de Santa Cruz</h3>
             <p>
                 Desde el Movimiento Obrero nos solidarizamos con la justa lucha de los docentes organizados en la ADoSaC,
                 <strong>Sin efecto la citada multa y cesen las acciones de carácter antisindical.</strong>
             </p>
-            <!-- <a href="#" class="leer-mas">Reservar tu lugar</a> -->
         </article>
 
-        <article class="actualidad-item app-info">
-            <img src="assets/images/federacion_judicial_argentina.png" alt="Fiesta Judicial 2025">
+        <article class="actualidad-item app-info" (click)="abrirModal('assets/images/federacion_judicial_argentina.png', 'FEDERACIÓN JUDICIAL ARGENTINA', 'La Federación Judicial Argentina (FJA) expresa su rechazo a la iniciativa del Poder Ejecutivo de Santa Cruz de ampliar el Tribunal Superior de Justicia (TSJ) mediante la designación de cuatro nuevas vocalías.')">
+            <div class="expand-indicator">Click para ampliar</div>
+            <img src="assets/images/federacion_judicial_argentina.png" alt="FEDERACIÓN JUDICIAL ARGENTINA">
             <h3>FEDERACIÓN JUDICIAL ARGENTINA</h3>
             <p>
                 La Federación Judicial Argentina (FJA) expresa su rechazo a la iniciativa del Poder
                 Ejecutivo de Santa Cruz de ampliar el Tribunal Superior de Justicia (TSJ) mediante la
                 designación de cuatro nuevas vocalías.
             </p>
-            <!-- <a href="#" class="leer-mas">Reservar tu lugar</a> -->
         </article>
+    </div>
 
-
+    <!-- Modal para mostrar la imagen ampliada -->
+    <div class="modal-overlay" *ngIf="modalActivo" (click)="cerrarModal($event)">
+        <div class="modal-contenido" (click)="$event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-titulo">{{ tituloModal }}</h3>
+                <button class="modal-cerrar" (click)="cerrarModal($event)">×</button>
+            </div>
+            <div class="modal-body" 
+                 (wheel)="manejarZoom($event)"
+                 (mousedown)="iniciarArrastre($event)"
+                 (mousemove)="moverImagen($event)"
+                 (mouseup)="finalizarArrastre()"
+                 (mouseleave)="finalizarArrastre()">
+                <div class="imagen-contenedor" #contenedorRef>
+                    <img [src]="imagenModal" 
+                         [alt]="tituloModal" 
+                         class="modal-imagen" 
+                         [style.transform]="'translate(calc(-50% + ' + offsetHorizontal + 'px), calc(-50% + ' + offsetVertical + 'px)) scale(' + escala + ')'"
+                         (load)="onImageLoad($event)"
+                         [class.arrastrando]="arrastrando">
+                </div>
+            </div>
+            <div class="modal-footer" *ngIf="textoModal">
+                <p class="modal-texto">{{ textoModal }}</p>
+            </div>
+        </div>
     </div>
 </section>
