@@ -13,6 +13,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   noticias = [
     {
+      titulo: 'Univesidad de La Plata',
+      descripcion: 'Exitoso encuentro con el reconocido abogado Alejandro Batista en La Plata para capacitar al Poder Judicial de Santa Cruz en las últimas tecnologías legales y modernización de procesos judiciales y acuerdos para carreas de grado y postgrado',
+      image: '/assets/images/reunion_universidad.png',
+      autor: 'Equipo de Prensa'
+    },
+    {
       titulo: 'Encuentro De Mujeres y Diversidades',
       descripcion: 'Este encuentro será un espacio de reflexión, intercambio y construcción colectiva, pensado para fortalecer la organización, compartir experiencias y seguir ampliando derechos.',
       image: '/assets/images/encuentro_mujeres_calafate_2025.png',
