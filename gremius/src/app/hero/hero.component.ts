@@ -26,7 +26,8 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     },
     {
       titulo: 'Encuentro De Mujeres y Diversidades',
-      descripcion: 'Este encuentro será un espacio de reflexión, intercambio y construcción colectiva, pensado para fortalecer la organización, compartir experiencias y seguir ampliando derechos.',
+      descripcion: 'Este encuentro será un espacio de reflexión, intercambio y construcción colectiva, pensado para fortalecer la organización, compartir experiencias y seguir ampliando derechos. 07 y 08 de noviembre. Fecha Límite de Inscripciónantes del 24 de octubre. ',
+
       image: '/assets/images/encuentro_mujeres_calafate_2025.png',
       autor: 'Equipo de Comunicación'
     },
