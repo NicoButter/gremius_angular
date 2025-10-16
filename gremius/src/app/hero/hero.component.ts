@@ -13,6 +13,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   noticias = [
     {
+      titulo: 'La Justicia se mejora con formación y compromiso',
+      descripcion: 'Reunión junto al Dr. Miguel Berri (Decano), Dra. Valeria Moreno (Secretaria Académica) y Dr. Alejandro Batista (Prosecretario de Políticas Digitales) de la Facultad de Ciencias Jurídicas y Sociales - UNLP. Trabajamos para brindar más calidad y herramientas a nuestros compañeros y compañeras judiciales.',
+      image: '/assets/images/encuentro_la_plata_universidad.jpeg',
+      autor: 'Equipo de Comunicación'
+    },
+    {
       titulo: 'Univesidad de La Plata',
       descripcion: 'Exitoso encuentro con el reconocido abogado Alejandro Batista en La Plata para capacitar al Poder Judicial de Santa Cruz en las últimas tecnologías legales y modernización de procesos judiciales y acuerdos para carreas de grado y postgrado',
       image: '/assets/images/reunion_universidad.png',
