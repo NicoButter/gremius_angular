@@ -21,7 +21,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       titulo: 'La Justicia se mejora con formación y compromiso',
       descripcion: 'Reunión junto al Dr. Miguel Berri (Decano), Dra. Valeria Moreno (Secretaria Académica) y Dr. Alejandro Batista (Prosecretario de Políticas Digitales) de la Facultad de Ciencias Jurídicas y Sociales - UNLP. Trabajamos para brindar más calidad y herramientas a nuestros compañeros y compañeras judiciales.',
-      image: '/assets/images/encuentro_la_plata_universidad.jpeg',
+      image: '/assets/images/encuentro_la_plata_universidad.webp',
       autor: 'Equipo de Comunicación'
     },
     {

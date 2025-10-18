@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://judicialesdesantacruz.org.ar/assets/images/logo_judiciales_1.webp</image:loc>
+      <image:title>Asociación Gremial de Empleados Judiciales de Santa Cruz</image:title>
+      <image:caption>Logo oficial de Judiciales Santa Cruz</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Página de inicio (si es diferente) -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/inicio</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Página de logos institucionales -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/logos</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Página de afiliaciones -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/afiliaciones</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Página de historia -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/historia</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Página de convenios -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/convenios-sindicales</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Página de galería histórica -->
+  <url>
+    <loc>https://judicialesdesantacruz.org.ar/galeria-historica</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
