@@ -1,11 +1,12 @@
 :root {
-  --header-height: 120px;
-  --header-shrink-height: 80px;
-  --mobile-header-height: 100px;
-  --mobile-shrink-height: 70px;
+  --header-height: 160px;
+  --header-shrink-height: 110px;
+  --mobile-header-height: 136px;
+  --mobile-shrink-height: 96px;
   --navbar-height: 40px;
+  --navbar-shrink-height: 30px;
   --mobile-navbar-height: 36px;
-  --navbar-top: 120px;
+  --mobile-navbar-shrink-height: 26px;
 }
 
 header {
@@ -14,33 +15,57 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 100px;
+  height: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #444C8A;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: height 0.3s ease;
+}
+
+.header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #fff;
-  color: #444C8A;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 120px;
   transition: height 0.3s ease, padding 0.3s ease;
 }
 
 header.shrink {
   height: var(--header-shrink-height);
+}
+
+header.shrink .header-top {
+  height: 80px;
   padding: 5px 15px;
 }
 
-header.shrink .logo img {
+header.shrink .header-top .logo img {
   height: 40px;
 }
 
-header.shrink .title {
+header.shrink .header-top .title {
   font-size: 1.5rem;
+}
+
+header.shrink .navbar {
+  height: var(--navbar-shrink-height);
+  padding: 4px 20px;
+  background: linear-gradient(to bottom, #30366D, #444C8A, #5A62A0);
+  transform: scaleY(0.9);
+}
+
+header.shrink .nav-item a {
+  font-size: 13px;
+  padding: 6px 10px;
 }
 
 .logo img {
   height: 80px;
   width: auto;
+  transition: height 0.3s ease;
 }
 
 .logo a {
@@ -69,20 +94,7 @@ header.shrink .title {
   /* Para el pseudo-elemento del degradado */
   line-height: 1.4;
   /* Mejora la legibilidad */
-}
-
-/* Degradado debajo del título usando un pseudo-elemento */
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  /* Altura del degradado */
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(68, 76, 138, 0.2), rgba(255, 255, 255, 0.1));
-  /* Degradado suave */
-  z-index: 1;
+  transition: font-size 0.3s ease;
 }
 
 .title-text {
@@ -94,14 +106,6 @@ header.shrink .title {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   /* Sombra suave */
 }
-
-/* .title {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 100;
-  color: #444C8A;
-} */
 
 .social-links {
   display: flex;
@@ -122,21 +126,16 @@ header.shrink .title {
 }
 
 .navbar {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background-color: #444C8A;
+  background: linear-gradient(to right, #30366D, #444C8A, #5A62A0);
   padding: 8px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 40px;
+  height: var(--navbar-height);
   margin: 0;
-  transition: top 0.3s ease;
+  transition: height 0.5s ease, padding 0.5s ease, background 0.5s ease, transform 0.5s ease;
 }
 
 .nav-list {
@@ -158,14 +157,15 @@ header.shrink .title {
   text-decoration: none;
   padding: 8px 12px;
   display: block;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, font-size 0.3s ease, padding 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-item a:hover {
-  color: #a3bffa;
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff, 0 0 12px #ffffff;
 }
 
 .dropdown-menu {
@@ -240,38 +240,55 @@ header.shrink .title {
 @media (max-width: 768px) {
 
   main {
-    padding-top: calc(var(--header-height, 120px) + 40px);
+    padding-top: var(--header-height);
   }
 
   header {
+    height: var(--mobile-header-height);
+  }
+
+  .header-top {
     flex-direction: column;
     align-items: center;
-    height: auto;
     padding: 8px;
+    height: auto;
   }
 
   header.shrink {
-    height: var(--header-shrink-height);
+    height: var(--mobile-shrink-height);
+  }
+
+  header.shrink .header-top {
     padding: 4px 10px;
   }
 
-  header.shrink .logo img {
+  header.shrink .header-top .logo img {
     height: 40px;
   }
 
-  header.shrink .title {
+  header.shrink .header-top .title {
     font-size: 0.9rem;
   }
 
-  .logo img {
+  header.shrink .navbar {
+    height: var(--mobile-navbar-shrink-height);
+    padding: 3px 15px;
+  }
+
+  header.shrink .nav-item a {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .header-top .logo img {
     height: 50px;
   }
 
-  .social-links {
+  .header-top .social-links {
     margin-top: 6px;
   }
 
-  .social-links a {
+  .header-top .social-links a {
     font-size: 16px;
     margin: 0 4px;
   }
@@ -279,18 +296,17 @@ header.shrink .title {
   .navbar {
     justify-content: space-between;
     padding: 6px 15px;
-    height: 36px;
-    top: var(--header-height, 120px);
+    height: var(--mobile-navbar-height);
+    background: linear-gradient(to right, #30366D, #444C8A, #5A62A0);
   }
 
   .nav-list {
     position: fixed;
-    /* <- Este es el cambio clave */
     top: var(--header-height);
     left: 0;
     right: 0;
     width: 100%;
-    background-color: #444C8A;
+    background: linear-gradient(to right, #30366D, #444C8A, #5A62A0);
     transform-origin: top;
     transform: scaleY(0);
     visibility: hidden;
@@ -354,21 +370,20 @@ header.shrink .title {
 /* Media Query para pantallas menores a 480px */
 @media (max-width: 480px) {
   main {
-    padding-top: calc(var(--header-height, 120px) + 36px);
-    /* Ajuste para navbar */
+    padding-top: var(--header-height);
   }
 
-  .logo img {
+  .header-top .logo img {
     height: 40px;
   }
 
-  .social-links a {
+  .header-top .social-links a {
     font-size: 14px;
   }
 
   .navbar {
     padding: 6px 10px;
-    height: 36px;
+    height: var(--mobile-navbar-height);
   }
 
   .nav-item a {
@@ -380,12 +395,12 @@ header.shrink .title {
 /* Media Query para pantallas entre 769px y 900px */
 @media (min-width: 769px) and (max-width: 900px) {
   main {
-    padding-top: calc(var(--header-height, 120px) + 36px);
+    padding-top: var(--header-height);
   }
 
   .navbar {
     padding: 6px 15px;
-    height: 36px;
+    height: var(--mobile-navbar-height);
   }
 
   .nav-item {

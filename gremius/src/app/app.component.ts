@@ -30,7 +30,7 @@ export class AppComponent {
   getMainPadding(): string {
     const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '120', 10);
     const navbarOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-offset') || '0', 10);
-    return `calc(${headerHeight}px + ${navbarOffset}px + 40px)`;
+    return `calc(${headerHeight}px + ${navbarOffset}px - 5px)`;
   }
   
 }

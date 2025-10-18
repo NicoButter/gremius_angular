@@ -1,29 +1,29 @@
 <header class="header" [class.shrink]="isShrunk">
-  <div class="logo">
-    <a routerLink="/inicio">
-      <img src="assets/images/logo_judiciales_1.webp" alt="Logo Judiciales de Santa Cruz" />
-    </a>
+  <div class="header-top">
+    <div class="logo">
+      <a routerLink="/inicio">
+        <img src="assets/images/logo_judiciales_1.webp" alt="Logo Judiciales de Santa Cruz" />
+      </a>
+    </div>
+    <div class="title">
+      <p><b>Asociación Gremial de Empleados y Empleadas Judiciales de la Provincia de Santa Cruz "3 de Julio"</b></p>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/judicialessantacruz" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/judicialessantacruz/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
   </div>
-  <div class="title">
-    <p><b>Asociación Gremial de Empleados y Empleadas Judiciales de la Provincia de Santa Cruz “3 de Julio”</b></p>
-  </div>
-  <div class="social-links">
-    <a href="https://www.facebook.com/judicialessantacruz" target="_blank" aria-label="Facebook">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://www.instagram.com/judicialessantacruz/" target="_blank" aria-label="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-</header>
-<nav class="navbar">
-  <div class="menu-toggle" id="mobile-menu" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
-  <ul class="nav-list" [class.active]="isMobileMenuOpen">
-  <li class="nav-item"><a routerLink="/inicio" (click)="closeMenuOnNavigation()">Inicio</a></li>
+  <nav class="navbar">
+    <div class="menu-toggle" id="mobile-menu" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-list" [class.active]="isMobileMenuOpen">
   <li class="nav-item dropdown">
     <a href="javascript:void(0)" class="dropdown-toggle" (click)="toggleDropdown('institucional')">
       Institucional
@@ -140,4 +140,5 @@
     <a routerLink="/contact" (click)="closeMenuOnNavigation()">Contacto</a>
   </li>
 </ul>
-</nav>
+  </nav>
+</header>

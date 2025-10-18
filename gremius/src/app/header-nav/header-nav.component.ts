@@ -1,6 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header-nav',
@@ -9,10 +10,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header-nav.component.html',
   styleUrls: ['./header-nav.component.css']
 })
-export class HeaderNavComponent implements OnInit {
+export class HeaderNavComponent implements OnInit, OnDestroy {
   isShrunk = false;
   isMobileMenuOpen = false;
   activeDropdown: string | null = null;
+  private routerSubscription: Subscription = new Subscription();
 
   constructor(private router: Router) {}
 
@@ -21,17 +23,24 @@ export class HeaderNavComponent implements OnInit {
     this.setInitialScrollState();
 
     // Escuchar eventos de navegación para cerrar el menú
-    this.router.events.subscribe(event => {
+    this.routerSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd && this.isMobileMenuOpen) {
         this.closeMenuOnNavigation();
       }
     });
   }
 
+  ngOnDestroy(): void {
+    this.routerSubscription.unsubscribe();
+  }
+
   @HostListener('window:scroll')
   onScroll(): void {
-    this.isShrunk = window.scrollY > 50;
-    this.updateHeaderHeight();
+    const shouldShrink = window.scrollY > 50;
+    if (this.isShrunk !== shouldShrink) {
+      this.isShrunk = shouldShrink;
+      this.updateHeaderHeight();
+    }
   }
 
   @HostListener('window:resize')

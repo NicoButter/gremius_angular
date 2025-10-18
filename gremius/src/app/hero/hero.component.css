@@ -8,7 +8,7 @@
     position: relative;
     width: 100%;
     max-width: 1100px;
-    margin: 50px auto 0;
+    margin: 0 auto 0;
     height: 70vh;
     overflow: hidden;
     border-radius: 24px;
@@ -195,7 +195,7 @@
 
 @media (max-width: 768px) {
     .news-hero {
-        margin: 110px auto 0;
+        margin: 0 auto 0;
         height: 55vh;
     }
 
@@ -220,7 +220,7 @@
 
 @media (max-width: 576px) {
     .news-hero {
-        margin-top: 100px;
+        margin-top: 0;
         height: 45vh;
     }
 
