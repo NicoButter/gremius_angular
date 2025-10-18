@@ -12,8 +12,8 @@ export class GremioJubiladosJudicialesComponent {
   gremio = {
     titulo: 'Centro de Jubilados Judiciales "3 de Febrero"',
     descripcion: '',
-    //logoUrl: 'assets/images/logo_gremio_jubilados_judiciales.png',
-    sedeUrl: 'assets/images/logo_gremio_jubilados_judiciales.png',
+    //logoUrl: 'assets/images/logo_gremio_jubilados_judiciales.webp',
+    sedeUrl: 'assets/images/logo_gremio_jubilados_judiciales.webp',
     extras: [
       { titulo: '', texto: '' },
       { titulo: '', texto: '' },

@@ -43,6 +43,16 @@ header.shrink .title {
   width: auto;
 }
 
+.logo a {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.logo a:hover {
+  opacity: 0.8;
+}
+
 .title {
   margin: 6px 0;
   flex-grow: 1;

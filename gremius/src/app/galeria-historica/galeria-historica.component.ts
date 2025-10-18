@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class GaleriaHistoricaComponent implements OnInit, OnDestroy {
   images = Array.from({ length: 41 }, (_, i) => ({
-    src: `/assets/galeria/image-${i + 1}.png`,
+    src: `/assets/galeria/image-${i + 1}.webp`,
     alt: `Imagen histórica ${i + 1}`
   }));
 

@@ -17,12 +17,12 @@ interface Novedad {
 export class ActividadesJubiladosComponent {
   novedades: Novedad[] = [
     {
-      image: 'assets/images/gimnasia-jubilados.png',
+      image: 'assets/images/gimnasia-jubilados.webp',
       title: 'Taller de Yoga',
       detail: 'No nos tomamos descanso!!!!'
     },
     {
-      image: 'assets/images/folklore-jubilados.png',
+      image: 'assets/images/folklore-jubilados.webp',
       title: 'Salida Cultural',
       detail: 'El Folklore nos une y nos hace bailar'
     },
