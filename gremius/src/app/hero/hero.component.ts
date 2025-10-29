@@ -31,19 +31,6 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       autor: 'Equipo de Prensa'
     },
     {
-      titulo: 'Encuentro De Mujeres y Diversidades',
-      descripcion: 'Este encuentro será un espacio de reflexión, intercambio y construcción colectiva, pensado para fortalecer la organización, compartir experiencias y seguir ampliando derechos. 07 y 08 de noviembre. Fecha Límite de Inscripciónantes del 24 de octubre. ',
-
-      image: '/assets/images/encuentro_mujeres_calafate_2025.webp',
-      autor: 'Equipo de Comunicación'
-    },
-    {
-      titulo: 'Estrenamos Página WEB!!',
-      descripcion: 'Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias, información sobre actividades, convenios, comunicados oficiales y mucho más.',
-      image: '/assets/images/nueva_pagina_web_1.webp',
-      autor: 'Equipo IT.'
-    },
-    {
       titulo: 'Reunión con el Intendente de Puerto Madryn',
       descripcion: 'Se gestionó un terreno destinado a los/as judiciales de Santa Cruz, con el objetivo de mejorar la infraestructura y brindar más espacios de uso gremial.',
       image: '/assets/images/solicitud_terreno_madryn.webp',
@@ -119,7 +106,17 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  private resetInterval(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+    this.intervalId = setInterval(() => {
+      this.currentSlide = (this.currentSlide + 1) % this.noticias.length;
+    }, 5000);
+  }
+
   goToSlide(index: number): void {
     this.currentSlide = index;
+    this.resetInterval();
   }
 }

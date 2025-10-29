@@ -28,9 +28,9 @@ export class AppComponent {
   title = 'gremius';
 
   getMainPadding(): string {
-    const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '120', 10);
-    const navbarOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-offset') || '0', 10);
-    return `calc(${headerHeight}px + ${navbarOffset}px - 5px)`;
+    const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '160', 10);
+    const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height') || '40', 10);
+    return `${headerHeight + navbarHeight}px`;
   }
   
 }
