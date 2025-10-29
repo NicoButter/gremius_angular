@@ -30,6 +30,8 @@ import { TurismoSocialComponent } from './turismo-social/turismo-social.componen
 import { AccionSocialComponent } from './accion-social/accion-social.component';
 import { ActividadesJubiladosComponent } from './actividades-jubilados/actividades-jubilados.component';
 import { ConsejoMagistraturaComponent } from './consejo-magistratura/consejo-magistratura.component';
+import { ConveniosBeneficiosComponent } from './convenios-beneficios/convenios-beneficios.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -64,6 +66,7 @@ export const routes: Routes = [
   { path: 'accion-social', component: AccionSocialComponent },
   { path: 'actividades-jubilados', component: ActividadesJubiladosComponent },
   { path: 'consejo-magistratura', component: ConsejoMagistraturaComponent },
-  { path: '**', redirectTo: '/home' }
+  { path: 'convenios-beneficios', component: ConveniosBeneficiosComponent },
+  { path: '**', redirectTo: '/home' },
 ];
 
