@@ -22,12 +22,12 @@ export class ConveniosBeneficiosComponent {
     {
       nombre: 'DOÑA CARMEN',
       categoria: 'Artículos de Limpieza',
-      direccion: 'Marini 332 bis',
-      telefono: '15% de descuento en efectivo',
+      direccion: 'Ramón y Cajal 331',
+      telefono: '',
       descuento: '15% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // ARTÍCULOS ELECTRÓNICOS
     {
       nombre: 'MEGATEC',
@@ -37,7 +37,7 @@ export class ConveniosBeneficiosComponent {
       descuento: 'Apotek 468: 10% de descuento, Av. Kirchner 538, 831 y 1154: 5% de descuento',
       imagen: '',
     },
-    
+
     // CAPACITACIONES
     {
       nombre: 'LAP PRO BALLESTER',
@@ -47,7 +47,7 @@ export class ConveniosBeneficiosComponent {
       descuento: 'Av. Kirchner 1387 + 10% de descuento en efectivo o transferencia en inscripciones',
       imagen: '',
     },
-    
+
     // CARNICERÍA / ALMACÉN
     {
       nombre: 'CARNICERÍA LA ESQUINA',
@@ -57,7 +57,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% Desc. Efectivo, 05% Desc. Transferencia',
       imagen: '',
     },
-    
+
     // CERRAJERÍA
     {
       nombre: 'CERRAJERÍA PREMIER',
@@ -67,7 +67,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% en llaves complicadas con acción',
       imagen: '',
     },
-    
+
     // COTILLÓN - BAZAR - BOUTIQUE - REGALOS
     {
       nombre: 'BARRABAS BOUTIQUE',
@@ -101,17 +101,17 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // DECO
     {
-      nombre: 'DEOSSA HOMES',
+      nombre: 'COSAS LINDAS',
       categoria: 'Deco',
       direccion: 'Zapiola 613',
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // ESTÉTICA - BARBERÍA - PELUQUERÍAS
     {
       nombre: 'C Y C ESTILO PERSONALIZADO',
@@ -122,11 +122,11 @@ export class ConveniosBeneficiosComponent {
       imagen: '',
     },
     {
-      nombre: 'DANIELA CABRERA',
+      nombre: 'D-UÑAS',
       categoria: 'Estética - Barbería - Peluquerías',
-      direccion: 'Av. Pres. Néstor Carlos Kirchner 1387',
+      direccion: 'Alberdi 301',
       telefono: '',
-      descuento: 'Combo 2: 10% de descuento en efectivo',
+      descuento: '10% de descuento en efectivo',
       imagen: '',
     },
     {
@@ -138,25 +138,25 @@ export class ConveniosBeneficiosComponent {
       imagen: '',
     },
     {
-      nombre: 'PERALTA FEDERICO MATIAS',
+      nombre: 'SALÓN UNISEX MARIANA',
       categoria: 'Estética - Barbería - Peluquerías',
-      direccion: 'Antártida Argentina 1023',
+      direccion: 'Provincias Unidas 472',
       telefono: '',
-      descuento: '20% de descuento en efectivo por corte de pelo completo',
+      descuento: '25% de descuento en cortes',
       imagen: '',
     },
     {
       nombre: 'SALÓN DE BELLEZA CRISTINA',
       categoria: 'Estética - Barbería - Peluquerías',
-      direccion: 'Lisio Vecina 7',
+      direccion: 'Lago Viedma y Antonio Rivero',
       telefono: '',
-      descuento: 'Antartida Micaela: 10% descuento efectivo o transferencia',
+      descuento: '20% de descuento en cortes',
       imagen: '',
     },
-    
+
     // FARMACIAS
     {
-      nombre: 'ACTOFARM A',
+      nombre: 'AUTOFARMA',
       categoria: 'Farmacias',
       direccion: 'Av. Kirchner 1167',
       telefono: '',
@@ -166,30 +166,30 @@ export class ConveniosBeneficiosComponent {
     {
       nombre: 'LA FRANCO',
       categoria: 'Farmacias',
-      direccion: 'Av. Remigio R Escalada 160, Kirchner 1166, Kirchner 1468, Juulito L Rodriguez Av Arg',
+      direccion: 'Av. Gregores y Kirchner; Av. Kirchner y 9 de Julio',
       telefono: '',
-      descuento: '15% de descuento en perfumería, regalos, cuidado personal y varios',
+      descuento: '10% de descuento en perfumería y regalería (no medicamentos)',
       imagen: '',
     },
-    
+
     // FERRETERÍAS
     {
       nombre: 'FERRETERÍA MANZUR',
       categoria: 'Ferreterías',
-      direccion: 'Av. Perón 685',
+      direccion: 'Av. Perón 885',
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
     },
     {
-      nombre: 'FERREUNIÓN',
+      nombre: 'RG SERVICIOS FERRETERÍA',
       categoria: 'Ferreterías',
-      direccion: 'Alberti 35',
+      direccion: 'Alberdi 63',
       telefono: '',
-      descuento: '10% de descuento todos los modos de pago',
+      descuento: '10% de descuento en todos los medios de pago',
       imagen: '',
     },
-    
+
     // FOTOGRAFÍA
     {
       nombre: 'TOMMY COLOR',
@@ -199,7 +199,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento en impres. en estudio',
       imagen: '',
     },
-    
+
     // GASTRONOMÍA - PASTELERÍA - ALMACENES
     {
       nombre: 'ARTE LATTE',
@@ -281,7 +281,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento efectivo',
       imagen: '',
     },
-    
+
     // HELADERÍAS
     {
       nombre: 'TENTACIÓN',
@@ -291,7 +291,7 @@ export class ConveniosBeneficiosComponent {
       descuento: 'Islas Malvinas 6, España 98, Roca 1: 10% de descuento todos los medios de pago',
       imagen: '',
     },
-    
+
     // INDUMENTARIA
     {
       nombre: 'PATAGONIA CARPINTERÍA',
@@ -413,7 +413,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '20% desc. 04, 3 y 6 cd. calc. 10% y 12 calc.',
       imagen: '',
     },
-    
+
     // INFORMÁTICA E INSUMOS
     {
       nombre: 'INFO',
@@ -423,7 +423,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento en efectivo en 04 desc. con efectiv',
       imagen: '',
     },
-    
+
     // LIBRERÍAS
     {
       nombre: 'LOLA MORA',
@@ -441,7 +441,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento especiales',
       imagen: '',
     },
-    
+
     // JUGUETERÍA
     {
       nombre: 'DAMA FESTA',
@@ -451,7 +451,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento efectivo u débito',
       imagen: '',
     },
-    
+
     // LIBRERÍA - PAPELERÍA
     {
       nombre: 'SAMI',
@@ -485,7 +485,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento en efectivo u débito',
       imagen: '',
     },
-    
+
     // MAYORISTAS
     {
       nombre: 'RAGA',
@@ -511,7 +511,7 @@ export class ConveniosBeneficiosComponent {
       descuento: '30% efectivo de mercadería',
       imagen: '',
     },
-    
+
     // MARMOLERÍA
     {
       nombre: 'VICTORIA',
@@ -521,35 +521,35 @@ export class ConveniosBeneficiosComponent {
       descuento: 'Traslados: 4 cuotas sin interés',
       imagen: '',
     },
-    
+
     // MERCERÍA
     {
       nombre: 'LA PRINCESA',
       categoria: 'Mercería',
-      direccion: 'Pío Trejo 187',
+      direccion: '25 de Mayo 987',
       telefono: '',
       descuento: '20% de descuento en todos los rubros',
       imagen: '',
     },
-    
+
     // NEUMÁTICOS / TALLER / LUBRICANTES
     {
-      nombre: 'AUSTRAL CUBIERTAS SRL',
+      nombre: 'AUSTRAL GOMAS SRL',
       categoria: 'Neumáticos / Taller / Lubricantes',
-      direccion: 'Patagonia 30',
+      direccion: 'Rivadavia 913',
       telefono: '',
-      descuento: '10% Desc. tarjetas 5 y 20 cuotas 0-30 % int.',
+      descuento: '10% de descuento; tarjetas 3 y 6 cuotas sin interés',
       imagen: '',
     },
     {
-      nombre: 'CROCEGON',
+      nombre: 'CRUCEGON',
       categoria: 'Neumáticos / Taller / Lubricantes',
-      direccion: 'Maipú Necochea 66',
+      direccion: 'Mariano Moreno 648',
       telefono: '',
-      descuento: '30% Desc. en cuotas',
+      descuento: '10% de descuento en mano de obra y lubricantes',
       imagen: '',
     },
-    
+
     // ÓPTICAS
     {
       nombre: 'ÓPTICA PUNTO AUSTRAL',
@@ -559,15 +559,24 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% Desc. efect., tarjeta, 3 y 6 c.s. int.',
       imagen: '',
     },
+    // ÓPTICAS
     {
-      nombre: 'ÓPTICA GALILEO',
+      nombre: 'CENTRO ÓPTICO AUSTRAL',
       categoria: 'Ópticas',
-      direccion: 'Rápola 830',
+      direccion: 'Zapiola 286',
       telefono: '',
-      descuento: '01% de descuento efectivo',
+      descuento: '10% en efectivo; tarjeta 3 y 6 cuotas sin interés',
       imagen: '',
     },
-    
+    {
+      nombre: 'ÓPTICA GALLEGOS',
+      categoria: 'Ópticas',
+      direccion: 'España 384',
+      telefono: '',
+      descuento: '15% de descuento en efectivo',
+      imagen: '',
+    },
+
     // ORTOPEDIAS
     {
       nombre: 'DIAZ VELEZ',
@@ -585,17 +594,17 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento efectivo',
       imagen: '',
     },
-    
+
     // PANADERÍA
     {
-      nombre: 'FRANCO',
+      nombre: 'FRANOI',
       categoria: 'Panadería',
-      direccion: 'Puerto 208',
+      direccion: 'Perito Moreno 138',
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // PERFUMERÍA - COSMÉTICA
     {
       nombre: 'LA SERENA',
@@ -605,108 +614,108 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento todos los medios de pagos',
       imagen: '',
     },
-    
+
     // PINTURERÍA
     {
       nombre: 'LA PINTURERÍA',
       categoria: 'Pinturería',
-      direccion: 'Pilbottom 391',
+      direccion: 'Pellegrini 331',
       telefono: '',
       descuento: '15% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // POLARIZADOS
     {
       nombre: 'EVOLUTION FILMS',
       categoria: 'Polarizados',
-      direccion: 'Arroyo Judo 794',
+      direccion: 'Hipólito Yrigoyen 726',
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // SALÓN DE EVENTOS
     {
       nombre: 'HAPPY WORLD',
       categoria: 'Salón de Eventos',
-      direccion: 'Plucalle 80',
+      direccion: 'Magallanes 68',
       telefono: '',
       descuento: '30% de descuento en efectivo',
       imagen: '',
     },
-    
+
     // SEGURIDAD
     {
       nombre: 'ROMERO SISTEMAS',
       categoria: 'Seguridad',
-      direccion: 'Belgrano 66',
+      direccion: 'Maipú 480',
       telefono: '',
-      descuento: 'Contratación preferencial',
+      descuento: 'Cotizaciones preferenciales',
       imagen: '',
     },
-    
+
     // SEGUROS
     {
-      nombre: 'BRISSA ASESORES DE SEGUROS',
+      nombre: 'BRUSA ASESORES DE SEGUROS',
       categoria: 'Seguros',
-      direccion: 'España 106',
+      direccion: 'España 306',
       telefono: '',
-      descuento: '10% en coupón para todo tipo de seguros',
+      descuento: '10% de descuento en pólizas',
       imagen: '',
     },
-    
+
     // SUPERMERCADOS - POLLERÍAS
     {
       nombre: 'DON ALDO',
       categoria: 'Supermercados - Pollerías',
-      direccion: 'A Alberdi 830 Bis Gaspern',
+      direccion: 'Alvear 1170 esq. Cepeda',
       telefono: '',
-      descuento: '10% de descuento efectivo',
+      descuento: '10% de descuento en efectivo',
       imagen: '',
     },
     {
-      nombre: 'EL SHEIK Y LA SIBERIA',
+      nombre: 'EL HUEVO Y LA GALLINA',
       categoria: 'Supermercados - Pollerías',
-      direccion: 'Meinram Cornés 190',
+      direccion: 'Hernán Cortés 827',
       telefono: '',
-      descuento: '10% de descuento efectivo',
+      descuento: '10% de descuento en efectivo',
       imagen: '',
     },
     {
-      nombre: 'GREGORIO Y. RODRÍGUEZ',
+      nombre: 'GREGORIO T. RODRÍGUEZ',
       categoria: 'Supermercados - Pollerías',
-      direccion: 'Marcelo Moreno 338, Calle 18 de Santa 340 Y 32',
+      direccion: 'Mariano Moreno 460 y 640',
       telefono: '',
-      descuento: '5% de descuento en todos los medios',
+      descuento: '5% de descuento en todos los medios de pago',
       imagen: '',
     },
-    
+
     // TURISMO
     {
-      nombre: 'WACA TURISMO',
+      nombre: 'MACA TOBIANO',
       categoria: 'Turismo',
       direccion: '',
       telefono: '',
-      descuento: 'Patagónica Robados: 10% Desc. todos los medios',
+      descuento: '10% de descuento. Todos los medios de pago',
       imagen: '',
     },
-    
+
     // VINERÍA
     {
-      nombre: 'LA ESQUINA DE VISTO',
+      nombre: 'LA ESQUINA DE BETO',
       categoria: 'Vinería',
-      direccion: 'Av. 25 de Mayo 469',
+      direccion: '25 de Mayo 404',
       telefono: '',
-      descuento: '10% Desc. en vinos y espumantes',
+      descuento: '10% de descuento en vinos y espumantes',
       imagen: '',
     },
-    
+
     // ZAPATERÍAS
     {
-      nombre: 'SHOE DA PLAZA',
+      nombre: 'BUENA PATA',
       categoria: 'Zapaterías',
-      direccion: 'Av. Kirchner 1232',
+      direccion: 'Av. Kirchner 1116',
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
@@ -727,36 +736,22 @@ export class ConveniosBeneficiosComponent {
       descuento: '10% de descuento',
       imagen: '',
     },
-    {
-      nombre: 'CALZADOS EMANUEL',
-      categoria: 'Zapaterías',
-      direccion: 'Máximo C. Leyres 136',
-      telefono: '',
-      descuento: '10% de descuento en efectivo',
-      imagen: '',
-    },
-    {
-      nombre: 'TARGETAS 2 Y 3 CUOTAS SIN INTERÉS',
-      categoria: 'Zapaterías',
-      direccion: '',
-      telefono: '',
-      descuento: '2 y 3 cuotas sin interés',
-      imagen: '',
-    },
+
+
     {
       nombre: 'SARKANY',
       categoria: 'Zapaterías',
-      direccion: 'A Alberdi 3 o Esquina San Martín',
+      direccion: 'Alcorta y San Martín',
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
     },
     {
-      nombre: 'ZAPATERIA TURBILENTA',
+      nombre: 'ZAPATERIA TURQUESA',
       categoria: 'Zapaterías',
-      direccion: 'E.Minguillón Av. Lelec 381',
+      direccion: 'Ezcurra 85',
       telefono: '',
-      descuento: '10% Desc. en efectivo',
+      descuento: '10% de descuento en efectivo',
       imagen: '',
     }
   ];
