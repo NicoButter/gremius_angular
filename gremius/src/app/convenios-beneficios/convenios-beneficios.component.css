@@ -1,8 +1,68 @@
+.convenios-beneficios {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.convenios-beneficios h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1a237e;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.convenios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.convenio-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.convenio-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  border-color: #1a237e;
+}
+
+.convenio-card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #1a237e;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.convenio-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
 .convenio-logo {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  min-height: 120px;
 }
 
 .convenio-img {
@@ -23,20 +83,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e0e0e0;
-  color: #888;
-  border-radius: 12px;
-  font-size: 0.9rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 2.5rem;
 }
 
 .nuevo-badge {
   background: #e53935;
   color: #fff;
-  font-size: 0.8rem;
-  padding: 2px 8px;
-  border-radius: 8px;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
   margin-left: 8px;
   vertical-align: middle;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .convenio-detalles {
@@ -47,54 +110,34 @@
 }
 
 .convenio-detalles li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-.convenios-beneficios {
-  max-width: 800px;
-  margin: 32px auto;
-  padding: 24px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(68,76,138,0.08);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
 }
 
-.convenios-beneficios {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.convenio-detalles li strong {
+  color: #1a237e;
+  display: inline-block;
+  min-width: 90px;
 }
 
-.convenios-beneficios h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.convenios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.convenio-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  text-align: center;
-  transition: box-shadow 0.2s;
-}
-
-.convenio-card:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.16);
-}
-
-.convenio-card h2 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-.convenio-card p {
-  color: #555;
-  font-size: 1rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .convenios-beneficios {
+    padding: 1rem;
+  }
+  
+  .convenios-beneficios h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .convenios-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }

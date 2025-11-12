@@ -1,10 +1,11 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, HostListener, OnDestroy } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-actualidad',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterLink],
   templateUrl: './actualidad.component.html',
   styleUrls: ['./actualidad.component.css']
 })
@@ -14,7 +15,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   imagenModal = '';
   tituloModal = '';
   textoModal = '';
-  
+
   // Propiedades para el zoom y arrastre
   @ViewChild('contenedorRef') contenedorRef!: ElementRef;
   escala = 1;
@@ -29,7 +30,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   altoImagenOriginal = 0;
   anchoContenedor = 0;
   altoContenedor = 0;
-  
+
   // Referencia para el indicador de zoom
   private zoomIndicator: HTMLElement | null = null;
   private timeoutZoomIndicator: any = null;
@@ -47,13 +48,13 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     this.offsetHorizontal = 0;
     this.offsetVertical = 0;
     this.arrastrando = false;
-    
+
     // Prevenir scroll del body cuando el modal está activo
     document.body.style.overflow = 'hidden';
-    
+
     // Crear indicador de zoom si no existe
     this.crearIndicadorZoom();
-    
+
     // Esperar un momento para calcular dimensiones
     setTimeout(() => {
       this.calcularDimensiones();
@@ -65,7 +66,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     this.modalActivo = false;
     // Restaurar scroll del body
     document.body.style.overflow = 'auto';
-    
+
     // Ocultar indicador de zoom
     this.ocultarIndicadorZoom();
   }
@@ -77,65 +78,65 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
 
   calcularDimensiones() {
     if (!this.contenedorRef || !this.modalActivo) return;
-    
+
     const contenedor = this.contenedorRef.nativeElement;
     this.anchoContenedor = contenedor.offsetWidth;
     this.altoContenedor = contenedor.offsetHeight;
-    
+
     // Centrar la imagen
     this.centrarImagen();
   }
 
   centrarImagen() {
     if (this.anchoImagenOriginal === 0 || this.altoImagenOriginal === 0) return;
-    
+
     // Centrar tanto horizontal como verticalmente cuando no hay zoom
     if (this.escala <= 1) {
       this.offsetHorizontal = 0;
       this.offsetVertical = 0;
       return;
     }
-    
+
     // Aplicar límites cuando hay zoom para que no se salga del contenedor
     this.aplicarLimites();
   }
 
   manejarZoom(event: WheelEvent) {
     event.preventDefault();
-    
+
     // Guardar posición del mouse relativa al contenedor
     const rect = event.currentTarget as HTMLElement;
     const mouseX = event.clientX - rect.getBoundingClientRect().left;
     const mouseY = event.clientY - rect.getBoundingClientRect().top;
-    
+
     // Calcular el centro del contenedor
     const centroX = this.anchoContenedor / 2;
     const centroY = this.altoContenedor / 2;
-    
+
     // Determinar dirección del zoom
     const factorZoom = event.deltaY > 0 ? 0.9 : 1.1;
     const escalaAnterior = this.escala;
     const nuevaEscala = Math.min(Math.max(this.escala * factorZoom, this.escalaMinima), this.escalaMaxima);
-    
+
     // Si la escala cambió, ajustar la posición para mantener el zoom centrado en el cursor
     if (nuevaEscala !== escalaAnterior && this.anchoImagenOriginal > 0 && this.altoImagenOriginal > 0) {
       const ratio = nuevaEscala / escalaAnterior;
-      
+
       // Calcular el offset relativo al cursor
       const offsetMouseX = mouseX - centroX - this.offsetHorizontal;
       const offsetMouseY = mouseY - centroY - this.offsetVertical;
-      
+
       // Ajustar los offsets para mantener el punto bajo el cursor
       this.offsetHorizontal = mouseX - centroX - (offsetMouseX * ratio);
       this.offsetVertical = mouseY - centroY - (offsetMouseY * ratio);
     }
-    
+
     // Aplicar nueva escala
     this.escala = nuevaEscala;
-    
+
     // Aplicar límites para mantener la imagen dentro del contenedor
     this.aplicarLimites();
-    
+
     // Mostrar indicador de zoom
     this.mostrarIndicadorZoom();
   }
@@ -145,12 +146,12 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     if (this.escala <= 1) {
       return;
     }
-    
+
     this.arrastrando = true;
     this.puntoInicioX = event.clientX;
     this.puntoInicioY = event.clientY;
     event.preventDefault();
-    
+
     // Cambiar cursor
     const contenedor = this.contenedorRef.nativeElement;
     contenedor.style.cursor = 'grabbing';
@@ -160,13 +161,13 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     if (this.arrastrando && this.escala > 1) {
       const deltaX = event.clientX - this.puntoInicioX;
       const deltaY = event.clientY - this.puntoInicioY;
-      
+
       this.offsetHorizontal += deltaX;
       this.offsetVertical += deltaY;
-      
+
       this.puntoInicioX = event.clientX;
       this.puntoInicioY = event.clientY;
-      
+
       // Aplicar límites para que la imagen no se salga del contenedor
       this.aplicarLimites();
     }
@@ -174,11 +175,11 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
 
   aplicarLimites() {
     if (this.anchoImagenOriginal === 0 || this.altoImagenOriginal === 0) return;
-    
+
     // Calcular dimensiones de la imagen escalada
     const anchoImagenEscalada = this.anchoImagenOriginal * this.escala;
     const altoImagenEscalada = this.altoImagenOriginal * this.escala;
-    
+
     // Aplicar límites horizontales
     if (anchoImagenEscalada > this.anchoContenedor) {
       const maxOffsetX = (anchoImagenEscalada - this.anchoContenedor) / 2;
@@ -187,7 +188,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
       // Si la imagen es más pequeña que el contenedor horizontalmente, mantenerla centrada
       this.offsetHorizontal = 0;
     }
-    
+
     // Aplicar límites verticales
     if (altoImagenEscalada > this.altoContenedor) {
       const maxOffsetY = (altoImagenEscalada - this.altoContenedor) / 2;
@@ -200,7 +201,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
 
   finalizarArrastre() {
     this.arrastrando = false;
-    
+
     // Restaurar cursor
     if (this.contenedorRef) {
       const contenedor = this.contenedorRef.nativeElement;
@@ -211,7 +212,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   crearIndicadorZoom() {
     // Eliminar indicador anterior si existe
     this.eliminarIndicadorZoom();
-    
+
     // Crear nuevo indicador
     this.zoomIndicator = document.createElement('div');
     this.zoomIndicator.className = 'zoom-indicator';
@@ -223,12 +224,12 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
     if (this.zoomIndicator) {
       this.zoomIndicator.innerText = `Zoom: ${Math.round(this.escala * 100)}%`;
       this.zoomIndicator.classList.add('visible');
-      
+
       // Limpiar timeout anterior
       if (this.timeoutZoomIndicator) {
         clearTimeout(this.timeoutZoomIndicator);
       }
-      
+
       // Ocultar después de 1 segundo de inactividad
       this.timeoutZoomIndicator = setTimeout(() => {
         this.ocultarIndicadorZoom();
@@ -262,7 +263,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
       const target = event.target as HTMLElement;
       if (target.closest('.modal-body')) {
         event.preventDefault();
-        
+
         // Alternar entre zoom 1x y 2x
         if (this.escala === 1) {
           this.escala = 2;
@@ -275,7 +276,7 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
           this.offsetVertical = 0;
           this.centrarImagen();
         }
-        
+
         this.mostrarIndicadorZoom();
       }
     }

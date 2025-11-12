@@ -1,21 +1,24 @@
 
 <section class="convenios-beneficios">
   <h1>Convenios por Beneficios</h1>
+  <p class="subtitle">Comprando todos los miércoles obtenés descuentos para afiliados</p>
   <div class="convenios-grid">
     <div class="convenio-card" *ngFor="let convenio of convenios">
       <div class="convenio-logo">
         <!-- Inserta aquí la imagen del logo del convenio -->
         <img *ngIf="convenio.imagen" [src]="convenio.imagen" [alt]="convenio.nombre" class="convenio-img" />
-        <div *ngIf="!convenio.imagen" class="convenio-img-placeholder">Logo aquí</div>
+        <div *ngIf="!convenio.imagen" class="convenio-img-placeholder">
+          <i class="fa-solid fa-store"></i>
+        </div>
       </div>
       <h2>
         {{ convenio.nombre }}
         <span *ngIf="convenio.nuevo" class="nuevo-badge">Nuevo</span>
       </h2>
       <ul class="convenio-detalles">
-        <li><strong>Comercio / Profesión:</strong> {{ convenio.nombre }}</li>
-        <li><strong>Dirección:</strong> {{ convenio.direccion }}</li>
-        <li><strong>Teléfonos:</strong> {{ convenio.telefono }}</li>
+        <li *ngIf="convenio.categoria"><strong>Categoría:</strong> {{ convenio.categoria }}</li>
+        <li *ngIf="convenio.direccion"><strong>Dirección:</strong> {{ convenio.direccion }}</li>
+        <li *ngIf="convenio.telefono && convenio.telefono !== convenio.descuento"><strong>Teléfono:</strong> {{ convenio.telefono }}</li>
         <li><strong>Descuento:</strong> {{ convenio.descuento }}</li>
       </ul>
     </div>

@@ -13,12 +13,6 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   noticias = [
     {
-      titulo: 'Gran sorteo en vivo - Día del Empleado Judicial',
-      descripcion: 'Fecha: 3 de noviembre del 2025. Hora: 15:00. Lugar: Sede Ramon y Cajal 257 (Antes Escribano Público). ¡No te lo pierdas!',
-      image: '/assets/images/sorteo_dia_empleado_judicial.webp',
-      autor: 'Equipo de Comunicación'
-    },
-    {
       titulo: 'La Justicia se mejora con formación y compromiso',
       descripcion: 'Reunión junto al Dr. Miguel Berri (Decano), Dra. Valeria Moreno (Secretaria Académica) y Dr. Alejandro Batista (Prosecretario de Políticas Digitales) de la Facultad de Ciencias Jurídicas y Sociales - UNLP. Trabajamos para brindar más calidad y herramientas a nuestros compañeros y compañeras judiciales.',
       image: '/assets/images/encuentro_la_plata_universidad.webp',
