@@ -244,12 +244,11 @@ header.shrink .nav-item a {
   }
 
   main {
-    padding-top: calc(var(--mobile-header-height) + var(--mobile-navbar-height));
+    padding-top: var(--header-height);
   }
 
   header {
     height: auto;
-    min-height: calc(var(--mobile-header-height) + var(--mobile-navbar-height));
   }
 
   .header-top {
@@ -297,26 +296,25 @@ header.shrink .nav-item a {
   }
 
   .navbar {
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 10px 15px;
-    height: var(--mobile-navbar-height);
+    min-height: var(--mobile-navbar-height);
     background: linear-gradient(to right, #30366D, #444C8A, #5A62A0);
     position: relative;
     display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   .menu-toggle {
     display: flex;
     position: relative;
-    right: 0;
     z-index: 1002;
-    margin-left: auto;
   }
 
   .nav-list {
     position: fixed;
-    top: calc(var(--mobile-header-height) + var(--mobile-navbar-height));
+    top: var(--header-height);
     left: 0;
     right: 0;
     width: 100%;
@@ -330,15 +328,10 @@ header.shrink .nav-item a {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     z-index: 998;
-    max-height: calc(100vh - var(--mobile-header-height) - var(--mobile-navbar-height));
+    max-height: calc(100vh - var(--header-height));
     overflow-y: auto;
-    padding: 0;
+    padding: 0 0 20px;
     margin: 0;
-  }
-
-  header.shrink .nav-list {
-    top: calc(var(--mobile-shrink-height) + var(--mobile-navbar-shrink-height));
-    max-height: calc(100vh - var(--mobile-shrink-height) - var(--mobile-navbar-shrink-height));
   }
 
   .nav-list.active {
@@ -429,7 +422,7 @@ header.shrink .nav-item a {
 /* Media Query para pantallas menores a 480px */
 @media (max-width: 480px) {
   main {
-    padding-top: calc(var(--mobile-header-height) + var(--mobile-navbar-height));
+    padding-top: var(--header-height);
   }
 
   .header-top .logo img {
@@ -443,7 +436,6 @@ header.shrink .nav-item a {
 
   .navbar {
     padding: 10px 15px;
-    height: var(--mobile-navbar-height);
   }
 
   .nav-item a {
