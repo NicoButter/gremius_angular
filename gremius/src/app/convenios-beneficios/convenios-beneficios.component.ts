@@ -17,6 +17,7 @@ export class ConveniosBeneficiosComponent {
     telefono: string;
     descuento: string;
     imagen: string;
+    rubro: string;
     nuevo?: boolean;
   }> = [
     // ARTÍCULOS DE LIMPIEZA
@@ -28,6 +29,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // ARTÍCULOS ELECTRÓNICOS
@@ -39,6 +41,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% de descuento en efectivo',
       imagen: '',
+      rubro: 'Tecnología',
     },
 
     // CAPACITACIONES
@@ -50,6 +53,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '50% descuento en efectivo o transferencia en inscripciones',
       imagen: '',
+      rubro: 'Educación',
     },
 
     // CARNICERÍA / ALMACÉN
@@ -61,6 +65,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% desc. efectivo, 5% desc. tarjetas',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // CERRAJERÍA
@@ -72,6 +77,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% llaves codificadas del autom.',
       imagen: '',
+      rubro: 'Servicios',
     },
 
     // COTILLÓN - BAZAR - BOUTIQUE - REGALOS
@@ -83,6 +89,7 @@ export class ConveniosBeneficiosComponent {
         telefono: '',
         descuento: '10% por pago en efectivo o débito',
         imagen: '',
+        rubro: 'Comercio',
       },
     {
       nombre: 'BAMBA BIJOUTERIE',
@@ -92,6 +99,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% desc. efectivo, 3 cuotas sin interés',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'BUBBLE INC',
@@ -101,6 +109,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% desc. en cotillón, 10% en regalería',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'DECO REGALERÍA',
@@ -110,6 +119,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% descuento en efectivo',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'ZOCO',
@@ -119,6 +129,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'COSAS LINDAS',
@@ -128,6 +139,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'COSAS DE CHICAS',
@@ -137,6 +149,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% con pago en efectivo o débito en servicios de manicuría, esmaltado de pies y manos y limpieza de cutis',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'C Y G ESTILO PERSONALIZADO',
@@ -146,6 +159,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% descuento efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'D UÑAS',
@@ -155,6 +169,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento en efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'HARMONY',
@@ -164,6 +179,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '30% de descuento en efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'SALÓN UNISEX MARIANA',
@@ -173,6 +189,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% descuento ef.',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'SALÓN DE BELLEZA CRISTINA',
@@ -182,6 +199,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% descuento en efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'ZONA SALUD',
@@ -191,6 +209,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 651273 / 02966 755049',
       descuento: '10% descuento en efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'AUTOFARMA',
@@ -200,6 +219,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% descuento perfumería y regalería (no incluye medicamentos)',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'LA FRANCO',
@@ -209,6 +229,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% descuento perfumería y regalería (no incluye medicamentos)',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'FERRETERÍA MANZUR',
@@ -218,6 +239,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'RG SERVICIOS FERRETERÍA',
@@ -227,6 +249,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '7% todos los medios',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'TOMMY COLOR',
@@ -236,6 +259,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% descuento efectivo en impresiones de fotos',
       imagen: '',
+      rubro: 'Servicios',
     },
     {
       nombre: 'MOMA FOOD HALL',
@@ -245,6 +269,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de lunes a jueves',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'BRITÁNICO COCKTAIL CLUB',
@@ -254,6 +279,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% en almuerzos de lunes a viernes',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'ARTE LATTE',
@@ -263,6 +289,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'CLUB BRITÁNICO',
@@ -272,6 +299,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'COMIDAS HUESINIS',
@@ -281,6 +309,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% en compras mayores a $20.000 (efectivo o transferencia)',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'DELICIAS DE LA ABUELA',
@@ -290,6 +319,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'EL TABLÓN PARRILLA',
@@ -299,6 +329,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 315502',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'MOMA - COMO EN CASA PIZZERÍA',
@@ -308,6 +339,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'NENEO RESTAURANTE',
@@ -317,6 +349,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo / 5% tarjeta',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'ROSTISERÍA JOB',
@@ -326,6 +359,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% todos los medios',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'VÍA VENETO',
@@ -335,6 +369,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
     {
       nombre: 'ZERO GLUTEN',
@@ -344,6 +379,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
 
     // HELADERÍAS
@@ -355,6 +391,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% todos los medios',
       imagen: '',
+      rubro: 'Gastronomía',
     },
 
     // INDUMENTARIA
@@ -366,6 +403,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% en pago en efectivo y hasta 6 cuotas sin interés con tarjetas de crédito',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'YAGMOUR',
@@ -375,6 +413,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 479463',
       descuento: '15% de descuento de lunes a miércoles',
       imagen: '',
+      rubro: 'Indumentaria',
     },
 
     // INFORMÁTICA E INSUMOS
@@ -386,6 +425,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo o 5% débito',
       imagen: '',
+      rubro: 'Tecnología',
     },
 
     // JOYERÍAS
@@ -397,6 +437,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'TEPPA JOYAS',
@@ -406,6 +447,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% efectivo o débito',
       imagen: '',
+      rubro: 'Indumentaria',
     },
 
     // JUGUETERÍA
@@ -417,6 +459,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% efectivo o débito',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // LIBRERÍA - PAPELERÍA
@@ -428,6 +471,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% efectivo, tarjeta 3 cuotas sin interés',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'CAPIPE',
@@ -437,6 +481,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo o débito (no ofertas)',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'EL MAYORAL',
@@ -446,6 +491,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo o débito',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'EL RELOJ',
@@ -455,6 +501,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo, tarjeta 3 cuotas sin interés',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'TODO PAPEL',
@@ -464,6 +511,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo o débito',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // MAYORISTAS
@@ -475,6 +523,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% todos los medios (no ofertas)',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'CAPIPE',
@@ -484,6 +533,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '13% efectivo o débito (no ofertas)',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // MARMOLERÍA
@@ -495,6 +545,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: 'Tarjetas 3 cuotas sin interés',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // MERCERÍA
@@ -506,18 +557,20 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% todos los medios',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // NEUMÁTICOS / TALLER / LUBRICANTES
-      {
-        nombre: 'DHL. MECÁNICA EN GENERAL',
-        categoria: 'Taller Mecánico',
-        direccion: 'Cañadón Seco 75, Río Gallegos',
-        localidad: 'Río Gallegos',
-        telefono: '02966 658396',
-        descuento: '20% para afiliados en mecánica y electricidad general. Daniel Horacio León.',
-        imagen: '',
-      },
+    {
+      nombre: 'DHL. MECÁNICA EN GENERAL',
+      categoria: 'Taller Mecánico',
+      direccion: 'Cañadón Seco 75, Río Gallegos',
+      localidad: 'Río Gallegos',
+      telefono: '02966 658396',
+      descuento: '20% para afiliados en mecánica y electricidad general. Daniel Horacio León.',
+      imagen: '',
+      rubro: 'Servicios',
+    },
     {
       nombre: 'AUSTRAL GOMAS SRL.',
       categoria: 'Neumáticos / Taller / Lubricantes',
@@ -526,6 +579,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% descuento; tarjetas 3 y 6 cuotas sin interés',
       imagen: '',
+      rubro: 'Servicios',
     },
     {
       nombre: 'CRUCECOR',
@@ -535,6 +589,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Servicios',
     },
 
     // ÓPTICAS
@@ -546,6 +601,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo, tarjeta 3 y 6 cuotas sin interés',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'ÓPTICA GALLEGOS',
@@ -555,6 +611,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
 
     // ORTOPEDIAS
@@ -566,6 +623,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 346222',
       descuento: '15% en Termobike, Acupuntura, Masajes, Auriculoterapia, Entrenamiento Funcional. 10% en coseguros de Obras Sociales para Kinesiología y Fisioterapia.',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'DÍAZ VÉLEZ',
@@ -575,6 +633,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
     {
       nombre: 'INTEGRAL',
@@ -584,6 +643,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
 
     // PANADERÍA
@@ -595,6 +655,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Gastronomía',
     },
 
     // PERFUMERÍA - COSMÉTICA
@@ -606,6 +667,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% todos los medios',
       imagen: '',
+      rubro: 'Salud y Belleza',
     },
 
     // PINTURERÍA
@@ -617,6 +679,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // POLARIZADOS
@@ -628,6 +691,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Servicios',
     },
     {
       nombre: 'FULL CARS. TU AUTO TU ESTILO',
@@ -637,6 +701,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 417512',
       descuento: '20% en polarizados, tratamientos cerámicos, instalaciones de PPF, instalaciones de vinilos, gráficas y reparaciones de parabrisas',
       imagen: '',
+      rubro: 'Servicios',
     },
 
     // SALÓN DE EVENTOS
@@ -648,6 +713,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 786021',
       descuento: '20% de descuento abonando en efectivo o transferencia',
       imagen: '',
+      rubro: 'Servicios',
     },
 
     // SEGURIDAD
@@ -659,6 +725,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: 'Condiciones preferenciales',
       imagen: '',
+      rubro: 'Servicios',
     },
 
     // SEGUROS
@@ -670,6 +737,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: 'Mejor propuesta garantizada',
       imagen: '',
+      rubro: 'Servicios',
     },
 
     // SUPERMERCADOS - POLLERÍAS
@@ -681,6 +749,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '5% en compras de hasta $10.000 por operación con todos los medios de pago (excepto promociones de Axion Energy)',
       imagen: '',
+      rubro: 'Servicios',
     },
     {
       nombre: 'DON ALDO',
@@ -690,6 +759,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'EL HUEVO Y LA GALLINA',
@@ -699,6 +769,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo, 10% débito',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'GREGORIO T. RODRÍGUEZ',
@@ -708,6 +779,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '5% todos los medios',
       imagen: '',
+      rubro: 'Comercio',
     },
     {
       nombre: 'MARKET SUR AHORRO',
@@ -717,6 +789,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento sobre compra final de productos. No acumulable con otras promociones vigentes',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // TURISMO
@@ -728,6 +801,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '02966 346222',
       descuento: '15% con pago en efectivo, transferencia bancaria o débito',
       imagen: '',
+      rubro: 'Turismo',
     },
     {
       nombre: 'MACA TOBIANO',
@@ -737,6 +811,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% de descuento. Todos los medios de pago',
       imagen: '',
+      rubro: 'Turismo',
     },
 
     // ALMACENES - CONGELADOS
@@ -748,6 +823,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% exclusivo para afiliados sobre la compra final de productos (congelados, frutas y verduras, productos SIN TACC, rebozados, pizzas, empanadas, pescados, waffles, helados, etc.)',
       imagen: '',
+      rubro: 'Comercio',
     },
 
     // VINERÍA
@@ -759,6 +835,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% en vinos y espumantes',
       imagen: '',
+      rubro: 'Gastronomía',
     },
 
     // ZAPATERÍAS
@@ -770,6 +847,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'EMANUEL CALZADOS',
@@ -779,6 +857,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% todos los medios',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'EMANUEL CALZADOS',
@@ -788,6 +867,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '20% efectivo',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'LA ESTACIÓN CALZADOS',
@@ -797,6 +877,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo, tarjetas 3 y 6 cuotas sin interés',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'SARKANY',
@@ -806,6 +887,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% efectivo',
       imagen: '',
+      rubro: 'Indumentaria',
     },
     {
       nombre: 'ZAPATERÍA TURQUESA',
@@ -815,6 +897,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '15% efectivo',
       imagen: '',
+      rubro: 'Indumentaria',
     },
 
       // MASCOTAS
@@ -826,6 +909,7 @@ export class ConveniosBeneficiosComponent {
       telefono: '',
       descuento: '10% en alimentos y 20% en accesorios con todos los medios de pago. No acumulable con otras promociones.',
       imagen: '',
+      rubro: 'Comercio',
     }
     ];
   }
