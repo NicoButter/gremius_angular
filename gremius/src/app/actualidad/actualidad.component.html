@@ -1,7 +1,33 @@
 <section id="actualidad">
     <h2>Actualidad del Gremio</h2>
     <p>Mantenete al día con nuestras actividades y logros recientes</p>
-    
+
+    <!-- Carrusel temporal -->
+    <div class="carrusel">
+        <div class="carrusel-contenedor">
+            <img [src]="imagenesCarrusel[indiceCarrusel]" alt="Entrega de termos" class="carrusel-imagen">
+            <div class="carrusel-overlay">
+                <div class="carrusel-texto">
+                    <h3>Seguimos entregando los presentes por el Día del/la Trabajador/a Judicial</h3>
+                    <p>
+                        Queremos reconocer el esfuerzo, la dedicación y el compromiso de cada compañero y compañera judicial de la provincia.
+                        Este pequeño presente es una manera de agradecer todo lo que sostienen cada día en sus lugares de trabajo. 💙🤍
+                    </p>
+                    <p>
+                        Gracias por ser parte de esta construcción colectiva que fortalece a nuestro gremio y a la justicia santacruceña. 🙌⚖️
+                    </p>
+                </div>
+            </div>
+            <button class="carrusel-btn anterior" (click)="anteriorCarrusel()">❮</button>
+            <button class="carrusel-btn siguiente" (click)="siguienteCarrusel()">❯</button>
+            <div class="carrusel-indicadores">
+                <span *ngFor="let img of imagenesCarrusel; let i = index" 
+                      [class.activo]="i === indiceCarrusel"
+                      (click)="indiceCarrusel = i"></span>
+            </div>
+        </div>
+    </div>
+
     <div class="actualidad-grid">
         <!-- Tarjeta 1: Nueva Web -->
         <!-- <article class="actualidad-item app-info" (click)="abrirModal('assets/images/nueva_pagina_web_1.webp', '¡Estrenamos nueva página web!', 'Te damos la bienvenida a nuestro renovado sitio institucional. Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias, información sobre actividades, convenios, comunicados oficiales y mucho más. Diseñamos esta página para que sea un espacio de encuentro, memoria y comunicación permanente con nuestros afiliados y afiliadas.')">
@@ -9,13 +35,31 @@
             <img src="assets/images/nueva_pagina_web_1.webp" alt="Nueva página web institucional">
             <h3>¡Estrenamos nueva página web!</h3>
             <p>
-                Te damos la bienvenida a nuestro renovado sitio institucional. 
-                Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias, 
-                información sobre actividades, convenios, comunicados oficiales y mucho más.  
-                Diseñamos esta página para que sea un espacio de encuentro, memoria y comunicación 
+                Te damos la bienvenida a nuestro renovado sitio institucional.
+                Aquí vas a encontrar la historia de nuestro gremio, las últimas noticias,
+                información sobre actividades, convenios, comunicados oficiales y mucho más.
+                Diseñamos esta página para que sea un espacio de encuentro, memoria y comunicación
                 permanente con nuestros afiliados y afiliadas.
             </p>
         </article> -->
+
+        <!-- Tarjeta: Representación Consejo de la Magistratura -->
+        <article class="actualidad-item app-info" (click)="abrirModal('assets/images/novedades_consejo.png', 'Representación de trabajadores/as Judicial ante el Consejo de la Magistratura', 'El 3 de noviembre de 2025 se llevó adelante la elección de representantes del estamento \'Trabajadores/as Judiciales\' ante el Consejo de la Magistratura de Santa Cruz. Nuestros representantes: María José Butterfield y Gerardo Valderrama de Río Gallegos.')">
+            <div class="expand-indicator">Click para ampliar</div>
+            <img src="assets/images/novedades_consejo.png" alt="Representación Consejo de la Magistratura" onerror="this.style.display='none';">
+            <h3>Representación de trabajadores/as Judicial ante el Consejo de la Magistratura</h3>
+            <h4>Nuestros representantes</h4>
+            <p>
+                La representación del estamento "Trabajadores/as Judiciales" estará integrada por:
+            </p>
+            <ul>
+                <li>• María José Butterfield – Río Gallegos</li>
+                <li>• Gerardo Valderrama – Río Gallegos</li>
+            </ul>
+            <p>
+                Ambos asumirán la tarea de expresar y defender la voz de las y los judiciales ante un órgano clave para el funcionamiento del Poder Judicial.
+            </p>
+        </article>
 
         <!-- Tarjeta: Convenios por Beneficios -->
         <article class="actualidad-item app-info" routerLink="/convenios-beneficios" style="cursor: pointer;">
@@ -26,8 +70,8 @@
             </div>
             <h3>Convenios por Beneficios</h3>
             <p>
-                ¡Descubre todos los descuentos y beneficios exclusivos para afiliados! 
-                Más de 100 comercios adheridos en toda la provincia con descuentos especiales 
+                ¡Descubre todos los descuentos y beneficios exclusivos para afiliados!
+                Más de 100 comercios adheridos en toda la provincia con descuentos especiales
                 todos los miércoles.
                 <strong>¡Aprovechá tus beneficios!</strong>
             </p>
@@ -40,13 +84,13 @@
 
             <!-- Botones -->
             <div class="qr-tabs">
-                <button 
-                [class.active]="plataforma === 'android'" 
+                <button
+                [class.active]="plataforma === 'android'"
                 (click)="cambiarPlataforma('android')">
                 Android
                 </button>
-                <button 
-                [class.active]="plataforma === 'ios'" 
+                <button
+                [class.active]="plataforma === 'ios'"
                 (click)="cambiarPlataforma('ios')">
                 iOS
                 </button>
@@ -61,7 +105,7 @@
                 <ng-container *ngIf="plataforma === 'ios'">
                     <img src="assets/images/qr-code-ios.webp" alt="QR iOS" class="qr-image" (click)="abrirModal('assets/images/qr-code-ios.webp', 'Descargar App para iOS', 'Escanea este código QR para descargar la aplicación Judiciales de Santa Cruz Cred en tu dispositivo iOS.')">
                 </ng-container>
-                
+
                 <div class="qr-expand-indicator">Click para ampliar</div>
             </div>
         </article>
@@ -72,8 +116,8 @@
             <img src="assets/images/flyer_obra_puerto_deseado.webp" alt="Obra del quincho en Puerto Deseado">
             <h3>Obra en Puerto Deseado: Quincho de 200 m²</h3>
             <p>
-                Avanza la primera etapa del quincho con inversión de $110 millones. 
-                Incluye materiales estructurales y entrega llave en mano. 
+                Avanza la primera etapa del quincho con inversión de $110 millones.
+                Incluye materiales estructurales y entrega llave en mano.
                 La segunda etapa incorporará calefacción y mobiliario.
             </p>
         </article>
@@ -84,9 +128,9 @@
             <img src="assets/images/fiesta_judicial_2025.webp" alt="Fiesta Judicial 2025">
             <h3>Fiesta Judicial 2025</h3>
             <p>
-                ¡No te pierdas la gran Fiesta Judicial 2025! 
-                Sorteos con importantes premios, banda en vivo y menúes especiales 
-                para celíacos y vegetarianos. 
+                ¡No te pierdas la gran Fiesta Judicial 2025!
+                Sorteos con importantes premios, banda en vivo y menúes especiales
+                para celíacos y vegetarianos.
                 <strong>15 de noviembre de 2025, 21:00 hs.</strong>
             </p>
         </article>
@@ -121,16 +165,16 @@
                 <h3 class="modal-titulo">{{ tituloModal }}</h3>
                 <button class="modal-cerrar" (click)="cerrarModal($event)">×</button>
             </div>
-            <div class="modal-body" 
+            <div class="modal-body"
                  (wheel)="manejarZoom($event)"
                  (mousedown)="iniciarArrastre($event)"
                  (mousemove)="moverImagen($event)"
                  (mouseup)="finalizarArrastre()"
                  (mouseleave)="finalizarArrastre()">
                 <div class="imagen-contenedor" #contenedorRef>
-                    <img [src]="imagenModal" 
-                         [alt]="tituloModal" 
-                         class="modal-imagen" 
+                    <img [src]="imagenModal"
+                         [alt]="tituloModal"
+                         class="modal-imagen"
                          [style.transform]="'translate(calc(-50% + ' + offsetHorizontal + 'px), calc(-50% + ' + offsetVertical + 'px)) scale(' + escala + ')'"
                          (load)="onImageLoad($event)"
                          [class.arrastrando]="arrastrando">

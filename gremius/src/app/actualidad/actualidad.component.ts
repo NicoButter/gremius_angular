@@ -1,11 +1,11 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, HostListener, OnDestroy } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-actualidad',
   standalone: true,
-  imports: [NgIf, RouterLink],
+  imports: [NgIf, NgFor, RouterLink],
   templateUrl: './actualidad.component.html',
   styleUrls: ['./actualidad.component.css']
 })
@@ -15,6 +15,10 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   imagenModal = '';
   tituloModal = '';
   textoModal = '';
+
+  // Carrusel
+  imagenesCarrusel = Array.from({length: 35}, (_, i) => `assets/images/carrousel-termo/${i+1}.png`);
+  indiceCarrusel = 0;
 
   // Propiedades para el zoom y arrastre
   @ViewChild('contenedorRef') contenedorRef!: ElementRef;
@@ -37,6 +41,14 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
 
   cambiarPlataforma(plataforma: 'android' | 'ios') {
     this.plataforma = plataforma;
+  }
+
+  anteriorCarrusel() {
+    this.indiceCarrusel = this.indiceCarrusel > 0 ? this.indiceCarrusel - 1 : this.imagenesCarrusel.length - 1;
+  }
+
+  siguienteCarrusel() {
+    this.indiceCarrusel = this.indiceCarrusel < this.imagenesCarrusel.length - 1 ? this.indiceCarrusel + 1 : 0;
   }
 
   abrirModal(imagen: string, titulo: string, texto: string) {
