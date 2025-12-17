@@ -23,8 +23,9 @@ export class FooterComponent implements OnInit, OnDestroy {
   welcomeModalOpen: boolean = false;
 
   ngOnInit(): void {
-    this.updateCountdown();
-    this.interval = setInterval(() => this.updateCountdown(), 1000);
+    // Countdown logic commented to avoid timers while countdown is hidden
+    // this.updateCountdown();
+    // this.interval = setInterval(() => this.updateCountdown(), 1000);
 
     // Mostrar bienvenida siempre al entrar / refrescar
     this.welcomeModalOpen = true;
@@ -40,11 +41,12 @@ export class FooterComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.interval);
+    // clearInterval(this.interval); // commented because countdown disabled
   }
 
   // Countdown
   private updateCountdown(): void {
+    /* Countdown logic commented while feature disabled to avoid intervals:
     const now = new Date().getTime();
     const distance = this.targetDate - now;
 
@@ -58,6 +60,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     this.countdown.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     this.countdown.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     this.countdown.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    */
   }
 
   // Abrir / cerrar modal QR
