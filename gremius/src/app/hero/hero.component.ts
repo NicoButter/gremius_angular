@@ -13,6 +13,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   noticias = [
     {
+      titulo: 'Acompañamos la Jornada de Lucha',
+      descripcion: 'Acompañamos junto al Frente Sindical Santa Cruz, la jornada de lucha dispuesta por la federación judicial argentina',
+      image: '/assets/images/no_a_la_reforma_instagram_facebook.png',
+      autor: 'Equipo de Comunicación'
+    },
+    {
       titulo: 'La Justicia se mejora con formación y compromiso',
       descripcion: 'Reunión junto al Dr. Miguel Berri (Decano), Dra. Valeria Moreno (Secretaria Académica) y Dr. Alejandro Batista (Prosecretario de Políticas Digitales) de la Facultad de Ciencias Jurídicas y Sociales - UNLP. Trabajamos para brindar más calidad y herramientas a nuestros compañeros y compañeras judiciales.',
       image: '/assets/images/encuentro_la_plata_universidad.webp',
@@ -28,12 +34,6 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       titulo: 'Reunión con el Intendente de Puerto Madryn',
       descripcion: 'Se gestionó un terreno destinado a los/as judiciales de Santa Cruz, con el objetivo de mejorar la infraestructura y brindar más espacios de uso gremial.',
       image: '/assets/images/solicitud_terreno_madryn.webp',
-      autor: 'Equipo de Comunicación'
-    },
-    {
-      titulo: 'Fiesta Judicial 2025',
-      descripcion: '¡No te pierdas la gran Fiesta Judicial 2025! Sorteos con importantes premios, banda en vivo y opciones de menú para celíacos y vegetarianos. Día 15 de noviembre de 2025, 21:00 hs.',
-      image: '/assets/images/fiesta_judicial_2025.webp',
       autor: 'Equipo de Comunicación'
     },
     {
