@@ -478,3 +478,122 @@ header.shrink .nav-item a {
     padding: 6px 12px;
   }
 }
+
+/* ============================================
+   DECORACIONES NAVIDEÑAS
+   ============================================ */
+
+.christmas-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.garland-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+}
+
+.garland {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Cable de la guirnalda */
+.garland::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    #2d5016 2%, 
+    #3d6b1f 20%, 
+    #2d5016 50%, 
+    #3d6b1f 80%, 
+    #2d5016 98%, 
+    transparent 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Curvas del cable */
+.garland::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: 
+    radial-gradient(circle at 10% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px),
+    radial-gradient(circle at 30% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px),
+    radial-gradient(circle at 50% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px),
+    radial-gradient(circle at 70% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px),
+    radial-gradient(circle at 90% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px);
+  background-size: 20% 100%;
+  background-repeat: repeat-x;
+}
+
+/* Luces navideñas */
+.garland-light {
+  position: absolute;
+  top: 12px;
+  width: 12px;
+  height: 16px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  animation: twinkle 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Colores alternados para las luces */
+.garland-light:nth-child(1) { background: #ff4444; box-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444; animation-delay: 0s; }
+.garland-light:nth-child(2) { background: #44ff44; box-shadow: 0 0 10px #44ff44, 0 0 20px #44ff44; animation-delay: 0.2s; }
+.garland-light:nth-child(3) { background: #4444ff; box-shadow: 0 0 10px #4444ff, 0 0 20px #4444ff; animation-delay: 0.4s; }
+.garland-light:nth-child(4) { background: #ffff44; box-shadow: 0 0 10px #ffff44, 0 0 20px #ffff44; animation-delay: 0.6s; }
+.garland-light:nth-child(5) { background: #ff44ff; box-shadow: 0 0 10px #ff44ff, 0 0 20px #ff44ff; animation-delay: 0.8s; }
+.garland-light:nth-child(6) { background: #ff9944; box-shadow: 0 0 10px #ff9944, 0 0 20px #ff9944; animation-delay: 1s; }
+.garland-light:nth-child(7) { background: #44ffff; box-shadow: 0 0 10px #44ffff, 0 0 20px #44ffff; animation-delay: 1.2s; }
+.garland-light:nth-child(8) { background: #ff4444; box-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444; animation-delay: 1.4s; }
+.garland-light:nth-child(9) { background: #44ff44; box-shadow: 0 0 10px #44ff44, 0 0 20px #44ff44; animation-delay: 1.6s; }
+.garland-light:nth-child(10) { background: #4444ff; box-shadow: 0 0 10px #4444ff, 0 0 20px #4444ff; animation-delay: 1.8s; }
+
+/* Animación de parpadeo */
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.3; 
+    transform: scale(0.9);
+  }
+}
+
+/* Ajustes para cuando el header se encoge */
+header.shrink .garland-container {
+  height: 80px;
+}
+
+header.shrink .garland-light {
+  width: 10px;
+  height: 14px;
+  top: 8px;
+}
+
+/* Responsivo - ocultar en pantallas pequeñas si es necesario */
+@media (max-width: 768px) {
+  .christmas-decorations {
+    display: none; /* Opcional: puedes mantenerlo visible en móviles */
+  }
+}
