@@ -1,0 +1,88 @@
+.christmas-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.garland-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+}
+
+.garland {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.garland::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent 0%, #2d5016 2%, #3d6b1f 20%, #2d5016 50%, #3d6b1f 80%, #2d5016 98%, transparent 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.garland::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: radial-gradient(circle at 10% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px), radial-gradient(circle at 30% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px), radial-gradient(circle at 50% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px), radial-gradient(circle at 70% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px), radial-gradient(circle at 90% 0, transparent 8px, #2d5016 8px, #2d5016 9px, transparent 9px);
+  background-size: 20% 100%;
+  background-repeat: repeat-x;
+}
+
+.garland-light {
+  position: absolute;
+  top: 12px;
+  width: 12px;
+  height: 16px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  animation: twinkle 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.garland-light:nth-child(1), .garland-light:nth-child(8) { --c: #ff4444; }
+.garland-light:nth-child(2), .garland-light:nth-child(9) { --c: #44ff44; }
+.garland-light:nth-child(3), .garland-light:nth-child(10) { --c: #4444ff; }
+.garland-light:nth-child(4) { --c: #ffff44; }
+.garland-light:nth-child(5) { --c: #ff44ff; }
+.garland-light:nth-child(6) { --c: #ff9944; }
+.garland-light:nth-child(7) { --c: #44ffff; }
+.garland-light:nth-child(n) { background: var(--c); box-shadow: 0 0 10px var(--c), 0 0 20px var(--c); }
+.garland-light:nth-child(1) { animation-delay: 0s; }
+.garland-light:nth-child(2) { animation-delay: .2s; }
+.garland-light:nth-child(3) { animation-delay: .4s; }
+.garland-light:nth-child(4) { animation-delay: .6s; }
+.garland-light:nth-child(5) { animation-delay: .8s; }
+.garland-light:nth-child(6) { animation-delay: 1s; }
+.garland-light:nth-child(7) { animation-delay: 1.2s; }
+.garland-light:nth-child(8) { animation-delay: 1.4s; }
+.garland-light:nth-child(9) { animation-delay: 1.6s; }
+.garland-light:nth-child(10) { animation-delay: 1.8s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.9); }
+}
+
+header.shrink .garland-container { height: 80px; }
+header.shrink .garland-light { width: 10px; height: 14px; top: 8px; }
+
+@media (max-width: 768px) {
+  .christmas-decorations { display: none; }
+}

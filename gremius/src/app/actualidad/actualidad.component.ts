@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [NgIf, NgFor, RouterLink],
   templateUrl: './actualidad.component.html',
-  styleUrls: ['./actualidad.component.css']
+  styleUrls: ['./actualidad.component.css', './carrusel.css']
 })
 export class ActualidadComponent implements AfterViewInit, OnDestroy {
   plataforma: 'android' | 'ios' = 'android';

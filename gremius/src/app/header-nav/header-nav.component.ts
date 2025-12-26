@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './header-nav.component.html',
-  styleUrls: ['./header-nav.component.css']
+  styleUrls: ['./header-nav.component.css', './christmas-decorations.css']
 })
 export class HeaderNavComponent implements OnInit, OnDestroy {
   isShrunk = false;

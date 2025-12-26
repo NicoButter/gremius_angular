@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.css', './christmas-decorations-footer.css']
 })
 export class FooterComponent implements OnInit, OnDestroy {
   // Countdown
