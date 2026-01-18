@@ -1,4 +1,6 @@
-.christmas-decorations-footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; overflow: hidden; }
+.christmas-decorations-footer {
+  display: none;
+}
 .garland-container-footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; }
 .garland-footer { position: relative; width: 100%; height: 100%; }
 .garland-footer::before { content: ''; position: absolute; bottom: 8px; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent 0%, #2d5016 2%, #3d6b1f 20%, #2d5016 50%, #3d6b1f 80%, #2d5016 98%, transparent 100%); box-shadow: 0 -2px 4px rgba(0,0,0,.3); }
