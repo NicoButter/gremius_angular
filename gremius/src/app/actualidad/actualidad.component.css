@@ -37,4 +37,66 @@
 .zoom-indicator.visible { opacity: 1; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideIn { from { transform: scale(.9) translateY(-20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+
+/* Label NUEVO! con animación */
+.nuevo-label {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+  z-index: 20;
+  animation: pulse 2s infinite, bounceIn 0.6s ease-out;
+  border: 2px solid white;
+}
+
+.nuevo-label::before {
+  content: "✨";
+  margin-right: 4px;
+  animation: sparkle 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.5);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  75% { transform: rotate(270deg) scale(0.9); }
+}
+
 @media (max-width: 768px) { .modal-contenido { max-width: 95vw; max-height: 95vh; } .modal-header { padding: 12px 15px; } .modal-titulo { font-size: 1.1em; } .modal-footer { padding: 12px 15px; } .imagen-contenedor { min-height: 250px; max-height: 50vh; } }
