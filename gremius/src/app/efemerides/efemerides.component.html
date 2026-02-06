@@ -1,0 +1,77 @@
+<section class="efemerides-container">
+  <div class="efemerides-header">
+    <h1>Efemérides</h1>
+    <p class="fecha-actual">Mes de {{ mesActual }}</p>
+  </div>
+
+  <!-- Efeméride principal destacada -->
+  <div class="efemeride-destacada" *ngIf="efemeridePrincipal">
+    <div class="destacada-badge">
+      <i class="fa-solid fa-star"></i>
+      <span>{{ getMensajeDiasHasta(efemeridePrincipal) }}</span>
+    </div>
+    <div class="destacada-fecha">
+      {{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}
+    </div>
+    <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
+    <div class="destacada-decoracion">
+      <i class="fa-solid fa-calendar-day"></i>
+    </div>
+  </div>
+
+  <!-- Efeméride que pasó recientemente -->
+  <div class="efemeride-pasada" *ngIf="efemeridePasada && efemeridePasada.diasHasta! >= -7">
+    <div class="pasada-badge">
+      <i class="fa-solid fa-clock-rotate-left"></i>
+      <span>{{ getMensajeDiasHasta(efemeridePasada) }}</span>
+    </div>
+    <div class="pasada-contenido">
+      <div class="pasada-fecha">
+        {{ efemeridePasada.dia }} de {{ getNombreMes(efemeridePasada.mes) }}
+      </div>
+      <p class="pasada-titulo">{{ efemeridePasada.titulo }}</p>
+    </div>
+  </div>
+
+  <!-- Próximas efemérides -->
+  <div class="proximas-efemerides" *ngIf="efemeridesProximas.length > 0">
+    <h3>
+      <i class="fa-solid fa-calendar-days"></i>
+      Próximas Efemérides
+    </h3>
+    <div class="proximas-lista">
+      <div class="proxima-item" *ngFor="let efemeride of efemeridesProximas">
+        <div class="proxima-fecha">
+          <span class="dia">{{ efemeride.dia }}</span>
+          <span class="mes">{{ getNombreMes(efemeride.mes).substring(0, 3) }}</span>
+        </div>
+        <div class="proxima-contenido">
+          <p class="proxima-titulo">{{ efemeride.titulo }}</p>
+          <span class="proxima-dias" *ngIf="efemeride.diasHasta && efemeride.diasHasta <= 30">
+            {{ getMensajeDiasHasta(efemeride) }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listado completo por mes -->
+  <div class="efemerides-completo">
+    <h3>
+      <i class="fa-solid fa-list"></i>
+      Calendario Completo de Efemérides
+    </h3>
+    <div class="meses-container">
+      <div class="mes-bloque" *ngFor="let mes of [1,2,3,4,5,6,7,8,9,10,11,12]">
+        <h4 class="mes-titulo">{{ getNombreMes(mes) }}</h4>
+        <ul class="mes-lista">
+          <li *ngFor="let efemeride of getEfemeridesDelMes(mes)" 
+              [class.es-destacada]="efemeride.dia === efemeridePrincipal?.dia && efemeride.mes === efemeridePrincipal?.mes">
+            <span class="dia-numero">{{ efemeride.dia }}</span>
+            <span class="efemeride-texto">{{ efemeride.titulo }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
