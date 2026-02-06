@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './header-nav.component.html',
-  styleUrls: ['./header-nav.component.css', './christmas-decorations.css']
+  styleUrls: ['./header-nav.component.css']
 })
 export class HeaderNavComponent implements OnInit, OnDestroy {
   isShrunk = false;
@@ -45,7 +45,7 @@ export class HeaderNavComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize')
   onResize(): void {
-    if (window.innerWidth > 768 && this.isMobileMenuOpen) {
+    if (window.innerWidth > 1024 && this.isMobileMenuOpen) {
       this.isMobileMenuOpen = false;
       document.body.style.overflow = '';
     }
@@ -78,7 +78,7 @@ export class HeaderNavComponent implements OnInit, OnDestroy {
   }
 
   toggleDropdown(item: string): void {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       this.activeDropdown = this.activeDropdown === item ? null : item;
     }
   }

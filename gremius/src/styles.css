@@ -8,5 +8,11 @@ body {
 }
 
 main {
-    padding-top: calc(var(--header-height, 120px) + 40px);
+    padding-top: 160px;
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding-top: 130px;
+    }
 }
