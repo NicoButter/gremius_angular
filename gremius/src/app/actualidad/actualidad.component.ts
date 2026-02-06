@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, HostListener, OnDestroy } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-actualidad',
@@ -16,8 +17,48 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   tituloModal = '';
   textoModal = '';
 
-  // Carrusel
-  imagenesCarrusel = Array.from({length: 35}, (_, i) => `assets/images/carrousel-termo/${i+1}.png`);
+  // Carrusel - Ley Laboral
+  imagenesCarrusel = [
+    'assets/images/carrousel-ley-laboral/placa_1.png',
+    'assets/images/carrousel-ley-laboral/placa_2.png',
+    'assets/images/carrousel-ley-laboral/placa_3.png',
+    'assets/images/carrousel-ley-laboral/placa_4.png',
+    'assets/images/carrousel-ley-laboral/placa_5.png',
+    'assets/images/carrousel-ley-laboral/placa_6.png',
+    'assets/images/carrousel-ley-laboral/placa_7.png'
+  ];
+  
+  textosCarrusel = [
+    {
+      titulo: 'YA EMPEZÓ: ESTAMOS PERDIENDO DERECHOS',
+      contenido: 'Ley Bases + "Modernización Laboral". No son medidas aisladas. Es un proceso.'
+    },
+    {
+      titulo: 'Con la LEY BASES ya se avanzó:',
+      contenido: '• Indemnización reemplazada por un fondo.\n• Más período de prueba.\n• Despido más fácil.\n• Menos herramientas para reclamar.\n• Más trabajo precario y encubierto.'
+    },
+    {
+      titulo: 'Ahora quieren avanzar con la "MODERNIZACIÓN LABORAL":',
+      contenido: '• Convenios colectivos más débiles.\n• Negociar por empresa y dividir a los trabajadores.\n• Limitar la organización y la huelga.\n• Ajustar sobre el salario y la estabilidad.'
+    },
+    {
+      titulo: 'Pero esto no impacta solo en el empleo.',
+      contenido: 'TAMBIÉN AFECTA TU SALUD Y TU JUBILACIÓN'
+    },
+    {
+      titulo: 'Más trabajo precario significa:',
+      contenido: '• Menos aportes.\n• Menos financiamiento.\n• Menos recursos para obras sociales.\n• Menos recursos para las cajas de previsión.'
+    },
+    {
+      titulo: 'Sin empleo estable no hay sistema que se sostenga.',
+      contenido: 'Ni obra social fuerte. Ni jubilación digna.'
+    },
+    {
+      titulo: 'No es modernización. Es precarización.',
+      contenido: 'No es una medida aislada. Es un proceso de pérdida de derechos.\n\nLa pregunta es simple: ¿Queremos seguir perdiendo? ¿Volver al siglo XIX?\n\nPor eso decimos que no a esta reforma laboral. Porque no pierde el sindicato. Perdés vos.'
+    }
+  ];
+  
   indiceCarrusel = 0;
 
   // Propiedades para el zoom y arrastre
@@ -39,8 +80,16 @@ export class ActualidadComponent implements AfterViewInit, OnDestroy {
   private zoomIndicator: HTMLElement | null = null;
   private timeoutZoomIndicator: any = null;
 
+  constructor(private sanitizer: DomSanitizer) {}
+
   cambiarPlataforma(plataforma: 'android' | 'ios') {
     this.plataforma = plataforma;
+  }
+
+  getContenidoCarrusel(): SafeHtml {
+    const contenido = this.textosCarrusel[this.indiceCarrusel].contenido;
+    const html = contenido.replace(/\n/g, '<br>');
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
   anteriorCarrusel() {
