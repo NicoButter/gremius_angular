@@ -47,7 +47,7 @@ export class HeaderNavComponent implements OnInit, OnDestroy {
   onResize(): void {
     if (window.innerWidth > 1024 && this.isMobileMenuOpen) {
       this.isMobileMenuOpen = false;
-      document.body.style.overflow = '';
+      // Ya no necesitamos restaurar el overflow
     }
     this.updateHeaderHeight();
   }
@@ -68,13 +68,13 @@ export class HeaderNavComponent implements OnInit, OnDestroy {
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
     this.activeDropdown = null; // Cerrar dropdowns al abrir/cerrar el menú
-    document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+    // Removemos el bloqueo del overflow para permitir scroll
   }
 
   closeMenuOnNavigation(): void {
     this.isMobileMenuOpen = false;
     this.activeDropdown = null; // Cerrar dropdowns al navegar
-    document.body.style.overflow = '';
+    // Ya no necesitamos restaurar el overflow
   }
 
   toggleDropdown(item: string): void {

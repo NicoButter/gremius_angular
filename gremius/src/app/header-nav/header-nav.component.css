@@ -130,24 +130,26 @@ header.shrink .nav-item a { font-size: 13px; padding: 6px 10px; }
   
   /* Nav list desplegable */
   .nav-list { 
-    position: fixed; 
-    top: calc(var(--mobile-header-height) + var(--mobile-navbar-height)); 
+    position: absolute; 
+    top: 100%; 
     left: 0; 
     right: 0; 
-    width: 100vw; 
+    width: 100%; 
     background: linear-gradient(to bottom, #30366D, #444C8A, #5A62A0);
     transform-origin: top; 
     transform: scaleY(0); 
     visibility: hidden; 
     opacity: 0; 
     flex-direction: column; 
-    border-radius: 0; 
+    border-radius: 0 0 8px 8px; 
     box-shadow: 0 6px 16px rgba(0,0,0,.2); 
     transition: all .3s ease; 
     z-index: 999; 
-    max-height: calc(100vh - calc(var(--mobile-header-height) + var(--mobile-navbar-height))); 
+    max-height: 70vh; 
     overflow-y: auto; 
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin;
     padding: 0 0 20px; 
     margin: 0; 
   }
