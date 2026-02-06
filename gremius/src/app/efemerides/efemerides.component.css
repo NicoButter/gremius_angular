@@ -3,6 +3,12 @@
   margin: 0 auto;
   padding: 2rem 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .efemerides-header {
@@ -267,8 +273,19 @@
 
 .meses-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+}
+
+@supports not (display: grid) {
+  .meses-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .mes-bloque {
+    flex: 1 1 280px;
+  }
 }
 
 .mes-bloque {
@@ -343,18 +360,57 @@
   line-height: 1.5;
 }
 
-/* Responsive */
+/* Responsive Design - Tablet Landscape */
+@media (max-width: 1024px) {
+  .efemerides-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .efemerides-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .destacada-titulo {
+    font-size: 1.6rem;
+  }
+
+  .meses-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet Portrait */
 @media (max-width: 768px) {
   .efemerides-container {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .efemerides-header {
+    margin-bottom: 2rem;
   }
 
   .efemerides-header h1 {
     font-size: 2rem;
   }
 
+  .fecha-actual {
+    font-size: 1.1rem;
+  }
+
+  /* Efeméride destacada */
   .efemeride-destacada {
     padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  .destacada-badge {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .destacada-fecha {
+    font-size: 1.3rem;
   }
 
   .destacada-titulo {
@@ -363,54 +419,484 @@
   }
 
   .destacada-decoracion {
-    display: none;
+    font-size: 4rem;
+    bottom: 15px;
+    right: 15px;
   }
 
+  /* Efeméride pasada */
   .efemeride-pasada {
     flex-direction: column;
-    text-align: center;
+    align-items: stretch;
+    padding: 1.25rem;
   }
 
   .pasada-badge {
     width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
   }
 
+  .pasada-badge i {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+
+  .pasada-contenido {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* Próximas efemérides */
   .proximas-efemerides {
     padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .proximas-efemerides h3 {
+    font-size: 1.3rem;
+    flex-wrap: wrap;
   }
 
   .proxima-item {
     padding: 1rem;
+    gap: 1rem;
+  }
+
+  .proxima-fecha {
+    min-width: 55px;
+  }
+
+  .proxima-fecha .dia {
+    font-size: 1.6rem;
+  }
+
+  .proxima-fecha .mes {
+    font-size: 0.85rem;
+  }
+
+  /* Listado completo */
+  .efemerides-completo h3 {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
   }
 
   .meses-container {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .mes-bloque {
-    padding: 1rem;
+    padding: 1.25rem;
+  }
+
+  .mes-titulo {
+    font-size: 1.2rem;
+  }
+
+  .dia-numero {
+    min-width: 28px;
+    font-size: 1rem;
+  }
+
+  .efemeride-texto {
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Large */
+@media (max-width: 640px) {
+  .efemerides-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .efemerides-header {
+    margin-bottom: 1.5rem;
+  }
+
   .efemerides-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .fecha-actual {
     font-size: 1rem;
   }
 
-  .destacada-titulo {
+  .efemeride-destacada {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .destacada-badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .destacada-badge i {
+    font-size: 1.1rem;
+  }
+
+  .destacada-fecha {
     font-size: 1.2rem;
   }
 
-  .proxima-fecha .dia {
-    font-size: 1.5rem;
+  .destacada-titulo {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .destacada-decoracion {
+    font-size: 3.5rem;
+    opacity: 0.1;
+  }
+
+  .proximas-efemerides {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .proximas-efemerides h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .proxima-item {
+    padding: 0.875rem;
+    gap: 0.875rem;
   }
 
   .proxima-titulo {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .proxima-dias {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .efemerides-completo {
+    margin-top: 2rem;
+  }
+
+  .efemerides-completo h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mes-bloque {
+    padding: 1rem;
+  }
+
+  .mes-lista li {
+    padding: 0.65rem 0;
+    gap: 0.75rem;
+  }
+
+  .mes-lista li.es-destacada {
+    padding: 0.875rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .efemerides-container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .efemerides-header h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .fecha-actual {
+    font-size: 0.95rem;
+  }
+
+  .efemeride-destacada {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .destacada-badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .destacada-badge i {
+    font-size: 1rem;
+  }
+
+  .destacada-fecha {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .destacada-titulo {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .destacada-decoracion {
+    display: none;
+  }
+
+  .efemeride-pasada {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pasada-badge {
+    padding: 0.65rem;
+  }
+
+  .pasada-badge i {
+    font-size: 1.4rem;
+  }
+
+  .pasada-badge span {
+    font-size: 0.85rem;
+  }
+
+  .pasada-fecha {
+    font-size: 1rem;
+  }
+
+  .pasada-titulo {
+    font-size: 0.95rem;
+  }
+
+  .proximas-efemerides {
+    padding: 1rem 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .proximas-efemerides h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .proximas-lista {
+    gap: 0.75rem;
+  }
+
+  .proxima-item {
+    padding: 0.75rem;
+    gap: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .proxima-item:hover {
+    transform: translateX(3px);
+  }
+
+  .proxima-fecha {
+    min-width: 50px;
+    padding: 0.4rem;
+  }
+
+  .proxima-fecha .dia {
+    font-size: 1.4rem;
+  }
+
+  .proxima-fecha .mes {
+    font-size: 0.75rem;
+  }
+
+  .proxima-titulo {
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .proxima-dias {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .efemerides-completo {
+    margin-top: 1.5rem;
+  }
+
+  .efemerides-completo h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .meses-container {
+    gap: 1rem;
+  }
+
+  .mes-bloque {
+    padding: 0.875rem;
+    border-radius: 8px;
+  }
+
+  .mes-titulo {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .mes-lista li {
+    padding: 0.6rem 0;
+    gap: 0.65rem;
+    flex-direction: row;
+  }
+
+  .mes-lista li:hover {
+    padding-left: 0.4rem;
+  }
+
+  .mes-lista li.es-destacada {
+    padding: 0.75rem;
+    border-left-width: 3px;
+  }
+
+  .dia-numero {
+    min-width: 26px;
+    font-size: 0.95rem;
+  }
+
+  .efemeride-texto {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* Mobile Extra Small */
+@media (max-width: 360px) {
+  .efemerides-container {
+    padding: 0.5rem 0.35rem;
+  }
+
+  .efemerides-header h1 {
+    font-size: 1.35rem;
+  }
+
+  .fecha-actual {
     font-size: 0.9rem;
+  }
+
+  .efemeride-destacada {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .destacada-titulo {
+    font-size: 1.05rem;
+  }
+
+  .proxima-fecha {
+    min-width: 45px;
+  }
+
+  .proxima-fecha .dia {
+    font-size: 1.2rem;
+  }
+
+  .proxima-titulo {
+    font-size: 0.825rem;
+  }
+
+  .mes-bloque {
+    padding: 0.75rem;
+  }
+
+  .mes-titulo {
+    font-size: 1rem;
+  }
+
+  .dia-numero {
+    min-width: 24px;
+    font-size: 0.9rem;
+  }
+
+  .efemeride-texto {
+    font-size: 0.8rem;
+  }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 600px) and (orientation: landscape) {
+  .efemerides-container {
+    padding: 1rem;
+  }
+
+  .efemerides-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .efemeride-destacada {
+    padding: 1.5rem;
+  }
+
+  .proximas-efemerides {
+    padding: 1.25rem;
+  }
+
+  .meses-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Print styles */
+@media print {
+  .efemerides-container {
+    max-width: 100%;
+  }
+
+  .efemeride-destacada,
+  .efemeride-pasada,
+  .proximas-efemerides {
+    page-break-inside: avoid;
+  }
+
+  .mes-bloque {
+    page-break-inside: avoid;
+  }
+
+  .efemeride-destacada::before,
+  .destacada-decoracion {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .efemeride-destacada {
+    border: 2px solid white;
+  }
+
+  .proxima-item {
+    border: 1px solid #ccc;
+  }
+
+  .mes-lista li {
+    border-bottom-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .efemeride-destacada {
+    animation: none;
+  }
+
+  .destacada-badge i {
+    animation: none;
+  }
+
+  .proxima-item:hover {
+    transform: none;
+  }
+
+  .mes-lista li.es-destacada {
+    animation: none;
+  }
+
+  .mes-lista li:hover {
+    transition: none;
   }
 }

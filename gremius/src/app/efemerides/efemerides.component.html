@@ -5,73 +5,73 @@
   </div>
 
   <!-- Efeméride principal destacada -->
-  <div class="efemeride-destacada" *ngIf="efemeridePrincipal">
-    <div class="destacada-badge">
-      <i class="fa-solid fa-star"></i>
+  <article class="efemeride-destacada" *ngIf="efemeridePrincipal">
+    <div class="destacada-badge" role="status" aria-live="polite">
+      <i class="fa-solid fa-star" aria-hidden="true"></i>
       <span>{{ getMensajeDiasHasta(efemeridePrincipal) }}</span>
     </div>
-    <div class="destacada-fecha">
+    <time class="destacada-fecha" [attr.datetime]="efemeridePrincipal.mes + '-' + efemeridePrincipal.dia">
       {{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}
-    </div>
+    </time>
     <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
-    <div class="destacada-decoracion">
+    <div class="destacada-decoracion" aria-hidden="true">
       <i class="fa-solid fa-calendar-day"></i>
     </div>
-  </div>
+  </article>
 
   <!-- Efeméride que pasó recientemente -->
-  <div class="efemeride-pasada" *ngIf="efemeridePasada && efemeridePasada.diasHasta! >= -7">
+  <aside class="efemeride-pasada" *ngIf="efemeridePasada && efemeridePasada.diasHasta! >= -7">
     <div class="pasada-badge">
-      <i class="fa-solid fa-clock-rotate-left"></i>
+      <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
       <span>{{ getMensajeDiasHasta(efemeridePasada) }}</span>
     </div>
     <div class="pasada-contenido">
-      <div class="pasada-fecha">
+      <time class="pasada-fecha" [attr.datetime]="efemeridePasada.mes + '-' + efemeridePasada.dia">
         {{ efemeridePasada.dia }} de {{ getNombreMes(efemeridePasada.mes) }}
-      </div>
+      </time>
       <p class="pasada-titulo">{{ efemeridePasada.titulo }}</p>
     </div>
-  </div>
+  </aside>
 
   <!-- Próximas efemérides -->
-  <div class="proximas-efemerides" *ngIf="efemeridesProximas.length > 0">
+  <section class="proximas-efemerides" *ngIf="efemeridesProximas.length > 0">
     <h3>
-      <i class="fa-solid fa-calendar-days"></i>
+      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
       Próximas Efemérides
     </h3>
-    <div class="proximas-lista">
-      <div class="proxima-item" *ngFor="let efemeride of efemeridesProximas">
-        <div class="proxima-fecha">
+    <div class="proximas-lista" role="list">
+      <article class="proxima-item" *ngFor="let efemeride of efemeridesProximas" role="listitem">
+        <time class="proxima-fecha" [attr.datetime]="efemeride.mes + '-' + efemeride.dia">
           <span class="dia">{{ efemeride.dia }}</span>
           <span class="mes">{{ getNombreMes(efemeride.mes).substring(0, 3) }}</span>
-        </div>
+        </time>
         <div class="proxima-contenido">
           <p class="proxima-titulo">{{ efemeride.titulo }}</p>
           <span class="proxima-dias" *ngIf="efemeride.diasHasta && efemeride.diasHasta <= 30">
             {{ getMensajeDiasHasta(efemeride) }}
           </span>
         </div>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 
   <!-- Listado completo por mes -->
-  <div class="efemerides-completo">
+  <section class="efemerides-completo">
     <h3>
-      <i class="fa-solid fa-list"></i>
+      <i class="fa-solid fa-list" aria-hidden="true"></i>
       Calendario Completo de Efemérides
     </h3>
     <div class="meses-container">
-      <div class="mes-bloque" *ngFor="let mes of [1,2,3,4,5,6,7,8,9,10,11,12]">
+      <article class="mes-bloque" *ngFor="let mes of [1,2,3,4,5,6,7,8,9,10,11,12]">
         <h4 class="mes-titulo">{{ getNombreMes(mes) }}</h4>
         <ul class="mes-lista">
           <li *ngFor="let efemeride of getEfemeridesDelMes(mes)" 
               [class.es-destacada]="efemeride.dia === efemeridePrincipal?.dia && efemeride.mes === efemeridePrincipal?.mes">
-            <span class="dia-numero">{{ efemeride.dia }}</span>
+            <time class="dia-numero" [attr.datetime]="efemeride.mes + '-' + efemeride.dia">{{ efemeride.dia }}</time>
             <span class="efemeride-texto">{{ efemeride.titulo }}</span>
           </li>
         </ul>
-      </div>
+      </article>
     </div>
-  </div>
+  </section>
 </section>
