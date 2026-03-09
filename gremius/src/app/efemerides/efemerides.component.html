@@ -14,15 +14,25 @@
       {{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}
     </time>
     <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
-    <!-- Contenido especial del 24 de marzo solo el día correspondiente -->
-    <div class="destacada-contenido" *ngIf="efemeridePrincipal.imagen && efemeridePrincipal.diasHasta === 0 && efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3">
+    <!-- Contenido especial para efemérides con imagen solo el día correspondiente -->
+    <div class="destacada-contenido" *ngIf="efemeridePrincipal.imagen && efemeridePrincipal.diasHasta === 0 && ((efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3) || (efemeridePrincipal.dia === 2 && efemeridePrincipal.mes === 4))">
       <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
       <div class="destacada-texto">
-        <p>En cada 24 de marzo la memoria del pueblo vuelve a ponerse de pie. Recordamos a quienes fueron perseguidxs, desaparecidxs y silenciadxs por defender una Argentina más justa, libre y soberana.</p>
-        <p>Desde la tradición de lucha del movimiento nacional y popular, reafirmamos nuestro compromiso con la memoria, la verdad y la justicia, porque un pueblo que recuerda es un pueblo que no se rinde.</p>
-        <p>Honrar a lxs compañerxs que ya no están es seguir levantando sus banderas: las de la dignidad, la solidaridad y la justicia social.</p>
-        <p>Porque la memoria no es pasado: es lucha presente y futuro.</p>
-        <p class="nunca-mas"><strong>Nunca Más.</strong></p>
+        <!-- Texto para el 24 de marzo -->
+        <ng-container *ngIf="efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3">
+          <p>En cada 24 de marzo la memoria del pueblo vuelve a ponerse de pie. Recordamos a quienes fueron perseguidxs, desaparecidxs y silenciadxs por defender una Argentina más justa, libre y soberana.</p>
+          <p>Desde la tradición de lucha del movimiento nacional y popular, reafirmamos nuestro compromiso con la memoria, la verdad y la justicia, porque un pueblo que recuerda es un pueblo que no se rinde.</p>
+          <p>Honrar a lxs compañerxs que ya no están es seguir levantando sus banderas: las de la dignidad, la solidaridad y la justicia social.</p>
+          <p>Porque la memoria no es pasado: es lucha presente y futuro.</p>
+          <p class="nunca-mas"><strong>Nunca Más.</strong></p>
+        </ng-container>
+        <!-- Texto para el 2 de abril -->
+        <ng-container *ngIf="efemeridePrincipal.dia === 2 && efemeridePrincipal.mes === 4">
+          <p>Cada 2 de abril honramos a quienes defendieron con valentía nuestra soberanía en las Islas Malvinas. Recordamos a los caídos y abrazamos a nuestros veteranos, que cargan para siempre la memoria de aquella gesta.</p>
+          <p>Para quienes creemos en una Argentina justa, libre y soberana, Malvinas no es sólo un capítulo de la historia: es una causa que vive en el corazón del pueblo.</p>
+          <p>Mantener viva la memoria de nuestros héroes es también sostener el compromiso con la soberanía nacional y con una patria que no olvida a sus hijos.</p>
+          <p class="malvinas-argentinas"><strong>Las Malvinas fueron, son y serán argentinas.</strong></p>
+        </ng-container>
       </div>
     </div>
     <div class="destacada-decoracion" aria-hidden="true">

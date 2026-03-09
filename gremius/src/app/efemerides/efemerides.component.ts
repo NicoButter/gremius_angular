@@ -33,7 +33,7 @@ export class EfemeridesComponent implements OnInit {
     { mes: 3, dia: 24, titulo: 'DÍA NACIONAL DE LA MEMORIA, POR LA VERDAD Y LA JUSTICIA "NUNCA MÁS"', imagen: 'assets/efemerides/24_de_marzo.png' },
     
     // ABRIL
-    { mes: 4, dia: 2, titulo: 'DÍA DEL VETERANO Y DE LOS CAÍDOS EN LA GUERRA DE MALVINAS' },
+    { mes: 4, dia: 2, titulo: 'DÍA DEL VETERANO Y DE LOS CAÍDOS EN LA GUERRA DE MALVINAS', imagen: 'assets/efemerides/2_de_abril.png' },
     { mes: 4, dia: 4, titulo: 'ASESINATO DE CARLOS FUENTEALBA' },
     { mes: 4, dia: 30, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL' },
     
