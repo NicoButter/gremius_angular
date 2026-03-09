@@ -34,7 +34,7 @@ export class EfemeridesComponent implements OnInit {
     
     // ABRIL
     { mes: 4, dia: 2, titulo: 'DÍA DEL VETERANO Y DE LOS CAÍDOS EN LA GUERRA DE MALVINAS', imagen: 'assets/efemerides/2_de_abril.png' },
-    { mes: 4, dia: 4, titulo: 'ASESINATO DE CARLOS FUENTEALBA' },
+    { mes: 4, dia: 4, titulo: 'ASESINATO DE CARLOS FUENTEALBA', imagen: 'assets/efemerides/4_de_abril.png' },
     { mes: 4, dia: 30, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL' },
     
     // MAYO
