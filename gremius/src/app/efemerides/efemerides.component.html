@@ -14,6 +14,17 @@
       {{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}
     </time>
     <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
+    <!-- Contenido especial del 24 de marzo solo el día correspondiente -->
+    <div class="destacada-contenido" *ngIf="efemeridePrincipal.imagen && efemeridePrincipal.diasHasta === 0 && efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3">
+      <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
+      <div class="destacada-texto">
+        <p>En cada 24 de marzo la memoria del pueblo vuelve a ponerse de pie. Recordamos a quienes fueron perseguidxs, desaparecidxs y silenciadxs por defender una Argentina más justa, libre y soberana.</p>
+        <p>Desde la tradición de lucha del movimiento nacional y popular, reafirmamos nuestro compromiso con la memoria, la verdad y la justicia, porque un pueblo que recuerda es un pueblo que no se rinde.</p>
+        <p>Honrar a lxs compañerxs que ya no están es seguir levantando sus banderas: las de la dignidad, la solidaridad y la justicia social.</p>
+        <p>Porque la memoria no es pasado: es lucha presente y futuro.</p>
+        <p class="nunca-mas"><strong>Nunca Más.</strong></p>
+      </div>
+    </div>
     <div class="destacada-decoracion" aria-hidden="true">
       <i class="fa-solid fa-calendar-day"></i>
     </div>

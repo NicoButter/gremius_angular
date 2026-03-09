@@ -5,6 +5,7 @@ interface Efemeride {
   mes: number;
   dia: number;
   titulo: string;
+  imagen?: string;
   esDestacada?: boolean;
   diasHasta?: number;
 }
@@ -29,7 +30,7 @@ export class EfemeridesComponent implements OnInit {
     // MARZO
     { mes: 3, dia: 1, titulo: 'DÍA MUNDIAL PARA LA NO DISCRIMINACIÓN' },
     { mes: 3, dia: 8, titulo: 'DÍA INTERNACIONAL DE LA MUJER' },
-    { mes: 3, dia: 24, titulo: 'DÍA NACIONAL DE LA MEMORIA, POR LA VERDAD Y LA JUSTICIA "NUNCA MÁS"' },
+    { mes: 3, dia: 24, titulo: 'DÍA NACIONAL DE LA MEMORIA, POR LA VERDAD Y LA JUSTICIA "NUNCA MÁS"', imagen: 'assets/efemerides/24_de_marzo.png' },
     
     // ABRIL
     { mes: 4, dia: 2, titulo: 'DÍA DEL VETERANO Y DE LOS CAÍDOS EN LA GUERRA DE MALVINAS' },

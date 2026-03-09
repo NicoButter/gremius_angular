@@ -2,7 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Lora', serif;
   width: 100%;
   box-sizing: border-box;
 }
@@ -102,8 +102,45 @@
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.4;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   padding-right: 80px;
+}
+
+.destacada-contenido {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.destacada-imagen {
+  flex-shrink: 0;
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.destacada-texto {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.destacada-texto p {
+  margin: 0 0 1rem 0;
+  opacity: 0.95;
+}
+
+.destacada-texto p:last-of-type {
+  margin-bottom: 0;
+}
+
+.nunca-mas {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1.5rem !important;
 }
 
 .destacada-decoracion {
@@ -898,5 +935,27 @@
 
   .mes-lista li:hover {
     transition: none;
+  }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .destacada-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destacada-imagen {
+    max-width: 100%;
+  }
+
+  .destacada-texto {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .destacada-titulo {
+    padding-right: 0;
+    font-size: 1.5rem;
   }
 }
