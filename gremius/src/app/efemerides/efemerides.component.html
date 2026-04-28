@@ -3,7 +3,6 @@
   <header class="efemerides-header">
     <h1>Efemérides</h1>
     <div class="fecha-actual">
-      <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
       <span>Calendario Institucional</span>
     </div>
   </header>
@@ -11,7 +10,6 @@
   <!-- Efeméride Principal (Solo muestra la imagen si ES HOY) -->
   <article class="efemeride-destacada" *ngIf="efemeridePrincipal">
     <div class="destacada-badge">
-      <i class="fa-solid fa-star" aria-hidden="true"></i>
       <span>{{ esHoyMismo ? 'Hoy' : 'Próxima Efeméride' }}</span>
     </div>
     
@@ -19,7 +17,7 @@
     <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
     
     <div class="destacada-contenido">
-      <!-- LA LÓGICA: Solo muestra la imagen si coincide con la fecha actual (esHoyMismo === true) -->
+      <!-- Solo muestra la imagen si coincide con la fecha actual -->
       <div class="destacada-imagen-container" *ngIf="efemeridePrincipal.imagen && esHoyMismo">
         <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
       </div>
@@ -46,10 +44,7 @@
 
   <!-- Grilla de Próximas Efemérides -->
   <section class="proximas-efemerides" *ngIf="efemeridesProximas.length > 0">
-    <h3>
-      <i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>
-      Próximas Fechas
-    </h3>
+    <h3>Próximas Fechas</h3>
     <div class="proximas-lista">
       <div class="proxima-item" *ngFor="let prox of efemeridesProximas">
         <div class="proxima-fecha">
@@ -66,10 +61,7 @@
 
   <!-- Calendario Completo (Listado por Meses) -->
   <section class="efemerides-completo">
-    <h3>
-      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-      Calendario Anual
-    </h3>
+    <h3>Calendario Anual</h3>
     <div class="meses-container">
       <article class="mes-bloque" *ngFor="let mesNum of [1,2,3,4,5,6,7,8,9,10,11,12]">
         <header class="mes-header">
