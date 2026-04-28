@@ -35,10 +35,10 @@ export class EfemeridesComponent implements OnInit {
     // ABRIL
     { mes: 4, dia: 2, titulo: 'DÍA DEL VETERANO Y DE LOS CAÍDOS EN LA GUERRA DE MALVINAS', imagen: 'assets/efemerides/2_de_abril.png' },
     { mes: 4, dia: 4, titulo: 'ASESINATO DE CARLOS FUENTEALBA', imagen: 'assets/efemerides/4_de_abril.png' },
-    { mes: 4, dia: 30, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL' },
+    { mes: 4, dia: 30, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL', imagen: 'assets/efemerides/30_abril_02.png' },
     
     // MAYO
-    { mes: 5, dia: 1, titulo: 'DÍA DE LOS TRABAJADORES Y TRABAJADORAS' },
+    { mes: 5, dia: 1, titulo: 'DÍA DE LOS TRABAJADORES Y TRABAJADORAS', imagen: 'assets/efemerides/01_mayo.jpeg' },
     { mes: 5, dia: 2, titulo: 'DÍA NACIONAL DEL CRUCERO ARA GENERAL BELGRANO' },
     { mes: 5, dia: 15, titulo: 'DÍA CONMEMORATIVO AL "ROSARIAZO"' },
     { mes: 5, dia: 25, titulo: 'DÍA DE LA REVOLUCIÓN DE MAYO' },

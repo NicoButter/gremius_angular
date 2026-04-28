@@ -15,7 +15,7 @@
     </time>
     <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
     <!-- Contenido especial para efemérides con imagen solo el día correspondiente -->
-    <div class="destacada-contenido" *ngIf="efemeridePrincipal.imagen && efemeridePrincipal.diasHasta === 0 && ((efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3) || (efemeridePrincipal.dia === 2 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 4 && efemeridePrincipal.mes === 4))">
+    <div class="destacada-contenido" *ngIf="efemeridePrincipal.imagen && efemeridePrincipal.diasHasta === 0 && ((efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3) || (efemeridePrincipal.dia === 2 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 4 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 30 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 1 && efemeridePrincipal.mes === 5))">
       <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
       <div class="destacada-texto">
         <!-- Texto para el 24 de marzo -->
@@ -39,6 +39,13 @@
           <p>Su muerte marcó profundamente a la comunidad educativa y al conjunto del pueblo trabajador. Desde entonces, su nombre se convirtió en símbolo de la lucha por una escuela pública digna y por el respeto a quienes dedican su vida a educar.</p>
           <p>Recordarlo no es sólo mirar al pasado: es renovar el compromiso con una sociedad donde enseñar, reclamar derechos y construir futuro nunca vuelva a ser respondido con violencia.</p>
           <p class="fuentealba-presente"><strong>Carlos Fuentealba, presente. Ahora y siempre.</strong></p>
+        </ng-container>
+        <!-- Texto para el 1 de mayo -->
+        <ng-container *ngIf="efemeridePrincipal.dia === 1 && efemeridePrincipal.mes === 5">
+          <p>Cada derecho que hoy forma parte de nuestra vida laboral tiene historia, tiene nombre y tiene el compromiso de quienes nunca miraron para otro lado.</p>
+          <p>Esas conquistas nos sostienen, nos ordenan y nos recuerdan quiénes somos cuando caminamos juntos.</p>
+          <p>Ahí está nuestra fuerza.</p>
+          <p class="trabajadores-presente"><strong>Judiciales de Santa Cruz.</strong></p>
         </ng-container>
       </div>
     </div>
