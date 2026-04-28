@@ -1,54 +1,89 @@
-<div class="afiliaciones-container">
+<!-- HERO -->
+<div class="afil-hero">
+  <div class="afil-hero-inner">
+    <h1 class="afil-title">Pre-afiliación Online</h1>
+    <div class="afil-divider"></div>
+    <p class="afil-lead">
+      Completá el formulario para iniciar tu incorporación al gremio.
+      Recibirás la ficha por correo para imprimir, firmar y enviar o presentar en la sede más cercana.
+    </p>
+  </div>
+</div>
 
-  <!-- Imagen institucional / pre-afiliación -->
-  <div class="afiliaciones-image">
+<div class="afil-container">
+
+  <!-- Imagen institucional -->
+  <div class="afil-image">
     <img src="assets/images/preafiliacion_online.webp" alt="Pre-afiliación Online al gremio" />
   </div>
 
-  <h2>Pre-afiliación Online</h2>
-  <p>
-    Completá con tus datos el formulario de pre-afiliación para iniciar tu incorporación al gremio.
-    Una vez que finalices la carga, recibirás por correo electrónico la ficha completa.
-    Deberás imprimirla, firmarla y enviarla al gremio, o bien acercarte a la sede más cercana para firmarla personalmente.
-  </p>
-
   <!-- alerta de éxito -->
   <div *ngIf="showSuccessAlert" class="alert-success">
-    ¡Tu pre-afiliación fue enviada con éxito! 🎉
+    <i class="fa-solid fa-circle-check"></i>
+    ¡Tu pre-afiliación fue enviada con éxito!
   </div>
 
   <!-- elegir destinatario -->
-  <div class="destinatarios">
-    <h3>Elegí la sede más cercana:</h3>
-    <button *ngFor="let sede of destinatarios" (click)="selectDestinatario(sede.email)">
-      {{ sede.label }}
-    </button>
+  <div class="afil-sedes">
+    <h3 class="afil-sedes-titulo">
+      <i class="fa-solid fa-location-dot"></i>
+      Elegí la sede más cercana
+    </h3>
+    <div class="afil-sedes-grid">
+      <button
+        *ngFor="let sede of destinatarios"
+        class="afil-sede-btn"
+        [class.selected]="destinatario === sede.email"
+        (click)="selectDestinatario(sede.email)">
+        {{ sede.label }}
+      </button>
+    </div>
   </div>
 
   <!-- formulario -->
-  <form *ngIf="destinatario" [attr.action]="formAction" method="POST">
+  <form *ngIf="destinatario" class="afil-form" [attr.action]="formAction" method="POST">
     <input type="hidden" name="_next" [value]="currentUrl + '?success=true'">
 
-    <label>Nombre completo</label>
-    <input type="text" name="nombre" [(ngModel)]="afiliacionData.nombre" required />
+    <div class="afil-form-group">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" type="text" name="nombre" [(ngModel)]="afiliacionData.nombre" required placeholder="Tu nombre y apellido" />
+    </div>
 
-    <label>Email</label>
-    <input type="email" name="email" [(ngModel)]="afiliacionData.email" required />
+    <div class="afil-form-group">
+      <label for="email">Correo electrónico</label>
+      <input id="email" type="email" name="email" [(ngModel)]="afiliacionData.email" required placeholder="tucorreo@ejemplo.com" />
+    </div>
 
-    <label>DNI</label>
-    <input type="text" name="dni" [(ngModel)]="afiliacionData.dni" required />
-    
-    <label>CUIL</label>
-    <input type="text" name="dni" [(ngModel)]="afiliacionData.cuil" required />
+    <div class="afil-form-row">
+      <div class="afil-form-group">
+        <label for="dni">DNI</label>
+        <input id="dni" type="text" name="dni" [(ngModel)]="afiliacionData.dni" required placeholder="Nro. de documento" />
+      </div>
+      <div class="afil-form-group">
+        <label for="cuil">CUIL</label>
+        <input id="cuil" type="text" name="cuil" [(ngModel)]="afiliacionData.cuil" required placeholder="XX-XXXXXXXX-X" />
+      </div>
+    </div>
 
-    <label>Teléfono</label>
-    <input type="tel" name="telefono" [(ngModel)]="afiliacionData.telefono" required />
+    <div class="afil-form-group">
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" type="tel" name="telefono" [(ngModel)]="afiliacionData.telefono" required placeholder="Tu número de contacto" />
+    </div>
 
-    <label>Mensaje</label>
-    <textarea name="mensaje" [(ngModel)]="afiliacionData.mensaje"></textarea>
+    <div class="afil-form-group">
+      <label for="mensaje">Mensaje (opcional)</label>
+      <textarea id="mensaje" name="mensaje" [(ngModel)]="afiliacionData.mensaje" placeholder="Algún comentario adicional..."></textarea>
+    </div>
 
-    <button type="submit">Enviar pre-afiliación</button>
-    <button type="button" (click)="resetForm()">Cancelar</button>
+    <div class="afil-form-actions">
+      <button type="submit" class="btn-primary">
+        <i class="fa-solid fa-paper-plane"></i>
+        Enviar pre-afiliación
+      </button>
+      <button type="button" class="btn-secondary" (click)="resetForm()">
+        Cancelar
+      </button>
+    </div>
   </form>
 
 </div>
