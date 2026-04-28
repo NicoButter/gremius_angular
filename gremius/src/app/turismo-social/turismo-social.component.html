@@ -1,56 +1,105 @@
-<div class="container">
-  <h1 class="title">Disponibilidades - Gremio Judicial</h1>
+<section id="turismo-social">
 
-  <div class="locations-grid">
-    <div class="location-card" *ngFor="let loc of locations">
-      <h2 class="city">{{ loc.city }}</h2>
-      <p><strong>Dirección:</strong> {{ loc.address }}</p>
-      <p><strong>Teléfono:</strong> {{ loc.phone }}</p>
-      <p><strong>Email:</strong> {{ loc.email }}</p>
-      <p><strong>Horario de atención:</strong> {{ loc.schedule }}</p>
-
-      <!-- Departamentos -->
-      <div *ngIf="loc.departments && loc.departments.length > 0" class="section">
-        <h3>Departamentos</h3>
-        <div class="item-list">
-          <div class="item" *ngFor="let dept of loc.departments">
-            <h4>{{ dept.name }} (hasta {{ dept.capacity }} personas)</h4>
-            <p>{{ dept.description }}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cabañas (solo Calafate) -->
-      <div *ngIf="loc.cabins && loc.cabins.length > 0" class="section">
-        <h3>Cabañas</h3>
-        <div class="item-list">
-          <div class="item" *ngFor="let cabin of loc.cabins">
-            <h4>{{ cabin.name }} (hasta {{ cabin.capacity }} personas)</h4>
-            <p>{{ cabin.description }}</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sala compartida -->
-      <div *ngIf="loc.hasSharedRoom" class="section">
-        <p>Contamos con sala de SUM compartida y equipada.</p>
-      </div>
-
-      <!-- Salón de eventos -->
-      <div *ngIf="loc.eventHall" class="section event-hall">
-        <h3>Salón de Eventos (Capacidad: {{ loc.eventHall.capacity }} personas)</h3>
-        <ul>
-          <li><strong>De 10 a 17 hs:</strong> {{ loc.eventHall.rates.day }}</li>
-          <li><strong>De 20 a 05 hs:</strong> {{ loc.eventHall.rates.night }}</li>
-          <li><strong>De 10 a 05 hs:</strong> {{ loc.eventHall.rates.full }}</li>
-        </ul>
-      </div> 
+  <!-- HERO -->
+  <div class="ts-hero">
+    <div class="ts-hero-inner">
+      <span class="ts-eyebrow">Turismo Social</span>
+      <h1 class="ts-title">Disponibilidades</h1>
+      <div class="ts-divider"></div>
+      <p class="ts-lead">Conocé las sedes y alojamientos disponibles para afiliados y afiliadas en toda la provincia. Para reservas, comunicate con la sede de tu localidad.</p>
     </div>
-    
   </div>
-   <div class="download-section">
-    <button (click)="downloadPdf()" class="download-btn">
-      Descargar PDF Completo
-    </button>
+
+  <!-- GRID DE SEDES -->
+  <div class="ts-content">
+    <div class="ts-grid">
+
+      <div class="ts-card" *ngFor="let loc of locations">
+
+        <!-- ENCABEZADO -->
+        <div class="ts-card-header">
+          <h2 class="ts-city">{{ loc.city }}</h2>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="ts-card-body">
+          <ul class="ts-contacto">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ loc.address }}
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.42 2 2 0 0 1 3.62 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 6.16 6.16l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              {{ loc.phone }}
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              {{ loc.email }}
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {{ loc.schedule }}
+            </li>
+          </ul>
+
+          <!-- DEPARTAMENTOS -->
+          <div class="ts-seccion" *ngIf="loc.departments && loc.departments.length > 0">
+            <h3 class="ts-seccion-titulo">Departamentos</h3>
+            <div class="ts-aloj-list">
+              <div class="ts-aloj-item" *ngFor="let dept of loc.departments">
+                <div class="ts-aloj-header">
+                  <span class="ts-aloj-nombre">{{ dept.name }}</span>
+                  <span class="ts-aloj-cap">hasta {{ dept.capacity }} pers.</span>
+                </div>
+                <p class="ts-aloj-desc">{{ dept.description }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CABAÑAS -->
+          <div class="ts-seccion" *ngIf="loc.cabins && loc.cabins.length > 0">
+            <h3 class="ts-seccion-titulo">Cabañas</h3>
+            <div class="ts-aloj-list">
+              <div class="ts-aloj-item" *ngFor="let cabin of loc.cabins">
+                <div class="ts-aloj-header">
+                  <span class="ts-aloj-nombre">{{ cabin.name }}</span>
+                  <span class="ts-aloj-cap">hasta {{ cabin.capacity }} pers.</span>
+                </div>
+                <p class="ts-aloj-desc">{{ cabin.description }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUM COMPARTIDA -->
+          <div class="ts-sum" *ngIf="loc.hasSharedRoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Sala SUM compartida y equipada
+          </div>
+
+          <!-- SALÓN DE EVENTOS -->
+          <div class="ts-salon" *ngIf="loc.eventHall">
+            <h3 class="ts-seccion-titulo">Salón de Eventos</h3>
+            <p class="ts-salon-cap">Capacidad: <strong>{{ loc.eventHall.capacity }} personas</strong></p>
+            <ul class="ts-salon-tarifas">
+              <li><span class="ts-tarifa-franja">10 a 17 hs</span><span class="ts-tarifa-valor">{{ loc.eventHall.rates.day }}</span></li>
+              <li><span class="ts-tarifa-franja">20 a 05 hs</span><span class="ts-tarifa-valor">{{ loc.eventHall.rates.night }}</span></li>
+              <li><span class="ts-tarifa-franja">10 a 05 hs</span><span class="ts-tarifa-valor">{{ loc.eventHall.rates.full }}</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DESCARGA PDF -->
+    <div class="ts-download">
+      <button (click)="downloadPdf()" class="ts-download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar PDF Completo
+      </button>
+    </div>
+
   </div>
-</div>
+
+</section>

@@ -1,9 +1,322 @@
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+/* src/app/turismo-social/turismo-social.component.css */
+
+/* ===== SECTION ===== */
+#turismo-social {
+  background: #f5f6fa;
+  padding-bottom: 70px;
+}
+
+/* ===== HERO ===== */
+.ts-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 64px 40px;
+  text-align: center;
+}
+
+.ts-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ts-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 12px;
+}
+
+.ts-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.ts-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.ts-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== CONTENT ===== */
+.ts-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 24px 0;
+}
+
+/* ===== GRID ===== */
+.ts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* ===== CARD ===== */
+.ts-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8eaf4;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ts-card:hover {
+  box-shadow: 0 8px 28px rgba(68, 76, 138, 0.16);
+  transform: translateY(-3px);
+}
+
+/* ===== CARD HEADER ===== */
+.ts-card-header {
+  background: linear-gradient(135deg, #444C8A 0%, #2e3566 100%);
+  padding: 18px 24px;
+}
+
+.ts-city {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ===== CARD BODY ===== */
+.ts-card-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===== CONTACTO ===== */
+.ts-contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ts-contacto li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.ts-contacto li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #444C8A;
+  opacity: 0.75;
+}
+
+/* ===== SECCIÓN (depts / cabañas / salón) ===== */
+.ts-seccion {
+  border-top: 1px solid #eef0fb;
+  padding-top: 14px;
+}
+
+.ts-seccion-titulo {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #444C8A;
+  margin: 0 0 10px;
+}
+
+/* ===== ALOJAMIENTO ITEMS ===== */
+.ts-aloj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ts-aloj-item {
+  background: #f9faff;
+  border-radius: 8px;
+  border: 1px solid #e8eaf4;
+  padding: 10px 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pastilla gradiente — sistema unificado */
+.ts-aloj-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 40%;
+  min-height: 14px;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 0 3px 3px 0;
+  opacity: 0.5;
+}
+
+.ts-aloj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.ts-aloj-nombre {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e2a5e;
+}
+
+.ts-aloj-cap {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ts-aloj-desc {
+  font-size: 0.78rem;
+  color: #777;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ===== SUM ===== */
+.ts-sum {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #444C8A;
+  font-weight: 600;
+  background: #eef0fb;
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+.ts-sum svg {
+  flex-shrink: 0;
+}
+
+/* ===== SALÓN EVENTOS ===== */
+.ts-salon {
+  border-top: 1px solid #eef0fb;
+  padding-top: 14px;
+}
+
+.ts-salon-cap {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.ts-salon-tarifas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ts-salon-tarifas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  background: #f9faff;
+  border-radius: 6px;
+}
+
+.ts-tarifa-franja {
+  color: #555;
+}
+
+.ts-tarifa-valor {
+  font-weight: 600;
+  color: #1e2a5e;
+}
+
+/* ===== DESCARGA PDF ===== */
+.ts-download {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.ts-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #444C8A, #2e3566);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(68, 76, 138, 0.32);
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+  letter-spacing: 0.03em;
+}
+
+.ts-download-btn:hover {
+  box-shadow: 0 8px 22px rgba(68, 76, 138, 0.42);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 860px) {
+  .ts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ts-hero {
+    padding: 44px 24px;
+  }
+
+  .ts-title {
+    font-size: 2.1rem;
+  }
+
+  .ts-content {
+    padding: 36px 16px 0;
+  }
+
+  .ts-card-body {
+    padding: 16px;
+  }
 }
 
 .title {
