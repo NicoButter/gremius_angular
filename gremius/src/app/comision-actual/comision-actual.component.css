@@ -1,113 +1,252 @@
+/* src/app/comision-actual/comision-actual.component.css */
+
+/* ===== SECTION ===== */
 #comision-actual {
-    padding: 40px 20px;
-    background-color: #e8ecef;
-    text-align: center;
+  padding: 60px 20px;
+  background-color: #f5f6fa;
 }
 
-#comision-actual h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #1a3c5e;
-    border-bottom: 3px solid #444C8A;
-    /* azul institucional */
-    display: inline-block;
-    padding-bottom: 5px;
+/* ===== HEADER ===== */
+.header-section {
+  max-width: 860px;
+  margin: 0 auto 50px;
+  text-align: center;
 }
 
-#comision-actual p {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
+.titulo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.comision-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.periodo-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(68, 76, 138, 0.28);
+  flex-shrink: 0;
+  margin-bottom: 4px;
 }
 
-.comision-container h3 {
-    font-size: 1.8rem;
-    margin: 30px 0 20px;
-    color: #2c3e50;
+.header-section h2 {
+  font-size: 2.2rem;
+  color: #1e2a5e;
+  margin-bottom: 0;
+  position: relative;
 }
 
-.miembros-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.header-section h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #444C8A, #8b9ecf);
+  border-radius: 2px;
+  margin: 12px auto 24px;
 }
 
-.miembro-card {
-    background-color: #fff;
-    border: 2px solid #444C8A;
-    /* azul institucional */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.header-section p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.75;
+  text-align: left;
 }
 
-.miembro-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+/* ===== WRAPPER ===== */
+.comision-wrapper {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
+/* ===== SECTION BLOCK ===== */
+.seccion-bloque {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 28px;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  border: 1px solid #e8eaf4;
+}
+
+.seccion-titulo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #444C8A;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eef0fb;
+}
+
+/* ===== GRID ===== */
+.miembros-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.congresales-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* ===== ITEM ===== */
+.miembro-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e8eaf4;
+  background: #fafbff;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+}
+
+/* Pastilla gradiente — misma lógica que comisiones-anteriores */
+.miembro-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 35%;
+  min-height: 16px;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 0 4px 4px 0;
+  opacity: 0.5;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease,
+              opacity 0.3s ease;
+}
+
+.miembro-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(68, 76, 138, 0.05) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
+}
+
+.miembro-item:hover {
+  border-color: rgba(68, 76, 138, 0.2);
+  box-shadow: 0 4px 16px rgba(68, 76, 138, 0.12);
+  transform: translateX(4px);
+}
+
+.miembro-item:hover::before {
+  height: 100%;
+  opacity: 1;
+  box-shadow: 3px 0 12px rgba(68, 76, 138, 0.28);
+}
+
+.miembro-item:hover::after {
+  opacity: 1;
+}
+
+/* ===== AVATAR ===== */
+.miembro-avatar {
+  min-width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(68, 76, 138, 0.28);
+}
+
+/* ===== INFO ===== */
 .miembro-info {
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .miembro-nombre {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e2a5e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .miembro-cargo {
-    font-size: 1rem;
-    color: #444C8A;
-    /* azul institucional */
-    font-style: italic;
-    margin-bottom: 5px;
+  font-size: 0.76rem;
+  color: #555;
+  line-height: 1.35;
 }
 
+/* ===== LOCALIDAD ===== */
 .miembro-localidad {
-    font-size: 0.9rem;
-    color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: #fff;
+  background: linear-gradient(135deg, #444C8A, #5a64b0);
+  padding: 3px 9px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 1px 5px rgba(68, 76, 138, 0.25);
 }
 
-.congresales-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
+/* ===== CONGRESALES ===== */
+.congresales-bloque {
+  border-top: 3px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+                    linear-gradient(90deg, #444C8A, #8b9ecf);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
-.congresal-item {
-    background-color: #fff;
-    border: 1px solid #444C8A;
-    /* azul institucional */
-    border-radius: 6px;
-    padding: 15px;
-    width: 100%;
-    text-align: left;
-}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  #comision-actual {
+    padding: 40px 16px;
+  }
 
-@media (max-width: 768px) {
-    .miembro-card {
-        width: 100%;
-        max-width: 350px;
-    }
+  .header-section h2 {
+    font-size: 1.7rem;
+  }
 
-    .congresal-item {
-        width: 100%;
-    }
+  .miembros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion-bloque {
+    padding: 20px 16px;
+  }
+
+  .miembro-nombre {
+    white-space: normal;
+  }
+
+  .miembro-localidad {
+    display: none;
+  }
 }

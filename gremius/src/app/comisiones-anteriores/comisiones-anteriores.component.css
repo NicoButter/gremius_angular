@@ -1,90 +1,366 @@
 /* src/app/comisiones-anteriores/comisiones-anteriores.component.css */
+
+/* ===== SECTION ===== */
 #comisiones-anteriores {
-    padding: 40px 20px;
-    background-color: #f2f2f2;
-    text-align: center;
+  padding: 60px 20px;
+  background-color: #f5f6fa;
 }
 
-#comisiones-anteriores h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-    border-bottom: 3px solid #444C8A;
-    /* borde inferior azul institucional */
-    display: inline-block;
-    padding-bottom: 5px;
+/* ===== HEADER ===== */
+.header-section {
+  max-width: 860px;
+  margin: 0 auto 50px;
+  text-align: center;
 }
 
-#comisiones-anteriores p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-    font-size: 1.1rem;
-    line-height: 1.6;
+.header-section h2 {
+  font-size: 2.2rem;
+  color: #1e2a5e;
+  margin-bottom: 0;
+  display: inline-block;
+  position: relative;
 }
 
-.comisiones-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+.header-section h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #444C8A, #8b9ecf);
+  border-radius: 2px;
+  margin: 12px auto 28px;
 }
 
-.comision-card {
-    background-color: #fff;
-    border: 2px solid #444C8A;
-    /* borde azul institucional */
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.header-section p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.75;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* ===== LIST ===== */
+.comisiones-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comision-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  cursor: pointer;
+  border: 1px solid #e0e3f0;
+  box-shadow: 0 2px 6px rgba(68, 76, 138, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  outline: none;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pastilla gradiente — corta al reposo, se expande en hover */
+.comision-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 38%;
+  min-height: 18px;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 0 5px 5px 0;
+  opacity: 0.65;
+  transition: height 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.32s ease,
+              opacity 0.32s ease;
+}
+
+/* Barrido de luz diagonal en hover */
+.comision-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(68, 76, 138, 0.07) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.comision-item:hover,
+.comision-item:focus-visible {
+  background: #fff;
+  border-color: rgba(68, 76, 138, 0.22);
+  box-shadow: 0 6px 22px rgba(68, 76, 138, 0.16);
+  transform: translateX(5px);
+}
+
+.comision-item:hover::before,
+.comision-item:focus-visible::before {
+  height: 100%;
+  opacity: 1;
+  box-shadow: 4px 0 16px rgba(68, 76, 138, 0.32);
+}
+
+.comision-item:hover::after,
+.comision-item:focus-visible::after {
+  opacity: 1;
+}
+
+.item-index {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(68, 76, 138, 0.3);
+}
+
+.item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.item-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #444C8A;
+  opacity: 0.7;
+}
+
+.item-period {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e2a5e;
+}
+
+.item-arrow {
+  color: #444C8A;
+  opacity: 0.45;
+  flex-shrink: 0;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.comision-item:hover .item-arrow,
+.comision-item:focus-visible .item-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 18, 48, 0.58);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: overlayIn 0.2s ease;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ===== MODAL CONTAINER ===== */
+.modal-container {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 88vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 28px 70px rgba(12, 18, 48, 0.28);
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from { transform: translateY(36px) scale(0.96); opacity: 0; }
+  to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+/* ===== MODAL HEADER ===== */
+.modal-header {
+  background: linear-gradient(135deg, #444C8A 0%, #2e3566 100%);
+  padding: 24px 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.modal-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modal-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.modal-period {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ===== MODAL BODY ===== */
+.modal-body {
+  overflow-y: auto;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Custom scrollbar */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-body::-webkit-scrollbar-track {
+  background: #f0f2fc;
+  border-radius: 3px;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background: #b0b8e0;
+  border-radius: 3px;
+}
+
+.section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #444C8A;
+  margin: 0 0 10px 0;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #eef0fb;
+}
+
+.members-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.members-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f9faff;
+  transition: background 0.15s ease;
+}
+
+.members-list li:hover {
+  background: #eef0fb;
+}
+
+.member-name {
+  font-size: 0.92rem;
+  color: #1e2a5e;
+  font-weight: 500;
+}
+
+.member-role {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  #comisiones-anteriores {
+    padding: 40px 16px;
+  }
+
+  .header-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .comision-item {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .item-period {
+    font-size: 0.95rem;
+  }
+
+  .modal-header {
     padding: 20px;
-    width: 350px;
+  }
+
+  .modal-period {
+    font-size: 1.15rem;
+  }
+
+  .modal-body {
+    padding: 18px 16px;
+  }
+
+  .members-list li {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .member-role {
     text-align: left;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.comision-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.comision-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-.comision-details {
-    display: none;
-}
-
-.comision-details.expanded {
-    display: block;
-}
-
-.comision-details h4 {
-    font-size: 1.2rem;
-    margin: 15px 0 10px;
-    color: #34495e;
-    border-left: 3px solid #444C8A;
-    /* detalle azul institucional */
-    padding-left: 8px;
-}
-
-.comision-details ul {
-    list-style: none;
-    padding: 0;
-}
-
-.comision-details li {
-    margin: 5px 0;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-    .comision-card {
-        width: 100%;
-        max-width: 400px;
-    }
+  }
 }

@@ -40,4 +40,11 @@ export class ComisionActualComponent {
       { name: 'Mirna Yanina Larrosa', role: 'Suplente', location: 'Piedra Buena' },
     ],
   };
+
+  getInitials(name: string): string {
+    const parts = name.trim().split(/\s+/);
+    const first = parts[0]?.[0] ?? '';
+    const last  = parts[parts.length - 1]?.[0] ?? '';
+    return (first + last).toUpperCase();
+  }
 }

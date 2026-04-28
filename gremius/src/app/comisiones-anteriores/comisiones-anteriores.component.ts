@@ -1,5 +1,5 @@
 // src/app/comisiones-anteriores/comisiones-anteriores.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,7 +10,20 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./comisiones-anteriores.component.css'],
 })
 export class ComisionesAnterioresComponent implements OnInit {
-  expandedCard: string | null = null;
+  selectedComision: any = null;
+
+  openModal(comision: any): void {
+    this.selectedComision = comision;
+  }
+
+  closeModal(): void {
+    this.selectedComision = null;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    this.closeModal();
+  }
 
   comisiones = [
     {
@@ -533,14 +546,6 @@ export class ComisionesAnterioresComponent implements OnInit {
   ];
 
   ngOnInit(): void {}
-
-  toggleCard(period: string): void {
-    this.expandedCard = this.expandedCard === period ? null : period;
-  }
-
-  isCardExpanded(period: string): boolean {
-    return this.expandedCard === period;
-  }
 
   getVocalesSuplentesTitulo(period: string): string {
   const match = period.match(/\d{4}/); // busca un año en el string

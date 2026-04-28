@@ -1,48 +1,113 @@
 <!-- src/app/comisiones-anteriores/comisiones-anteriores.component.html -->
 <section id="comisiones-anteriores">
-  <h2>Nuestra Historia, Nuestro Orgullo</h2>
+  <div class="header-section">
+    <h2>Nuestra Historia, Nuestro Orgullo</h2>
   <p>Desde su creación, la Asociación Gremial de Empleados Judiciales de la Provincia de Santa Cruz “3 de Julio” ha sido conducida por hombres y mujeres comprometidos con la defensa de los derechos de los/as trabajadores/as judiciales, dejando su huella en cada etapa de nuestra historia.</p>
   <p>Cada Comisión Directiva, con sus particularidades y desafíos, aportó su esfuerzo, tiempo y convicción para sostener y fortalecer nuestra organización. A través de los años, fueron quienes representaron la voz de nuestros afiliados/as, gestionaron mejoras laborales, impulsaron obras, generaron beneficios y defendieron con firmeza nuestra autonomía sindical.</p>
   <p>Reconocemos y valoramos profundamente el compromiso de todas las conducciones que nos precedieron, porque gracias a su trabajo colectivo hoy contamos con una institución sólida, presente en toda la provincia y con la mirada puesta en el futuro.</p>
   <p>Este espacio en nuestra página es un homenaje a quienes asumieron la responsabilidad de conducir el gremio, manteniendo viva la esencia que nos une: la unidad, la lucha y la dignidad de los/as trabajadores/as judiciales.</p>
+  </div>
 
-  <div class="comisiones-container">
-    <div *ngFor="let comision of comisiones" class="comision-card" (click)="toggleCard(comision.period)">
-      <h3>Comisión Directiva {{ comision.period }}</h3>
-      <div class="comision-details" [class.expanded]="isCardExpanded(comision.period)">
-        <h4>Secretarios</h4>
-        <ul>
-          <li *ngFor="let secretario of comision.secretarios">
-            {{ secretario.name }} - {{ secretario.role }}
-          </li>
-        </ul>
-        <h4 *ngIf="comision.vocalesTitulares?.length">Vocales Titulares</h4>
-        <ul *ngIf="comision.vocalesTitulares?.length">
-          <li *ngFor="let vocal of comision.vocalesTitulares">
-            {{ vocal.name }} - {{ vocal.role }}
-          </li>
-        </ul>
-        <h4 *ngIf="comision.vocalesSuplentes?.length">
-            {{ getVocalesSuplentesTitulo(comision.period) }}
-          </h4>
-          <ul *ngIf="comision.vocalesSuplentes?.length">
-            <li *ngFor="let vocal of comision.vocalesSuplentes">
-              {{ vocal.name }} - {{ vocal.role }}
-            </li>
-          </ul>
-        <h4 *ngIf="comision.revisoresCuentas?.length">Comisión Revisora de Cuentas</h4>
-        <ul *ngIf="comision.revisoresCuentas?.length">
-          <li *ngFor="let revisor of comision.revisoresCuentas">
-            {{ revisor.name }} - {{ revisor.role }}
-          </li>
-        </ul>
-        <h4 *ngIf="comision.delegadosCongresales?.length">Delegados Congresales a F.J.A.</h4>
-        <ul *ngIf="comision.delegadosCongresales?.length">
-          <li *ngFor="let delegado of comision.delegadosCongresales">
-            {{ delegado.name }} - {{ delegado.role }}
-          </li>
-        </ul>
+  <div class="comisiones-list">
+    <div
+      *ngFor="let comision of comisiones; let i = index"
+      class="comision-item"
+      (click)="openModal(comision)"
+      (keydown.enter)="openModal(comision)"
+      [attr.aria-label]="'Ver Comision Directiva ' + comision.period"
+      tabindex="0"
+      role="button"
+    >
+      <div class="item-index">{{ i + 1 }}</div>
+      <div class="item-content">
+        <span class="item-label">Comision Directiva</span>
+        <span class="item-period">{{ comision.period }}</span>
+      </div>
+      <div class="item-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div
+    class="modal-overlay"
+    *ngIf="selectedComision"
+    (click)="closeModal()"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="modal-container" (click)="$event.stopPropagation()">
+
+      <div class="modal-header">
+        <div class="modal-title-wrapper">
+          <span class="modal-label">Comision Directiva</span>
+          <h3 class="modal-period">{{ selectedComision.period }}</h3>
+        </div>
+        <button class="modal-close" (click)="closeModal()" aria-label="Cerrar modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="modal-section">
+          <h4 class="section-title">Secretarios</h4>
+          <ul class="members-list">
+            <li *ngFor="let secretario of selectedComision.secretarios">
+              <span class="member-name">{{ secretario.name }}</span>
+              <span class="member-role">{{ secretario.role }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-section" *ngIf="selectedComision.vocalesTitulares?.length">
+          <h4 class="section-title">Vocales Titulares</h4>
+          <ul class="members-list">
+            <li *ngFor="let vocal of selectedComision.vocalesTitulares">
+              <span class="member-name">{{ vocal.name }}</span>
+              <span class="member-role">{{ vocal.role }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-section" *ngIf="selectedComision.vocalesSuplentes?.length">
+          <h4 class="section-title">{{ getVocalesSuplentesTitulo(selectedComision.period) }}</h4>
+          <ul class="members-list">
+            <li *ngFor="let vocal of selectedComision.vocalesSuplentes">
+              <span class="member-name">{{ vocal.name }}</span>
+              <span class="member-role">{{ vocal.role }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-section" *ngIf="selectedComision.revisoresCuentas?.length">
+          <h4 class="section-title">Comision Revisora de Cuentas</h4>
+          <ul class="members-list">
+            <li *ngFor="let revisor of selectedComision.revisoresCuentas">
+              <span class="member-name">{{ revisor.name }}</span>
+              <span class="member-role">{{ revisor.role }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-section" *ngIf="selectedComision.delegadosCongresales?.length">
+          <h4 class="section-title">Delegados Congresales a F.J.A.</h4>
+          <ul class="members-list">
+            <li *ngFor="let delegado of selectedComision.delegadosCongresales">
+              <span class="member-name">{{ delegado.name }}</span>
+              <span class="member-role">{{ delegado.role }}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </section>
