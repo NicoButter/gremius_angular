@@ -1,143 +1,217 @@
-.convenios-beneficios {
-  padding: 2rem;
-  max-width: 1200px;
+/* ─── Hero ───────────────────────────────────────────────────────── */
+.cb-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.cb-hero-inner {
+  max-width: 660px;
   margin: 0 auto;
 }
 
-.convenios-beneficios h1 {
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #1a237e;
-  font-size: 2.5rem;
-}
-
-.subtitle {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #666;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.convenios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.convenio-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.convenio-card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
-  transform: translateY(-5px);
-  border-color: #1a237e;
-}
-
-.convenio-card h2 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-  color: #1a237e;
-  min-height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.convenio-card p {
-  color: #555;
-  font-size: 1rem;
-}
-
-.convenio-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-  min-height: 120px;
-}
-
-.convenio-img {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 16px;
-  background: #f5f5f5;
-  margin: 0 auto;
-  display: block;
-}
-
-.convenio-img-placeholder {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.cb-title {
+  font-size: 2.8rem;
+  font-weight: 800;
   color: #fff;
-  border-radius: 50%;
-  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0 0 18px;
 }
 
-.nuevo-badge {
+.cb-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.cb-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Contenedor ──────────────────────────────────────────────────── */
+.cb-container {
+  max-width: 1200px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+/* ─── Grid ────────────────────────────────────────────────────────── */
+.cb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+
+/* ─── Card ─────────────────────────────────────────────────────────── */
+.cb-card {
+  background: #fff;
+  border: 1px solid #e4e6f1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cb-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(68, 76, 138, 0.18);
+}
+
+/* ─── Media (imagen / placeholder) ────────────────────────────────── */
+.cb-card-media {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: #f5f6fb;
+}
+
+.cb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cb-card:hover .cb-img {
+  transform: scale(1.05);
+}
+
+.cb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #444C8A 0%, #6b76c5 100%);
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 3.5rem;
+}
+
+.cb-nuevo-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
   background: #e53935;
   color: #fff;
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 12px;
-  margin-left: 8px;
-  vertical-align: middle;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(229, 57, 53, 0.4);
 }
 
-.convenio-detalles {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0 0;
-  text-align: left;
+/* ─── Card body ────────────────────────────────────────────────────── */
+.cb-card-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.convenio-detalles li {
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #444;
-}
-
-.convenio-detalles li strong {
-  color: #1a237e;
+.cb-categoria {
   display: inline-block;
-  min-width: 90px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5A62A0;
+  background: #eceef8;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+  align-self: flex-start;
 }
 
-/* Responsive */
+.cb-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3475;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+/* ─── Filas de detalle (sin etiquetas) ───────────────────────────── */
+.cb-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid #eceef8;
+}
+
+.cb-detalle-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.cb-detalle-row i {
+  color: #444C8A;
+  font-size: 0.85rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+}
+
+.cb-descuento-row {
+  font-weight: 600;
+  color: #2c3475;
+}
+
+.cb-descuento-row i {
+  color: #5A62A0;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .convenios-beneficios {
-    padding: 1rem;
+  .cb-hero {
+    padding: 44px 24px;
   }
-  
-  .convenios-beneficios h1 {
+
+  .cb-title {
     font-size: 2rem;
   }
-  
-  .subtitle {
-    font-size: 1rem;
+
+  .cb-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
   }
-  
-  .convenios-grid {
+}
+
+@media (max-width: 480px) {
+  .cb-hero {
+    padding: 36px 16px;
+  }
+
+  .cb-title {
+    font-size: 1.6rem;
+  }
+
+  .cb-lead {
+    font-size: 0.92rem;
+  }
+
+  .cb-container {
+    padding: 0 1rem;
+  }
+
+  .cb-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 }

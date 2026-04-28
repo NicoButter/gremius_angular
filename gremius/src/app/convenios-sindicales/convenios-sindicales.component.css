@@ -1,90 +1,197 @@
-.convenios-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    line-height: 1.6;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* ─── Hero ────────────────────────────────────────────────────────────── */
+.cs-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 60px 40px;
+  text-align: center;
 }
 
-.title {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #444c8a;
-    /* azul institucional */
-    margin-bottom: 1.5rem;
+.cs-hero-inner {
+  max-width: 660px;
+  margin: 0 auto;
 }
 
-.intro-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-left: 6px solid #444c8a;
-    border-radius: 6px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.cs-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
 }
 
-.intro-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border-color: #5a62a0;
+.cs-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
 }
 
-.logos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
+.cs-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Contenedor principal ─────────────────────────────────────────── */
+.cs-container {
+  max-width: 1000px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+/* ─── Intro card ───────────────────────────────────────────────────── */
+.cs-intro-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #e4e6f1;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(68, 76, 138, 0.09);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cs-intro-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(68, 76, 138, 0.15);
+}
+
+.cs-intro-icon {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(68, 76, 138, 0.3);
+}
+
+.cs-intro-body {
+  flex: 1;
+  line-height: 1.8;
+  color: #444;
+}
+
+.cs-intro-body p {
+  margin: 0 0 0.9rem;
+}
+
+.cs-intro-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Etiqueta de sección ────────────────────────────────────────────── */
+.cs-section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #444C8A;
+  margin-bottom: 1.4rem;
+}
+
+.cs-section-label i {
+  font-size: 1rem;
+}
+
+/* ─── Logos grid ────────────────────────────────────────────────────── */
+.cs-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cs-logo-card {
+  background: #fff;
+  border: 1px solid #e4e6f1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cs-logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(68, 76, 138, 0.18);
+}
+
+.cs-logo-card-header {
+  background: linear-gradient(135deg, #444C8A 0%, #2e3566 100%);
+  padding: 12px 18px;
+}
+
+.cs-logo-nombre {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cs-logo-card-body {
+  padding: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  background: #fafafa;
+}
+
+.cs-logo-card-body img {
+  max-width: 100%;
+  max-height: 90px;
+  object-fit: contain;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cs-hero {
+    padding: 44px 24px;
+  }
+
+  .cs-title {
+    font-size: 2rem;
+  }
+
+  .cs-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cs-intro-card {
+    flex-direction: column;
     align-items: center;
-}
-
-
-.logo-card {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo-card img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.logo-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-    .title {
-        font-size: 1.4rem;
-    }
+  .cs-hero {
+    padding: 36px 16px;
+  }
 
-    .logos-grid {
-        grid-template-columns: 1fr; /* una columna en móvil */
-        gap: 1rem;
-    }
+  .cs-title {
+    font-size: 1.6rem;
+  }
 
-    .intro-card {
-        padding: 1rem;
-    }
+  .cs-lead {
+    font-size: 0.92rem;
+  }
 
-    .logo-card {
-        padding: 0.8rem;
-    }
-}
+  .cs-container {
+    padding: 0 1rem;
+  }
 
-
-@media (max-width: 768px) {
-    .logos-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-    }
+  .cs-logos-grid {
+    grid-template-columns: 1fr;
+  }
 }

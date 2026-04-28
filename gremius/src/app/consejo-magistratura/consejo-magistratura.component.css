@@ -1,55 +1,342 @@
-.consejo-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* ─── Hero ───────────────────────────────────────────────────────── */
+.cm-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 60px 40px;
+  text-align: center;
 }
 
-.consejo-container h1 {
-    text-align: center;
-    color: #444C8A;
-    margin-bottom: 20px;
+.cm-hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.consejo-container h2 {
-    text-align: center;
-    color: #444C8A;
-    margin-bottom: 20px;
+.cm-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
 }
 
-.card {
-    background: #f8f9fc;
-    border-left: 4px solid #444C8A;
-    padding: 15px 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.cm-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
 }
 
-.card h3 {
-    margin-top: 0;
-    color: #2c3475;
+.cm-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
 }
 
-.card ul {
-    padding-left: 20px;
+/* ─── Contenedor ──────────────────────────────────────────────────── */
+.cm-container {
+  max-width: 960px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.5rem;
 }
 
-.card.highlight {
-    background: #e0e3f8;
-    border-left: 6px solid #2c3475;
+/* ─── Intro ───────────────────────────────────────────────────────── */
+.cm-intro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
 }
 
-.card.emphasis {
-    background: #fff;
-    border: 2px solid #444C8A;
-    font-weight: 500;
+/* ─── Grid de cards ───────────────────────────────────────────────── */
+.cm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 2rem;
 }
 
-.card .final {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #444C8A;
-    text-align: center;
+/* ─── Card estándar ─────────────────────────────────────────────────── */
+.cm-card {
+  background: #fff;
+  border: 1px solid #e4e6f1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(68, 76, 138, 0.16);
+}
+
+.cm-card-header {
+  background: linear-gradient(135deg, #444C8A 0%, #2e3566 100%);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cm-card-header i {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.cm-card-body {
+  padding: 1.3rem 1.5rem;
+  flex: 1;
+  color: #444;
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+.cm-card-body p {
+  margin: 0;
+}
+
+/* ─── Lista común ────────────────────────────────────────────────────── */
+.cm-list {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cm-list li {
+  line-height: 1.65;
+}
+
+.cm-list--check {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cm-list--check li::before {
+  content: '\2713';
+  display: inline-block;
+  color: #444C8A;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* ─── Card destacada (representantes) ───────────────────────────────── */
+.cm-card-featured {
+  background: #fff;
+  border: 1px solid #e4e6f1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(68, 76, 138, 0.12);
+  margin-bottom: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cm-card-featured:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(68, 76, 138, 0.2);
+}
+
+.cm-featured-header {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 100%);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+}
+
+.cm-featured-header > i {
+  font-size: 1.6rem;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.cm-featured-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 4px;
+}
+
+.cm-featured-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cm-featured-body {
+  padding: 1.8rem 2rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.cm-featured-body > p {
+  margin: 0 0 1.4rem;
+}
+
+.cm-representantes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.cm-rep-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f5f6fb;
+  border: 1px solid #e4e6f1;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.cm-rep-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cm-rep-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cm-rep-nombre {
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: #2c3475;
+}
+
+.cm-rep-lugar {
+  font-size: 0.82rem;
+  color: #777;
+}
+
+.cm-featured-nota {
+  font-size: 0.92rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ─── Card de énfasis (participación) ────────────────────────────────── */
+.cm-card-emphasis {
+  background: linear-gradient(135deg, #f5f6fb 0%, #eceef8 100%);
+  border: 1.5px solid #d0d3ee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  margin-bottom: 1rem;
+}
+
+.cm-emphasis-header {
+  background: linear-gradient(135deg, #444C8A 0%, #5A62A0 100%);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cm-emphasis-header i {
+  font-size: 1.1rem;
+}
+
+.cm-emphasis-body {
+  padding: 1.6rem 2rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.cm-emphasis-body > p {
+  margin: 0 0 1.2rem;
+}
+
+.cm-emphasis-final {
+  margin-top: 1.4rem !important;
+  font-weight: 700;
+  color: #444C8A;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
+  background: rgba(68, 76, 138, 0.07);
+  border-radius: 10px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .cm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cm-hero {
+    padding: 44px 24px;
+  }
+
+  .cm-title {
+    font-size: 2rem;
+  }
+
+  .cm-representantes {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-featured-body {
+    padding: 1.4rem 1.5rem;
+  }
+
+  .cm-emphasis-body {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cm-hero {
+    padding: 36px 16px;
+  }
+
+  .cm-title {
+    font-size: 1.6rem;
+  }
+
+  .cm-lead {
+    font-size: 0.92rem;
+  }
+
+  .cm-container {
+    padding: 0 1rem;
+  }
+
+  .cm-grid {
+    grid-template-columns: 1fr;
+  }
 }

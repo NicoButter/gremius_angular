@@ -10,11 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class ConveniosSindicalesComponent {
   logos = [
-    { src: '/assets/images/logo_apdfa.webp', alt: 'Sindicato 1' },
-    { src: '/assets/images/logo_asimira.webp', alt: 'Sindicato 2' },
-    { src: '/assets/images/logo_ate.webp', alt: 'Sindicato 3' },
-    { src: '/assets/images/logo_civil_policial.webp', alt: 'Sindicato 4' },
-    { src: '/assets/images/logo_camioneros.webp', alt: 'Sindicato 5' },
-    { src: '/assets/images/logo_la_bancaria.webp', alt: 'Sindicato 6' }
+    { src: '/assets/images/logo_apdfa.webp',         alt: 'Logo APDFA',         nombre: 'APDFA' },
+    { src: '/assets/images/logo_asimira.webp',        alt: 'Logo ASIMIRA',       nombre: 'ASIMIRA' },
+    { src: '/assets/images/logo_ate.webp',            alt: 'Logo ATE',           nombre: 'ATE' },
+    { src: '/assets/images/logo_civil_policial.webp', alt: 'Logo Civil Policial',nombre: 'Civil Policial' },
+    { src: '/assets/images/logo_camioneros.webp',     alt: 'Logo Camioneros',    nombre: 'Camioneros' },
+    { src: '/assets/images/logo_la_bancaria.webp',    alt: 'Logo La Bancaria',   nombre: 'La Bancaria' }
   ];
 }

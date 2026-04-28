@@ -1,23 +1,52 @@
-<div class="convenios-container">
-  <h2 class="title">Más unión, más acompañamiento</h2>
-
-  <div class="intro-card">
-    <p>
-      En Judiciales Santa Cruz creemos que la fuerza del sindicalismo está en el encuentro y en el
-      trabajo conjunto. Por eso, seguimos ampliando nuestros lazos con otros sindicatos de la
-      provincia, firmando convenios de cooperación que nos permiten estar más cerca, acompañarnos y
-      fortalecernos mutuamente.
-    </p>
-    <p>
-      Estos acuerdos son una muestra de que los trabajadores y trabajadoras, unidos, podemos
-      construir un presente y un futuro con mayor organización, solidaridad y presencia en todo el
-      territorio.
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <h1 class="cs-title">Más unión, más acompañamiento</h1>
+    <div class="cs-divider"></div>
+    <p class="cs-lead">
+      Convenios de cooperación con otros sindicatos de la provincia para estar más cerca,
+      acompañarnos y fortalecernos mutuamente.
     </p>
   </div>
+</div>
 
-  <div class="logos-grid">
-    <div class="logo-card" *ngFor="let logo of logos">
-      <img [src]="logo.src" [alt]="logo.alt" />
+<div class="cs-container">
+
+  <!-- Intro -->
+  <div class="cs-intro-card">
+    <div class="cs-intro-icon">
+      <i class="fa-solid fa-handshake"></i>
+    </div>
+    <div class="cs-intro-body">
+      <p>
+        En Judiciales Santa Cruz creemos que la fuerza del sindicalismo está en el encuentro y en el
+        trabajo conjunto. Por eso, seguimos ampliando nuestros lazos con otros sindicatos de la
+        provincia, firmando convenios de cooperación que nos permiten estar más cerca, acompañarnos y
+        fortalecernos mutuamente.
+      </p>
+      <p>
+        Estos acuerdos son una muestra de que los trabajadores y trabajadoras, unidos, podemos
+        construir un presente y un futuro con mayor organización, solidaridad y presencia en todo el
+        territorio.
+      </p>
     </div>
   </div>
+
+  <!-- Sección de sindicatos -->
+  <div class="cs-section-label">
+    <i class="fa-solid fa-circle-nodes"></i>
+    Sindicatos adheridos
+  </div>
+
+  <div class="cs-logos-grid">
+    <div class="cs-logo-card" *ngFor="let logo of logos">
+      <div class="cs-logo-card-header">
+        <span class="cs-logo-nombre">{{ logo.nombre }}</span>
+      </div>
+      <div class="cs-logo-card-body">
+        <img [src]="logo.src" [alt]="logo.alt" />
+      </div>
+    </div>
+  </div>
+
 </div>
