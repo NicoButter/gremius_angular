@@ -1,55 +1,311 @@
-.derecho-sindical {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
+/* src/app/derecho-sindical/derecho-sindical.component.css */
+
+#derecho-sindical {
+  background: #f5f6fa;
+  padding-bottom: 70px;
 }
 
-.derecho-sindical h2 {
+/* ===== HERO ===== */
+.ds-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 64px 40px;
   text-align: center;
-  margin-bottom: 2rem;
-  color: #444C8A;
-  /* color institucional */
 }
 
-.card {
+.ds-hero-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ds-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 12px;
+}
+
+.ds-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.ds-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.ds-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== CONTENT ===== */
+.ds-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== CARD BASE ===== */
+.ds-card {
   background: #fff;
-  border-left: 5px solid #444C8A;
-  /* color institucional */
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border: 1px solid #e8eaf4;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  padding: 28px 32px 28px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.card h3 {
-  margin-top: 0;
+.ds-card:hover {
+  box-shadow: 0 8px 28px rgba(68, 76, 138, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Pastilla gradiente */
+.ds-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 35%;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 0 3px 3px 0;
+  opacity: 0.55;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.35s ease;
+}
+
+.ds-card:hover::before {
+  top: 0;
+  height: 100%;
+  opacity: 1;
+}
+
+/* Light sweep */
+.ds-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(68, 76, 138, 0.05) 0%, transparent 45%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.ds-card:hover::after {
+  opacity: 1;
+}
+
+/* ===== CARD TABLA ===== */
+.ds-card--tabla {
+  padding: 28px 28px 28px 40px;
+}
+
+.ds-card--tabla:hover {
+  transform: none;
+}
+
+/* ===== CARD SINDICATO ===== */
+.ds-card--sindicato {
+  background: linear-gradient(135deg, #eef0fb 0%, #e4e8f8 100%);
+  border-color: #d0d5ef;
+}
+
+.ds-card--sindicato::before {
+  background: linear-gradient(180deg, #6b76c5 0%, #444C8A 55%, #2e3566 100%);
+  opacity: 0.8;
+}
+
+.ds-card--sindicato .ds-card-titulo {
   color: #444C8A;
-  /* color institucional */
 }
 
-.comparativo {
+/* ===== TÍTULOS ===== */
+.ds-card-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e2a5e;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.ds-card-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background: linear-gradient(90deg, #444C8A, #8b9ecf);
+  border-radius: 2px;
+}
+
+/* ===== PÁRRAFOS ===== */
+.ds-card p {
+  font-size: 0.95rem;
+  line-height: 1.72;
+  color: #4a4f6a;
+  margin: 0 0 12px;
+}
+
+.ds-card p:last-child {
+  margin-bottom: 0;
+}
+
+.ds-card strong {
+  color: #1e2a5e;
+  font-weight: 700;
+}
+
+/* ===== LISTA ===== */
+.ds-lista {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ds-lista li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4a4f6a;
+}
+
+.ds-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  min-height: 12px;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 2px;
+}
+
+/* ===== TABLA ===== */
+.ds-tabla-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e0e3f5;
+  margin-top: 6px;
+}
+
+.ds-tabla {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  font-size: 0.88rem;
 }
 
-.comparativo th,
-.comparativo td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
+.ds-th-tipo {
+  background: #1e2a5e;
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 700;
   text-align: left;
 }
 
-.comparativo th {
+.ds-th-quien,
+.ds-th-que {
   background: #444C8A;
-  /* color institucional */
-  color: #e0e7ff;
-  /* texto claro para contraste */
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 700;
+  text-align: left;
 }
 
-.sindicato {
-  background: #f5f5ff;
-  /* variante clara del institucional */
-  border-left: 5px solid #5A62A0;
-  /* secundario institucional */
+.ds-tabla tbody tr:nth-child(odd) {
+  background: #fafbff;
+}
+
+.ds-tabla tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+.ds-tabla tbody tr:hover {
+  background: #eef0fb;
+}
+
+.ds-td-tipo {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #1e2a5e;
+  border-right: 1px solid #e8eaf4;
+  white-space: nowrap;
+}
+
+.ds-tabla tbody td:not(.ds-td-tipo) {
+  padding: 12px 16px;
+  color: #4a4f6a;
+  border-right: 1px solid #e8eaf4;
+}
+
+.ds-tabla tbody td:last-child {
+  border-right: none;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.is-visible {
+  animation: dsReveal 0.55s cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, 0s) both;
+}
+
+@keyframes dsReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ds-hero {
+    padding: 44px 24px;
+  }
+
+  .ds-title {
+    font-size: 2.1rem;
+  }
+
+  .ds-content {
+    padding: 32px 16px 0;
+    gap: 18px;
+  }
+
+  .ds-card,
+  .ds-card--tabla {
+    padding: 22px 18px 22px 26px;
+  }
+
+  .ds-td-tipo {
+    white-space: normal;
+  }
 }

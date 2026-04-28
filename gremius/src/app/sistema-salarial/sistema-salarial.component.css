@@ -1,250 +1,365 @@
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px 40px;
-    color: #333;
+/* src/app/sistema-salarial/sistema-salarial.component.css */
+
+/* ===== SECTION ===== */
+#sistema-salarial {
+  background: #f5f6fa;
+  padding-bottom: 70px;
 }
 
-.title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    text-align: center;
-    color: #444C8A;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+/* ===== HERO ===== */
+.ss-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 64px 40px;
+  text-align: center;
 }
 
-.subtitle {
-    font-size: 1.125rem;
-    font-style: italic;
-    text-align: center;
-    color: #5A62A0;
-    margin-bottom: 1rem;
+.ss-hero-inner {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.header-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.ss-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 12px;
 }
 
-.card {
-    background-color: #f5f5f5;
-    border: 2px solid #444C8A;
-    /* color institucional */
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.5s ease-out forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    will-change: transform, box-shadow;
+.ss-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
 }
 
-.card:nth-child(3) {
-    animation-delay: 0.2s;
+.ss-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
 }
 
-/* Primera tarjeta (introducción) */
-.card:nth-child(4) {
-    animation-delay: 0.4s;
+.ss-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+  font-style: italic;
 }
 
-.card:nth-child(5) {
-    animation-delay: 0.6s;
+/* ===== BANNER IMAGEN ===== */
+.ss-banner {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
 }
 
-.card:nth-child(6) {
-    animation-delay: 0.8s;
+.ss-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.card:nth-child(7) {
-    animation-delay: 1.0s;
+.ss-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 42, 94, 0.35) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(245, 246, 250, 0.85) 100%
+  );
 }
 
-.card:nth-child(8) {
-    animation-delay: 1.2s;
+/* ===== CONTENT ===== */
+.ss-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.card:nth-child(9) {
-    animation-delay: 1.4s;
+/* ===== CARD ===== */
+.ss-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8eaf4;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  padding: 28px 32px 28px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.card:nth-child(10) {
-    animation-delay: 1.6s;
+.ss-card:hover {
+  box-shadow: 0 8px 28px rgba(68, 76, 138, 0.15);
+  transform: translateY(-2px);
 }
 
-.card:nth-child(11) {
-    animation-delay: 1.8s;
+/* Pastilla gradiente */
+.ss-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 35%;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 0 3px 3px 0;
+  opacity: 0.55;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.35s ease;
 }
 
-.card:nth-child(12) {
-    animation-delay: 2.0s;
+.ss-card:hover::before {
+  top: 0;
+  height: 100%;
+  opacity: 1;
 }
 
-/* Última tarjeta (descarga) */
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border-color: #5A62A0;
-    /* hover secundario */
+/* Light sweep hover */
+.ss-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(68, 76, 138, 0.05) 0%, transparent 45%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
 }
 
-.card-content {
-    padding: 0.5rem;
+.ss-card:hover::after {
+  opacity: 1;
 }
 
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #444C8A;
-    /* institucional */
-    margin: 0 0 1rem;
+/* ===== TÍTULOS CARD ===== */
+.ss-card-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e2a5e;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  position: relative;
 }
 
-.text {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 1rem;
+.ss-card-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background: linear-gradient(90deg, #444C8A, #8b9ecf);
+  border-radius: 2px;
 }
 
-.list {
-    list-style: none;
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
+/* ===== PÁRRAFOS ===== */
+.ss-card p {
+  font-size: 0.95rem;
+  line-height: 1.72;
+  color: #4a4f6a;
+  margin: 0 0 12px;
 }
 
-.list li {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 0.5rem;
-    position: relative;
+.ss-card p:last-child {
+  margin-bottom: 0;
 }
 
-.list li::before {
-    width: 8px;
-    height: 8px;
-    background-color: #5A62A0;
-    /* bullets institucionales */
+.ss-card strong {
+  color: #1e2a5e;
+  font-weight: 700;
 }
 
-.list.ordered {
-    list-style: decimal;
-    padding-left: 2rem;
+.ss-destacado {
+  background: #eef0fb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 14px 0 !important;
 }
 
-.list.ordered li::before {
-    content: none;
+/* ===== LISTA ===== */
+.ss-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
 
-.download-section {
-    text-align: center;
-    margin-top: 1rem;
+.ss-lista li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4a4f6a;
 }
 
-.download-title {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #444C8A;
-    margin-bottom: 1rem;
+.ss-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  min-height: 12px;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 2px;
 }
 
-.download-button {
-    display: inline-block;
-    background-color: #444C8A;
-    /* institucional */
-    color: #e0e7ff;
-    font-weight: 500;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+/* ===== STEPS (lista ordenada estilizada) ===== */
+.ss-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.download-button:hover {
-    background-color: #5A62A0;
-    /* hover institucional */
+.ss-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #4a4f6a;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.ss-step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
 }
 
+/* ===== TIMELINE ===== */
+.ss-timeline {
+  position: relative;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Línea vertical */
+.ss-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg, #8b9ecf, #444C8A, #2e3566);
+  border-radius: 2px;
+}
+
+.ss-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.ss-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.ss-tl-dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #444C8A, #6b76c5);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #444C8A;
+  flex-shrink: 0;
+}
+
+.ss-tl-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ss-tl-fecha {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #444C8A;
+  background: #eef0fb;
+  padding: 2px 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.ss-tl-body p {
+  font-size: 0.92rem;
+  color: #4a4f6a;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.is-visible {
+  animation: ssReveal 0.55s cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, 0s) both;
+}
+
+@keyframes ssReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 15px 30px;
-    }
+  .ss-hero {
+    padding: 44px 24px;
+  }
 
-    .title {
-        font-size: 1.5rem;
-        margin-top: 0.75rem;
-    }
+  .ss-title {
+    font-size: 2.1rem;
+  }
 
-    .subtitle {
-        font-size: 1rem;
-    }
+  .ss-banner {
+    height: 180px;
+  }
 
-    .header-image {
-        margin-bottom: 0.75rem;
-    }
+  .ss-content {
+    padding: 32px 16px 0;
+    gap: 18px;
+  }
 
-    .section-title {
-        font-size: 1.25rem;
-    }
-
-    .text {
-        font-size: 0.875rem;
-    }
-
-    .list li {
-        font-size: 0.875rem;
-    }
-
-    .download-title {
-        font-size: 1rem;
-    }
-
-    .download-button {
-        padding: 0.4rem 1.2rem;
-        font-size: 0.875rem;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 10px 20px;
-    }
-
-    .title {
-        font-size: 1.25rem;
-        margin-top: 0.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.875rem;
-    }
-
-    .section-title {
-        font-size: 1.125rem;
-    }
+  .ss-card {
+    padding: 22px 20px 22px 28px;
+  }
 }
