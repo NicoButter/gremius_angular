@@ -12,15 +12,12 @@
   padding: 64px 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sn-hero-text {
-  flex: 1;
-  min-width: 260px;
-  max-width: 520px;
+  max-width: 680px;
+  text-align: center;
 }
 
 .sn-eyebrow {
@@ -46,7 +43,7 @@
   height: 4px;
   background: rgba(255, 255, 255, 0.45);
   border-radius: 2px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .sn-lead {
@@ -54,22 +51,6 @@
   color: rgba(255, 255, 255, 0.82);
   line-height: 1.7;
   margin: 0;
-}
-
-.sn-hero-img-wrap {
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  padding: 20px 28px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.sn-hero-img {
-  display: block;
-  max-width: 200px;
-  height: auto;
 }
 
 /* ===== BLOQUES WRAPPER ===== */
@@ -207,20 +188,10 @@
 @media (max-width: 700px) {
   .sn-hero {
     padding: 44px 24px;
-    flex-direction: column;
-    text-align: center;
   }
 
   .sn-title {
     font-size: 2.2rem;
-  }
-
-  .sn-divider {
-    margin: 0 auto 20px;
-  }
-
-  .sn-hero-img-wrap {
-    align-self: center;
   }
 
   .sn-bloque,
