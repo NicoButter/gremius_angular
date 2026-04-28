@@ -1,56 +1,70 @@
-<section id="bienestar-laboral" class="bienestar-section">
-  <h2>Oficina de Bienestar Laboral: qué es y cómo funciona</h2>
-  <p class="intro">
-    Conocé qué es la Oficina de Bienestar Laboral (OBL), cuál es su función institucional y por qué desde el gremio te invitamos a acompañar cada denuncia con nuestra intervención.
-  </p>
+<div class="bl-hero">
+  <div class="bl-hero-inner">
+    <h1 class="bl-title">Oficina de Bienestar Laboral</h1>
+    <div class="bl-divider"></div>
+    <p class="bl-lead">
+      Conocé qué es la Oficina de Bienestar Laboral (OBL), cuál es su función institucional y por qué desde el gremio te invitamos a acompañar cada denuncia con nuestra intervención.
+    </p>
+  </div>
+</div>
 
-  <div class="bienestar-container">
-
+<div class="bl-container">
+  
+  <div class="bl-grid">
     <!-- Tarjeta Institucional -->
-    <article class="bienestar-card institucional">
-      <h4>¿Qué es la Oficina de Bienestar Laboral (OBL)?</h4>
-      <p>
-        La Oficina de Bienestar Laboral (OBL) fue creada por el Tribunal Superior de Justicia de Santa Cruz como un espacio institucional para abordar situaciones de violencia y acoso en el ámbito laboral.
-      </p>
-      <p>
-        Su objetivo es <strong>prevenir, intervenir y promover un ambiente de trabajo saludable</strong>, ofreciendo asesoramiento, contención y recomendaciones en casos que afecten la integridad física, psíquica o emocional de quienes integran el Poder Judicial.
-      </p>
-      <p>
-        Esta oficina depende directamente del Tribunal y funciona con un equipo interdisciplinario que recibe consultas y denuncias. Sin embargo, <strong>no tiene facultades sancionatorias</strong>: sus actuaciones se limitan a informes o sugerencias, quedando las decisiones finales en manos de las autoridades judiciales.
-      </p>
-    </article>
-
-    <div class="section-divider"></div>
+    <div class="bl-card">
+      <div class="bl-card-header">
+        <h2>{{ oficinaInfo.title }}</h2>
+      </div>
+      <div class="bl-card-body">
+        <p *ngFor="let p of oficinaInfo.paragraphs; let i = index">
+          <ng-container *ngIf="i === 1">
+            Su objetivo es <strong>prevenir, intervenir y promover un ambiente de trabajo saludable</strong>, ofreciendo asesoramiento, contención y recomendaciones en casos que afecten la integridad física, psíquica o emocional de quienes integran el Poder Judicial.
+          </ng-container>
+          <ng-container *ngIf="i === 2">
+            Esta oficina depende directamente del Tribunal y funciona con un equipo interdisciplinario que recibe consultas y denuncias. Sin embargo, <strong>no tiene facultades sancionatorias</strong>: sus actuaciones se limitan a informes o sugerencias, quedando las decisiones finales en manos de las autoridades judiciales.
+          </ng-container>
+          <ng-container *ngIf="i === 0">
+            {{ p }}
+          </ng-container>
+        </p>
+      </div>
+    </div>
 
     <!-- Tarjeta Mirada del Gremio -->
-    <article class="bienestar-card gremio">
-      <h4>La mirada del gremio</h4>
-      <p>
-        Desde el sindicato consideramos que toda herramienta que busque mejorar el bienestar laboral es positiva. Pero también vemos que, en la práctica, muchos/as compañeros/as sienten que esta oficina <strong>no brinda respuestas reales</strong>: se hacen denuncias, se entregan informes, pero los conflictos siguen sin resolverse.
-      </p>
-      <p>Por eso queremos ser claros:</p>
-      <ul>
-        <li><strong>Si el gremio no es convocado, no toma conocimiento de los casos.</strong></li>
-        <li><strong>Te pedimos que, además de recurrir a la Oficina de Bienestar Laboral, acudas a tu gremio para ser acompañado/a y defendido/a de manera efectiva.</strong></li>
-      </ul>
-      <p class="conclusion">
-        La participación gremial es indispensable para garantizar que cada denuncia no quede en un trámite vacío, sino que se traduzca en <strong>soluciones concretas</strong> y en la <strong>defensa real de los derechos laborales</strong>.
-      </p>
-    </article>
-
-    
-    <div class="call-to-action">
-    <!-- <p>Descarga </p> -->
-    
-    <div class="button-group">
-        <!-- <a href="/contacto" class="download-button">Contactá al gremio ahora</a> -->
-        <a href="/assets/docs/resolucion_obl_protocolo.pdf"
-        download
-        class="download-button secondary">
-        Descargar PDF informativo
-        </a>
+    <div class="bl-card">
+      <div class="bl-card-header bl-card-gremio">
+        <h2>{{ gremioInfo.title }}</h2>
+      </div>
+      <div class="bl-card-body">
+        <p *ngFor="let p of gremioInfo.paragraphs; let i = index">
+          <ng-container *ngIf="i === 0">
+            Desde el sindicato consideramos que toda herramienta que busque mejorar el bienestar laboral es positiva. Pero también vemos que, en la práctica, muchos/as compañeros/as sienten que esta oficina <strong>no brinda respuestas reales</strong>: se hacen denuncias, se entregan informes, pero los conflictos siguen sin resolverse.
+          </ng-container>
+          <ng-container *ngIf="i === 1">
+            {{ p }}
+          </ng-container>
+        </p>
+        <ul class="bl-list">
+          <li *ngFor="let item of gremioInfo.bulletPoints">
+            <i class="fa-solid fa-circle-check"></i>
+            <strong>{{ item }}</strong>
+          </li>
+        </ul>
+        <div class="bl-conclusion">
+          <p>
+            La participación gremial es indispensable para garantizar que cada denuncia no quede en un trámite vacío, sino que se traduzca en <strong>soluciones concretas</strong> y en la <strong>defensa real de los derechos laborales</strong>.
+          </p>
+        </div>
+      </div>
     </div>
-    </div>
-
   </div>
-</section>
+
+  <div class="bl-actions">
+    <a href="/assets/docs/resolucion_obl_protocolo.pdf" download class="bl-btn">
+      <i class="fa-solid fa-file-pdf"></i>
+      Descargar PDF informativo
+    </a>
+  </div>
+
+</div>

@@ -21,6 +21,19 @@ export class ContactComponent implements OnInit {
     { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com', templateID: 'template_8e3q3cm' }
   ];
 
+  faqs = [
+    { q: '¿Qué puedo consultar?', a: 'Podés escribirnos por reservas, beneficios o consultas administrativas.' },
+    { q: '¿Si no soy afiliado/a puedo alquilar el Quincho o cabañas del Gremio?', a: 'Sí, hace tu consulta y te informamos las condiciones.' },
+    { q: '¿En qué localidades el gremio tiene alojamiento propio?', a: 'Actualmente contamos con alojamiento en Río Gallegos, Caleta Olivia, San Julián y El Calafate.' },
+    { q: '¿Cómo hago para afiliarme al gremio?', a: 'Tenes que trabajar para el Poder Judicial de Santa Cruz. Completa la Pre carga del formulario de afiliación en la web y te contactaremos para que acerques a tu sede más cercana, o consultanos por mail para recibir asistencia.' },
+    { q: '¿Qué beneficios tengo como afiliado/a?', a: 'Accedés a turismo social, capacitaciones, asesoramiento gremial y distintos convenios.' },
+    { q: '¿Cómo reservo una cabaña o departamento?', a: 'Las reservas se realizan escribiendo a la sede correspondiente o si sos afiliado/a a través de la app “Mi Credencial”.' },
+    { q: '¿Cuánto tardan en responder?', a: 'Generalmente dentro de las 48 hs hábiles. Atención: lunes a viernes de 9:00 a 12:00 y 16:00 a 19:00.' },
+    { q: '¿Dónde encuentro información sobre el sistema salarial y paritarias?', a: 'En la sección Utilidades, donde también podés consultar derechos laborales y sindicales.' },
+    { q: '¿Cómo me inscribo en capacitaciones?', a: 'Podés anotarte desde la sección Capacitaciones de la web o enviando un mensaje a tu sede.' },
+    { q: '¿Si soy contratado/a por el Poder Judicial de la Provincia de Santa Cruz, me puedo afiliar?', a: 'Sí, podés afiliarte al gremio.' }
+  ];
+
   sending = false;
   showSuccessAlert = false;
   error = false;
@@ -42,7 +55,6 @@ export class ContactComponent implements OnInit {
   selectDestinatario(dest: any) {
     this.destinatario = dest.email;
     this.selectedTemplateID = dest.templateID;
-    //console.log('Destinatario seleccionado:', this.destinatario);
   }
 
   back() {

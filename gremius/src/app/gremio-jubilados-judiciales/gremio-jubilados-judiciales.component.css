@@ -1,85 +1,283 @@
-.gremio-container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #333;
-  line-height: 1.7;
-}
-
-.gremio-container .titulo {
+/* ─── Hero ───────────────────────────────────────────────────────── */
+.gj-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 60px 40px;
   text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #444c8a;
-  margin-bottom: 1rem;
 }
 
-.gremio-container .descripcion {
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: #555;
+.gj-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* 🔹 Estilos para el bloque de historia */
-.historia-container {
-  background: #fff;
-  padding: 2rem;
-  border-left: 6px solid #444c8a; /* borde azul institucional */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+.gj-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
 }
 
-.historia-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border-color: #5a62a0; /* azul versión 2 */
+.gj-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
 }
 
-.historia-container p {
-  margin-bottom: 1.2rem;
-  text-align: justify;
-}
-
-.historia-container h3,
-.historia-container h4 {
-  color: #444c8a;
-  margin-top: 1.5rem;
-  margin-bottom: 0.6rem;
-  font-weight: bold;
-}
-
-.historia-container h3 {
-  font-size: 1.4rem;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.3rem;
-}
-
-.historia-container h4 {
+.gj-lead {
   font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── Layout ───────────────────────────────────────────────────────── */
+.gj-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.gj-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ─── Tarjetas ─────────────────────────────────────────────────────── */
+.gj-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e4e6f1;
+  box-shadow: 0 4px 16px rgba(68, 76, 138, 0.06);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.gj-card-header {
+  background: linear-gradient(135deg, #f1f3f9 0%, #e4e6f1 100%);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e4e6f1;
+}
+
+.gj-card-header h2, .gj-card-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e2a5e;
+  margin: 0;
+}
+
+.gj-card-body {
+  padding: 2.5rem;
+}
+
+/* ─── Columna Izquierda (Sidebar) ───────────────────────────────────── */
+.img-card {
+  border: none;
+}
+
+.gj-sede-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gj-card:hover .gj-sede-img {
+  transform: scale(1.05);
+}
+
+.gj-card-footer {
+  padding: 1rem;
+  background: #f8fafc;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+.gj-location {
+  margin: 0;
+  font-weight: 600;
+  color: #444C8A;
+  font-size: 0.95rem;
+}
+
+.focus-card {
+  background: linear-gradient(135deg, #1e2a5e 0%, #2c3475 100%);
+  color: #fff;
+  border: none;
+}
+
+.focus-card .gj-card-header {
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.focus-card .gj-card-header h3 {
+  color: #fff;
+}
+
+.gj-quote {
+  font-size: 1.2rem;
   font-style: italic;
-}
-
-.historia-container ul {
-  margin: 0 0 1rem 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
   padding: 0;
-  list-style-type: disc;
+  color: rgba(255,255,255,0.9);
+  position: relative;
 }
 
-.historia-container li {
-  margin-bottom: 0.4rem;
-  color: #555;
+.gj-quote::before {
+  content: '“';
+  font-size: 4rem;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  opacity: 0.1;
+  font-family: serif;
 }
 
-.historia-container strong {
-  color: #222;
+/* ─── Columna Derecha (Main) ────────────────────────────────────────── */
+.content-list p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
 }
 
-.historia-container em {
-  color: #444c8a;
-  font-weight: 500;
+.gj-highlight-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.gj-highlight-box h3 {
+  color: #1e2a5e;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.gj-small {
+  font-size: 0.95rem;
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+.gj-comision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gj-miembro {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+}
+
+.gj-miembro .cargo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #6b76c5;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.gj-miembro .nombre {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.gj-sub-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.gj-sub-group h4 {
+  font-size: 0.95rem;
+  color: #1e2a5e;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gj-sub-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gj-sub-group li {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.gj-sub-group li::before {
+  content: '•';
+  color: #6b76c5;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.gj-emphasis {
+  font-weight: 600;
+  color: #1e2a5e !important;
+  background: linear-gradient(to right, rgba(107,118,197,0.05), transparent);
+  padding: 1.5rem;
+  border-left: 4px solid #6b76c5;
+  border-radius: 0 8px 8px 0;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .gj-layout {
+    grid-template-columns: 1fr;
+  }
+  .gj-sidebar {
+    order: 2;
+  }
+  .gj-main {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .gj-hero {
+    padding: 44px 24px;
+  }
+  .gj-title {
+    font-size: 2.2rem;
+  }
+  .gj-comision-grid, .gj-sub-groups {
+    grid-template-columns: 1fr;
+  }
+  .gj-card-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gj-hero {
+    padding: 36px 16px;
+  }
+  .gj-title {
+    font-size: 1.8rem;
+  }
 }
