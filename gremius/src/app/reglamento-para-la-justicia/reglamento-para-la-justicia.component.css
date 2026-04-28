@@ -1,130 +1,275 @@
-.reglamento {
-  padding: 2rem;
-  background: #fafafa;
-  border-radius: 12px;
+/* src/app/reglamento-para-la-justicia/reglamento-para-la-justicia.component.css */
+
+#reglamento-justicia {
+  background: #f5f6fa;
+  padding-bottom: 70px;
 }
 
-
-/* Contenedor principal alineado con tarjetas */
-.reglamento-container,
-.reglamento > p {
-  max-width: 800px;   /* igual que las tarjetas */
-  margin: 0 auto 1.5rem; /* centrado */
-  text-align: center; /* centra el contenido */
-}
-
-/* Subtítulo */
-.reglamento-container h3 {
-  font-size: 1.5rem;
-  color: #444C8A;
-  border-left: 6px solid #444C8A;
-  padding-left: 0.5rem;
-  text-align: left;  /* opcional: para que no quede raro el borde */
-  margin-bottom: 1rem;
-}
-
-
-
-/* Título principal */
-.reglamento h2 {
-  margin: 0 auto 1rem;
-  /* centrado y con margen inferior */
-  font-size: 2rem;
-  color: #444C8A;
-  /* institucional */
-  border-bottom: 3px solid #5A62A0;
-  padding-bottom: 5px;
-  max-width: 800px;
-  /* mismo ancho que las tarjetas */
-  text-align: center;
-  /* mantiene el texto centrado */
-}
-
-
-/* Subtítulo */
-.reglamento h3 {
-  margin: 1 auto 1rem ;
-  font-size: 1.5rem;
-  color: #444C8A;
-  /* institucional */
-  border-left: 6px solid #444C8A;
-  /* institucional */
-  padding-left: 0.5rem;
-}
-
-/* Párrafos introductorios */
-.reglamento p {
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Cada sección tipo tarjeta */
-.reglamento-section {
-  background: #fff;
-  border: 1px solid #444C8A;
-  /* institucional */
-  border-left: 6px solid #444C8A;
-  /* más marcado a la izquierda */
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  margin: 1rem auto;
-  /* centrado */
-  max-width: 800px;
-  /* más angosta que antes */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Efecto hover */
-.reglamento-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Título de cada tarjeta */
-.reglamento-section h4 {
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
-  color: #444C8A;
-  /* institucional */
-}
-
-/* Lista dentro de tarjetas */
-.reglamento-section ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.reglamento-section li {
-  margin-bottom: 0.5rem;
-  color: #444C8A;
-  /* institucional */
-  line-height: 1.5;
-}
-
-/* Texto final de descarga */
-.descarga {
-  margin-top: 2rem;
-  font-style: italic;
+/* ===== HERO ===== */
+.rj-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 64px 40px;
   text-align: center;
 }
 
-.download-button {
+.rj-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.rj-eyebrow {
   display: inline-block;
-  margin-left: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  border: 2px solid #444C8A;
-  /* institucional */
-  border-radius: 6px;
-  color: #444C8A;
-  /* institucional */
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.2s ease;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 12px;
 }
 
-.download-button:hover {
-  background: #444C8A;
-  /* institucional */
+.rj-title {
+  font-size: 2.8rem;
+  font-weight: 800;
   color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.rj-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.rj-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== CONTENT ===== */
+.rj-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 52px 24px 0;
+}
+
+/* ===== BLOCK HEADER ===== */
+.rj-block-header {
+  margin-bottom: 32px;
+}
+
+.rj-block-titulo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e2a5e;
+  margin: 0 0 10px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.rj-block-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 44px;
+  height: 3px;
+  background: linear-gradient(90deg, #444C8A, #8b9ecf);
+  border-radius: 2px;
+}
+
+.rj-block-intro {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a4f6a;
+  margin: 0;
+  max-width: 760px;
+}
+
+/* ===== GRID ===== */
+.rj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+/* ===== CARD ===== */
+.rj-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e8eaf4;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
+  padding: 22px 22px 22px 34px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.rj-card:hover {
+  box-shadow: 0 8px 28px rgba(68, 76, 138, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Pastilla gradiente */
+.rj-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 35%;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 0 3px 3px 0;
+  opacity: 0.55;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.35s ease;
+}
+
+.rj-card:hover::before {
+  top: 0;
+  height: 100%;
+  opacity: 1;
+}
+
+/* Light sweep */
+.rj-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(68, 76, 138, 0.05) 0%, transparent 45%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.rj-card:hover::after {
+  opacity: 1;
+}
+
+/* ===== TÍTULOS ===== */
+.rj-card-titulo {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1e2a5e;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  position: relative;
+  line-height: 1.3;
+}
+
+.rj-card-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, #444C8A, #8b9ecf);
+  border-radius: 2px;
+}
+
+/* ===== LISTA ===== */
+.rj-lista {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rj-lista li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #4a4f6a;
+}
+
+.rj-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  min-height: 10px;
+  background: linear-gradient(180deg, #8b9ecf 0%, #444C8A 55%, #2e3566 100%);
+  border-radius: 2px;
+}
+
+/* ===== DOWNLOAD ===== */
+.rj-download-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+.rj-btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, #444C8A 0%, #2e3566 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.25s ease;
+  box-shadow: 0 2px 10px rgba(68, 76, 138, 0.25);
+}
+
+.rj-btn-download:hover {
+  background: linear-gradient(135deg, #5560a8 0%, #444C8A 100%);
+  box-shadow: 0 6px 20px rgba(68, 76, 138, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.is-visible {
+  animation: rjReveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, 0s) both;
+}
+
+@keyframes rjReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .rj-hero {
+    padding: 44px 20px;
+  }
+
+  .rj-title {
+    font-size: 2.1rem;
+  }
+
+  .rj-content {
+    padding: 36px 16px 0;
+  }
+
+  .rj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rj-card {
+    padding: 18px 16px 18px 28px;
+  }
 }
