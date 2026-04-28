@@ -1,58 +1,80 @@
-<section id="protocolo-salud-mental" class="protocolo-section">
-  <h2>Protocolo de Salud Mental y Consumos Problemáticos</h2>
-  <p class="intro">
-    Conocé los alcances de este protocolo institucional, su enfoque preventivo y el rol clave que tuvo el gremio en su impulso.
-  </p>
+<div class="sm-hero">
+  <div class="sm-hero-inner">
+    <h1 class="sm-title">{{ protocoloDetails.title }}</h1>
+    <div class="sm-divider"></div>
+    <p class="sm-lead">{{ protocoloDetails.intro }}</p>
+  </div>
+</div>
 
-  <div class="protocolo-container">
-
+<div class="sm-container">
+  
+  <div class="sm-grid">
     <!-- Tarjeta Institucional -->
-    <article class="protocolo-card institucional">
-      <h4>¿Qué es este protocolo?</h4>
-      <p>
-        El Tribunal Superior de Justicia de Santa Cruz aprobó un protocolo para prevenir y abordar problemáticas de salud mental y consumos en el ámbito laboral.
-      </p>
-      <p>
-        Se trata de una herramienta que busca generar <strong>entornos laborales más saludables y seguros</strong>, promoviendo la prevención, la detección temprana y el acompañamiento en casos de consumo problemático de sustancias o padecimientos psíquicos.
-      </p>
-      <p>
-        El protocolo se centra en un <strong>enfoque integral y no punitivo</strong>, garantizando la confidencialidad, el respeto a los derechos laborales y la promoción de hábitos saludables.
-      </p>
-      <ul>
-        <li>Capacitaciones para equipos de trabajo.</li>
-        <li>Redes de apoyo institucional.</li>
-        <li>Derivaciones médicas y psicológicas.</li>
-        <li>Acciones para la reinserción laboral digna y libre de estigmatización.</li>
-      </ul>
-    </article>
-
-    <div class="section-divider"></div>
-
-    <!-- Tarjeta Mirada del Gremio -->
-    <article class="protocolo-card gremio">
-      <h4>El aporte del gremio</h4>
-      <p>
-        Este avance no surge de la nada: fue el gremio el que durante años insistió en la necesidad de reconocer la salud mental y los consumos problemáticos como parte del bienestar laboral.
-      </p>
-      <p>
-        Hoy este protocolo representa un paso importante para consolidar un ámbito laboral basado en el <strong>respeto, la prevención y la inclusión</strong>, donde el cuidado de la salud de los/as trabajadores/as es asumido como una prioridad institucional.
-      </p>
-      <p class="conclusion">
-        Seguimos trabajando para que estas herramientas no queden en el papel, sino que se traduzcan en <strong>acciones concretas, acompañamiento real y derechos garantizados</strong>.
-      </p>
-    </article>
-
-   <div class="call-to-action">
-      <p>¿Querés conocer el protocolo completo o recibir asesoramiento?</p>
-      
-      <div class="button-group">
-        <a href="/assets/docs/protocolo_problemas_salud_mental_consumo.pdf"
-          download
-          class="download-button secondary">
-          📄 Descargar protocolo (PDF)
-        </a>
+    <div class="sm-card">
+      <div class="sm-card-header">
+        <h2>¿Qué es este protocolo?</h2>
+      </div>
+      <div class="sm-card-body">
+        <p>
+          El Tribunal Superior de Justicia de Santa Cruz aprobó un protocolo para 
+          prevenir y abordar problemáticas de salud mental y consumos en el ámbito laboral.
+        </p>
+        <p>
+          Se trata de una herramienta que busca generar <strong>entornos laborales
+          más saludables y seguros</strong>, promoviendo la prevención, la detección temprana 
+          y el acompañamiento en casos de consumo problemático de sustancias o padecimientos psíquicos.
+        </p>
+        <p>
+          El protocolo se centra en un <strong>enfoque integral y no punitivo</strong>, 
+          garantizando la confidencialidad, el respeto a los derechos laborales y la promoción de hábitos saludables.
+        </p>
+        
+        <ul class="sm-list">
+          <li *ngFor="let item of protocoloDetails.items">
+            <i class="fas fa-check-circle"></i>
+            <span>{{ item }}</span>
+          </li>
+        </ul>
       </div>
     </div>
 
+    <!-- Tarjeta Mirada del Gremio -->
+    <div class="sm-card dark-card">
+      <div class="sm-card-header">
+        <h2>El aporte del gremio</h2>
+      </div>
+      <div class="sm-card-body">
+        <p>
+          Este avance no surge de la nada: fue el gremio el que durante años insistió 
+          en la necesidad de reconocer la salud mental y los consumos problemáticos como parte del bienestar laboral.
+        </p>
+        <p>
+          Hoy este protocolo representa un paso importante para consolidar un ámbito laboral basado 
+          en el <strong>respeto, la prevención y la inclusión</strong>, donde el cuidado de la salud 
+          de los/as trabajadores/as es asumido como una prioridad institucional.
+        </p>
+        
+        <div class="sm-conclusion">
+          <p>
+            Seguimos trabajando para que estas herramientas no queden en el papel, 
+            sino que se traduzcan en <strong>acciones concretas, acompañamiento real y derechos garantizados</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+
+  <div class="sm-cta">
+    <div class="sm-cta-card">
+      <h3>Documentación Completa</h3>
+      <p>¿Querés conocer el protocolo completo o recibir asesoramiento?</p>
+      <a [href]="protocoloDetails.pdfUrl" 
+         download 
+         class="sm-btn">
+        <i class="fas fa-file-pdf"></i>
+        Descargar Protocolo (PDF)
+      </a>
+    </div>
+  </div>
+
+</div>

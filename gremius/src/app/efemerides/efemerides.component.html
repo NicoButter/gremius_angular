@@ -1,111 +1,89 @@
 <section class="efemerides-container">
-  <div class="efemerides-header">
+  <!-- Hero Section -->
+  <header class="efemerides-header">
     <h1>Efemérides</h1>
-    <p class="fecha-actual">Mes de {{ mesActual }}</p>
-  </div>
+    <div class="fecha-actual">
+      <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+      <span>Calendario Institucional</span>
+    </div>
+  </header>
 
-  <!-- Efeméride principal destacada -->
+  <!-- Efeméride Principal (Solo muestra la imagen si ES HOY) -->
   <article class="efemeride-destacada" *ngIf="efemeridePrincipal">
-    <div class="destacada-badge" role="status" aria-live="polite">
+    <div class="destacada-badge">
       <i class="fa-solid fa-star" aria-hidden="true"></i>
-      <span>{{ getMensajeDiasHasta(efemeridePrincipal) }}</span>
+      <span>{{ esHoyMismo ? 'Hoy' : 'Próxima Efeméride' }}</span>
     </div>
-    <time class="destacada-fecha" [attr.datetime]="efemeridePrincipal.mes + '-' + efemeridePrincipal.dia">
-      {{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}
-    </time>
+    
+    <div class="destacada-fecha">{{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}</div>
     <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
-    <!-- Contenido especial para efemérides con imagen solo el día correspondiente -->
-    <div class="destacada-contenido" *ngIf="efemeridePrincipal.imagen && efemeridePrincipal.diasHasta === 0 && ((efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3) || (efemeridePrincipal.dia === 2 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 4 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 30 && efemeridePrincipal.mes === 4) || (efemeridePrincipal.dia === 1 && efemeridePrincipal.mes === 5))">
-      <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
-      <div class="destacada-texto">
-        <!-- Texto para el 24 de marzo -->
-        <ng-container *ngIf="efemeridePrincipal.dia === 24 && efemeridePrincipal.mes === 3">
-          <p>En cada 24 de marzo la memoria del pueblo vuelve a ponerse de pie. Recordamos a quienes fueron perseguidxs, desaparecidxs y silenciadxs por defender una Argentina más justa, libre y soberana.</p>
-          <p>Desde la tradición de lucha del movimiento nacional y popular, reafirmamos nuestro compromiso con la memoria, la verdad y la justicia, porque un pueblo que recuerda es un pueblo que no se rinde.</p>
-          <p>Honrar a lxs compañerxs que ya no están es seguir levantando sus banderas: las de la dignidad, la solidaridad y la justicia social.</p>
-          <p>Porque la memoria no es pasado: es lucha presente y futuro.</p>
-          <p class="nunca-mas"><strong>Nunca Más.</strong></p>
-        </ng-container>
-        <!-- Texto para el 2 de abril -->
-        <ng-container *ngIf="efemeridePrincipal.dia === 2 && efemeridePrincipal.mes === 4">
-          <p>Cada 2 de abril honramos a quienes defendieron con valentía nuestra soberanía en las Islas Malvinas. Recordamos a los caídos y abrazamos a nuestros veteranos, que cargan para siempre la memoria de aquella gesta.</p>
-          <p>Para quienes creemos en una Argentina justa, libre y soberana, Malvinas no es sólo un capítulo de la historia: es una causa que vive en el corazón del pueblo.</p>
-          <p>Mantener viva la memoria de nuestros héroes es también sostener el compromiso con la soberanía nacional y con una patria que no olvida a sus hijos.</p>
-          <p class="malvinas-argentinas"><strong>Las Malvinas fueron, son y serán argentinas.</strong></p>
-        </ng-container>
-        <!-- Texto para el 4 de abril -->
-        <ng-container *ngIf="efemeridePrincipal.dia === 4 && efemeridePrincipal.mes === 4">
-          <p>Cada 4 de abril recordamos a Carlos Fuentealba, docente que levantó su voz en defensa de la educación pública y de los derechos de quienes enseñan.</p>
-          <p>Su muerte marcó profundamente a la comunidad educativa y al conjunto del pueblo trabajador. Desde entonces, su nombre se convirtió en símbolo de la lucha por una escuela pública digna y por el respeto a quienes dedican su vida a educar.</p>
-          <p>Recordarlo no es sólo mirar al pasado: es renovar el compromiso con una sociedad donde enseñar, reclamar derechos y construir futuro nunca vuelva a ser respondido con violencia.</p>
-          <p class="fuentealba-presente"><strong>Carlos Fuentealba, presente. Ahora y siempre.</strong></p>
-        </ng-container>
-        <!-- Texto para el 1 de mayo -->
-        <ng-container *ngIf="efemeridePrincipal.dia === 1 && efemeridePrincipal.mes === 5">
-          <p>Cada derecho que hoy forma parte de nuestra vida laboral tiene historia, tiene nombre y tiene el compromiso de quienes nunca miraron para otro lado.</p>
-          <p>Esas conquistas nos sostienen, nos ordenan y nos recuerdan quiénes somos cuando caminamos juntos.</p>
-          <p>Ahí está nuestra fuerza.</p>
-          <p class="trabajadores-presente"><strong>Judiciales de Santa Cruz.</strong></p>
-        </ng-container>
+    
+    <div class="destacada-contenido">
+      <!-- LA LÓGICA: Solo muestra la imagen si coincide con la fecha actual (esHoyMismo === true) -->
+      <div class="destacada-imagen-container" *ngIf="efemeridePrincipal.imagen && esHoyMismo">
+        <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
       </div>
-    </div>
-    <div class="destacada-decoracion" aria-hidden="true">
-      <i class="fa-solid fa-calendar-day"></i>
+      <div class="destacada-texto">
+        <!-- Textos específicos solo si es hoy -->
+        <ng-container *ngIf="esHoyMismo">
+          <p *ngIf="efemeridePrincipal.mes === 3 && efemeridePrincipal.dia === 24" class="nunca-mas">¡NUNCA MÁS!</p>
+          <p *ngIf="efemeridePrincipal.mes === 4 && efemeridePrincipal.dia === 2" class="malvinas-argentinas">LAS MALVINAS SON ARGENTINAS</p>
+          <p *ngIf="efemeridePrincipal.mes === 4 && efemeridePrincipal.dia === 4" class="fuentealba-presente">CARLOS FUENTEALBA: ¡PRESENTE!</p>
+        </ng-container>
+        
+        <p *ngIf="!esHoyMismo">Nos preparamos para conmemorar esta fecha importante de nuestro calendario institucional.</p>
+        <p *ngIf="esHoyMismo">Recordamos esta fecha con el compromiso de sostener la memoria colectiva y los valores que nos definen como organización sindical.</p>
+      </div>
     </div>
   </article>
 
-  <!-- Efeméride que pasó recientemente -->
-  <aside class="efemeride-pasada" *ngIf="efemeridePasada && efemeridePasada.diasHasta! >= -7">
-    <div class="pasada-badge">
-      <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
-      <span>{{ getMensajeDiasHasta(efemeridePasada) }}</span>
-    </div>
-    <div class="pasada-contenido">
-      <time class="pasada-fecha" [attr.datetime]="efemeridePasada.mes + '-' + efemeridePasada.dia">
-        {{ efemeridePasada.dia }} de {{ getNombreMes(efemeridePasada.mes) }}
-      </time>
-      <p class="pasada-titulo">{{ efemeridePasada.titulo }}</p>
-    </div>
+  <!-- Efeméride Pasada Recientemente -->
+  <aside class="efemeride-pasada" *ngIf="efemeridePasada">
+    <div class="pasada-badge">Reciente</div>
+    <div class="pasada-fecha">{{ efemeridePasada.dia }}/{{ efemeridePasada.mes }}</div>
+    <p class="pasada-titulo">{{ efemeridePasada.titulo }}</p>
   </aside>
 
-  <!-- Próximas efemérides -->
+  <!-- Grilla de Próximas Efemérides -->
   <section class="proximas-efemerides" *ngIf="efemeridesProximas.length > 0">
     <h3>
-      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-      Próximas Efemérides
+      <i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>
+      Próximas Fechas
     </h3>
-    <div class="proximas-lista" role="list">
-      <article class="proxima-item" *ngFor="let efemeride of efemeridesProximas" role="listitem">
-        <time class="proxima-fecha" [attr.datetime]="efemeride.mes + '-' + efemeride.dia">
-          <span class="dia">{{ efemeride.dia }}</span>
-          <span class="mes">{{ getNombreMes(efemeride.mes).substring(0, 3) }}</span>
-        </time>
-        <div class="proxima-contenido">
-          <p class="proxima-titulo">{{ efemeride.titulo }}</p>
-          <span class="proxima-dias" *ngIf="efemeride.diasHasta && efemeride.diasHasta <= 30">
-            {{ getMensajeDiasHasta(efemeride) }}
-          </span>
+    <div class="proximas-lista">
+      <div class="proxima-item" *ngFor="let prox of efemeridesProximas">
+        <div class="proxima-fecha">
+          <span class="dia">{{ prox.dia }}</span>
+          <span class="mes">{{ getNombreMes(prox.mes).substring(0,3) }}</span>
         </div>
-      </article>
+        <div class="proxima-contenido">
+          <h4 class="proxima-titulo">{{ prox.titulo }}</h4>
+          <span class="proxima-dias">En {{ prox.diasHasta }} días</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Listado completo por mes -->
+  <!-- Calendario Completo (Listado por Meses) -->
   <section class="efemerides-completo">
     <h3>
-      <i class="fa-solid fa-list" aria-hidden="true"></i>
-      Calendario Completo de Efemérides
+      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+      Calendario Anual
     </h3>
     <div class="meses-container">
-      <article class="mes-bloque" *ngFor="let mes of [1,2,3,4,5,6,7,8,9,10,11,12]">
-        <h4 class="mes-titulo">{{ getNombreMes(mes) }}</h4>
-        <ul class="mes-lista">
-          <li *ngFor="let efemeride of getEfemeridesDelMes(mes)" 
-              [class.es-destacada]="efemeride.dia === efemeridePrincipal?.dia && efemeride.mes === efemeridePrincipal?.mes">
-            <time class="dia-numero" [attr.datetime]="efemeride.mes + '-' + efemeride.dia">{{ efemeride.dia }}</time>
-            <span class="efemeride-texto">{{ efemeride.titulo }}</span>
-          </li>
-        </ul>
+      <article class="mes-bloque" *ngFor="let mesNum of [1,2,3,4,5,6,7,8,9,10,11,12]">
+        <header class="mes-header">
+          <h4>{{ getNombreMes(mesNum) }}</h4>
+        </header>
+        <div class="mes-dia-lista">
+          <div class="mes-dia-item" *ngFor="let ef of getEfemeridesDelMes(mesNum)">
+            <span class="mes-dia-numero">{{ ef.dia }}</span>
+            <span class="mes-dia-titulo">{{ ef.titulo }}</span>
+          </div>
+          <div class="mes-dia-item" *ngIf="getEfemeridesDelMes(mesNum).length === 0">
+            <span class="mes-dia-titulo" style="opacity: 0.5;">Sin efemérides registradas.</span>
+          </div>
+        </div>
       </article>
     </div>
   </section>

@@ -101,6 +101,7 @@ export class EfemeridesComponent implements OnInit {
   efemeridePrincipal: Efemeride | null = null;
   efemeridesProximas: Efemeride[] = [];
   efemeridePasada: Efemeride | null = null;
+  esHoyMismo: boolean = false;
   mesActual: string = '';
   mesesDelAnio = [
     'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
@@ -111,97 +112,54 @@ export class EfemeridesComponent implements OnInit {
     this.calcularEfemeridesDestacadas();
   }
 
+  getNombreMes(numMes: number): string {
+    return this.mesesDelAnio[numMes - 1];
+  }
+
+  getEfemeridesDelMes(numMes: number): Efemeride[] {
+    return this.efemerides.filter(e => e.mes === numMes);
+  }
+
   calcularEfemeridesDestacadas() {
     const hoy = new Date();
-    const mesActual = hoy.getMonth() + 1; // getMonth() devuelve 0-11
     const diaActual = hoy.getDate();
-    
-    this.mesActual = this.mesesDelAnio[mesActual - 1];
+    const mesActual = hoy.getMonth() + 1;
+    this.mesActual = this.getNombreMes(mesActual);
 
     // Calcular días hasta cada efeméride
-    this.efemerides.forEach(efemeride => {
-      const diasHasta = this.calcularDiasHasta(diaActual, mesActual, efemeride.dia, efemeride.mes);
-      efemeride.diasHasta = diasHasta;
-      efemeride.esDestacada = false;
+    this.efemerides.forEach(ef => {
+      let anio = hoy.getFullYear();
+      let fechaEf = new Date(anio, ef.mes - 1, ef.dia);
+      
+      const diffTime = fechaEf.getTime() - hoy.getTime();
+      ef.diasHasta = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     });
 
-    // Ordenar por proximidad
-    const efemeridesOrdenadas = [...this.efemerides].sort((a, b) => 
-      Math.abs(a.diasHasta!) - Math.abs(b.diasHasta!)
-    );
+    // Buscar efeméride de HOY
+    const hoyEf = this.efemerides.find(e => e.dia === diaActual && e.mes === mesActual);
 
-    // Encontrar la efeméride principal (la del día o la más cercana)
-    const masCercana = efemeridesOrdenadas[0];
-    
-    if (masCercana.diasHasta === 0) {
-      // Es hoy
-      this.efemeridePrincipal = { ...masCercana, esDestacada: true };
-    } else if (masCercana.diasHasta! > 0) {
-      // La más cercana está en el futuro
-      this.efemeridePrincipal = { ...masCercana, esDestacada: true };
-      
-      // Buscar la última que pasó
-      const pasadas = efemeridesOrdenadas.filter(e => e.diasHasta! < 0);
-      if (pasadas.length > 0) {
-        this.efemeridePasada = pasadas[0];
-      }
+    if (hoyEf) {
+      this.efemeridePrincipal = hoyEf;
+      this.esHoyMismo = true;
     } else {
-      // La más cercana ya pasó
-      this.efemeridePasada = { ...masCercana };
-      
-      // Buscar la próxima
-      const futuras = efemeridesOrdenadas.filter(e => e.diasHasta! > 0);
+      // Si no es hoy, buscar la más próxima FUTURA
+      this.esHoyMismo = false;
+      const futuras = this.efemerides.filter(e => e.diasHasta! > 0)
+        .sort((a, b) => a.diasHasta! - b.diasHasta!);
       if (futuras.length > 0) {
-        this.efemeridePrincipal = { ...futuras[0], esDestacada: true };
+        this.efemeridePrincipal = futuras[0];
       }
     }
 
-    // Obtener las próximas 5 efemérides (excluyendo la principal)
-    this.efemeridesProximas = efemeridesOrdenadas
-      .filter(e => e.diasHasta! > 0 && e !== masCercana)
-      .slice(0, 5);
-  }
+    // Próximas 3 (excluyendo la principal)
+    this.efemeridesProximas = this.efemerides
+      .filter(e => e.diasHasta! > 0 && e !== this.efemeridePrincipal)
+      .sort((a, b) => a.diasHasta! - b.diasHasta!)
+      .slice(0, 3);
 
-  calcularDiasHasta(diaActual: number, mesActual: number, diaEfemeride: number, mesEfemeride: number): number {
-    const fechaActual = new Date(new Date().getFullYear(), mesActual - 1, diaActual);
-    let fechaEfemeride = new Date(new Date().getFullYear(), mesEfemeride - 1, diaEfemeride);
-    
-    // Si la fecha ya pasó este año, calcular para el próximo año
-    if (fechaEfemeride < fechaActual) {
-      fechaEfemeride = new Date(new Date().getFullYear() + 1, mesEfemeride - 1, diaEfemeride);
-    }
-    
-    // Calcular diferencia en días
-    const diferencia = Math.floor((fechaEfemeride.getTime() - fechaActual.getTime()) / (1000 * 60 * 60 * 24));
-    
-    // Si es negativo, significa que ya pasó
-    if (diferencia < 0 && fechaEfemeride.getFullYear() === fechaActual.getFullYear()) {
-      return diferencia;
-    }
-    
-    return diferencia;
-  }
-
-  getNombreMes(mes: number): string {
-    return this.mesesDelAnio[mes - 1];
-  }
-
-  getEfemeridesDelMes(mes: number): Efemeride[] {
-    return this.efemerides.filter(e => e.mes === mes);
-  }
-
-  getMensajeDiasHasta(efemeride: Efemeride): string {
-    if (!efemeride.diasHasta) return '';
-    
-    if (efemeride.diasHasta === 0) {
-      return '¡HOY!';
-    } else if (efemeride.diasHasta === 1) {
-      return 'Mañana';
-    } else if (efemeride.diasHasta > 1 && efemeride.diasHasta <= 7) {
-      return `En ${efemeride.diasHasta} días`;
-    } else if (efemeride.diasHasta < 0 && efemeride.diasHasta >= -7) {
-      return `Hace ${Math.abs(efemeride.diasHasta)} días`;
-    }
-    return '';
+    // Pasada reciente (hasta 7 días atrás)
+    this.efemeridePasada = this.efemerides
+      .filter(e => e.diasHasta! < 0 && e.diasHasta! >= -7)
+      .sort((a,b) => b.diasHasta! - a.diasHasta!)[0] || null;
   }
 }
