@@ -1,162 +1,364 @@
-.delegados-afiliados-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  color: #333;
-}
-
-.main-title {
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: #444C8A;
-  margin-bottom: 30px;
+/* ─── Hero ───────────────────────────────────────────────────────── */
+.da-hero {
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 60%, #6b76c5 100%);
+  padding: 60px 40px;
   text-align: center;
-  border-bottom: 3px solid #444C8A;
-  /* subrayado institucional */
-  display: inline-block;
-  padding-bottom: 5px;
 }
 
-.card {
-  background-color: #fff;
-  border: 2px solid #444C8A;
-  /* borde azul institucional */
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+.da-hero-inner {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.da-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.da-divider {
+  width: 52px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.da-lead {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ─── Contenedor Principal ────────────────────────────────────────── */
+.da-container {
+  max-width: 1200px;
+  margin: 3.5rem auto 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ─── Elementos Generales de Cards ────────────────────────────────── */
+.da-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e4e6f1;
+  box-shadow: 0 2px 12px rgba(68, 76, 138, 0.08);
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+}
+
+.da-card-horizontal {
   flex-direction: row;
-  align-items: stretch;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(68, 76, 138, 0.3);
-  border-color: #5A62A0;
-  /* azul más claro en hover */
-}
-
-.card-image {
-  flex: 0 0 300px;
-  max-width: 300px;
+.da-card-media {
+  position: relative;
   overflow: hidden;
+  background: #f5f6fb;
 }
 
-.card-image img {
+.da-card-horizontal .da-card-media {
+  width: 40%;
+  flex-shrink: 0;
+}
+
+.da-media-short {
+  height: 250px;
+}
+
+.da-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.card-content {
+.da-card:hover .da-img {
+  transform: scale(1.05);
+}
+
+.da-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  padding: 20px;
 }
 
-h2 {
-  font-weight: 600;
+/* ─── Tipografía Interna ─────────────────────────────────────────── */
+.da-section-title {
+  color: #2c3475;
   font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.da-subtitle {
   color: #444C8A;
-  margin-top: 0;
-  margin-bottom: 10px;
-  border-left: 5px solid #444C8A;
-  /* detalle a la izquierda */
-  padding-left: 8px;
-}
-
-h3 {
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: #5A62A0;
-  /* tono azul secundario */
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-p {
   font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.da-text {
+  color: #4a5568;
+  font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 15px;
-  color: #333;
+  margin: 0 0 1.5rem;
 }
 
-ul {
+.da-list-title {
+  color: #1e2a5e;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e4e6f1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.da-list-title i {
+  color: #6b76c5;
+}
+
+/* ─── Listas ──────────────────────────────────────────────────────── */
+.da-list {
   list-style: none;
-  padding-left: 1.5rem;
-  margin-bottom: 15px;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-li {
+.da-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.da-check {
+  color: #6b76c5;
   font-size: 1.1rem;
-  margin-bottom: 8px;
-  position: relative;
-  padding-left: 0.5rem;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
-li::before {
-  content: "✔";
-  position: absolute;
-  left: -1.5rem;
-  top: 0;
+.da-check-green {
+  color: #10b981;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.da-check-blue {
+  color: #3b82f6;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.da-info-extra {
   font-size: 0.9rem;
-  color: #444C8A;
-  font-weight: bold;
+  background: #eceef8;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #444C8A;
+  margin-bottom: 1.5rem;
 }
 
-button {
-  background-color: #444C8A;
+/* ─── Caja de Contacto ───────────────────────────────────────────── */
+.da-contact-box {
+  margin-top: auto;
+  background: linear-gradient(135deg, #1e2a5e 0%, #444C8A 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #5A62A0;
-}
-
-.action-buttons {
-  margin-top: 20px;
   text-align: center;
 }
 
-.action-buttons h3 {
-  margin-bottom: 10px;
-  color: #444C8A;
+.da-contact-box h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .card {
+.da-contact-box p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.da-contact-box a {
+  color: #a5b4fc;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.da-contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Grid de Afiliados y Desafiliación ───────────────────────────── */
+.da-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.da-lists-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.da-list-compact {
+  gap: 0.6rem;
+}
+
+/* ─── Card de Alerta (Desafiliación) ─────────────────────────────── */
+.da-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.da-card-alert {
+  border: 1px solid #fee2e2;
+}
+
+.da-card-header-alert {
+  background: #ef4444;
+  color: #fff;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.da-card-header-alert i {
+  font-size: 1.5rem;
+}
+
+.da-card-header-alert h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.da-text-alert {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.da-text-alert-bold {
+  font-weight: 700;
+  color: #b91c1c;
+  font-size: 1rem;
+}
+
+/* ─── Card de Descarga de Estatuto ────────────────────────────────── */
+.da-card-action {
+  background: linear-gradient(135deg, #f5f6fb 0%, #eceef8 100%);
+  text-align: center;
+  border-bottom: 4px solid #444C8A;
+}
+
+.da-action-body {
+  align-items: center;
+}
+
+.da-action-icon {
+  font-size: 3rem;
+  color: #444C8A;
+  margin-bottom: 1rem;
+}
+
+.da-card-action h2 {
+  color: #1e2a5e;
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+}
+
+.da-card-action p {
+  color: #4a5568;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: #444C8A;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(68, 76, 138, 0.2);
+}
+
+.btn-primary:hover {
+  background: #2e3566;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(68, 76, 138, 0.3);
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .da-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .da-card-horizontal {
     flex-direction: column;
   }
+  
+  .da-card-horizontal .da-card-media {
+    width: 100%;
+    height: 250px;
+  }
+}
 
-  .card-image {
-    flex: 0 0 100%;
-    max-width: 100%;
-    height: 200px;
+@media (max-width: 768px) {
+  .da-lists-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .da-hero {
+    padding: 36px 16px;
   }
 
-  .card-image img {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 0;
+  .da-title {
+    font-size: 1.8rem;
   }
 
-  .card-content {
-    padding: 15px;
+  .da-section-title {
+    font-size: 1.5rem;
   }
 
-  .delegados-afiliados-container {
-    margin: 20px;
-    padding: 15px;
+  .da-card-body {
+    padding: 1.5rem;
   }
 }

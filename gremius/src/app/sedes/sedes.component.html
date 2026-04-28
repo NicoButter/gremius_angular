@@ -1,14 +1,27 @@
-<section id="sedes">
-  <h2>Nuestras Sedes</h2>
-  <p>Contamos con varias sedes para brindarte el mejor servicio. Selecciona una sede para conocer más detalles y cómo llegar.</p>
+<div class="sd-hero">
+  <div class="sd-hero-inner">
+    <h1 class="sd-title">Nuestras Sedes</h1>
+    <div class="sd-divider"></div>
+    <p class="sd-lead">
+      Contamos con opciones distribuidas estratégicamente para brindarte el mejor servicio. Selecciona una sede para conocer más detalles, ubicaciones y cómo llegar.
+    </p>
+  </div>
+</div>
 
-  <div class="sedes-container">
-    <div class="sedes-lista">
-      <div *ngFor="let sede of sedes" class="sede-detalle sede-miniatura" [routerLink]="['/sedes', sede.id]">
-        <img [src]="sede.image" [alt]="sede.name">
-        <h3>{{ sede.name }}</h3>
+<div class="sd-container">
+  <div class="sd-grid">
+    <div *ngFor="let sede of sedes" class="sd-card" [routerLink]="['/sedes', sede.id]">
+      <div class="sd-card-img-wrapper">
+        <img [src]="sede.image" [alt]="sede.name" class="sd-card-img">
+      </div>
+      <div class="sd-card-body">
+        <h3 class="sd-card-title">{{ sede.name }}</h3>
+        <p class="sd-card-address">
+          <i class="fa-solid fa-location-dot"></i>
+          {{ sede.address }}
+        </p>
+        <span class="sd-btn-ver-mas">Ver detalles <i class="fa-solid fa-arrow-right"></i></span>
       </div>
     </div>
   </div>
-</section>
-
+</div>

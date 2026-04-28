@@ -1,41 +1,80 @@
-<section class="sede-detail" *ngIf="sede">
-  <h2>{{ sede.name }}</h2>
-  <p>{{ sede.description }}</p>
-  <p><strong>Dirección:</strong> {{ sede.address }}</p>
-
-  <!-- Carrusel de imágenes -->
-  <div class="image-gallery">
-    <img *ngFor="let img of sede.images" [src]="img" [alt]="sede.name + ' imagen'" class="gallery-image">
+<ng-container *ngIf="sede; else notFound">
+  <!-- Hero Section -->
+  <div class="sdt-hero">
+    <div class="sdt-hero-inner">
+      <h1 class="sdt-title">{{ sede.name }}</h1>
+      <div class="sdt-divider"></div>
+      <p class="sdt-lead">{{ sede.description }}</p>
+      
+      <div class="sdt-address-badge">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>{{ sede.address }}</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Mapa con iframe -->
-  <div class="map-container">
-    <iframe
-      width="100%"
-      height="400"
-      frameborder="0"
-      style="border:0"
-      [src]="sede.mapIframeUrl | safeUrl"
-      allowfullscreen
-      aria-hidden="false"
-      tabindex="0">
-    </iframe>
-  </div>
+  <!-- Content Container -->
+  <div class="sdt-container">
+    
+    <!-- Image Gallery -->
+    <div class="sdt-section" *ngIf="sede.images && sede.images.length > 0">
+      <div class="sdt-section-header">
+        <h2>Galería de Imágenes</h2>
+      </div>
+      <div class="sdt-gallery-grid">
+        <div class="sdt-img-wrapper" *ngFor="let img of sede.images">
+          <img [src]="img" [alt]="sede.name + ' imagen'" class="sdt-gallery-image">
+        </div>
+      </div>
+    </div>
 
-  <!-- Videos -->
-  <div class="video-gallery">
-    <iframe
-      *ngFor="let video of sede.videos"
-      width="100%"
-      height="315"
-      [src]="video | safeUrl"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
+    <!-- Map -->
+    <div class="sdt-section" *ngIf="sede.mapIframeUrl">
+      <div class="sdt-section-header">
+        <h2>Ubicación</h2>
+      </div>
+      <div class="sdt-map-container">
+        <!-- Importante: el pipe safeUrl debe recibir un string valido segun configuracion previa -->
+        <iframe
+          class="sdt-map-iframe"
+          [src]="sede.mapIframeUrl | safeUrl"
+          frameborder="0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
 
-<section *ngIf="!sede">
-  <p>Sede no encontrada.</p>
-</section>
+    <!-- Videos Gallery -->
+    <div class="sdt-section" *ngIf="sede.videos && sede.videos.length > 0">
+      <div class="sdt-section-header">
+        <h2>Material Audiovisual</h2>
+      </div>
+      <div class="sdt-video-grid">
+        <div class="sdt-video-wrapper" *ngFor="let video of sede.videos">
+          <iframe
+            class="sdt-video-iframe"
+            [src]="video | safeUrl"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+
+<!-- Error / Not found -->
+<ng-template #notFound>
+  <div class="sdt-hero sdt-hero-error">
+    <div class="sdt-hero-inner">
+      <h1 class="sdt-title">Sede no encontrada</h1>
+      <div class="sdt-divider"></div>
+      <p class="sdt-lead">Lo sentimos, no pudimos cargar la información de la sede solicitada.</p>
+    </div>
+  </div>
+</ng-template>

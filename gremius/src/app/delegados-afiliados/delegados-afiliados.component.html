@@ -1,80 +1,106 @@
-<div class="delegados-afiliados-container">
-  <h1 class="main-title">Participación Gremial</h1>
+<!-- HERO -->
+<div class="da-hero">
+  <div class="da-hero-inner">
+    <h1 class="da-title">Participación Gremial</h1>
+    <div class="da-divider"></div>
+    <p class="da-lead">
+      El compromiso, los derechos y la organización en cada lugar de trabajo fortalecen nuestra defensa colectiva.
+    </p>
+  </div>
+</div>
 
-  <!-- Tarjeta Delegados -->
-  <div class="card">
-    <div class="card-image">
-      <img src="assets/images/afiliados_casa_de_gobierno.webp" alt="Asamblea de afiliados" />
-    </div>
-    <div class="card-content">
-      <h2>Delegados y Delegadas Gremiales</h2>
-      <p>¡La voz de cada oficina, juzgado o localidad!</p>
-      <p>Los y las delegadas son elegidos por sus propios compañeros/as para ser el puente entre el sindicato y cada lugar de trabajo. Cumplen un rol fundamental en la defensa colectiva de nuestros derechos.</p>
+<div class="da-container">
 
-      <h3>¿Cuáles son sus funciones?</h3>
-      <ul>
-        <li>Representar a sus compañeros/as ante la Comisión Directiva.</li>
-        <li>Informar sobre problemáticas, propuestas o conflictos de su sector.</li>
-        <li>Convocar y organizar asambleas locales.</li>
-        <li>Participar en reuniones gremiales llevando la voz de su jurisdicción.</li>
-        <li>Acompañar en situaciones laborales difíciles: sanciones, sumarios, traslados, etc.</li>
-        <li>Fomentar la unidad y participación en las actividades del sindicato.</li>
-      </ul>
-      <p>El mandato de los/as delegados/as es por tiempo determinado y pueden ser reelegidos/as.</p>
-
-      <h3>¿Querés ser delegado/a?</h3>
-      <p>Postulate en tu ciudad (o contacta a: <a href="mailto:contacto@gremiojudicial.com">{{ 'gremiojudicialesrg@gmail.com' }}</a>)</p>
+  <!-- SECCIÓN DELEGADOS -->
+  <div class="da-section">
+    <div class="da-card da-card-horizontal">
+      <div class="da-card-media">
+        <img [src]="delegados.imagen" alt="Asamblea de afiliados" class="da-img" />
+      </div>
+      <div class="da-card-body">
+        <h2 class="da-section-title">{{ delegados.titulo }}</h2>
+        <p class="da-subtitle"><strong>{{ delegados.subtitulo }}</strong></p>
+        <p class="da-text">{{ delegados.descripcion }}</p>
+        
+        <h3 class="da-list-title"><i class="fa-solid fa-list-check"></i> ¿Cuáles son sus funciones?</h3>
+        <ul class="da-list">
+          <li *ngFor="let funcion of delegados.funciones">
+            <i class="fa-solid fa-circle-check da-check"></i>
+            <span>{{ funcion }}</span>
+          </li>
+        </ul>
+        <p class="da-text da-info-extra">{{ delegados.infoExtra }}</p>
+        
+        <div class="da-contact-box">
+          <h3>¿Querés ser delegado/a?</h3>
+          <p>Postulate en tu ciudad o contactanos a: <a href="mailto:gremiojudicialesrg&#64;gmail.com">gremiojudicialesrg&#64;gmail.com</a></p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Tarjeta Afiliados -->
-  <div class="card">
-    <div class="card-image">
-      <img src="assets/images/afiliado_votando.webp" alt="Evento de afiliados" />
+  <!-- SECCIÓN AFILIADOS Y DESAFILIACIÓN (GRID) -->
+  <div class="da-grid">
+    
+    <!-- Tarjeta Afiliados -->
+    <div class="da-card">
+      <div class="da-card-media da-media-short">
+        <img [src]="afiliados.imagen" alt="Evento de afiliados" class="da-img" />
+      </div>
+      <div class="da-card-body">
+        <h2 class="da-section-title">{{ afiliados.titulo }}</h2>
+        <p class="da-subtitle"><strong>{{ afiliados.subtitulo }}</strong></p>
+        <p class="da-text">{{ afiliados.descripcion }}</p>
+        
+        <div class="da-lists-grid">
+          <div class="da-list-col">
+            <h3 class="da-list-title"><i class="fa-solid fa-scale-balanced"></i> Derechos</h3>
+            <ul class="da-list da-list-compact">
+              <li *ngFor="let derecho of afiliados.derechos">
+                <i class="fa-solid fa-check da-check-green"></i>
+                <span>{{ derecho }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="da-list-col">
+            <h3 class="da-list-title"><i class="fa-solid fa-handshake-simple"></i> Compromisos</h3>
+            <ul class="da-list da-list-compact">
+              <li *ngFor="let compromiso of afiliados.compromisos">
+                <i class="fa-solid fa-pen-nib da-check-blue"></i>
+                <span>{{ compromiso }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card-content">
-      <h2>Ser Afiliado/a: Derechos y Compromisos</h2>
-      <p>Afiliarse no es solo un trámite, es una decisión colectiva.</p>
-      <p>Ser parte del sindicato significa construir juntos mejores condiciones laborales, salariales y de vida.</p>
 
-      <h3> Derechos de los afiliados/as</h3>
-      <ul>
-        <li>Votar en asambleas y elecciones.</li>
-        <li>Postularse a cargos gremiales.</li>
-        <li>Recibir asesoramiento y defensa gremial.</li>
-        <li>Acceder a beneficios sociales, turísticos, solidarios y formativos.</li>
-        <li>Participar de actividades, capacitaciones y encuentros.</li>
-      </ul>
+    <!-- Panel Lateral: Desafiliación & Acciones -->
+    <div class="da-side-panel">
+      <div class="da-card da-card-alert">
+        <div class="da-card-header-alert">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <h2>{{ desafiliacion.titulo }}</h2>
+        </div>
+        <div class="da-card-body">
+          <p *ngFor="let parrafo of desafiliacion.parrafos" class="da-text-alert" [class.da-text-alert-bold]="parrafo.includes('debilita')">
+            {{ parrafo }}
+          </p>
+        </div>
+      </div>
 
-      <h3> Compromisos de los afiliados/as</h3>
-      <ul>
-        <li>Cumplir con lo establecido en el estatuto.</li>
-        <li>Contribuir con la cuota sindical.</li>
-        <li>Participar activamente en las decisiones colectivas.</li>
-        <li>Respetar las resoluciones democráticas del gremio.</li>
-      </ul>
+      <div class="da-card da-card-action">
+        <div class="da-card-body da-action-body">
+          <i class="fa-solid fa-file-pdf da-action-icon"></i>
+          <h2>Estatuto del Gremio</h2>
+          <p>Conocé en detalle las normativas, derechos y obligaciones que rigen nuestra organización sindical.</p>
+          <button class="btn-primary" (click)="descargarEstatuto()">
+            <i class="fa-solid fa-download"></i> Descargar Estatuto
+          </button>
+        </div>
+      </div>
     </div>
+    
   </div>
 
-  <!-- Tarjeta Desafiliación -->
-  <div class="card">
-    <div class="card-content">
-      <h2> ¿Estás pensando en desafiliarte?</h2>
-      <p>Antes de tomar una decisión apresurada, recordá algo fundamental:</p>
-      <p> La desafiliación debilita nuestra herramienta de lucha.</p>
-      <p>Lo que no se logra individualmente, lo conseguimos colectivamente.</p>
-      <p>Si algo no te convence, participá, proponé, construí. El sindicato es de todos y todas. Solo con más unidad y participación podemos lograr mejores conquistas.</p>
-    </div>
-  </div>
-
-  <div class="action-buttons">
-    <!-- <h3> ¿Querés actualizar tus datos como afiliado/a?</h3>
-    <button (click)="actualizarDatos()">Actualizar mis datos</button>
-
-    <h3> ¿Querés saber por qué es importante estar afiliado/a?</h3>
-    <button (click)="conocerMas()">Conocé más</button> -->
-
-    <h3> ¿Querés descargar el Estatuto?</h3>
-    <button (click)="descargarEstatuto()">Descargar</button>
-  </div>
 </div>
