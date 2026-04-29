@@ -7,33 +7,37 @@
     </div>
   </header>
 
-  <!-- Efeméride Principal (Solo muestra la imagen si ES HOY) -->
-  <article class="efemeride-destacada" *ngIf="efemeridePrincipal">
+  <!-- Efemérides Destacadas (Soporta múltiples para el mismo día) -->
+  <section class="efemerides-destacadas-container" *ngIf="efemeridesHoy.length > 0">
     <div class="destacada-badge">
       <span>{{ esHoyMismo ? 'Hoy' : 'Próxima Efeméride' }}</span>
     </div>
-    
-    <div class="destacada-fecha">{{ efemeridePrincipal.dia }} de {{ getNombreMes(efemeridePrincipal.mes) }}</div>
-    <h2 class="destacada-titulo">{{ efemeridePrincipal.titulo }}</h2>
-    
-    <div class="destacada-contenido">
-      <!-- Solo muestra la imagen si coincide con la fecha actual -->
-      <div class="destacada-imagen-container" *ngIf="efemeridePrincipal.imagen && esHoyMismo">
-        <img [src]="efemeridePrincipal.imagen" [alt]="efemeridePrincipal.titulo" class="destacada-imagen">
-      </div>
-      <div class="destacada-texto">
-        <!-- Textos específicos solo si es hoy -->
-        <ng-container *ngIf="esHoyMismo">
-          <p *ngIf="efemeridePrincipal.mes === 3 && efemeridePrincipal.dia === 24" class="nunca-mas">¡NUNCA MÁS!</p>
-          <p *ngIf="efemeridePrincipal.mes === 4 && efemeridePrincipal.dia === 2" class="malvinas-argentinas">LAS MALVINAS SON ARGENTINAS</p>
-          <p *ngIf="efemeridePrincipal.mes === 4 && efemeridePrincipal.dia === 4" class="fuentealba-presente">CARLOS FUENTEALBA: ¡PRESENTE!</p>
-        </ng-container>
+    <div class="destacada-fecha">{{ efemeridePrincipal?.dia }} de {{ getNombreMes(efemeridePrincipal!.mes) }}</div>
+
+    <div class="efemerides-grid">
+      <article class="efemeride-destacada-card" *ngFor="let ef of efemeridesHoy">
+        <h2 class="destacada-titulo">{{ ef.titulo }}</h2>
         
-        <p *ngIf="!esHoyMismo">Nos preparamos para conmemorar esta fecha importante de nuestro calendario institucional.</p>
-        <p *ngIf="esHoyMismo">Recordamos esta fecha con el compromiso de sostener la memoria colectiva y los valores que nos definen como organización sindical.</p>
-      </div>
+        <div class="destacada-contenido">
+          <!-- Solo muestra la imagen si coincide con la fecha actual -->
+          <div class="destacada-imagen-container" *ngIf="ef.imagen && esHoyMismo">
+            <img [src]="ef.imagen" [alt]="ef.titulo" class="destacada-imagen">
+          </div>
+          <div class="destacada-texto">
+            <!-- Textos específicos solo si es hoy -->
+            <ng-container *ngIf="esHoyMismo">
+              <p *ngIf="ef.mes === 3 && ef.dia === 24" class="nunca-mas">¡NUNCA MÁS!</p>
+              <p *ngIf="ef.mes === 4 && ef.dia === 2" class="malvinas-argentinas">LAS MALVINAS SON ARGENTINAS</p>
+              <p *ngIf="ef.mes === 4 && ef.dia === 4" class="fuentealba-presente">CARLOS FUENTEALBA: ¡PRESENTE!</p>
+            </ng-container>
+            
+            <p *ngIf="!esHoyMismo">Nos preparamos para conmemorar esta fecha importante de nuestro calendario institucional.</p>
+            <p *ngIf="esHoyMismo">Recordamos esta fecha con el compromiso de sostener la memoria colectiva y los valores que nos definen como organización sindical.</p>
+          </div>
+        </div>
+      </article>
     </div>
-  </article>
+  </section>
 
   <!-- Efeméride Pasada Recientemente -->
   <aside class="efemeride-pasada" *ngIf="efemeridePasada">

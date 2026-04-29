@@ -35,10 +35,10 @@ export class EfemeridesComponent implements OnInit {
     // ABRIL
     { mes: 4, dia: 2, titulo: 'DÍA DEL VETERANO Y DE LOS CAÍDOS EN LA GUERRA DE MALVINAS', imagen: 'assets/efemerides/2_de_abril.png' },
     { mes: 4, dia: 4, titulo: 'ASESINATO DE CARLOS FUENTEALBA', imagen: 'assets/efemerides/4_de_abril.png' },
-    { mes: 4, dia: 30, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL', imagen: 'assets/efemerides/30_abril_02.png' },
     
     // MAYO
     { mes: 5, dia: 1, titulo: 'DÍA DE LOS TRABAJADORES Y TRABAJADORAS', imagen: 'assets/efemerides/01_mayo.jpeg' },
+    { mes: 5, dia: 1, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL', imagen: 'assets/efemerides/01_mayo, constitucion_nacional.png' },
     { mes: 5, dia: 2, titulo: 'DÍA NACIONAL DEL CRUCERO ARA GENERAL BELGRANO' },
     { mes: 5, dia: 15, titulo: 'DÍA CONMEMORATIVO AL "ROSARIAZO"' },
     { mes: 5, dia: 25, titulo: 'DÍA DE LA REVOLUCIÓN DE MAYO' },
@@ -98,6 +98,7 @@ export class EfemeridesComponent implements OnInit {
     { mes: 12, dia: 20, titulo: 'DÍA INTERNACIONAL DE LA SOLIDARIDAD HUMANA' }
   ];
 
+  efemeridesHoy: Efemeride[] = [];
   efemeridePrincipal: Efemeride | null = null;
   efemeridesProximas: Efemeride[] = [];
   efemeridePasada: Efemeride | null = null;
@@ -135,11 +136,11 @@ export class EfemeridesComponent implements OnInit {
       ef.diasHasta = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     });
 
-    // Buscar efeméride de HOY
-    const hoyEf = this.efemerides.find(e => e.dia === diaActual && e.mes === mesActual);
+    // Buscar efemérides de HOY
+    this.efemeridesHoy = this.efemerides.filter(e => e.dia === diaActual && e.mes === mesActual);
 
-    if (hoyEf) {
-      this.efemeridePrincipal = hoyEf;
+    if (this.efemeridesHoy.length > 0) {
+      this.efemeridePrincipal = this.efemeridesHoy[0];
       this.esHoyMismo = true;
     } else {
       // Si no es hoy, buscar la más próxima FUTURA
@@ -148,6 +149,8 @@ export class EfemeridesComponent implements OnInit {
         .sort((a, b) => a.diasHasta! - b.diasHasta!);
       if (futuras.length > 0) {
         this.efemeridePrincipal = futuras[0];
+        // También buscamos si hay más efemérides ese mismo día próximo
+        this.efemeridesHoy = this.efemerides.filter(e => e.dia === this.efemeridePrincipal?.dia && e.mes === this.efemeridePrincipal?.mes);
       }
     }
 

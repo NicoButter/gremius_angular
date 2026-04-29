@@ -42,7 +42,7 @@
 }
 
 /* ─── Efeméride Destacada ────────────────────────────────────────── */
-.efemeride-destacada {
+.efemerides-destacadas-container {
   background: #fff;
   padding: 3.5rem;
   border-radius: 24px;
@@ -54,6 +54,22 @@
   align-items: center;
   text-align: center;
   animation: slideUp 0.6s ease-out;
+}
+
+.efemerides-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.efemeride-destacada-card {
+  width: 100%;
+}
+
+.efemeride-destacada-card:not(:last-child) {
+  border-bottom: 1px solid #eef2f7;
+  padding-bottom: 3rem;
 }
 
 @keyframes slideUp {
@@ -83,12 +99,13 @@
 }
 
 .destacada-titulo {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: #1e2a5e;
   line-height: 1.1;
   margin: 1rem 0 2.5rem;
   max-width: 900px;
+  text-align: center;
 }
 
 .destacada-contenido {
