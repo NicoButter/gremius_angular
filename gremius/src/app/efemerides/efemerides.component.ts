@@ -25,7 +25,7 @@ export class EfemeridesComponent implements OnInit {
     
     // FEBRERO
     { mes: 2, dia: 10, titulo: 'LEY SÁENZ PEÑA: SOBRE EL VOTO, UNIVERSAL, SECRETO Y OBLIGATORIO' },
-    { mes: 2, dia: 12, titulo: 'CARNAVALES - FIESTA POPULAR (12-13)' },
+    { mes: 2, dia: 16, titulo: 'CARNAVALES - FIESTA POPULAR (16-17)' },
     
     // MARZO
     { mes: 3, dia: 1, titulo: 'DÍA MUNDIAL PARA LA NO DISCRIMINACIÓN' },
@@ -63,7 +63,7 @@ export class EfemeridesComponent implements OnInit {
     
     // AGOSTO
     { mes: 8, dia: 9, titulo: 'DÍA INTERNACIONAL DE LAS POBLACIONES INDÍGENAS' },
-    { mes: 8, dia: 12, titulo: 'DÍA INTERNACIONAL DE LAS INFANCIAS (EL TERCER DOMINGO DEL MES)' },
+    { mes: 8, dia: 16, titulo: 'DÍA INTERNACIONAL DE LAS INFANCIAS (EL TERCER DOMINGO DEL MES)' },
     { mes: 8, dia: 17, titulo: 'ANIVERSARIO DE LA MUERTE DEL GRAL. SAN MARTÍN' },
     { mes: 8, dia: 21, titulo: 'SANCIÓN DE LA LEY DE ANULACIÓN DE LEYES DE PUNTO FINAL Y OBEDIENCIA DE VIDA' },
     { mes: 8, dia: 29, titulo: 'DÍA NACIONAL DE LOS ABOGADOS Y LAS ABOGADAS' },
@@ -93,7 +93,7 @@ export class EfemeridesComponent implements OnInit {
     
     // DICIEMBRE
     { mes: 12, dia: 3, titulo: 'DÍA NACIONAL DE LOS Y LAS MÉDICAS' },
-    { mes: 12, dia: 10, titulo: 'DÍA DE LOS Y LAS TRABAJADORAS SOCIALES' },
+    { mes: 9, dia: 2, titulo: 'DÍA DE LOS Y LAS TRABAJADORAS SOCIALES' },
     { mes: 12, dia: 17, titulo: 'DÍA NACIONAL DE LOS CONTADORES Y CONTADORAS PÚBLICAS' },
     { mes: 12, dia: 20, titulo: 'DÍA INTERNACIONAL DE LA SOLIDARIDAD HUMANA' }
   ];
