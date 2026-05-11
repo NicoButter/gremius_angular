@@ -104,6 +104,15 @@ export class EfemeridesComponent implements OnInit {
   efemeridesProximas: Efemeride[] = [];
   efemeridePasada: Efemeride | null = null;
   esHoyMismo: boolean = false;
+  imagenModal: string | null = null;
+
+  abrirModal(src: string) {
+    this.imagenModal = src;
+  }
+
+  cerrarModal() {
+    this.imagenModal = null;
+  }
   mesActual: string = '';
   mesesDelAnio = [
     'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',

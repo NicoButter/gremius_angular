@@ -21,7 +21,7 @@
         <div class="destacada-contenido">
           <!-- Solo muestra la imagen si coincide con la fecha actual -->
           <div class="destacada-imagen-container" *ngIf="ef.imagen && esHoyMismo">
-            <img [src]="ef.imagen" [alt]="ef.titulo" class="destacada-imagen">
+            <img [src]="ef.imagen" [alt]="ef.titulo" class="destacada-imagen imagen-clickable" (click)="abrirModal(ef.imagen)">
           </div>
           <div class="destacada-texto">
             <!-- Textos específicos solo si es hoy -->
@@ -84,3 +84,11 @@
     </div>
   </section>
 </section>
+
+<!-- Modal de imagen -->
+<div class="modal-overlay" *ngIf="imagenModal" (click)="cerrarModal()">
+  <div class="modal-contenido" (click)="$event.stopPropagation()">
+    <button class="modal-cerrar" (click)="cerrarModal()" aria-label="Cerrar">&times;</button>
+    <img [src]="imagenModal" alt="Imagen ampliada" class="modal-imagen">
+  </div>
+</div>
