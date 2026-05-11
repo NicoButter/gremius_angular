@@ -40,6 +40,7 @@ export class EfemeridesComponent implements OnInit {
     { mes: 5, dia: 1, titulo: 'DÍA DE LOS TRABAJADORES Y TRABAJADORAS', imagen: 'assets/efemerides/01_mayo.jpeg' },
     { mes: 5, dia: 1, titulo: 'DÍA DE LA CONSTITUCIÓN NACIONAL', imagen: 'assets/efemerides/01_mayo, constitucion_nacional.png' },
     { mes: 5, dia: 2, titulo: 'DÍA NACIONAL DEL CRUCERO ARA GENERAL BELGRANO' },
+    { mes: 5, dia: 11, titulo: 'DÍA DEL HIMNO NACIONAL ARGENTINO', imagen: 'assets/efemerides/11_mayo.png' },
     { mes: 5, dia: 15, titulo: 'DÍA CONMEMORATIVO AL "ROSARIAZO"' },
     { mes: 5, dia: 25, titulo: 'DÍA DE LA REVOLUCIÓN DE MAYO' },
     
