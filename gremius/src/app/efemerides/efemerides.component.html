@@ -29,10 +29,13 @@
               <p *ngIf="ef.mes === 3 && ef.dia === 24" class="nunca-mas">¡NUNCA MÁS!</p>
               <p *ngIf="ef.mes === 4 && ef.dia === 2" class="malvinas-argentinas">LAS MALVINAS SON ARGENTINAS</p>
               <p *ngIf="ef.mes === 4 && ef.dia === 4" class="fuentealba-presente">CARLOS FUENTEALBA: ¡PRESENTE!</p>
+              
+              <!-- Texto alusivo general -->
+              <p *ngIf="ef.texto" class="texto-alusivo">{{ ef.texto }}</p>
             </ng-container>
             
             <p *ngIf="!esHoyMismo">Nos preparamos para conmemorar esta fecha importante de nuestro calendario institucional.</p>
-            <p *ngIf="esHoyMismo">Recordamos esta fecha con el compromiso de sostener la memoria colectiva y los valores que nos definen como organización sindical.</p>
+            <p *ngIf="esHoyMismo && !ef.texto">Recordamos esta fecha con el compromiso de sostener la memoria colectiva y los valores que nos definen como organización sindical.</p>
           </div>
         </div>
       </article>

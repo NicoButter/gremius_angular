@@ -140,6 +140,10 @@
   margin-top: 2rem;
 }
 
+.texto-alusivo {
+  white-space: pre-line;
+}
+
 /* ─── Efeméride Pasada ────────────────────────────────────────── */
 .efemeride-pasada {
   background: #f1f5f9;
