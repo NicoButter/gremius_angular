@@ -1,0 +1,119 @@
+<section class="tracking-admin">
+  <div class="admin-header" *ngIf="authenticated; else accessIntro">
+    <div>
+      <p class="eyebrow">Panel privado</p>
+      <h1>Transmision de ubicacion</h1>
+      <p>Usar desde el celular de la comision durante el viaje.</p>
+    </div>
+    <span class="live-badge" [class.active]="transmitting">
+      {{ transmitting ? 'GPS activo' : 'GPS detenido' }}
+    </span>
+  </div>
+
+  <ng-template #accessIntro>
+    <div class="access-intro">
+      <div class="access-copy">
+        <p class="eyebrow">Panel privado</p>
+        <h1>Transmision de ubicacion</h1>
+        <p>Este acceso es solo para la comision. Para comenzar, valida la clave privada.</p>
+      </div>
+      <button type="button" (click)="openAccessModal()">Iniciar transmision</button>
+    </div>
+  </ng-template>
+
+  <div class="tracking-layout" *ngIf="authenticated">
+    <form class="admin-panel" (ngSubmit)="startTracking()">
+      <div class="panel-title">
+        <span>01</span>
+        <div>
+          <h2>Datos del viaje</h2>
+          <p>Estos datos se muestran en el mapa publico.</p>
+        </div>
+      </div>
+
+      <label>
+        Destino
+        <select
+          name="destination"
+          [(ngModel)]="destination"
+          (ngModelChange)="updateText()"
+        >
+          <option *ngFor="let option of destinations" [value]="option">{{ option }}</option>
+        </select>
+      </label>
+
+      <label>
+        Mensaje visible
+        <textarea
+          name="status"
+          [(ngModel)]="status"
+          rows="3"
+        ></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="submit" [disabled]="transmitting">
+          {{ transmitting ? 'Transmitiendo' : 'Activar GPS' }}
+        </button>
+        <button type="button" class="secondary" (click)="stopTracking()" [disabled]="!transmitting">
+          Finalizar
+        </button>
+      </div>
+
+      <p class="state" *ngIf="saving">Guardando ubicacion...</p>
+      <p class="state ok" *ngIf="message && !saving">{{ message }}</p>
+      <p class="state error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+
+    <div class="admin-map-panel">
+      <div class="map-toolbar">
+        <div>
+          <span>02</span>
+          <strong>Mapa de Santa Cruz</strong>
+        </div>
+        <small>{{ transmitting ? 'Transmitiendo en vivo' : 'Esperando GPS' }}</small>
+      </div>
+      <div id="tracking-admin-map" class="admin-map"></div>
+      <div class="map-overlay" *ngIf="!transmitting">
+        El mapa se centrara en la ubicacion del celular al iniciar transmision.
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" *ngIf="showAccessModal">
+    <form class="access-modal" (ngSubmit)="validateAccess()">
+      <div class="access-modal-visual" aria-hidden="true"></div>
+      <div class="access-modal-content">
+        <p class="eyebrow">Acceso restringido</p>
+        <h2>Acceso de comision</h2>
+        <p>Ingresar las credenciales autorizadas para habilitar el mapa y la transmision GPS.</p>
+        <label>
+          Email
+          <input
+            type="email"
+            name="accessEmail"
+            [(ngModel)]="accessEmail"
+            autocomplete="username"
+            autofocus
+          />
+        </label>
+        <label>
+          Contrasena
+          <input
+            type="password"
+            name="accessPassword"
+            [(ngModel)]="accessPassword"
+            autocomplete="current-password"
+          />
+        </label>
+        <p class="state error" *ngIf="accessError">{{ accessError }}</p>
+        <div class="actions">
+          <button type="submit" [disabled]="authenticating">
+            {{ authenticating ? 'Validando...' : 'Ingresar' }}
+          </button>
+          <button type="button" class="secondary" (click)="closeAccessModal()" [disabled]="authenticating">Cancelar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

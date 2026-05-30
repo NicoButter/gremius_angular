@@ -69,6 +69,13 @@ export const routes: Routes = [
   { path: 'consejo-magistratura', component: ConsejoMagistraturaComponent },
   { path: 'convenios-beneficios', component: ConveniosBeneficiosComponent },
   { path: 'efemerides', component: EfemeridesComponent },
+  {
+    path: 'mapa-comision',
+    loadComponent: () => import('./comision-map/comision-map.component').then((m) => m.ComisionMapComponent),
+  },
+  {
+    path: 'comision-tracking',
+    loadComponent: () => import('./comision-tracking/comision-tracking.component').then((m) => m.ComisionTrackingComponent),
+  },
   { path: '**', redirectTo: '/home' },
 ];
-

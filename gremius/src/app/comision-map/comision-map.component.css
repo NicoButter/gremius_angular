@@ -1,0 +1,143 @@
+.tracking-page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 56px;
+}
+
+.tracking-header {
+  margin-bottom: 22px;
+}
+
+.tracking-header h1 {
+  margin: 0 0 10px;
+  color: #1f2937;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.tracking-header p {
+  max-width: 760px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: #b71c1c;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tracking-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.map-shell {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #eef2f7;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+}
+
+.map-state {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  z-index: 500;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #374151;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .14);
+  font-weight: 600;
+}
+
+.map-state.error {
+  color: #991b1b;
+}
+
+.tracking-panel {
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.status-pill.offline {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+dl {
+  margin: 22px 0 0;
+}
+
+dt {
+  margin-bottom: 6px;
+  color: #6b7280;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+:host ::ng-deep .commission-marker {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(183, 28, 28, .22);
+}
+
+:host ::ng-deep .commission-marker span {
+  width: 14px;
+  height: 14px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #b71c1c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
+}
+
+@media (max-width: 860px) {
+  .tracking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-shell,
+  .map {
+    min-height: 420px;
+  }
+}

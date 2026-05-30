@@ -1,0 +1,38 @@
+<section class="tracking-page">
+  <div class="tracking-header">
+    <p class="eyebrow">Comision directiva</p>
+    <h1>Ubicacion en tiempo real</h1>
+    <p>{{ visibleStatus }}</p>
+  </div>
+
+  <div class="tracking-grid">
+    <div class="map-shell">
+      <div id="commission-map" class="map"></div>
+      <div *ngIf="loading" class="map-state">Cargando ubicacion...</div>
+      <div *ngIf="errorMessage" class="map-state error">{{ errorMessage }}</div>
+    </div>
+
+    <aside class="tracking-panel">
+      <span class="status-pill" [class.offline]="isStale || !location?.active">
+        {{ location?.active && !isStale ? 'En vivo' : 'Sin transmision activa' }}
+      </span>
+      <dl>
+        <div>
+          <dt>Destino</dt>
+          <dd>{{ location?.destination || 'No informado' }}</dd>
+        </div>
+        <div>
+          <dt>Ultima actualizacion</dt>
+          <dd>{{ lastUpdateLabel }}</dd>
+        </div>
+        <div>
+          <dt>Coordenadas</dt>
+          <dd *ngIf="location; else emptyCoords">
+            {{ location.lat | number:'1.4-4' }}, {{ location.lng | number:'1.4-4' }}
+          </dd>
+          <ng-template #emptyCoords><dd>Sin datos</dd></ng-template>
+        </div>
+      </dl>
+    </aside>
+  </div>
+</section>
