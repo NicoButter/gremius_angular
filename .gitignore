@@ -42,3 +42,6 @@ media/
 dist/
 build/
 *.egg-info/
+
+# Manuales generados localmente
+manual_tracking_judiciales.pdf

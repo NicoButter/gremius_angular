@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
@@ -12,6 +12,8 @@ import { TrackingService } from '../services/tracking.service';
   styleUrls: ['./comision-tracking.component.css'],
 })
 export class ComisionTrackingComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('trackingAdminMap') private trackingAdminMap?: ElementRef<HTMLElement>;
+
   destination = 'Caleta Olivia';
   status = 'La comision se dirige a Caleta Olivia';
   destinations = [
@@ -45,11 +47,13 @@ export class ComisionTrackingComponent implements AfterViewInit, OnDestroy {
   private map?: any;
   private marker?: any;
   private leaflet?: any;
+  private pendingPosition?: [number, number];
   private readonly defaultCenter: [number, number] = [-48.815, -69.955];
 
   constructor(
     private trackingService: TrackingService,
-    @Inject(PLATFORM_ID) private platformId: object
+    @Inject(PLATFORM_ID) private platformId: object,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngAfterViewInit(): void {
@@ -87,6 +91,7 @@ export class ComisionTrackingComponent implements AfterViewInit, OnDestroy {
         this.authenticated = true;
         this.showAccessModal = false;
         this.accessPassword = '';
+        this.cdr.detectChanges();
         setTimeout(() => this.initializeMap());
       })
       .catch(() => {
@@ -173,28 +178,47 @@ export class ComisionTrackingComponent implements AfterViewInit, OnDestroy {
   }
 
   private async initializeMap(): Promise<void> {
-    if (this.map) {
+    if (this.map || !isPlatformBrowser(this.platformId)) {
       return;
     }
 
-    this.leaflet = await import('leaflet');
-    this.map = this.leaflet.map('tracking-admin-map', {
-      center: this.defaultCenter,
-      zoom: 6,
-      zoomControl: true,
-      scrollWheelZoom: true,
-    });
+    const mapElement = this.trackingAdminMap?.nativeElement;
+    if (!mapElement) {
+      setTimeout(() => this.initializeMap(), 50);
+      return;
+    }
 
-    this.leaflet
-      .tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; OpenStreetMap contributors',
-      })
-      .addTo(this.map);
+    try {
+      this.leaflet = await import('leaflet');
+      this.map = this.leaflet.map(mapElement, {
+        center: this.defaultCenter,
+        zoom: 6,
+        zoomControl: true,
+        scrollWheelZoom: true,
+      });
+
+      this.leaflet
+        .tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '&copy; OpenStreetMap contributors',
+        })
+        .addTo(this.map);
+
+      this.refreshMapSize();
+
+      if (this.pendingPosition) {
+        const [lat, lng] = this.pendingPosition;
+        this.pendingPosition = undefined;
+        this.updateMarker(lat, lng);
+      }
+    } catch {
+      this.errorMessage = 'No se pudo cargar el mapa. Revisa la conexion e intenta nuevamente.';
+    }
   }
 
   private updateMarker(lat: number, lng: number): void {
     if (!this.map || !this.leaflet) {
+      this.pendingPosition = [lat, lng];
       return;
     }
 
@@ -214,5 +238,14 @@ export class ComisionTrackingComponent implements AfterViewInit, OnDestroy {
 
     this.marker.setLatLng(latLng);
     this.map.panTo(latLng);
+  }
+
+  private refreshMapSize(): void {
+    if (!this.map) {
+      return;
+    }
+
+    requestAnimationFrame(() => this.map?.invalidateSize());
+    setTimeout(() => this.map?.invalidateSize(), 250);
   }
 }
