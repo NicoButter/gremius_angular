@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Inject, OnDestroy, PLATFORM_ID, ViewChild } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
+import * as L from 'leaflet';
 import { TrackingLocation, TrackingService } from '../services/tracking.service';
 
 @Component({
@@ -19,9 +20,8 @@ export class ComisionMapComponent implements AfterViewInit, OnDestroy {
   lastUpdateLabel = 'Sin datos';
 
   private subscription?: Subscription;
-  private map?: any;
-  private marker?: any;
-  private leaflet?: any;
+  private map?: L.Map;
+  private marker?: L.Marker;
   private pendingLocation: TrackingLocation | null = null;
   private readonly defaultCenter: [number, number] = [-48.815, -69.955];
 
@@ -91,19 +91,17 @@ export class ComisionMapComponent implements AfterViewInit, OnDestroy {
     }
 
     try {
-      this.leaflet = await import('leaflet');
-      this.map = this.leaflet.map(mapElement, {
+      this.map = L.map(mapElement, {
         center: this.defaultCenter,
         zoom: 6,
         zoomControl: true,
         scrollWheelZoom: true,
       });
 
-      this.leaflet
-        .tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 18,
-          attribution: '&copy; OpenStreetMap contributors',
-        })
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; OpenStreetMap contributors',
+      })
         .addTo(this.map);
 
       this.refreshMapSize();
@@ -120,13 +118,13 @@ export class ComisionMapComponent implements AfterViewInit, OnDestroy {
   }
 
   private updateMarker(location: TrackingLocation | null): void {
-    if (!this.map || !this.leaflet || !location?.lat || !location?.lng) {
+    if (!this.map || !location?.lat || !location?.lng) {
       this.pendingLocation = location;
       return;
     }
 
     const latLng: [number, number] = [location.lat, location.lng];
-    const icon = this.leaflet.divIcon({
+    const icon = L.divIcon({
       className: 'commission-marker',
       html: '<span></span>',
       iconSize: [28, 28],
@@ -134,7 +132,7 @@ export class ComisionMapComponent implements AfterViewInit, OnDestroy {
     });
 
     if (!this.marker) {
-      this.marker = this.leaflet.marker(latLng, { icon }).addTo(this.map);
+      this.marker = L.marker(latLng, { icon }).addTo(this.map);
       this.map.setView(latLng, 8);
       return;
     }
