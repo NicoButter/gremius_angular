@@ -55,7 +55,7 @@ export class EfemeridesComponent implements OnInit {
     // JUNIO
     { mes: 6, dia: 7, titulo: 'DÍA NACIONAL DE LOS Y LAS PERIODISTAS' },
     { mes: 6, dia: 12, titulo: 'DÍA MUNDIAL CONTRA EL TRABAJO INFANTIL' },
-    { mes: 6, dia: 14, titulo: 'DÍA MUNDIAL DE LAS PERSONAS DONANTES DE SANGRE' },
+    { mes: 6, dia: 14, titulo: 'DÍA MUNDIAL DE LAS PERSONAS DONANTES DE SANGRE', imagen: 'assets/efemerides/14_junio.png' },
     { mes: 6, dia: 15, titulo: 'DÍA MUNDIAL DE TOMA DE CONCIENCIA DE ABUSO Y MALTRATO EN LA VEJEZ' },
     { mes: 6, dia: 17, titulo: 'DÍA CONMEMORATIVO DEL FALLECIMIENTO DEL GRAL. MARTÍN MIGUEL DE GÜEMES' },
     { mes: 6, dia: 20, titulo: 'DÍA DE LA BANDERA' },
