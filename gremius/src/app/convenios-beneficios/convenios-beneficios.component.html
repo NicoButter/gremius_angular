@@ -21,18 +21,10 @@
         *ngFor="let convenio of convenios; trackBy: trackById"
         [class.cb-card--review]="convenio.estadoRevision !== 'ok'"
       >
-        <div class="cb-card-top">
-          <div class="cb-card-topline">
-            <span class="cb-tag">#beneficios</span>
-            <span *ngIf="convenio.estadoRevision !== 'ok'" class="cb-review">Revisar</span>
-            <span *ngIf="convenio.nuevo" class="cb-new">Nuevo</span>
-          </div>
-
-          <div class="cb-card-head">
-            <p class="cb-card-kicker">{{ convenio.rubro }}</p>
-            <h2 class="cb-card-title">{{ convenio.titulo }}</h2>
-            <p class="cb-card-subtitle">{{ convenio.subtitulo }}</p>
-          </div>
+        <div class="cb-card-head">
+          <p class="cb-card-kicker">{{ convenio.rubro }}</p>
+          <h2 class="cb-card-title">{{ convenio.titulo }}</h2>
+          <p class="cb-card-subtitle">{{ convenio.subtitulo }}</p>
         </div>
 
         <div class="cb-card-body">
@@ -75,10 +67,6 @@
                 <span class="cb-detail-label">Condiciones</span>
                 <span class="cb-detail-value">{{ convenio.condiciones }}</span>
               </div>
-            </div>
-
-            <div *ngIf="convenio.observaciones" class="cb-observation">
-              {{ convenio.observaciones }}
             </div>
           </div>
         </div>
