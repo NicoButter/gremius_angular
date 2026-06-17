@@ -1,49 +1,95 @@
-<!-- HERO -->
-<div class="cb-hero">
+<section class="cb-hero">
   <div class="cb-hero-inner">
+    <span class="cb-eyebrow">#CONVENIOS</span>
     <h1 class="cb-title">Convenios por Beneficios</h1>
-    <div class="cb-divider"></div>
     <p class="cb-lead">
-      Descuentos y beneficios exclusivos para afiliadas y afiliados en comercios y servicios de la provincia.
+      Convenios por beneficios, condiciones y datos de contacto para afiliadas y afiliados.
     </p>
   </div>
-</div>
+</section>
 
-<div class="cb-container">
-
-  <div class="cb-grid">
-    <div class="cb-card" *ngFor="let convenio of convenios">
-
-      <!-- Imagen o placeholder -->
-      <div class="cb-card-media">
-        <img *ngIf="convenio.imagen" [src]="convenio.imagen" [alt]="convenio.nombre" class="cb-img" />
-        <div *ngIf="!convenio.imagen" class="cb-placeholder">
-          <i class="fa-solid fa-store"></i>
-        </div>
-      </div>
-
-      <!-- Cuerpo de la card -->
-      <div class="cb-card-body">
-        <span class="cb-categoria">{{ convenio.categoria }}</span>
-        <h2 class="cb-nombre">{{ convenio.nombre }}</h2>
-
-        <div class="cb-detalles">
-          <div *ngIf="convenio.direccion" class="cb-detalle-row">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>{{ convenio.direccion }}</span>
-          </div>
-          <div *ngIf="convenio.telefono && convenio.telefono !== convenio.descuento" class="cb-detalle-row">
-            <i class="fa-solid fa-phone"></i>
-            <span>{{ convenio.telefono }}</span>
-          </div>
-          <div class="cb-detalle-row cb-descuento-row">
-            <i class="fa-solid fa-tag"></i>
-            <span>{{ convenio.descuento }}</span>
-          </div>
-        </div>
-      </div>
-
+<section class="cb-shell">
+  <ng-container *ngIf="convenios$ | async as convenios; else loadingState">
+    <div class="cb-summary">
+      <span class="cb-summary-pill">{{ convenios.length }} convenios activos</span>
+      <span class="cb-summary-text">Vista adaptada al estilo de las nuevas piezas gráficas.</span>
     </div>
-  </div>
 
-</div>
+    <div class="cb-grid">
+      <article
+        class="cb-card"
+        *ngFor="let convenio of convenios; trackBy: trackById"
+        [class.cb-card--review]="convenio.estadoRevision !== 'ok'"
+      >
+        <div class="cb-card-top">
+          <div class="cb-card-topline">
+            <span class="cb-tag">#beneficios</span>
+            <span *ngIf="convenio.estadoRevision !== 'ok'" class="cb-review">Revisar</span>
+            <span *ngIf="convenio.nuevo" class="cb-new">Nuevo</span>
+          </div>
+
+          <div class="cb-card-head">
+            <p class="cb-card-kicker">{{ convenio.rubro }}</p>
+            <h2 class="cb-card-title">{{ convenio.titulo }}</h2>
+            <p class="cb-card-subtitle">{{ convenio.subtitulo }}</p>
+          </div>
+        </div>
+
+        <div class="cb-card-body">
+          <div class="cb-details">
+            <div *ngIf="convenio.direccion" class="cb-detail-row">
+              <span class="cb-detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <span class="cb-detail-label">Dirección</span>
+                <span class="cb-detail-value">{{ convenio.direccion }}</span>
+              </div>
+            </div>
+
+            <div *ngIf="convenio.localidad" class="cb-detail-row">
+              <span class="cb-detail-icon"><i class="fa-solid fa-city"></i></span>
+              <div>
+                <span class="cb-detail-label">Localidad</span>
+                <span class="cb-detail-value">{{ convenio.localidad }}</span>
+              </div>
+            </div>
+
+            <div *ngIf="convenio.telefonos.length" class="cb-detail-row">
+              <span class="cb-detail-icon"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <span class="cb-detail-label">Teléfonos</span>
+                <span class="cb-detail-value">{{ convenio.telefonos.join(' / ') }}</span>
+              </div>
+            </div>
+
+            <div class="cb-detail-row cb-detail-row--highlight">
+              <span class="cb-detail-icon"><i class="fa-solid fa-circle-check"></i></span>
+              <div>
+                <span class="cb-detail-label">Descuento</span>
+                <span class="cb-detail-value">{{ convenio.beneficio }}</span>
+              </div>
+            </div>
+
+            <div *ngIf="convenio.condiciones" class="cb-detail-row cb-detail-row--muted">
+              <span class="cb-detail-icon"><i class="fa-solid fa-note-sticky"></i></span>
+              <div>
+                <span class="cb-detail-label">Condiciones</span>
+                <span class="cb-detail-value">{{ convenio.condiciones }}</span>
+              </div>
+            </div>
+
+            <div *ngIf="convenio.observaciones" class="cb-observation">
+              {{ convenio.observaciones }}
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </ng-container>
+
+  <ng-template #loadingState>
+    <div class="cb-loading">
+      <div class="cb-loading-card"></div>
+      <p>Cargando convenios por beneficios...</p>
+    </div>
+  </ng-template>
+</section>

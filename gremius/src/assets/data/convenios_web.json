@@ -1,0 +1,1424 @@
+[
+  {
+    "id": "capipe-s-r-l-libreria",
+    "comercio": "CAPIPE S.R.L. Librería",
+    "rubro": "Librería",
+    "comercio_profesion": "CAPIPE S.R.L. Librería",
+    "beneficio": "10% en librería",
+    "direccion": null,
+    "localidad": null,
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_00.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "casimiro-bigua",
+    "comercio": "Casimiro Biguá",
+    "rubro": "Transporte / Turismo",
+    "comercio_profesion": "Casimiro Biguá",
+    "beneficio": "10% de descuento",
+    "direccion": "Av. del Libertador 993",
+    "localidad": "El Calafate",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "Presentando tu app Judiciales",
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_01.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "sebastian-souto-ss-servicios",
+    "comercio": "Sebastián Souto SS Servicios",
+    "rubro": "Servicios",
+    "comercio_profesion": "Sebastián Souto SS Servicios",
+    "beneficio": "10% en tarifa mensual y servicios de instalación sin costo",
+    "direccion": null,
+    "localidad": null,
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "Beneficio disponible para todas las localidades donde SS tenga presencia.",
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_02.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "todo-color-pintureria",
+    "comercio": "Todo Color Pinturería",
+    "rubro": "Pinturería",
+    "comercio_profesion": "Todo Color Pinturería",
+    "beneficio": "10% de descuento en compras con débito, crédito y/o transferencia bancaria en todos los productos",
+    "direccion": "Marcelino Álvarez 51",
+    "localidad": "Río Gallegos",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_03.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "farmacias-la-franco-del-sur",
+    "comercio": "Farmacias La Franco del Sur",
+    "rubro": "Farmacia",
+    "comercio_profesion": "Farmacias La Franco",
+    "beneficio": "15% de descuento con todos los medios de pago (débito, crédito y efectivo) en perfumería, cosmética, medicamentos de venta libre y/o productos de comercialización en la farmacia de la sucursal de calle 9 de Julio N° 5",
+    "direccion": "9 de Julio N° 5",
+    "localidad": "Río Gallegos",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_04.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "britanico-club-cocktail-club",
+    "comercio": "Británico Club Cocktail Club",
+    "rubro": "Gastronomía",
+    "comercio_profesion": "Británico Club Cocktail Club",
+    "beneficio": "Almuerzos con 15% de descuento de lunes a jueves",
+    "direccion": null,
+    "localidad": null,
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_05.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "wyndham",
+    "comercio": "Wyndham",
+    "rubro": "Alojamiento / Hotel",
+    "comercio_profesion": "Wyndham",
+    "beneficio": "No se visualiza descuento en la imagen",
+    "direccion": null,
+    "localidad": null,
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_06.webp",
+    "estado_revision": "revisar",
+    "observaciones": "La captura solo muestra comercio/profesión y dirección “-”; no aparece beneficio visible."
+  },
+  {
+    "id": "ostesur-rehabilitacion-integral",
+    "comercio": "OSTESUR Rehabilitación Integral",
+    "rubro": "Salud / Rehabilitación",
+    "comercio_profesion": "OSTESUR Rehabilitación Integral",
+    "beneficio": "15% en Termobike, acupuntura, masajes, auriculoterapia y entrenamiento funcional. 10% en coseguros de obras sociales para kinesiología y fisioterapia",
+    "direccion": "Santiago de Liniers 1348",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "296 634-6222"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_07.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "te-de-tilo",
+    "comercio": "TÉ DE TILO",
+    "rubro": "Indumentaria / Marroquinería",
+    "comercio_profesion": "TÉ DE TILO - Venta de ropa de dama y marroquinería",
+    "beneficio": "15% de descuento en pago efectivo y hasta 6 cuotas sin interés con tarjetas de crédito",
+    "direccion": "Guttero 55",
+    "localidad": "Caleta Olivia",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_08.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "zona-frozen-s-a-s",
+    "comercio": "ZONA FROZEN S.A.S.",
+    "rubro": "Alimentos congelados",
+    "comercio_profesion": "ZONA FROZEN S.A.S.",
+    "beneficio": "10% sobre la compra final de productos congelados, frutas, verduras, productos sin TACC, rebozados, pizzas, empanadas, pescados, waffles, helados, etc.",
+    "direccion": "España 372",
+    "localidad": "Río Gallegos",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "Beneficio exclusivo para afiliados",
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_09.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "market-sur-ahorro-rio-gallegos",
+    "comercio": "Market Sur Ahorro Río Gallegos",
+    "rubro": "Supermercado / Autoservicio",
+    "comercio_profesion": "Market Sur Ahorro Río Gallegos",
+    "beneficio": "10% de descuento sobre la compra final de productos. No acumulable con otras promociones vigentes.",
+    "direccion": "Maipú 1215, esquina Cepeda y Policía del Territorio 531",
+    "localidad": "Río Gallegos",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_10.webp",
+    "estado_revision": "ok",
+    "observaciones": "N° de referencia visible: 120852"
+  },
+  {
+    "id": "tdm-tienda-de-mascotas",
+    "comercio": "TDM - Tienda de Mascotas",
+    "rubro": "Mascotas",
+    "comercio_profesion": "TDM - Tienda de Mascotas",
+    "beneficio": "10% de descuento en alimentos y 20% de descuento en accesorios con todos los medios de pago. No acumulable con otras promociones.",
+    "direccion": "José French e Hirigoyen",
+    "localidad": "Caleta Olivia",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_11.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "zona-salud",
+    "comercio": "ZONA SALUD",
+    "rubro": "Centro médico estético",
+    "comercio_profesion": "ZONA SALUD - Centro Médico Estético",
+    "beneficio": "Descuentos varios, consultar por los diferentes tratamientos",
+    "direccion": "Comodoro Rivadavia 280",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "296 665-1273",
+      "296 675-5049"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_12.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "yagmour",
+    "comercio": "YAGMOUR",
+    "rubro": "Indumentaria",
+    "comercio_profesion": "YAGMOUR - Indumentaria",
+    "beneficio": "15% de descuento de lunes a miércoles",
+    "direccion": "Calle 9 de Julio N° 16",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "0296 647-9463"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_13.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "happy-world",
+    "comercio": "HAPPY WORLD",
+    "rubro": "Salón de eventos",
+    "comercio_profesion": "HAPPY WORLD - Salón de eventos",
+    "beneficio": "20% de descuento abonando en efectivo o transferencia",
+    "direccion": "Calle Magallanes 69",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "296 678-6021"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_14.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "el-tablon",
+    "comercio": "EL TABLÓN",
+    "rubro": "Parrilla",
+    "comercio_profesion": "EL TABLÓN - Parrilla",
+    "beneficio": "15% de descuento sobre el total del consumo realizado para almuerzos o cenas, sin límite de monto",
+    "direccion": "Sarmiento 337",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "0296 631-5502"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones",
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_15.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "dazzler",
+    "comercio": "DAZZLER",
+    "rubro": "Alojamiento / Hotel",
+    "comercio_profesion": "DAZZLER",
+    "beneficio": "30% sobre tarifa standard de diciembre a agosto inclusive. 25% sobre tarifa standard de septiembre a noviembre inclusive.",
+    "direccion": "Boulevard Almirante Brown 637",
+    "localidad": "Puerto Madryn",
+    "telefonos": [
+      "+54 0280 447-5753",
+      "+54 0280 447-5758"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_16.webp",
+    "estado_revision": "ok",
+    "observaciones": "La imagen muestra el e-mail oculto como [email protected]."
+  },
+  {
+    "id": "rio-clean",
+    "comercio": "RÍO CLEAN",
+    "rubro": "Limpieza",
+    "comercio_profesion": "RÍO CLEAN",
+    "beneficio": "10% de descuento en productos de limpieza y desinfección, abonando por transferencia o efectivo",
+    "direccion": "Río Gallegos",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "296 624-5243"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_17.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "full-cars",
+    "comercio": "FULL CARS",
+    "rubro": "Automotor",
+    "comercio_profesion": "FULL CARS - Tu auto, tu estilo",
+    "beneficio": "20% de descuento en polarizados, tratamientos cerámicos, instalaciones de PPF, instalaciones de vinilos, gráficas y reparaciones de parabrisas",
+    "direccion": "Tucumán 330",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "0296 641-7512"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_18.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "aca-camping",
+    "comercio": "ACA Camping",
+    "rubro": "Alojamiento / Camping",
+    "comercio_profesion": "ACA Camping",
+    "beneficio": "30% de descuento en temporada baja. 20% de descuento en temporada alta.",
+    "direccion": "Bv. Almirante Brown 3680",
+    "localidad": "Puerto Madryn",
+    "telefonos": [
+      "+54 0280 451-7217"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "Válido para parcelas de camping, dormis y dúplex. La vigencia dependerá de la disponibilidad al momento de la reserva.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_19.webp",
+    "estado_revision": "ok",
+    "observaciones": "La imagen muestra el e-mail oculto como [email protected]."
+  },
+  {
+    "id": "jp-neumaticos",
+    "comercio": "JP NEUMÁTICOS",
+    "rubro": "Automotor / Neumáticos",
+    "comercio_profesion": "JP NEUMÁTICOS",
+    "beneficio": "15% de descuento en servicios de alineación, balanceo, tren delantero, frenos y gomería para todo tipo de vehículos, en efectivo o transferencia",
+    "direccion": "Ismael Saldivia 645",
+    "localidad": "El Calafate",
+    "telefonos": [
+      "290 245-1999"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_20.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "la-segunda-cooperativa-limitada-de-seguros-generales",
+    "comercio": "La Segunda Cooperativa Limitada de Seguros Generales",
+    "rubro": "Seguros",
+    "comercio_profesion": "La Segunda Cooperativa Limitada de Seguros Generales",
+    "beneficio": "30% de descuento en nuevas pólizas de automotores, motovehículos, multicobertura de vivienda y comercio, y accidentes personales",
+    "direccion": "Válido para toda la provincia de Santa Cruz",
+    "localidad": "Santa Cruz",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otros descuentos ni aplicable a pólizas vigentes.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_21.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "katilandia-flop",
+    "comercio": "KATILANDIA FLOP",
+    "rubro": "Juguetería",
+    "comercio_profesion": "KATILANDIA FLOP - Tienda de juguetes",
+    "beneficio": "10% de descuento con pago en efectivo y transferencia",
+    "direccion": "Av. de los Mineros 327, Galería TUTI, local 1",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 662-1977"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_22.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "lo-del-bocha",
+    "comercio": "LO DEL BOCHA",
+    "rubro": "Carnicería",
+    "comercio_profesion": "LO DEL BOCHA Carnicería",
+    "beneficio": "10% de descuento pagando en efectivo. 5% de descuento pagando por transferencia.",
+    "direccion": "Belgrano 60 / San Martín 404",
+    "localidad": "Puerto Santa Cruz / Comandante Luis Piedra Buena",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_23.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "city-sport",
+    "comercio": "CITY SPORT",
+    "rubro": "Indumentaria deportiva / Regalería",
+    "comercio_profesion": "CITY SPORT - Tienda de ropa y regalería deportiva",
+    "beneficio": "10% de descuento en indumentaria original RIVER / BOCA con pago en efectivo y transferencia. 8% de descuento en camisetas europeas con pago en efectivo y transferencia.",
+    "direccion": "Av. de los Mineros 327, Galería TUTI, local 5",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 638-0353"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_24.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "mazu-adamma-yain",
+    "comercio": "MAZU ADAMMA YAIN",
+    "rubro": "Psicología",
+    "comercio_profesion": "MAZU ADAMMA YAIN - Consultorio Psicológico virtual",
+    "beneficio": "10% de descuento en honorarios de psicóloga infanto juvenil",
+    "direccion": null,
+    "localidad": null,
+    "telefonos": [
+      "296 653-2702"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "ada.psicologia_ra"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_25.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "mamushka",
+    "comercio": "MAMUSHKA",
+    "rubro": "Indumentaria femenina",
+    "comercio_profesion": "MAMUSHKA - Tienda de ropa / indumentaria femenina",
+    "beneficio": "10% de descuento sobre la compra final de productos de lunes a sábado con pago en efectivo y transferencia",
+    "direccion": "Tte. del Castillo 277, Galería Sol Garden, local 1",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 670-5753"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_26.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "caleta-olivia-jm",
+    "comercio": "CALETA OLIVIA JM",
+    "rubro": "Taller mecánico",
+    "comercio_profesion": "CALETA OLIVIA JM - Taller mecánico",
+    "beneficio": "20% de descuento sobre mecánica en general, autos y camionetas, abonando en efectivo o transferencia bancaria, y 3 cuotas sin interés con tarjetas bancarias todos los días",
+    "direccion": "Ceibo 1635",
+    "localidad": "Caleta Olivia",
+    "telefonos": [
+      "297 425-7183"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_27.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "ac-representaciones",
+    "comercio": "AC REPRESENTACIONES",
+    "rubro": "Venta de pasajes",
+    "comercio_profesion": "AC REPRESENTACIONES - Venta de pasajes terrestre ANDESMAR y VIA TAC",
+    "beneficio": "20% de descuento con pago efectivo y transferencia",
+    "direccion": "Av. de los Mineros 327, Galería TUTI",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 242-2154"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_28.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "optica-impulso",
+    "comercio": "ÓPTICA IMPULSO",
+    "rubro": "Óptica",
+    "comercio_profesion": "ÓPTICA IMPULSO",
+    "beneficio": "10% de descuento en cristales recetados con pago en efectivo o billetera virtual. Martes y jueves: 3 cuotas sin interés con tarjetas bancarizadas en lentes completos, cristal y marcos.",
+    "direccion": "Sáenz Peña 59",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 670-6885"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "opticaimpulsoo",
+      "facebook": "Erica Mercado"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_29.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "farmacia-calo",
+    "comercio": "FARMACIA CALO",
+    "rubro": "Farmacia",
+    "comercio_profesion": "FARMACIA CALO",
+    "beneficio": "5% y 25% de descuento en medicamentos seleccionados pagando con transferencia bancaria y efectivo. 10% de descuento en perfumería y regalería pagando en efectivo y transferencia bancaria.",
+    "direccion": "Av. de los Mineros 147",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 240-4401"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "farmacia.calo"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_30.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "boutique-canela",
+    "comercio": "BOUTIQUE CANELA",
+    "rubro": "Indumentaria femenina",
+    "comercio_profesion": "BOUTIQUE CANELA - Tienda de indumentaria femenina",
+    "beneficio": "Lunes a miércoles: 15% de descuento pagando en efectivo. Lunes a miércoles: 10% de descuento pagando con billeteras virtuales.",
+    "direccion": "Luis Sáenz Peña 83",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 242-1311"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "facebook": "CanelaBoutique"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_31.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "lenceria-intima",
+    "comercio": "LENCERÍA ÍNTIMA",
+    "rubro": "Lencería",
+    "comercio_profesion": "LENCERÍA ÍNTIMA",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia bancaria",
+    "direccion": "Av. de los Mineros 147",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 672-6264"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "Intimalenceria28",
+      "facebook": "Somosintimalenceria"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_32.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "nicolas-brignoli",
+    "comercio": "NICOLÁS BRIGNOLI",
+    "rubro": "Nutrición",
+    "comercio_profesion": "NICOLÁS BRIGNOLI - Lic. en Nutrición",
+    "beneficio": "25% de descuento sobre la consulta nutricional virtual de lunes a sábado, en efectivo o transferencia",
+    "direccion": null,
+    "localidad": null,
+    "telefonos": [
+      "296 668-2714"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_33.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "ferreteria-belli",
+    "comercio": "FERRETERÍA BELLI",
+    "rubro": "Ferretería",
+    "comercio_profesion": "FERRETERÍA BELLI",
+    "beneficio": "5% de descuento en productos seleccionados",
+    "direccion": "Oneto 18",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 242-1207"
+    ],
+    "whatsapp": [
+      "296 665-3055"
+    ],
+    "email": null,
+    "redes": {
+      "facebook": "Belli & CIA"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_34.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "mathilda",
+    "comercio": "MATHILDA",
+    "rubro": "Indumentaria niños y mujer",
+    "comercio_profesion": "MATHILDA - Indumentaria para niños y mujer",
+    "beneficio": "15% de descuento en efectivo o transferencia en indumentaria y calzado. No acumulable con otras promociones.",
+    "direccion": "Av. de Los Mineros 147",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 670-0825"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "Mathilda.rioturbio",
+      "facebook": "Mathilda"
+    },
+    "condiciones": "Venta exclusiva de marca MIMO & CO en Río Turbio.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_35.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "siempre-guapas",
+    "comercio": "SIEMPRE GUAPAS",
+    "rubro": "Indumentaria femenina",
+    "comercio_profesion": "SIEMPRE GUAPAS - Indumentaria de vestir y sport femenina",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Tte. del Navío A. del Castillo 280, local 1",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 640-6859"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_36.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "dejate-querer",
+    "comercio": "DEJATE QUERER",
+    "rubro": "Tienda de regalos",
+    "comercio_profesion": "DEJATE QUERER - Tienda de regalos",
+    "beneficio": "15% de descuento pagando en efectivo, transferencia y débito",
+    "direccion": "Av. de los Mineros 327, Galería Tuti, local 6",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 242-5495"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_37.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "stylo",
+    "comercio": "STYLO",
+    "rubro": "Indumentaria deportiva",
+    "comercio_profesion": "STYLO - Indumentaria deportiva",
+    "beneficio": "20% de descuento de lunes a jueves pagando con transferencia y efectivo",
+    "direccion": "Pellegrini 473 / Chubut 473",
+    "localidad": "Río Turbio / 28 de Noviembre",
+    "telefonos": [
+      "290 242-1786"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_38.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "las-hileras",
+    "comercio": "LAS HILERAS",
+    "rubro": "Resto Bar",
+    "comercio_profesion": "LAS HILERAS - Resto Bar",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Tte. del Navío Agustín del Castillo, esquina Jorge Newbery",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 674-2460"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "lashileras",
+      "facebook": "Las Hileras Resto Bar"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_39.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "las-hileras-cocina-y-vinos",
+    "comercio": "LAS HILERAS - Cocina y Vinos",
+    "rubro": "Gastronomía",
+    "comercio_profesion": "LAS HILERAS - Cocina y Vinos",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Jorge Newbery 24",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 627-1852"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "Las Hileras Cocina y Vinos",
+      "facebook": "Las Hileras Cocina y Vinos"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_40.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "el-cubo",
+    "comercio": "EL CUBO",
+    "rubro": "Informática y regalería",
+    "comercio_profesion": "EL CUBO - Informática y Regalería",
+    "beneficio": "15% de descuento pagando en efectivo o transferencia",
+    "direccion": "Sáenz Peña 23",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 668-3683"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "el.cubo.rioturbio"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_41.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "renata-deco-home",
+    "comercio": "RENATA DECO HOME",
+    "rubro": "Regalos y aromas",
+    "comercio_profesion": "RENATA DECO HOME - Tienda de regalos y aromas",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Pellegrini 78",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "351 538-1481"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "renatadecohome",
+      "facebook": "RENATA DECO HOME"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_42.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "tienda-rous",
+    "comercio": "TIENDA ROUS",
+    "rubro": "Calzado / Indumentaria / Bazar",
+    "comercio_profesion": "TIENDA ROUS - Calzado, Indumentaria y Bazar",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Tte. del Navío Agustín del Catillo 331",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "384 116-3231"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "tienda_rous_123",
+      "facebook": "Rous Abalos"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_43.webp",
+    "estado_revision": "ok",
+    "observaciones": "En la imagen figura “Catillo”; revisar si corresponde “Castillo”."
+  },
+  {
+    "id": "fernando",
+    "comercio": "FERNANDO",
+    "rubro": "Peluquería",
+    "comercio_profesion": "FERNANDO - Peluquería",
+    "beneficio": "15% de descuento pagando en efectivo o transferencia",
+    "direccion": "Av. Y.F.C., local 2",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "353 656-3448"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "facebook": "FERNANDO BARRERA"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_44.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "hotel-nazo",
+    "comercio": "HOTEL NAZÓ",
+    "rubro": "Alojamiento / Hotel",
+    "comercio_profesion": "HOTEL NAZÓ",
+    "beneficio": "10% de descuento sobre el alojamiento únicamente con todos los medios de pago",
+    "direccion": "Gobernador Moyano 464",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 250-5615"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "web": "www.hotelnazo.com.ar"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_45.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "hf-computacion",
+    "comercio": "HF COMPUTACIÓN",
+    "rubro": "Servicio técnico",
+    "comercio_profesion": "HF COMPUTACIÓN - Servicio Técnico Especializado",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Segundo Villagra 463, B° Los Coihues",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 664-9494"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_46.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "angeles-de-hierro",
+    "comercio": "ÁNGELES DE HIERRO",
+    "rubro": "Gimnasio",
+    "comercio_profesion": "ÁNGELES DE HIERRO - Gimnasio dedicado a la musculación",
+    "beneficio": "6% de descuento pagando en efectivo o transferencia",
+    "direccion": "Av. de los Mineros 377",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 669-1580"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_47.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "reyna",
+    "comercio": "REYNA",
+    "rubro": "Restaurante / Cafetería",
+    "comercio_profesion": "REYNA - Restaurante / Cafetería",
+    "beneficio": "15% de descuento pagando en efectivo o transferencia",
+    "direccion": "Av. de los Mineros 397",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 638-6465"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "facebook": "REYNA RESTAURANT"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_48.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "di-ba",
+    "comercio": "DI BA",
+    "rubro": "Indumentaria femenina",
+    "comercio_profesion": "DI BA - Tienda de ropa femenina",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Av. de los Mineros, esquina Los Inmigrantes",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 635-0779"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "diba_indumentaria_femenina",
+      "facebook": "DI BA INDUMENTARIA FEMENINA"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_49.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "allegra-calzados",
+    "comercio": "ALLEGRA CALZADOS",
+    "rubro": "Marroquinería",
+    "comercio_profesion": "ALLEGRA CALZADOS - Marroquinería",
+    "beneficio": "15% de descuento en transferencia o efectivo",
+    "direccion": "Tte. del Navío A. del Castillo 237, Galería Nuevo Centro, 2° piso, local 4",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 672-3165"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_50.webp",
+    "estado_revision": "ok",
+    "observaciones": "La línea de Facebook quedó parcialmente cortada en la captura."
+  },
+  {
+    "id": "vital-care-sas",
+    "comercio": "VITAL CARE SAS",
+    "rubro": "Odontología",
+    "comercio_profesion": "VITAL CARE SAS - Odontología",
+    "beneficio": "20% de descuento en tratamientos odontológicos y 15% en odontología integral, de lunes a sábado, mediante transferencia bancaria y tarjetas bancarizadas Ahora 3 y Ahora 6",
+    "direccion": "Bernardino Rivadavia 615",
+    "localidad": "Río Gallegos",
+    "telefonos": [
+      "296 621-8734",
+      "296 669-0061"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_51.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "cristal-modas",
+    "comercio": "CRISTAL MODAS",
+    "rubro": "Indumentaria y calzado",
+    "comercio_profesion": "CRISTAL MODAS - Indumentaria y calzado",
+    "beneficio": "18% de descuento en indumentaria y calzado únicamente con forma de pago débito, transferencia y efectivo",
+    "direccion": "Tte. del Navío A. del Castillo 237, Galería Nuevo Centro, 2° piso, local 2",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 663-8864"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_52.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "bienestar-arte-salud",
+    "comercio": "BIENESTAR ARTE + SALUD",
+    "rubro": "Arte + Salud",
+    "comercio_profesion": "BIENESTAR ARTE + SALUD",
+    "beneficio": "10% de descuento sobre la compra final de los productos expendidos por la empresa de lunes a sábados con todos los bienes de pago",
+    "direccion": "Jamieson 590",
+    "localidad": "Río Gallegos",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_53.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "valhalla-gym",
+    "comercio": "VALHALLA GYM",
+    "rubro": "Gimnasio",
+    "comercio_profesion": "VALHALLA GYM",
+    "beneficio": "10% de descuento pagando en efectivo o transferencia",
+    "direccion": "Gobernador Moyano 283",
+    "localidad": "Río Turbio",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "valhllagim"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_54.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "farmacia-don-bosco-i-ii-iii-iv",
+    "comercio": "FARMACIA DON BOSCO I - II - III - IV",
+    "rubro": "Farmacia",
+    "comercio_profesion": "FARMACIA DON BOSCO I - II - III - IV",
+    "beneficio": "30% en medicamentos genéricos de lista. 10% en perfumería y 10% en accesorios con cualquier medio de pago.",
+    "direccion": "Río Turbio - El Calafate - Río Gallegos",
+    "localidad": "Río Turbio / El Calafate / Río Gallegos",
+    "telefonos": [],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_55.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "quiro-fitness",
+    "comercio": "QUIRO FITNESS",
+    "rubro": "Entrenamiento / Gimnasio",
+    "comercio_profesion": "QUIRO FITNESS",
+    "beneficio": "15% de descuento en las siguientes cuotas: caminata para la salud, running principiantes y running competitivo",
+    "direccion": "Caleta Olivia",
+    "localidad": "Caleta Olivia",
+    "telefonos": [
+      "297 475-2190"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "maria_entrenadoraok",
+      "tiktok": "@maria_entrenadoraok"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_56.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "sangre-latina",
+    "comercio": "SANGRE LATINA",
+    "rubro": "Escuela de Bachata y Salsa",
+    "comercio_profesion": "SANGRE LATINA - Escuela de Bachata y Salsa",
+    "beneficio": "Descuento mensual por taller: 15%. Los dos talleres: 20%.",
+    "direccion": "Centro Cultural, Av. Roca 1110",
+    "localidad": "El Calafate",
+    "telefonos": [
+      "296 669-0154"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "sangrelatinafte"
+    },
+    "condiciones": "Clases lunes y miércoles: 19:30 hs Bachata, 20:30 hs Salsa. Cualquier forma de pago. Profesora: Ana Paula Barreto.",
+    "nuevo": false,
+    "imagen_origen": "convenio_judiciales_57.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "f3-atelier",
+    "comercio": "F3 ATELIER",
+    "rubro": "Arquitectura",
+    "comercio_profesion": "F3 ATELIER - Estudio de Arquitectura",
+    "beneficio": "Precio preferencial por m² para planos, actualización y proyecto. Medio de pago a través de convenio de honorarios hasta 12 cuotas sin interés, efectivo o transferencia.",
+    "direccion": "Gob. Lista 224",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "221 507-6825"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": "Beneficio intransferible. Arquitecta Verón Laniz Naiara Noemí, MP 2371. MM: Río Turbio, 28 de Noviembre y El Calafate.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_58.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "wadiasol-construcciones",
+    "comercio": "WADIASOL CONSTRUCCIONES",
+    "rubro": "Construcción",
+    "comercio_profesion": "WADIASOL CONSTRUCCIONES",
+    "beneficio": "5% de descuento en efectivo o transferencia",
+    "direccion": "Justo José Urquiza 678, Barrio Güemes",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 649-9822"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_59.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "polirubro-damian",
+    "comercio": "POLIRUBRO DAMIÁN",
+    "rubro": "Librería / Juguetería / Cotillón",
+    "comercio_profesion": "POLIRUBRO DAMIÁN - Artículos de librería, juguetería y cotillón",
+    "beneficio": "10% de descuento en compras mayores a $50.000 en efectivo o transferencia",
+    "direccion": "Islas Malvinas casa 127, calle 4 de Diciembre",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 242-1729"
+    ],
+    "whatsapp": [
+      "296 638-8308"
+    ],
+    "email": null,
+    "redes": {
+      "facebook": "Polirubro Damian"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_60.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "95-mc-queen",
+    "comercio": "95 MC QUEEN",
+    "rubro": "Gomería / Mecánica ligera / Lavadero",
+    "comercio_profesion": "95 MC QUEEN - Gomería Mecánica Ligera y Lavadero",
+    "beneficio": "10% de descuento en efectivo o transferencia",
+    "direccion": "Gobernador Paradelo 357",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 661-3260",
+      "296 675-7155"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_61.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "tiempo-di-pao",
+    "comercio": "TIEMPO DI PAO",
+    "rubro": "Mercería y tienda",
+    "comercio_profesion": "TIEMPO DI PAO - Mercería y tienda",
+    "beneficio": "10% de descuento rubro tienda. 5% de descuento y 3 cuotas sin interés con tarjeta de crédito en rubro tienda.",
+    "direccion": "Comercial Gdor. Lista 326",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "290 242-1451"
+    ],
+    "whatsapp": [
+      "296 650-7930"
+    ],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_62.webp",
+    "estado_revision": "ok",
+    "observaciones": "La imagen repite/arrastró texto de otra captura en la parte superior; se tomó el contenido central visible."
+  },
+  {
+    "id": "carniceria-don-bosco",
+    "comercio": "CARNICERÍA DON BOSCO",
+    "rubro": "Carnicería",
+    "comercio_profesion": "CARNICERÍA DON BOSCO",
+    "beneficio": "10% de descuento en efectivo o transferencia",
+    "direccion": "Gobernador Paradelo 356",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "0375 568-6901"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {},
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_63.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "patagonia-extreme",
+    "comercio": "PATAGONIA EXTREME",
+    "rubro": "Indumentaria deportiva y urbana",
+    "comercio_profesion": "PATAGONIA EXTREME - Indumentaria Deportiva & Urbana",
+    "beneficio": "15% de descuento pagando en efectivo o transferencia. 3 cuotas sin interés con tarjetas de crédito bancarizadas.",
+    "direccion": "Segundo Villagra 179",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 641-1477"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "instagram": "patagoniaextreme.rt"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_64.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "las-margaritas-deco-hogar",
+    "comercio": "LAS MARGARITAS DECO HOGAR",
+    "rubro": "Deco hogar",
+    "comercio_profesion": "LAS MARGARITAS DECO HOGAR",
+    "beneficio": "15% de descuento con pago efectivo o transferencia en productos seleccionados",
+    "direccion": "Jorge Newbery 268",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 612-1260"
+    ],
+    "whatsapp": [
+      "296 638-3907"
+    ],
+    "email": null,
+    "redes": {
+      "instagram": "lasmargaritashomeydeco",
+      "facebook": "Las Margaritas RT"
+    },
+    "condiciones": "No acumulable con otras promociones.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_65.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "margalan-cotillon",
+    "comercio": "MARGALAN COTILLÓN",
+    "rubro": "Cotillón",
+    "comercio_profesion": "MARGALAN COTILLÓN",
+    "beneficio": "10% de descuento en compras mayores a cincuenta mil pesos, con forma de pago efectivo o transferencia",
+    "direccion": "Jorge Newbery 171",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 662-9730"
+    ],
+    "whatsapp": [
+      "2902 425197"
+    ],
+    "email": null,
+    "redes": {
+      "facebook": "COTILLÓN MARGALAN"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_66.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "estudio-de-arquitectura-y-diseno-de-interiores",
+    "comercio": "ESTUDIO DE ARQUITECTURA Y DISEÑO DE INTERIORES",
+    "rubro": "Arquitectura / Diseño de interiores",
+    "comercio_profesion": "ESTUDIO DE ARQUITECTURA Y DISEÑO DE INTERIORES",
+    "beneficio": "Precio preferencial por m² para planos municipales (actualización) y proyectos",
+    "direccion": "San Martín 699",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 631-4487"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "facebook": "Arq. Mario Maldonado"
+    },
+    "condiciones": "Forma de pago: efectivo o transferencia. Arquitecto y Especialista en Seguridad e Higiene Maldonado Mario Alberto MP:1608 y Clancia Daniela Beatriz, Diseñadora de Interiores.",
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_67.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  },
+  {
+    "id": "zeidan-automotores",
+    "comercio": "ZEIDAN AUTOMOTORES",
+    "rubro": "Automotor / Neumáticos",
+    "comercio_profesion": "ZEIDAN AUTOMOTORES",
+    "beneficio": "5% de descuento con pago en efectivo o transferencia en vehículos automotor y neumáticos",
+    "direccion": "Jorge Newbery 198",
+    "localidad": "Río Turbio",
+    "telefonos": [
+      "296 627-4691"
+    ],
+    "whatsapp": [],
+    "email": null,
+    "redes": {
+      "facebook": "ZEIDAN AUTOMOTORES"
+    },
+    "condiciones": null,
+    "nuevo": true,
+    "imagen_origen": "convenio_judiciales_68.webp",
+    "estado_revision": "ok",
+    "observaciones": null
+  }
+]
