@@ -60,10 +60,10 @@ export class EfemeridesComponent implements OnInit {
     { mes: 6, dia: 17, titulo: 'DÍA CONMEMORATIVO DEL FALLECIMIENTO DEL GRAL. MARTÍN MIGUEL DE GÜEMES' },
     { mes: 6, dia: 20, titulo: 'DÍA DE LA BANDERA', imagen: 'assets/efemerides/20_de_junio.png' },
     { mes: 6, dia: 21, titulo: 'DÍA DEL PADRE', imagen: 'assets/efemerides/dia_del_padre.png' },
-    { mes: 6, dia: 28, titulo: 'DÍA INTERNACIONAL DEL ORGULLO LGBTIQ+' },
+    { mes: 6, dia: 28, titulo: 'DÍA INTERNACIONAL DEL ORGULLO LGBTIQ+', imagen: 'assets/efemerides/dia_de_lgbtq.png' },
     
     // JULIO
-    { mes: 7, dia: 6, titulo: 'DÍA DE LOS EMPLEADOS Y EMPLEADAS LEGISLATIVAS DE LA PROVINCIA DE SANTA CRUZ' },
+    { mes: 7, dia: 6, titulo: 'DÍA DE LOS EMPLEADOS Y EMPLEADAS LEGISLATIVAS DE LA PROVINCIA DE SANTA CRUZ', imagen: 'assets/efemerides/06_de_julio..png' },
     { mes: 7, dia: 8, titulo: 'SE CONMEMORA LA PROMULGACIÓN DE LA LEY 1420 DE EDUCACIÓN COMÚN, GRATUITA Y OBLIGATORIA' },
     { mes: 7, dia: 9, titulo: 'DÍA DE LA INDEPENDENCIA DE ARGENTINA' },
     { mes: 7, dia: 13, titulo: 'DÍA DE LA CREACIÓN DEL SINDICATO DE LUZ Y FUERZA' },
