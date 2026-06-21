@@ -59,6 +59,7 @@ export class EfemeridesComponent implements OnInit {
     { mes: 6, dia: 15, titulo: 'DÍA MUNDIAL DE TOMA DE CONCIENCIA DE ABUSO Y MALTRATO EN LA VEJEZ' },
     { mes: 6, dia: 17, titulo: 'DÍA CONMEMORATIVO DEL FALLECIMIENTO DEL GRAL. MARTÍN MIGUEL DE GÜEMES' },
     { mes: 6, dia: 20, titulo: 'DÍA DE LA BANDERA', imagen: 'assets/efemerides/20_de_junio.png' },
+    { mes: 6, dia: 21, titulo: 'DÍA DEL PADRE', imagen: 'assets/efemerides/dia_del_padre.png' },
     { mes: 6, dia: 28, titulo: 'DÍA INTERNACIONAL DEL ORGULLO LGBTIQ+' },
     
     // JULIO
@@ -139,6 +140,18 @@ export class EfemeridesComponent implements OnInit {
     return this.efemerides.filter(e => e.mes === numMes);
   }
 
+  calcularDiasHasta(diaActual: number, mesActual: number, diaEfemeride: number, mesEfemeride: number): number {
+    const fechaActual = new Date(new Date().getFullYear(), mesActual - 1, diaActual);
+    let fechaEfemeride = new Date(new Date().getFullYear(), mesEfemeride - 1, diaEfemeride);
+
+    if (fechaEfemeride < fechaActual) {
+      fechaEfemeride = new Date(new Date().getFullYear() + 1, mesEfemeride - 1, diaEfemeride);
+    }
+
+    const diferencia = Math.floor((fechaEfemeride.getTime() - fechaActual.getTime()) / (1000 * 60 * 60 * 24));
+    return diferencia;
+  }
+
   calcularEfemeridesDestacadas() {
     const hoy = new Date();
     const diaActual = hoy.getDate();
@@ -147,11 +160,7 @@ export class EfemeridesComponent implements OnInit {
 
     // Calcular días hasta cada efeméride
     this.efemerides.forEach(ef => {
-      let anio = hoy.getFullYear();
-      let fechaEf = new Date(anio, ef.mes - 1, ef.dia);
-      
-      const diffTime = fechaEf.getTime() - hoy.getTime();
-      ef.diasHasta = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      ef.diasHasta = this.calcularDiasHasta(diaActual, mesActual, ef.dia, ef.mes);
     });
 
     // Buscar efemérides de HOY
