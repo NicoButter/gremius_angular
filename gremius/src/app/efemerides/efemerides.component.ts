@@ -60,6 +60,7 @@ export class EfemeridesComponent implements OnInit {
     { mes: 6, dia: 17, titulo: 'DÍA CONMEMORATIVO DEL FALLECIMIENTO DEL GRAL. MARTÍN MIGUEL DE GÜEMES' },
     { mes: 6, dia: 20, titulo: 'DÍA DE LA BANDERA', imagen: 'assets/efemerides/20_de_junio.png' },
     { mes: 6, dia: 21, titulo: 'DÍA DEL PADRE', imagen: 'assets/efemerides/dia_del_padre.png' },
+    { mes: 6, dia: 27, titulo: 'DÍA DEL TRABAJADOR DEL ESTADO', imagen: 'assets/efemerides/27_junio.png' },
     { mes: 6, dia: 28, titulo: 'DÍA INTERNACIONAL DEL ORGULLO LGBTIQ+', imagen: 'assets/efemerides/dia_de_lgbtq.png' },
     
     // JULIO
