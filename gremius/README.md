@@ -10,6 +10,10 @@ Este es el sitio web oficial de Gremius, desarrollado con [Angular CLI](https://
 - **Estructura Modular**: Componentes organizados por secciones (Secretarías, Sedes, Beneficios, etc.).
 - **Optimización de Imágenes**: Sistema de scripts para conversión y gestión de activos WebP.
 
+## 📄 Documentación del módulo Tracking
+
+- [Manual de uso del módulo Tracking](MANUAL_MODULO_TRACKING.md)
+
 ## 🛠️ Desarrollo y Comandos
 
 ### Servidor de Desarrollo
