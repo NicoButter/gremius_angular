@@ -13,6 +13,18 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   noticias = [
     {
+      titulo: 'Nuevo convenio',
+      descripcion: 'El Gremio de Judiciales y APEL rubrican un nuevo convenio para fortalecer la unidad, la organización y la lucha colectiva en defensa de los derechos de las y los trabajadores.',
+      image: '/assets/images/convenio_apel_1.jpeg',
+      autor: 'Equipo de Comunicación'
+    },
+    {
+      titulo: 'Nuevo convenio',
+      descripcion: 'El Gremio de Judiciales y APEL rubrican un nuevo convenio para fortalecer la unidad, la organización y la lucha colectiva en defensa de los derechos de las y los trabajadores.',
+      image: '/assets/images/convenio_apel_2.jpeg',
+      autor: 'Equipo de Comunicación'
+    },
+    {
       titulo: 'Acompañamos la Jornada de Lucha',
       descripcion: 'Acompañamos junto al Frente Sindical Santa Cruz, la jornada de lucha dispuesta por la federación judicial argentina',
       image: '/assets/images/no_a_la_reforma_instagram_facebook.png',
