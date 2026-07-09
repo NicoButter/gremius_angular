@@ -66,7 +66,7 @@ export class EfemeridesComponent implements OnInit {
     // JULIO
     { mes: 7, dia: 6, titulo: 'DÍA DE LOS EMPLEADOS Y EMPLEADAS LEGISLATIVAS DE LA PROVINCIA DE SANTA CRUZ', imagen: 'assets/efemerides/06_de_julio..png' },
     { mes: 7, dia: 8, titulo: 'SE CONMEMORA LA PROMULGACIÓN DE LA LEY 1420 DE EDUCACIÓN COMÚN, GRATUITA Y OBLIGATORIA' },
-    { mes: 7, dia: 9, titulo: 'DÍA DE LA INDEPENDENCIA DE ARGENTINA' },
+    { mes: 7, dia: 9, titulo: 'DÍA DE LA INDEPENDENCIA DE ARGENTINA', imagen: 'assets/efemerides/9_de_julio.png' },
     { mes: 7, dia: 13, titulo: 'DÍA DE LA CREACIÓN DEL SINDICATO DE LUZ Y FUERZA' },
     { mes: 7, dia: 18, titulo: 'DÍA CONMEMORATIVO POR EL ATENTADO CONTRA LA AMIA' },
     { mes: 7, dia: 27, titulo: 'DÍA DE LOS Y LAS EMPLEADAS PÚBLICAS PROVINCIALES' },
