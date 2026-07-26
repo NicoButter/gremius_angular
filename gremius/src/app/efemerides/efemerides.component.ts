@@ -69,7 +69,7 @@ export class EfemeridesComponent implements OnInit {
     { mes: 7, dia: 9, titulo: 'DÍA DE LA INDEPENDENCIA DE ARGENTINA', imagen: 'assets/efemerides/9_de_julio.png' },
     { mes: 7, dia: 13, titulo: 'DÍA DE LA CREACIÓN DEL SINDICATO DE LUZ Y FUERZA' },
     { mes: 7, dia: 18, titulo: 'DÍA CONMEMORATIVO POR EL ATENTADO CONTRA LA AMIA' },
-    { mes: 7, dia: 27, titulo: 'DÍA DE LOS Y LAS EMPLEADAS PÚBLICAS PROVINCIALES' },
+    { mes: 7, dia: 27, titulo: 'DÍA DE LOS Y LAS EMPLEADAS PÚBLICAS PROVINCIALES', imagen: 'assets/efemerides/27_julio.png' },
     { mes: 7, dia: 30, titulo: 'DÍA MUNDIAL CONTRA LA TRATA DE PERSONAS' },
     
     // AGOSTO
