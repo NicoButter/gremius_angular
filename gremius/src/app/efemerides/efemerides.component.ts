@@ -74,7 +74,7 @@ export class EfemeridesComponent implements OnInit {
     
     // AGOSTO
     { mes: 8, dia: 9, titulo: 'DÍA INTERNACIONAL DE LAS POBLACIONES INDÍGENAS' },
-    { mes: 8, dia: 16, titulo: 'DÍA INTERNACIONAL DE LAS INFANCIAS (EL TERCER DOMINGO DEL MES)' },
+    { mes: 8, dia: 16, titulo: 'DÍA INTERNACIONAL DE LAS INFANCIAS (EL TERCER DOMINGO DEL MES)', imagen: 'assets/efemerides/16-8-infancias.webp' },
     { mes: 8, dia: 17, titulo: 'ANIVERSARIO DE LA MUERTE DEL GRAL. SAN MARTÍN' },
     { mes: 8, dia: 21, titulo: 'SANCIÓN DE LA LEY DE ANULACIÓN DE LEYES DE PUNTO FINAL Y OBEDIENCIA DE VIDA' },
     { mes: 8, dia: 29, titulo: 'DÍA NACIONAL DE LOS ABOGADOS Y LAS ABOGADAS' },
