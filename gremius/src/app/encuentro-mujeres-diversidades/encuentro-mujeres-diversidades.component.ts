@@ -9,15 +9,15 @@ import { Component } from '@angular/core';
 })
 export class EncuentroMujeresDiversidadsComponent {
   evento = {
-    titulo: 'Encuentro de Mujeres y Diversidades – El Calafate 2025',
-    organizador: 'Judiciales Santa Cruz',
-    ciudad: 'El Calafate',
+    titulo: 'Encuentro Provincial de Mujeres y Diversidades 2026',
+    organizador: 'Gremio Santa Cruz',
+    ciudad: 'Caleta Olivia',
     fechas: [
-      'Viernes 7 de noviembre de 2025',
-      'Sábado 8 de noviembre de 2025'
+      'Viernes 23 de octubre de 2026',
+      'Sábado 24 de octubre de 2026',
+      'Domingo 25 de octubre de 2026'
     ],
-    descripcion: `Este encuentro será un espacio de reflexión, intercambio y construcción colectiva,
-                  pensado para fortalecer nuestra organización, compartir experiencias y seguir ampliando derechos.`,
-    inscripcion: 'Próximamente se abrirán las inscripciones, para que todas las compañeras y diversidades puedan sumarse a esta instancia de participación.'
+    descripcion: 'Tres jornadas de encuentro, reflexión, formación e intercambio de experiencias.',
+    inscripcion: 'Fecha límite de inscripción: 25/09/2026. Sin excepción.'
   };
 }
