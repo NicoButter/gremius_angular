@@ -1,17 +1,33 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
+interface Noticia {
+  titulo: string;
+  descripcion: string;
+  image: string;
+  autor: string;
+  enlace?: string;
+}
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
 export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('radioPlayer') radioPlayer!: ElementRef<HTMLAudioElement>;
 
-  noticias = [
+  noticias: Noticia[] = [
+    {
+      titulo: 'Encuentro Provincial de Mujeres y Diversidades 2026',
+      descripcion: '23, 24 y 25 de octubre en Caleta Olivia. Conocé toda la información del encuentro.',
+      image: '/assets/images/encuentro-de-mujeres-y-diversidades.webp',
+      autor: 'Encuentro provincial',
+      enlace: '/encuentro-mujeres-diversidades'
+    },
     {
       titulo: 'Nuevo convenio',
       descripcion: 'El Gremio de Judiciales y APEL rubrican un nuevo convenio para fortalecer la unidad, la organización y la lucha colectiva en defensa de los derechos de las y los trabajadores.',

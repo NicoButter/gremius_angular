@@ -45,6 +45,13 @@
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent 100%);
 }
 
+.hero-slide-link {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    cursor: pointer;
+}
+
 .hero-text {
     position: absolute;
     bottom: 15%;
@@ -52,7 +59,16 @@
     max-width: 80%;
     color: white;
     z-index: 10;
+    pointer-events: none;
     padding-right: 5%;
+}
+
+.hero-cta {
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .news-badge {

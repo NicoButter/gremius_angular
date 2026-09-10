@@ -20,11 +20,18 @@
       [ngStyle]="{ 'background-image': 'url(' + noticia.image + ')' }"
     >
       <div class="gradient-overlay"></div>
+      <a
+        *ngIf="noticia.enlace"
+        class="hero-slide-link"
+        [routerLink]="noticia.enlace"
+        [attr.aria-label]="'Ver información de ' + noticia.titulo"
+      ></a>
       <div class="hero-text">
-        <span class="news-badge">NOTICIAS</span>
+        <span class="news-badge">{{ noticia.enlace ? 'ENCUENTRO 2026' : 'NOTICIAS' }}</span>
         <h1>{{ noticia.titulo }}</h1>
         <p class="author">{{ noticia.autor }}</p>
         <p class="excerpt">{{ noticia.descripcion }}</p>
+        <span *ngIf="noticia.enlace" class="hero-cta">Ver información</span>
       </div>
     </div>
 
