@@ -1,18 +1,35 @@
+<section class="live-broadcast" aria-labelledby="live-broadcast-title">
+  <div class="live-broadcast__content">
+    <span class="live-broadcast__badge">EN VIVO</span>
+    <div>
+      <h2 id="live-broadcast-title">Franco Mascheroni en “La Calle y Vos”</h2>
+      <p *ngIf="!liveBroadcastAvailable">La transmisión comienza a las 21:00 hs. Faltan <strong>{{ liveCountdown }}</strong>.</p>
+      <p *ngIf="liveBroadcastAvailable">Nuestro Secretario General participa del programa <strong>Molotov</strong>.</p>
+    </div>
+    <a
+      *ngIf="!liveBroadcastAvailable"
+      class="live-broadcast__link"
+      href="https://youtube.com/@lacalleyvos?si=GHb6mRHd8Ro5HnoO"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ver la transmisión en vivo de La Calle y Vos en YouTube"
+    >
+      Ver transmisión <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  <div *ngIf="liveBroadcastAvailable" class="live-broadcast__player">
+    <iframe
+      src="https://www.youtube.com/embed/live_stream?channel=UCxPw-EgB44ZLd6M3npCAKYw&amp;autoplay=0&amp;rel=0"
+      title="Transmisión en vivo de La Calle y Vos"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
+
 <section class="news-hero">
   <div class="hero-container">
-    <!-- Reproductor integrado arriba del carrusel -->
-    <!-- <div class="audio-player-fixed">
-      <div class="live-announcement">
-        🎙️ Escuchá en VIVO la entrevista a nuestro Secretario General 
-        <strong>Franco Macheroni</strong> a partir de las 19 hs desde LU14!!
-      </div>
-      <h3>Radio LU14 AM830</h3>
-      <audio controls aria-label="Reproductor de Radio LU14">
-        <source src="https://transmision-lu14.santacruz.gob.ar/lu14.mp3" type="audio/mpeg">
-        Tu navegador no soporta el reproductor de audio.
-      </audio>
-    </div> -->
-
     <div 
       class="hero-slide"
       *ngFor="let noticia of noticias; let i = index"
