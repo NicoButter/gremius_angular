@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -17,9 +17,8 @@ interface Noticia {
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent implements OnInit, OnDestroy {
-  liveBroadcastAvailable = false;
-  liveCountdown = 'la hora de inicio';
+export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('radioPlayer') radioPlayer!: ElementRef<HTMLAudioElement>;
 
   noticias: Noticia[] = [
     {
@@ -99,27 +98,33 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   currentSlide = 0;
   private intervalId: any;
-  private liveBroadcastIntervalId: any;
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
       this.intervalId = setInterval(() => {
         this.currentSlide = (this.currentSlide + 1) % this.noticias.length;
       }, 5000);
+    }
+  }
 
-      this.updateLiveBroadcastAvailability();
-      this.liveBroadcastIntervalId = setInterval(() => {
-        this.updateLiveBroadcastAvailability();
-      }, 1000);
+  ngAfterViewInit(): void {
+    if (this.radioPlayer) {
+      const player = this.radioPlayer.nativeElement;
+      player.addEventListener('loadedmetadata', () => {
+        try {
+          if (player.seekable.length > 0) {
+            player.currentTime = player.seekable.end(0);
+          }
+        } catch (e) {
+          console.warn('No se pudo ajustar el tiempo del stream', e);
+        }
+      });
     }
   }
 
   ngOnDestroy(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
-    }
-    if (this.liveBroadcastIntervalId) {
-      clearInterval(this.liveBroadcastIntervalId);
     }
   }
 
@@ -135,34 +140,5 @@ export class HeroComponent implements OnInit, OnDestroy {
   goToSlide(index: number): void {
     this.currentSlide = index;
     this.resetInterval();
-  }
-
-  private updateLiveBroadcastAvailability(): void {
-    const timeParts = new Intl.DateTimeFormat('en-CA', {
-      timeZone: 'America/Argentina/Rio_Gallegos',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hourCycle: 'h23'
-    }).formatToParts(new Date());
-    const time = Object.fromEntries(
-      timeParts
-        .filter(({ type }) => type !== 'literal')
-        .map(({ type, value }) => [type, Number(value)])
-    );
-    const currentSeconds = (time['hour'] * 3600) + (time['minute'] * 60) + time['second'];
-    const broadcastStartSeconds = 21 * 3600;
-
-    this.liveBroadcastAvailable = currentSeconds >= broadcastStartSeconds;
-    if (this.liveBroadcastAvailable) {
-      this.liveCountdown = 'La transmisión está en vivo.';
-      return;
-    }
-
-    const remainingSeconds = broadcastStartSeconds - currentSeconds;
-    const hours = Math.floor(remainingSeconds / 3600);
-    const minutes = Math.floor((remainingSeconds % 3600) / 60);
-    const seconds = remainingSeconds % 60;
-    this.liveCountdown = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }
 }
