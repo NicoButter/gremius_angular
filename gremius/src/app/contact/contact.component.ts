@@ -1,8 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import emailjs from '@emailjs/browser';
+import { CONTACT_CAMPAIGN } from './contact-campaign.config';
+import { JobApplicationService } from '../services/job-application.service';
+
+type ContactMode = 'general' | 'job_application';
+
+interface ContactRecipient {
+  id: string;
+  label: string;
+  email: string;
+  templateID: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -15,10 +26,27 @@ export class ContactComponent implements OnInit {
   destinatario: string | null = null;
   selectedTemplateID: string | null = null;
   contactData = { name: '', email: '', message: '' };
+  jobApplicationData = { name: '', email: '', phone: '', message: '', honeypot: '' };
+  cvFile: File | null = null;
+  cvError = '';
+  jobFormError = '';
+  mode: ContactMode = 'general';
 
-  destinatarios = [
-    { label: 'Gremio Judiciales Río Gallegos - El Calafate', email: 'gremiojudicialesrg@gmail.com', templateID: 'template_wluyfpg' },
-    { label: 'Gremio Judiciales San Julián - Caleta Olivia', email: 'empleadosjudiciales3dejulio@hotmail.com', templateID: 'template_8e3q3cm' }
+  readonly campaign = CONTACT_CAMPAIGN;
+
+  destinatarios: ContactRecipient[] = [
+    {
+      id: 'rio-gallegos',
+      label: 'Gremio Judiciales Río Gallegos - El Calafate',
+      email: 'gremiojudicialesrg@gmail.com',
+      templateID: 'template_wluyfpg'
+    },
+    {
+      id: 'san-julian-caleta-olivia',
+      label: 'Gremio Judiciales San Julián - Caleta Olivia',
+      email: 'empleadosjudiciales3dejulio@hotmail.com',
+      templateID: 'template_8e3q3cm'
+    }
   ];
 
   faqs = [
@@ -36,12 +64,34 @@ export class ContactComponent implements OnInit {
 
   sending = false;
   showSuccessAlert = false;
+  showJobSuccessAlert = false;
   error = false;
 
   private serviceID = 'service_ck9nnbd';
   private publicKey = 'cd4j8Dqisx59BKdag';
 
-  constructor(private route: ActivatedRoute) {}
+  @ViewChild('jobCvInput') private jobCvInput?: ElementRef<HTMLInputElement>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private jobApplicationService: JobApplicationService
+  ) {}
+
+  get campaignEnabled(): boolean {
+    return this.campaign.enabled;
+  }
+
+  get isJobApplication(): boolean {
+    return this.mode === 'job_application';
+  }
+
+  get acceptedResumeExtensions(): string {
+    return this.campaign.resume.allowedExtensions.map(extension => `.${extension}`).join(', ');
+  }
+
+  get cvFileName(): string {
+    return this.cvFile?.name ?? '';
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -52,29 +102,88 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  selectDestinatario(dest: any) {
+  selectDestinatario(dest: ContactRecipient): void {
     this.destinatario = dest.email;
     this.selectedTemplateID = dest.templateID;
   }
 
-  back() {
+  startJobApplication(): void {
+    if (!this.campaignEnabled || this.campaign.type !== 'job_application') return;
+
+    const campaignRecipient = this.destinatarios.find(dest => dest.id === this.campaign.office);
+    if (!campaignRecipient) {
+      console.error('No hay una sede configurada para la campaña de contacto.');
+      this.error = true;
+      return;
+    }
+
+    this.mode = 'job_application';
+    this.error = false;
+    this.cvError = '';
+    this.jobFormError = '';
+    this.showJobSuccessAlert = false;
+    this.selectDestinatario(campaignRecipient);
+  }
+
+  startGeneralConsultation(): void {
+    this.back();
+  }
+
+  back(): void {
+    this.mode = 'general';
     this.destinatario = null;
     this.selectedTemplateID = null;
     this.contactData = { name: '', email: '', message: '' };
+    this.resetJobApplication();
+    this.showJobSuccessAlert = false;
     this.sending = false;
     this.error = false;
   }
 
-  sendEmail() {
+  onCvSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.item(0) ?? null;
+
+    this.cvFile = null;
+    this.cvError = '';
+    this.jobFormError = '';
+
+    if (!file) return;
+
+    const extension = file.name.split('.').pop()?.toLowerCase();
+    if (
+      !extension ||
+      !this.campaign.resume.allowedExtensions.includes(extension) ||
+      file.type !== 'application/pdf'
+    ) {
+      this.cvError = 'El currículum debe estar en formato PDF.';
+      input.value = '';
+      return;
+    }
+
+    if (file.size > this.campaign.resume.maxSizeBytes) {
+      this.cvError = 'El archivo supera el máximo permitido de 3 MB.';
+      input.value = '';
+      return;
+    }
+
+    this.cvFile = file;
+  }
+
+  sendEmail(): void {
     if (!this.destinatario || !this.selectedTemplateID) return;
 
     this.sending = true;
     this.error = false;
 
+    const title = this.destinatarios.find(recipient => recipient.email === this.destinatario)?.label ?? 'Consulta general';
     const templateParams = {
+      subject: `Contact Us: ${title}`,
       to_email: this.destinatario,
       from_name: this.contactData.name,
       from_email: this.contactData.email,
+      name: this.contactData.name,
+      email: this.contactData.email,
       message: this.contactData.message
     };
 
@@ -89,5 +198,53 @@ export class ContactComponent implements OnInit {
         this.sending = false;
         this.error = true;
       });
+  }
+
+  sendJobApplication(form: NgForm): void {
+    if (!this.isJobApplication || !this.campaignEnabled) return;
+
+    this.jobFormError = '';
+    this.showJobSuccessAlert = false;
+
+    if (form.invalid) {
+      this.jobFormError = 'Completá los campos obligatorios.';
+      return;
+    }
+
+    if (!this.cvFile) {
+      this.cvError = 'Debés seleccionar tu CV.';
+      return;
+    }
+
+    this.sending = true;
+    this.jobApplicationService.submit(this.campaign, {
+      fullName: this.jobApplicationData.name,
+      email: this.jobApplicationData.email,
+      phone: this.jobApplicationData.phone,
+      message: this.jobApplicationData.message,
+      honeypot: this.jobApplicationData.honeypot
+    }, this.cvFile)
+      .then(() => {
+        this.resetJobApplication();
+        form.resetForm();
+        this.showJobSuccessAlert = true;
+      })
+      .catch(() => {
+        this.jobFormError = 'No pudimos enviar la postulación. Intentá nuevamente.';
+      })
+      .finally(() => {
+        this.sending = false;
+      });
+  }
+
+  private resetJobApplication(): void {
+    this.jobApplicationData = { name: '', email: '', phone: '', message: '', honeypot: '' };
+    this.cvFile = null;
+    this.cvError = '';
+    this.jobFormError = '';
+
+    if (this.jobCvInput) {
+      this.jobCvInput.nativeElement.value = '';
+    }
   }
 }

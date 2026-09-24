@@ -1,0 +1,7 @@
+project_id = "cjprsgroaierjsxklbhx"
+
+[functions.prepare-job-application]
+verify_jwt = false
+
+[functions.confirm-job-application]
+verify_jwt = false

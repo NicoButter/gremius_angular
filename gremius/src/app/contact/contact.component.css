@@ -40,6 +40,73 @@
   padding: 0 1.5rem;
 }
 
+/* ─── Convocatoria temporal ────────────────────────────────────────── */
+.campaign-banner {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 2.25rem 2.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #1e2a5e 0%, #444c8a 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(30, 42, 94, 0.18);
+}
+
+.campaign-eyebrow {
+  margin: 0 0 0.65rem;
+  color: #dfe4ff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.campaign-banner h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.campaign-banner > p:not(.campaign-eyebrow) {
+  max-width: 700px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.campaign-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.campaign-cta {
+  background: #fff;
+  color: #1e2a5e;
+}
+
+.campaign-cta:hover:not(:disabled) {
+  background: #f1f3ff;
+  color: #1e2a5e;
+}
+
+.campaign-secondary-action {
+  padding: 0.5rem;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+}
+
+.campaign-secondary-action:hover {
+  border-bottom-color: #fff;
+}
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -99,6 +166,17 @@
   gap: 1rem;
 }
 
+.application-indicator {
+  margin-bottom: 1.75rem;
+  padding: 0.9rem 1rem;
+  color: #1e2a5e;
+  font-weight: 700;
+  line-height: 1.45;
+  background: #eef0fb;
+  border-left: 4px solid #444c8a;
+  border-radius: 6px;
+}
+
 /* ─── Formulario ───────────────────────────────────────────────────── */
 .modern-form .form-group {
   margin-bottom: 1.5rem;
@@ -122,6 +200,21 @@
   color: #333;
   transition: border-color 0.3s, box-shadow 0.3s;
   background-color: #fcfcfd;
+}
+
+.modern-form .file-input {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .modern-form input:focus,
@@ -160,6 +253,36 @@
 .submit-btn {
   flex: 2;
   border-radius: 8px !important;
+}
+
+.file-help,
+.selected-file,
+.field-error {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.file-help {
+  color: #64748b;
+}
+
+.selected-file {
+  color: #2c3475;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.field-error {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.privacy-notice {
+  margin: 1.25rem 0 0;
+  color: #64748b;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 /* ─── Botones Globales ─────────────────────────────────────────────── */
@@ -226,6 +349,10 @@
   border: 1px solid #bbf7d0;
 }
 
+.alert.success p {
+  margin: 0.4rem 0 0;
+}
+
 /* ─── FAQ ──────────────────────────────────────────────────────────── */
 .faq-body {
   padding: 0 !important;
@@ -270,6 +397,22 @@
   }
   .contact-title {
     font-size: 2.2rem;
+  }
+  .campaign-banner {
+    padding: 1.75rem 1.5rem;
+  }
+  .campaign-banner h2 {
+    font-size: 1.45rem;
+  }
+  .campaign-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .campaign-cta {
+    width: 100%;
+  }
+  .campaign-secondary-action {
+    align-self: center;
   }
   .form-actions {
     flex-direction: column;

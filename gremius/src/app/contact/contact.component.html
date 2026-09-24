@@ -10,19 +10,34 @@
 </div>
 
 <div class="contact-container">
+  <section *ngIf="campaignEnabled" class="campaign-banner" aria-labelledby="campaign-title">
+    <p class="campaign-eyebrow">Convocatoria laboral</p>
+    <h2 id="campaign-title">{{ campaign.title }}</h2>
+    <p>{{ campaign.description }}</p>
+    <div class="campaign-actions">
+      <button type="button" class="contact-btn campaign-cta" (click)="startJobApplication()">
+        Quiero postularme
+      </button>
+      <button type="button" class="campaign-secondary-action" (click)="startGeneralConsultation()">
+        Realizar una consulta general
+      </button>
+    </div>
+  </section>
+
   <div class="contact-layout">
     
     <!-- Lado Izquierdo: Acción de Contacto (Selector Sede y Formulario) -->
     <div class="contact-card main-card">
       <div class="contact-card-header">
         <h2 *ngIf="!destinatario">Envianos un mensaje</h2>
-        <h2 *ngIf="destinatario">Formulario de Contacto</h2>
+        <h2 *ngIf="destinatario && !isJobApplication">Formulario de Contacto</h2>
+        <h2 *ngIf="isJobApplication">Postulación laboral</h2>
       </div>
       
       <div class="contact-card-body form-body">
         
         <!-- Selección de sede -->
-        <div *ngIf="!destinatario" class="destinatarios">
+        <div *ngIf="!destinatario && !isJobApplication" class="destinatarios">
           <p class="destinatarios-subtitle">Seleccioná la sede a la que deseas escribirle:</p>
           <div class="destinatarios-grid">
             <button class="contact-btn outline" *ngFor="let d of destinatarios" (click)="selectDestinatario(d)">
@@ -32,7 +47,7 @@
         </div>
 
         <!-- Formulario -->
-        <div *ngIf="destinatario" class="contact-form">
+        <div *ngIf="destinatario && !isJobApplication" class="contact-form">
           <form (ngSubmit)="sendEmail()" class="modern-form">
             <div class="form-group">
               <label>Nombre Completo</label>
@@ -63,6 +78,68 @@
               </button>
               <button type="submit" class="contact-btn submit-btn" [disabled]="sending">
                 {{ sending ? 'Enviando...' : 'Enviar Mensaje' }}
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Formulario de postulación: la sede queda fijada por la campaña. -->
+        <div *ngIf="destinatario && isJobApplication" class="contact-form">
+          <div class="application-indicator">
+            Postulación: {{ campaign.position }} — {{ campaign.officeName }}
+          </div>
+
+          <form #jobApplicationForm="ngForm" (ngSubmit)="sendJobApplication(jobApplicationForm)" class="modern-form" novalidate>
+            <div class="honeypot" aria-hidden="true">
+              <label for="job-website">Sitio web</label>
+              <input id="job-website" type="text" name="job-website" tabindex="-1" autocomplete="off" [(ngModel)]="jobApplicationData.honeypot">
+            </div>
+
+            <div class="form-group">
+              <label for="job-name">Nombre y apellido</label>
+              <input id="job-name" type="text" [(ngModel)]="jobApplicationData.name" name="job-name" placeholder="Ej: Juan Pérez" minlength="2" maxlength="160" required>
+            </div>
+
+            <div class="form-group">
+              <label for="job-email">Correo electrónico</label>
+              <input id="job-email" type="email" [(ngModel)]="jobApplicationData.email" name="job-email" placeholder="ejemplo@correo.com" maxlength="254" required>
+            </div>
+
+            <div class="form-group">
+              <label for="job-phone">Teléfono</label>
+              <input id="job-phone" type="tel" [(ngModel)]="jobApplicationData.phone" name="job-phone" placeholder="Ej: 2966 123456" pattern="[0-9+() .-]{6,}" maxlength="40" required>
+            </div>
+
+            <div class="form-group">
+              <label for="job-message">Breve presentación o mensaje</label>
+              <textarea id="job-message" [(ngModel)]="jobApplicationData.message" name="job-message" rows="6" placeholder="Contanos brevemente sobre tu experiencia e interés en el puesto..." minlength="20" maxlength="2000" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="job-cv">Currículum Vitae</label>
+              <input #jobCvInput id="job-cv" class="file-input" type="file" [attr.accept]="acceptedResumeExtensions" (change)="onCvSelected($event)" required>
+              <p class="file-help">Formato PDF — máximo 3 MB.</p>
+              <p *ngIf="cvFileName" class="selected-file">Archivo seleccionado: {{ cvFileName }}</p>
+              <p *ngIf="cvError" class="field-error" role="alert">{{ cvError }}</p>
+            </div>
+
+            <div *ngIf="jobFormError" class="alert error" role="alert">
+              {{ jobFormError }}
+            </div>
+
+            <div *ngIf="showJobSuccessAlert" class="alert success" role="status">
+              <strong>¡Postulación recibida!</strong>
+              <p>Recibimos tus datos y tu Currículum Vitae correctamente.</p>
+            </div>
+
+            <p class="privacy-notice">Los datos enviados serán utilizados exclusivamente para el proceso de selección.</p>
+
+            <div class="form-actions">
+              <button type="button" class="back-btn" (click)="startGeneralConsultation()">
+                ← Volver a consulta general
+              </button>
+              <button type="submit" class="contact-btn submit-btn" [disabled]="sending">
+                {{ sending ? 'Enviando...' : 'Enviar postulación' }}
               </button>
             </div>
           </form>

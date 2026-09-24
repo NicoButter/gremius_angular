@@ -43,3 +43,8 @@ Thumbs.db
 
 # Requerimientos
 /requerimientos
+
+# Configuración local de Supabase / Edge Functions (puede contener secretos)
+supabase/.env
+supabase/functions/.env
+supabase/.temp/

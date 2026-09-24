@@ -22,6 +22,7 @@
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.1",
     "@emailjs/browser": "^4.4.1",
+    "@supabase/supabase-js": "^2.117.1",
     "@types/leaflet": "^1.9.21",
     "@types/swiper": "^5.4.3",
     "express": "^4.18.2",
