@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, isDevMode, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -207,6 +207,18 @@ export class ContactComponent implements OnInit {
     this.showJobSuccessAlert = false;
 
     if (form.invalid) {
+      if (isDevMode()) {
+        console.debug('Invalid job application controls:', Object.entries(form.controls)
+          .filter(([, control]) => control.invalid)
+          .map(([name, control]) => ({
+            name,
+            errors: control.errors,
+            hasValue: control.value !== null &&
+              control.value !== undefined &&
+              control.value !== ''
+          })));
+      }
+
       this.jobFormError = 'Completá los campos obligatorios.';
       return;
     }
