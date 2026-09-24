@@ -97,22 +97,39 @@
 
             <div class="form-group">
               <label for="job-name">Nombre y apellido</label>
-              <input id="job-name" type="text" [(ngModel)]="jobApplicationData.name" name="job-name" placeholder="Ej: Juan Pérez" minlength="2" maxlength="160" required>
+              <input #jobName="ngModel" id="job-name" type="text" [(ngModel)]="jobApplicationData.name" name="job-name" placeholder="Ej: Juan Pérez" minlength="2" maxlength="160" required>
+              <p *ngIf="jobName.invalid && (jobName.touched || jobApplicationForm.submitted)" class="field-error" role="alert">
+                <ng-container *ngIf="jobName.errors?.['required']">Ingresá tu nombre y apellido.</ng-container>
+                <ng-container *ngIf="jobName.errors?.['minlength']">El nombre debe tener al menos 2 caracteres.</ng-container>
+              </p>
             </div>
 
             <div class="form-group">
               <label for="job-email">Correo electrónico</label>
-              <input id="job-email" type="email" [(ngModel)]="jobApplicationData.email" name="job-email" placeholder="ejemplo@correo.com" maxlength="254" required>
+              <input #jobEmail="ngModel" id="job-email" type="email" [(ngModel)]="jobApplicationData.email" name="job-email" placeholder="ejemplo@correo.com" maxlength="254" required>
+              <p *ngIf="jobEmail.invalid && (jobEmail.touched || jobApplicationForm.submitted)" class="field-error" role="alert">
+                <ng-container *ngIf="jobEmail.errors?.['required']">Ingresá tu correo electrónico.</ng-container>
+                <ng-container *ngIf="jobEmail.errors?.['email']">Ingresá un correo electrónico válido.</ng-container>
+              </p>
             </div>
 
             <div class="form-group">
               <label for="job-phone">Teléfono</label>
-              <input id="job-phone" type="tel" [(ngModel)]="jobApplicationData.phone" name="job-phone" placeholder="Ej: 2966 123456" pattern="[0-9+() .-]{6,}" maxlength="40" required>
+              <input #jobPhone="ngModel" id="job-phone" type="tel" [(ngModel)]="jobApplicationData.phone" (ngModelChange)="jobPhoneError = ''" name="job-phone" placeholder="Ej: 2966 123456" maxlength="40" required>
+              <p *ngIf="(jobPhone.invalid && (jobPhone.touched || jobApplicationForm.submitted)) || jobPhoneError" class="field-error" role="alert">
+                <ng-container *ngIf="jobPhone.errors?.['required']">Ingresá un teléfono válido.</ng-container>
+                <ng-container *ngIf="jobPhoneError">{{ jobPhoneError }}</ng-container>
+              </p>
             </div>
 
             <div class="form-group">
               <label for="job-message">Breve presentación o mensaje</label>
-              <textarea id="job-message" [(ngModel)]="jobApplicationData.message" name="job-message" rows="6" placeholder="Contanos brevemente sobre tu experiencia e interés en el puesto..." minlength="20" maxlength="2000" required></textarea>
+              <textarea #jobMessage="ngModel" id="job-message" [(ngModel)]="jobApplicationData.message" name="job-message" rows="6" placeholder="Contanos brevemente sobre tu experiencia e interés en el puesto..." minlength="20" maxlength="2000" required></textarea>
+              <p class="file-help">Mínimo 20 caracteres.</p>
+              <p *ngIf="jobMessage.invalid && (jobMessage.touched || jobApplicationForm.submitted)" class="field-error" role="alert">
+                <ng-container *ngIf="jobMessage.errors?.['required']">Ingresá una breve presentación.</ng-container>
+                <ng-container *ngIf="jobMessage.errors?.['minlength']">La presentación debe tener al menos 20 caracteres.</ng-container>
+              </p>
             </div>
 
             <div class="form-group">

@@ -1,4 +1,4 @@
-import { Component, ElementRef, isDevMode, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -29,6 +29,7 @@ export class ContactComponent implements OnInit {
   jobApplicationData = { name: '', email: '', phone: '', message: '', honeypot: '' };
   cvFile: File | null = null;
   cvError = '';
+  jobPhoneError = '';
   jobFormError = '';
   mode: ContactMode = 'general';
 
@@ -120,6 +121,7 @@ export class ContactComponent implements OnInit {
     this.mode = 'job_application';
     this.error = false;
     this.cvError = '';
+    this.jobPhoneError = '';
     this.jobFormError = '';
     this.showJobSuccessAlert = false;
     this.selectDestinatario(campaignRecipient);
@@ -207,19 +209,11 @@ export class ContactComponent implements OnInit {
     this.showJobSuccessAlert = false;
 
     if (form.invalid) {
-      if (isDevMode()) {
-        console.debug('Invalid job application controls:', Object.entries(form.controls)
-          .filter(([, control]) => control.invalid)
-          .map(([name, control]) => ({
-            name,
-            errors: control.errors,
-            hasValue: control.value !== null &&
-              control.value !== undefined &&
-              control.value !== ''
-          })));
-      }
+      return;
+    }
 
-      this.jobFormError = 'Completá los campos obligatorios.';
+    if (!this.hasValidPhone(this.jobApplicationData.phone)) {
+      this.jobPhoneError = 'Ingresá un teléfono válido.';
       return;
     }
 
@@ -253,10 +247,15 @@ export class ContactComponent implements OnInit {
     this.jobApplicationData = { name: '', email: '', phone: '', message: '', honeypot: '' };
     this.cvFile = null;
     this.cvError = '';
+    this.jobPhoneError = '';
     this.jobFormError = '';
 
     if (this.jobCvInput) {
       this.jobCvInput.nativeElement.value = '';
     }
+  }
+
+  private hasValidPhone(phone: string): boolean {
+    return /^[0-9+() .-]{6,40}$/.test(phone.trim());
   }
 }
