@@ -9,6 +9,8 @@ export interface ContactCampaignConfig {
   position: string;
   title: string;
   description: string;
+  applicationDeadline: string;
+  requirements: readonly string[];
   campaignKey: string;
   resume: {
     allowedExtensions: readonly string[];
@@ -34,6 +36,14 @@ export const CONTACT_CAMPAIGN: ContactCampaignConfig = {
   position: 'Personal administrativo',
   title: 'Búsqueda de personal administrativo',
   description: 'Estamos incorporando personal administrativo para nuestra sede de Río Gallegos.',
+  applicationDeadline: '16 de octubre inclusive',
+  requirements: [
+    'Currículum vitae',
+    'Certificado de antecedentes penales',
+    'Certificado de libre deudor alimentario',
+    'Secundario completo',
+    'Referencias laborales comprobables'
+  ],
   campaignKey: 'administrativo-rg-2026',
   resume: {
     allowedExtensions: ['pdf'],

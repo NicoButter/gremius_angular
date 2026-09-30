@@ -14,6 +14,7 @@
     <p class="campaign-eyebrow">Convocatoria laboral</p>
     <h2 id="campaign-title">{{ campaign.title }}</h2>
     <p>{{ campaign.description }}</p>
+    <p class="campaign-deadline"><strong>Recepción de postulaciones hasta el {{ campaign.applicationDeadline }}.</strong></p>
     <div class="campaign-actions">
       <button type="button" class="contact-btn campaign-cta" (click)="startJobApplication()">
         Quiero postularme
@@ -89,6 +90,15 @@
             Postulación: {{ campaign.position }} — {{ campaign.officeName }}
           </div>
 
+          <section class="application-requirements" aria-labelledby="application-requirements-title">
+            <h3 id="application-requirements-title">Requisitos de postulación</h3>
+            <ul>
+              <li *ngFor="let requirement of campaign.requirements">{{ requirement }}</li>
+            </ul>
+            <p><strong>Importante:</strong> reuní toda la documentación en un único archivo PDF antes de adjuntarla.</p>
+            <p class="application-deadline">Se recibirán postulaciones hasta el <strong>{{ campaign.applicationDeadline }}</strong>.</p>
+          </section>
+
           <form #jobApplicationForm="ngForm" (ngSubmit)="sendJobApplication(jobApplicationForm)" class="modern-form" novalidate>
             <div class="honeypot" aria-hidden="true">
               <label for="job-website">Sitio web</label>
@@ -133,9 +143,9 @@
             </div>
 
             <div class="form-group">
-              <label for="job-cv">Currículum Vitae</label>
+              <label for="job-cv">Documentación de postulación</label>
               <input #jobCvInput id="job-cv" class="file-input" type="file" [attr.accept]="acceptedResumeExtensions" (change)="onCvSelected($event)" required>
-              <p class="file-help">Formato PDF — máximo 3 MB.</p>
+              <p class="file-help">Adjuntá un único PDF con el currículum y toda la documentación requerida. Máximo 3 MB.</p>
               <p *ngIf="cvFileName" class="selected-file">Archivo seleccionado: {{ cvFileName }}</p>
               <p *ngIf="cvError" class="field-error" role="alert">{{ cvError }}</p>
             </div>

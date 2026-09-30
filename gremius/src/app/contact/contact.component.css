@@ -74,6 +74,11 @@
   line-height: 1.6;
 }
 
+.campaign-deadline {
+  margin-top: 1rem !important;
+  color: #fff !important;
+}
+
 .campaign-actions {
   display: flex;
   flex-wrap: wrap;
@@ -175,6 +180,62 @@
   background: #eef0fb;
   border-left: 4px solid #444c8a;
   border-radius: 6px;
+}
+
+.application-requirements {
+  margin: 0 0 1.75rem;
+  padding: 1.25rem;
+  color: #26305f;
+  background: #f5f7ff;
+  border: 1px solid #dce1f7;
+  border-radius: 10px;
+}
+
+.application-requirements h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1.08rem;
+  color: #1e2a5e;
+}
+
+.application-requirements ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.application-requirements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+
+.application-requirements li::before {
+  content: '✓';
+  flex: 0 0 auto;
+  color: #fff;
+  background: #226bd4;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.application-requirements p {
+  margin: 1rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.application-requirements .application-deadline {
+  padding-top: 0.9rem;
+  color: #1e2a5e;
+  border-top: 1px solid #dce1f7;
 }
 
 /* ─── Formulario ───────────────────────────────────────────────────── */
